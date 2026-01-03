@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "projects": "Projets",
+    "services": "Services",
+    "about": "À propos",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Disponible pour vos projets",
+    "role": "Développeur Web",
+    "tagline": "Votre vision, mon code,",
+    "taglineHighlight": "votre levier de croissance.",
+    "ctaPrimary": "Discutons de votre projet",
+    "ctaSecondary": "Voir mes projets",
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Mes projets récents",
+    "subtitle": "Des applications web conçues pour répondre aux besoins réels de mes clients.",
+    "viewProject": "Voir le projet",
+    "visitSite": "Site",
+    "backToHome": "Retour à l'accueil",
+    "techStack": "Stack technique",
+    "visitOnlineSite": "Visiter le site",
+    "viewCode": "Voir le code",
+    "backToProjects": "Retour aux projets",
+    "projectLabel": "Projet",
+    "visitSiteButton": "Voir le site",
+    "sourceCode": "Code source",
+    "aboutProject": "À propos du projet",
+    "otherProjects": "Autres projets",
+    "ctaTitle": "Un projet en tête ?",
+    "ctaDescription": "Discutons de vos besoins et voyons comment je peux vous aider à concrétiser votre vision.",
+    "ctaButton": "Discutons de votre projet",
+    "notFoundTitle": "Projet non trouvé",
+    "items": {
+      "jay": {
+        "description": "Assistant IA pour commerciaux — Seul développeur",
+        "fullDescription": "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email."
+      },
+      "nicolas-steinberg": {
+        "description": "Portfolio consultant hôtellerie de luxe",
+        "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés."
+      },
+      "rdp-glass": {
+        "description": "Application B2B — gestion produits & blog",
+        "fullDescription": "Application web complète pour un distributeur de packaging verre B2B. Dashboard d'administration, gestion de catalogue produits, système de blog intégré, et interface client optimisée pour la conversion."
+      }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Ce que je propose",
+    "subtitle": "Des solutions web adaptées à vos besoins et à votre budget.",
+    "pricing": "Tarifs :",
+    "pricingValue": "Sur devis",
+    "items": {
+      "sites-vitrines": {
+        "title": "Sites vitrines",
+        "description": "Une présence en ligne professionnelle qui reflète votre identité et convertit vos visiteurs en clients."
+      },
+      "applications-web": {
+        "title": "Applications web",
+        "description": "Dashboards, gestion de contenu, outils métier — des solutions sur mesure qui simplifient votre quotidien."
+      },
+      "developpement-technique": {
+        "title": "Développement technique",
+        "description": "Applications internes, intégrations API, automatisations — des solutions robustes pour vos besoins complexes."
+      },
+      "landing-pages": {
+        "title": "Landing pages",
+        "description": "Pages de conversion optimisées pour vos campagnes, produits ou événements."
+      },
+      "refonte-site": {
+        "title": "Refonte de site",
+        "description": "Modernisation de votre site existant : design, performance, expérience utilisateur."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Évolutions, corrections, mises à jour — votre site entre de bonnes mains."
+      }
+    }
+  },
+  "about": {
+    "label": "À propos",
+    "title": "Du sens du service au code",
+    "paragraph1": "Après plusieurs années dans l'hôtellerie de luxe — notamment comme concierge dans un boutique hôtel 5 étoiles à Paris — j'ai appris une chose essentielle :",
+    "paragraph1Highlight": "comprendre le client avant tout.",
+    "paragraph2": "Aujourd'hui développeur web, je mets cette exigence au service de vos projets digitaux. J'écoute, je comprends, puis je code exactement ce dont vous avez besoin.",
+    "paragraph3": "Le sens du service client + la maîtrise technique : c'est ma double casquette, et",
+    "paragraph3Highlight": "votre avantage.",
+    "badge": "Double casquette",
+    "badgeSub": "Service + Technique",
+    "photo": "Photo à venir",
+    "stats": {
+      "reviews": "Avis Google",
+      "satisfaction": "Satisfaction",
+      "response": "Réponse"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Discutons de votre projet",
+    "subtitle": "Vous avez une idée, un besoin, une question ? Remplissez le formulaire ou contactez-moi directement par email. Je vous réponds sous 24-48h.",
+    "email": "Email",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "projectType": "Type de projet",
+      "projectTypes": {
+        "placeholder": "Sélectionnez un type de projet",
+        "showcase": "Site vitrine",
+        "webapp": "Application web",
+        "landing": "Landing page",
+        "redesign": "Refonte de site",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre projet...",
+      "submit": "Envoyer",
+      "submitting": "Envoi en cours...",
+      "success": "Message envoyé avec succès ! Je vous réponds rapidement.",
+      "error": "Une erreur est survenue. Réessayez ou contactez-moi directement par email."
+    }
+  },
+  "testimonial": {
+    "label": "Témoignage",
+    "title": "Ce qu'ils disent",
+    "quote": "Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
+    "quoteHighlight": "denrée rare",
+    "author": "Nicolas Steinberg",
+    "role": "Consultant hôtellerie de luxe",
+    "viewOnGoogle": "Voir sur Google"
+  },
+  "process": {
+    "label": "Process",
+    "title": "Comment ça se passe ?",
+    "subtitle": "Un accompagnement structuré pour des projets réussis.",
+    "steps": {
+      "discovery": {
+        "title": "Découverte",
+        "description": "Questionnaire + rendez-vous (Lille ou visio) pour comprendre vos besoins et objectifs."
+      },
+      "proposal": {
+        "title": "Proposition",
+        "description": "Devis détaillé + planning. Paiement de 50% à la signature pour démarrer."
+      },
+      "development": {
+        "title": "Développement",
+        "description": "Méthode agile avec points réguliers et démos. Révisions illimitées dans le périmètre."
+      },
+      "delivery": {
+        "title": "Livraison",
+        "description": "Solde de 50% + garantie bugs 30 jours. Maintenance optionnelle proposée."
+      }
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Questions fréquentes",
+    "items": {
+      "cost": {
+        "question": "Combien coûte un site web ?",
+        "answer": "Chaque projet est unique. Contactez-moi pour un devis personnalisé gratuit et sans engagement."
+      },
+      "timeline": {
+        "question": "Quels sont les délais ?",
+        "answer": "Landing page : 1-2 semaines. Site vitrine : 2-3 semaines. Refonte : 2-3 semaines. Application web : 1-2 mois."
+      },
+      "hosting": {
+        "question": "L'hébergement est inclus ?",
+        "answer": "Je propose les deux options : je peux gérer l'hébergement pour vous, ou vous conseiller pour le faire vous-même."
+      },
+      "autonomy": {
+        "question": "Je pourrai modifier le site moi-même ?",
+        "answer": "Selon vos besoins, je peux intégrer un CMS (système de gestion de contenu) pour que vous soyez totalement autonome."
+      },
+      "technologies": {
+        "question": "Tu travailles avec quelles technologies ?",
+        "answer": "React, Next.js, Node.js, TypeScript — des technologies modernes, performantes et maintenables."
+      },
+      "location": {
+        "question": "Tu te déplaces ?",
+        "answer": "Oui, dans la métropole lilloise. Pour le reste, visio sans problème !"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "JBR Development - Tous droits réservés"
+  },
+  "notFound": {
+    "title": "Oups !",
+    "message": "Cette page n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "metadata": {
+    "title": "Jean-Baptiste Renart | JBR Development",
+    "description": "Développeur web freelance - Je conçois vos applications web sur mesure. Sites vitrines, applications web, landing pages pour PME et entrepreneurs.",
+    "ogDescription": "Votre vision, mon code, votre levier de croissance."
+  }
+}

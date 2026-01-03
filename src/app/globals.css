@@ -1,26 +1,284 @@
 @import "tailwindcss";
 
 :root {
+  /* Palette JBR Development - Dark Mode (default) */
+  --background: #1a1a1a;
+  --background-secondary: #232323;
+  --background-card: #2a2a2a;
+  --foreground: #f5f5f5;
+  --foreground-secondary: #a0a0a0;
+  --accent: #34d399;
+  --accent-hover: #10b981;
+  --accent-foreground: #052e16; /* Dark green for text on accent - WCAG AA compliant */
+  --border: #333333;
+  /* Terminal colors */
+  --terminal-bg: #0d1117;
+  --terminal-header: #161b22;
+  /* Syntax highlighting - dark mode (light colors on dark bg) */
+  --syntax-keyword: #c27aff;
+  --syntax-variable: #51a2ff;
+  --syntax-property: #ff6467;
+  --syntax-method: #facc15;
+  --syntax-bracket: #fde047;
+  --syntax-string: #34d399; /* Accent green for strings */
+}
+
+/* Light Mode - Using :root[data-theme] for higher specificity */
+:root[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #f8f9fa;
+  --background-card: #ffffff;
+  --foreground: #1a1a1a;
+  --foreground-secondary: #6b7280;
+  --accent: #047857; /* Darker green for WCAG AA contrast on white (4.6:1) */
+  --accent-hover: #065f46;
+  --accent-foreground: #ffffff; /* White text on dark green buttons */
+  --border: #e5e7eb;
+  /* Terminal colors */
+  --terminal-bg: #ffffff;
+  --terminal-header: #f6f8fa;
+  /* Syntax highlighting - light mode (dark colors on light bg - WCAG AA) */
+  --syntax-keyword: #7c3aed;
+  --syntax-variable: #2563eb;
+  --syntax-property: #dc2626;
+  --syntax-method: #ca8a04;
+  --syntax-bracket: #a16207;
+  --syntax-string: #047857; /* Same as accent for strings */
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-card: var(--background-card);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --font-sans: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Link base */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes starBreathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+/* Animation utilities - using 'both' fill-mode to prevent hydration flicker */
+/* Small base delay (50ms) prevents animations from starting during React hydration */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out 50ms both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out 50ms both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out 50ms both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out 50ms both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* Initial state for animations - visibility prevents FOUC flicker */
+.opacity-0-initial {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect for accent elements */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+}
+
+/* Card hover effect - specific properties for fast hover response */
+.card-hover {
+  transition-property: transform, border-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* Primary button text - ensures dynamic theme switching */
+.btn-primary-text {
+  color: var(--accent-foreground) !important;
+}
+
+/* Subtle noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Section container */
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0 3rem;
+  }
 }

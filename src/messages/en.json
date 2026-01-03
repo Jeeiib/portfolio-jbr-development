@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "role": "Web Developer",
+    "tagline": "Your vision, my code,",
+    "taglineHighlight": "your growth lever.",
+    "ctaPrimary": "Let's discuss your project",
+    "ctaSecondary": "View my work",
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Recent projects",
+    "subtitle": "Web applications designed to meet my clients' real needs.",
+    "viewProject": "View project",
+    "visitSite": "Site",
+    "backToHome": "Back to home",
+    "techStack": "Tech stack",
+    "visitOnlineSite": "Visit site",
+    "viewCode": "View code",
+    "backToProjects": "Back to projects",
+    "projectLabel": "Project",
+    "visitSiteButton": "Visit site",
+    "sourceCode": "Source code",
+    "aboutProject": "About the project",
+    "otherProjects": "Other projects",
+    "ctaTitle": "Have a project in mind?",
+    "ctaDescription": "Let's discuss your needs and see how I can help bring your vision to life.",
+    "ctaButton": "Let's discuss your project",
+    "notFoundTitle": "Project not found",
+    "items": {
+      "jay": {
+        "description": "AI assistant for sales teams — Solo developer",
+        "fullDescription": "Jay is a conversational AI assistant accessible via WhatsApp that enables professionals to manage their CRMs and calendars through voice. Users send a voice note describing what they want to do, and Jay transcribes, analyzes, and automatically executes the corresponding actions in connected systems. Supports 6 major CRMs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), calendar and email integrations."
+      },
+      "nicolas-steinberg": {
+        "description": "Luxury hospitality consultant portfolio",
+        "fullDescription": "Portfolio website for a luxury hospitality consultant. Premium and refined design reflecting the luxury world. Smooth scroll animations, impeccable Lighthouse scores (97/100 performance, 100/100 SEO). Integration of custom strategic tools."
+      },
+      "rdp-glass": {
+        "description": "B2B application — product & blog management",
+        "fullDescription": "Complete web application for a B2B glass packaging distributor. Admin dashboard, product catalog management, integrated blog system, and client interface optimized for conversion."
+      }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I offer",
+    "subtitle": "Web solutions tailored to your needs and budget.",
+    "pricing": "Rates:",
+    "pricingValue": "Custom quote",
+    "items": {
+      "sites-vitrines": {
+        "title": "Showcase websites",
+        "description": "A professional online presence that reflects your identity and converts visitors into customers."
+      },
+      "applications-web": {
+        "title": "Web applications",
+        "description": "Dashboards, content management, business tools — custom solutions that simplify your daily work."
+      },
+      "developpement-technique": {
+        "title": "Technical development",
+        "description": "Internal applications, API integrations, automations — robust solutions for your complex needs."
+      },
+      "landing-pages": {
+        "title": "Landing pages",
+        "description": "Conversion-optimized pages for your campaigns, products, or events."
+      },
+      "refonte-site": {
+        "title": "Website redesign",
+        "description": "Modernizing your existing site: design, performance, user experience."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Updates, fixes, improvements — your website in good hands."
+      }
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "From hospitality to code",
+    "paragraph1": "After several years in luxury hospitality — including as a concierge at a 5-star boutique hotel in Paris — I learned one essential thing:",
+    "paragraph1Highlight": "understand the client first.",
+    "paragraph2": "Now a web developer, I bring that same standard to your digital projects. I listen, I understand, then I code exactly what you need.",
+    "paragraph3": "Customer service mindset + technical expertise: that's my dual skill set, and",
+    "paragraph3Highlight": "your advantage.",
+    "badge": "Dual expertise",
+    "badgeSub": "Service + Technical",
+    "photo": "Photo coming soon",
+    "stats": {
+      "reviews": "Google Reviews",
+      "satisfaction": "Satisfaction",
+      "response": "Response"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's discuss your project",
+    "subtitle": "Got an idea, a need, or a question? Fill out the form or contact me directly by email. I'll get back to you within 24-48 hours.",
+    "email": "Email",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "projectType": "Project type",
+      "projectTypes": {
+        "placeholder": "Select a project type",
+        "showcase": "Showcase website",
+        "webapp": "Web application",
+        "landing": "Landing page",
+        "redesign": "Website redesign",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project...",
+      "submit": "Send",
+      "submitting": "Sending...",
+      "success": "Message sent successfully! I'll get back to you shortly.",
+      "error": "An error occurred. Please try again or contact me directly by email."
+    }
+  },
+  "testimonial": {
+    "label": "Testimonial",
+    "title": "What they say",
+    "quote": "An expert to work with while he's still available, because this level of execution is a",
+    "quoteHighlight": "rare find",
+    "author": "Nicolas Steinberg",
+    "role": "Luxury hospitality consultant",
+    "viewOnGoogle": "View on Google"
+  },
+  "process": {
+    "label": "Process",
+    "title": "How does it work?",
+    "subtitle": "A structured approach for successful projects.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "Questionnaire + meeting (Lille area or video call) to understand your needs and goals."
+      },
+      "proposal": {
+        "title": "Proposal",
+        "description": "Detailed quote + timeline. 50% payment at signature to get started."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Agile methodology with regular check-ins and demos. Unlimited revisions within scope."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "description": "Final 50% payment + 30-day bug warranty. Optional maintenance available."
+      }
+    }
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently Asked Questions",
+    "items": {
+      "cost": {
+        "question": "How much does a website cost?",
+        "answer": "Every project is unique. Contact me for a free, no-obligation custom quote."
+      },
+      "timeline": {
+        "question": "What are the timelines?",
+        "answer": "Landing page: 1-2 weeks. Showcase website: 2-3 weeks. Redesign: 2-3 weeks. Web application: 1-2 months."
+      },
+      "hosting": {
+        "question": "Is hosting included?",
+        "answer": "I offer both options: I can manage hosting for you, or advise you on doing it yourself."
+      },
+      "autonomy": {
+        "question": "Can I update the site myself?",
+        "answer": "Depending on your needs, I can integrate a CMS (content management system) so you're fully autonomous."
+      },
+      "technologies": {
+        "question": "What technologies do you use?",
+        "answer": "React, Next.js, Node.js, TypeScript — modern, performant, and maintainable technologies."
+      },
+      "location": {
+        "question": "Do you travel for meetings?",
+        "answer": "Yes, within the Lille metropolitan area. Otherwise, video calls work great!"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "JBR Development - All rights reserved"
+  },
+  "notFound": {
+    "title": "Oops!",
+    "message": "This page doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  },
+  "metadata": {
+    "title": "Jean-Baptiste Renart | JBR Development",
+    "description": "Freelance web developer - I build custom web applications. Showcase websites, web apps, landing pages for SMEs and entrepreneurs.",
+    "ogDescription": "Your vision, my code, your growth lever."
+  }
+}
