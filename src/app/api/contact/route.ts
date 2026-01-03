@@ -1,7 +1,14 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Instanciation lazy pour éviter le crash au build si la clé n'est pas définie
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+  return new Resend(apiKey);
+}
 
 const projectTypeLabels: Record<string, string> = {
   "site-vitrine": "Site vitrine",
@@ -257,6 +264,7 @@ export async function POST(request: Request) {
     }
 
     const contactEmail = process.env.CONTACT_EMAIL || "jb@jbrdevelopment.fr";
+    const resend = getResendClient();
 
     // Email 1: Notification pour JB
     const notificationResult = await resend.emails.send({
