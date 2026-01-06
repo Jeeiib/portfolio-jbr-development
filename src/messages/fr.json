@@ -128,13 +128,27 @@
     }
   },
   "testimonial": {
-    "label": "Témoignage",
+    "label": "Témoignages",
     "title": "Ce qu'ils disent",
-    "quote": "Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
-    "quoteHighlight": "denrée rare",
-    "author": "Nicolas Steinberg",
-    "role": "Consultant hôtellerie de luxe",
-    "viewOnGoogle": "Voir sur Google"
+    "viewOnGoogle": "Voir sur Google",
+    "items": {
+      "nicolas": {
+        "quote": "Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
+        "quoteHighlight": "denrée rare",
+        "author": "Nicolas Steinberg",
+        "role": "Consultant hôtellerie de luxe",
+        "initials": "NS",
+        "link": "https://share.google/TrBD8GioYeNPAUJ37"
+      },
+      "thierry": {
+        "quote": "Le développement de notre nouveau site web vient de s'achever et JB a fourni un travail qui a dépassé nos attentes. Sa compréhension des problématiques, sa rapidité de réaction et sa façon de transposer nos demandes a été",
+        "quoteHighlight": "simplement parfaite",
+        "author": "Thierry Dehon",
+        "role": "Gérant de RDP Glass",
+        "initials": "TD",
+        "link": "https://share.google/LPCNCjqZRBPBRaVjv"
+      }
+    }
   },
   "process": {
     "label": "Process",

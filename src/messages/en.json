@@ -128,13 +128,27 @@
     }
   },
   "testimonial": {
-    "label": "Testimonial",
+    "label": "Testimonials",
     "title": "What they say",
-    "quote": "An expert to work with while he's still available, because this level of execution is a",
-    "quoteHighlight": "rare find",
-    "author": "Nicolas Steinberg",
-    "role": "Luxury hospitality consultant",
-    "viewOnGoogle": "View on Google"
+    "viewOnGoogle": "View on Google",
+    "items": {
+      "nicolas": {
+        "quote": "An expert to work with while he's still available, because this level of execution is a",
+        "quoteHighlight": "rare find",
+        "author": "Nicolas Steinberg",
+        "role": "Luxury hospitality consultant",
+        "initials": "NS",
+        "link": "https://share.google/TrBD8GioYeNPAUJ37"
+      },
+      "thierry": {
+        "quote": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was",
+        "quoteHighlight": "simply perfect",
+        "author": "Thierry Dehon",
+        "role": "CEO of RDP Glass",
+        "initials": "TD",
+        "link": "https://share.google/LPCNCjqZRBPBRaVjv"
+      }
+    }
   },
   "process": {
     "label": "Process",
