@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import SmoothScrollLink from "@/components/ui/SmoothScrollLink";
 
 const socialLinks = [
@@ -28,6 +28,7 @@ const socialLinks = [
 export default function Footer() {
   const t = useTranslations("nav");
   const tFooter = useTranslations("footer");
+  const locale = useLocale();
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
@@ -84,6 +85,12 @@ export default function Footer() {
           <p className="text-sm text-[var(--foreground-secondary)]">
             © {currentYear} {tFooter("copyright")}
           </p>
+          <Link
+            href={`/${locale}/services`}
+            className="inline-block mt-3 text-xs text-[var(--foreground-secondary)]/50 hover:text-[var(--foreground-secondary)] transition-colors"
+          >
+            {tFooter("services")}
+          </Link>
         </div>
       </div>
     </footer>

@@ -204,6 +204,7 @@
     }
   },
   "footer": {
+    "services": "Nos services",
     "copyright": "JBR Development - Tous droits réservés"
   },
   "notFound": {
@@ -215,5 +216,262 @@
     "title": "Jean-Baptiste Renart | JBR Development",
     "description": "Développeur web freelance - Je conçois vos applications web sur mesure. Sites vitrines, applications web, landing pages pour PME et entrepreneurs.",
     "ogDescription": "Votre vision, mon code, votre levier de croissance."
+  },
+  "servicesHub": {
+    "label": "Services",
+    "title": "Mes services",
+    "subtitle": "Des solutions web sur mesure pour développer votre activité. Du site vitrine à l'application complexe, je vous accompagne à chaque étape.",
+    "learnMore": "En savoir plus",
+    "meta": {
+      "title": "Services Développeur Web Lille | JBR Development",
+      "description": "Découvrez mes services de développement web à Lille : sites vitrines, applications web, React/Next.js. Freelance disponible et réactif."
+    },
+    "pages": {
+      "developpeur-web-lille": {
+        "title": "Développeur Web à Lille",
+        "description": "Votre développeur web freelance à Lille. Création de sites internet et applications sur mesure pour PME et entrepreneurs du Nord."
+      },
+      "creation-site-internet-lille": {
+        "title": "Création de Site Internet",
+        "description": "Création de sites vitrines et e-commerce professionnels. Design moderne, SEO optimisé, responsive mobile."
+      },
+      "freelance-react-nextjs": {
+        "title": "Expert React & Next.js",
+        "description": "Développement d'applications web performantes avec React et Next.js. Sites rapides, SEO-friendly, scalables."
+      },
+      "application-web-sur-mesure": {
+        "title": "Application Web Sur Mesure",
+        "description": "Développement d'applications web métier : dashboards, outils internes, intégrations API. Solutions adaptées à vos besoins."
+      }
+    },
+    "cta": {
+      "title": "Un projet en tête ?",
+      "description": "Discutons de vos besoins et voyons comment je peux vous aider.",
+      "button": "Demander un devis gratuit"
+    }
+  },
+  "landingCommon": {
+    "googleReviews": "avis Google",
+    "cta": {
+      "quote": "Demander un devis gratuit",
+      "projects": "Voir mes projets"
+    },
+    "whyMe": {
+      "label": "Pourquoi me choisir",
+      "title": "Un développeur local, réactif et engagé",
+      "items": {
+        "local": {
+          "title": "Basé à Lambersart",
+          "description": "Rencontrons-nous en présentiel dans la métropole lilloise pour discuter de votre projet."
+        },
+        "interlocuteur": {
+          "title": "Interlocuteur unique",
+          "description": "Pas d'intermédiaire : vous échangez directement avec moi du début à la fin."
+        },
+        "reactif": {
+          "title": "Réponse sous 24h",
+          "description": "Disponible et réactif, je m'engage à répondre rapidement à vos demandes."
+        },
+        "tarifs": {
+          "title": "Tarifs freelance",
+          "description": "Pas de frais d'agence : bénéficiez de tarifs compétitifs sans sacrifier la qualité."
+        },
+        "accompagnement": {
+          "title": "Accompagnement A à Z",
+          "description": "Du brief initial à la mise en ligne, je vous guide à chaque étape."
+        },
+        "technologies": {
+          "title": "Technologies modernes",
+          "description": "React, Next.js, TypeScript : des outils performants pour des sites rapides et maintenables."
+        }
+      }
+    },
+    "services": {
+      "label": "Mes services",
+      "title": "Des solutions adaptées à vos besoins",
+      "pricing": "Tarif",
+      "onQuote": "Sur devis - Devis gratuit sous 24h",
+      "items": {
+        "siteVitrine": {
+          "title": "Site Vitrine",
+          "description": "Une présence en ligne professionnelle qui reflète votre identité et convertit vos visiteurs.",
+          "features": {
+            "1": "Design sur mesure",
+            "2": "Responsive mobile",
+            "3": "Optimisé SEO",
+            "4": "Formulaire de contact"
+          }
+        },
+        "applicationWeb": {
+          "title": "Application Web",
+          "description": "Des solutions sur mesure pour digitaliser et optimiser votre activité.",
+          "features": {
+            "1": "Dashboard personnalisé",
+            "2": "Gestion de données",
+            "3": "Intégrations API",
+            "4": "Interface intuitive"
+          }
+        },
+        "landingPage": {
+          "title": "Landing Page",
+          "description": "Pages de conversion optimisées pour vos campagnes marketing.",
+          "features": {
+            "1": "Design orienté conversion",
+            "2": "Temps de chargement optimisé",
+            "3": "A/B testing ready",
+            "4": "Analytics intégrés"
+          }
+        }
+      }
+    },
+    "faq": {
+      "label": "Questions fréquentes"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Discutons de votre projet",
+      "subtitle": "Premier échange gratuit et sans engagement. Je vous réponds sous 24h.",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "onGoogle": "sur Google"
+    }
+  },
+  "landing": {
+    "developpeur-web-lille": {
+      "meta": {
+        "title": "Développeur Web Freelance Lille | JBR Development",
+        "description": "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js. Devis gratuit sous 24h."
+      },
+      "hero": {
+        "label": "Développeur Web à Lille",
+        "title": "Votre Développeur Web Freelance à Lille",
+        "subtitle": "Je crée des sites internet et applications web sur mesure pour les PME et entrepreneurs du Nord. Technologies modernes, accompagnement personnalisé, résultats concrets."
+      },
+      "faq": {
+        "title": "Questions sur le développement web à Lille",
+        "pourquoiLille": {
+          "question": "Pourquoi choisir un développeur web à Lille ?",
+          "answer": "Travailler avec un développeur local facilite les échanges et permet des rendez-vous en présentiel. Basé à Lambersart, je connais le tissu économique local et peux vous rencontrer facilement dans la métropole lilloise."
+        },
+        "coutSite": {
+          "question": "Combien coûte un site internet à Lille ?",
+          "answer": "Les tarifs varient selon la complexité du projet. Un site vitrine démarre généralement autour de 1 500€, une application web à partir de 3 000€. Contactez-moi pour un devis personnalisé gratuit."
+        },
+        "freelanceVsAgence": {
+          "question": "Freelance ou agence web : que choisir ?",
+          "answer": "Un freelance offre un interlocuteur unique, plus de flexibilité et des tarifs généralement plus compétitifs. Une agence convient mieux aux très gros projets nécessitant plusieurs spécialistes simultanément."
+        },
+        "delai": {
+          "question": "Quel est le délai pour créer un site web ?",
+          "answer": "Comptez 1-2 semaines pour une landing page, 2-4 semaines pour un site vitrine, et 1-3 mois pour une application web complexe. Je vous donne une estimation précise dès notre premier échange."
+        },
+        "horsLille": {
+          "question": "Travaillez-vous avec des clients hors de Lille ?",
+          "answer": "Absolument ! Si je privilégie les rendez-vous en présentiel dans la métropole lilloise, je travaille aussi en visio avec des clients partout en France."
+        }
+      }
+    },
+    "creation-site-internet-lille": {
+      "meta": {
+        "title": "Création Site Internet Lille | JBR Development",
+        "description": "Création de sites internet professionnels à Lille. Sites vitrines, e-commerce, refonte. Design moderne, SEO optimisé. Devis gratuit."
+      },
+      "hero": {
+        "label": "Création Site Internet",
+        "title": "Création de Site Internet à Lille",
+        "subtitle": "Des sites web professionnels qui reflètent votre identité et convertissent vos visiteurs en clients. Design moderne, responsive, optimisé pour le référencement."
+      },
+      "faq": {
+        "title": "Questions sur la création de site internet",
+        "prixVitrine": {
+          "question": "Quel est le prix d'un site vitrine en 2025 ?",
+          "answer": "Un site vitrine professionnel coûte généralement entre 1 500€ et 5 000€ selon le nombre de pages, le design et les fonctionnalités souhaitées. Je vous propose un devis détaillé gratuit."
+        },
+        "queComprend": {
+          "question": "Que comprend la création d'un site internet ?",
+          "answer": "Mon offre inclut : le design personnalisé, le développement, l'intégration de vos contenus, l'optimisation SEO de base, la mise en ligne et une formation à l'utilisation si nécessaire."
+        },
+        "seo": {
+          "question": "Mon site sera-t-il optimisé pour Google (SEO) ?",
+          "answer": "Oui, tous mes sites sont optimisés pour le référencement naturel : structure HTML sémantique, temps de chargement optimisé, balises méta, sitemap, et bonnes pratiques SEO."
+        },
+        "autonomie": {
+          "question": "Puis-je modifier mon site moi-même après livraison ?",
+          "answer": "Selon vos besoins, je peux intégrer un système de gestion de contenu (CMS) qui vous permettra de modifier textes et images en toute autonomie."
+        },
+        "accompagnement": {
+          "question": "Proposez-vous un accompagnement après la mise en ligne ?",
+          "answer": "Oui, je propose des forfaits de maintenance pour les mises à jour, corrections et évolutions. Une garantie bugs de 30 jours est incluse après chaque livraison."
+        }
+      }
+    },
+    "freelance-react-nextjs": {
+      "meta": {
+        "title": "Développeur React Next.js Lille | JBR Development",
+        "description": "Expert React et Next.js à Lille. Développement d'applications web performantes, SEO-friendly. Sites rapides et modernes. Freelance disponible."
+      },
+      "hero": {
+        "label": "Expert React & Next.js",
+        "title": "Développeur React & Next.js à Lille",
+        "subtitle": "Spécialisé dans les technologies React et Next.js, je développe des applications web ultra-performantes, optimisées pour le SEO et scalables."
+      },
+      "faq": {
+        "title": "Questions sur React et Next.js",
+        "pourquoiNextjs": {
+          "question": "Pourquoi choisir Next.js plutôt que React seul ?",
+          "answer": "Next.js ajoute à React le rendu côté serveur (SSR), la génération statique (SSG), et des optimisations automatiques. Résultat : des sites plus rapides et mieux référencés sur Google."
+        },
+        "nextjsSeo": {
+          "question": "Un site Next.js est-il meilleur pour le SEO ?",
+          "answer": "Oui, significativement. Contrairement à React côté client, Next.js génère du HTML complet que Google peut indexer immédiatement, améliorant votre référencement naturel."
+        },
+        "wordpressVsNextjs": {
+          "question": "Quelle différence entre un site WordPress et Next.js ?",
+          "answer": "WordPress est idéal pour des sites de contenu modifiables facilement. Next.js offre des performances supérieures et une flexibilité totale pour des projets sur mesure ou des applications web."
+        },
+        "nextjsPME": {
+          "question": "Next.js convient-il aux petites entreprises ?",
+          "answer": "Absolument. Next.js permet de créer des sites vitrines ultra-rapides à coûts maîtrisés. L'hébergement est souvent gratuit (Vercel) et les performances excellent."
+        },
+        "prixReact": {
+          "question": "Combien coûte un site en React/Next.js ?",
+          "answer": "Les tarifs démarrent autour de 2 000€ pour un site vitrine Next.js et peuvent aller jusqu'à 10 000€+ pour une application complexe. Devis gratuit sur demande."
+        }
+      }
+    },
+    "application-web-sur-mesure": {
+      "meta": {
+        "title": "Application Web Sur Mesure Lille | JBR Development",
+        "description": "Développement d'applications web sur mesure à Lille. Dashboards, outils métier, intégrations API. Solutions adaptées à vos besoins."
+      },
+      "hero": {
+        "label": "Application Web Sur Mesure",
+        "title": "Développement d'Applications Web Sur Mesure",
+        "subtitle": "Digitalisez et optimisez votre activité avec des applications web métier : dashboards, outils de gestion, intégrations API, automatisations."
+      },
+      "faq": {
+        "title": "Questions sur les applications web",
+        "definition": {
+          "question": "Qu'est-ce qu'une application web sur mesure ?",
+          "answer": "Une application web sur mesure est un logiciel accessible via navigateur, développé spécifiquement pour répondre aux besoins de votre entreprise : gestion, suivi, automatisation, etc."
+        },
+        "siteVsApp": {
+          "question": "Quelle différence entre site web et application web ?",
+          "answer": "Un site web présente de l'information (vitrine). Une application web permet d'interagir : créer des comptes, gérer des données, effectuer des actions. Ex : un CRM, un dashboard."
+        },
+        "coutApp": {
+          "question": "Combien coûte le développement d'une application web ?",
+          "answer": "Le budget démarre autour de 3 000€ pour une application simple et peut atteindre 15 000€+ pour des projets complexes avec nombreuses fonctionnalités. Devis détaillé sur demande."
+        },
+        "delaiApp": {
+          "question": "Combien de temps pour développer une application web ?",
+          "answer": "Comptez 1 à 3 mois selon la complexité. Je travaille en méthode agile avec des livraisons régulières pour que vous puissiez suivre l'avancement et ajuster si besoin."
+        },
+        "technologies": {
+          "question": "Quelles technologies utilisez-vous ?",
+          "answer": "Je développe avec React/Next.js pour le frontend, Node.js pour le backend, et PostgreSQL ou Supabase pour les bases de données. Des technologies modernes, performantes et maintenables."
+        }
+      }
+    }
   }
 }

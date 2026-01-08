@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { routing } from "@/i18n/routing";
 import { LangUpdater } from "@/components/ui/LangUpdater";
+import StructuredData from "@/components/StructuredData";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -33,6 +34,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <ThemeProvider>
+        <StructuredData locale={locale} />
         <LangUpdater locale={locale} />
         {children}
       </ThemeProvider>

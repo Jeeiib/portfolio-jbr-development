@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { landingPages } from "@/data/landingPages";
 import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,6 +23,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     });
+  }
+
+  // Services hub page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${baseUrl}/${locale}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/fr/services`,
+          en: `${baseUrl}/en/services`,
+        },
+      },
+    });
+  }
+
+  // Landing pages for each locale
+  for (const locale of locales) {
+    for (const page of landingPages) {
+      entries.push({
+        url: `${baseUrl}/${locale}/services/${page.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.9,
+        alternates: {
+          languages: {
+            fr: `${baseUrl}/fr/services/${page.slug}`,
+            en: `${baseUrl}/en/services/${page.slug}`,
+          },
+        },
+      });
+    }
   }
 
   // Project pages for each locale

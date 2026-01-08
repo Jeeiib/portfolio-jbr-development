@@ -204,6 +204,7 @@
     }
   },
   "footer": {
+    "services": "Our services",
     "copyright": "JBR Development - All rights reserved"
   },
   "notFound": {
@@ -215,5 +216,262 @@
     "title": "Jean-Baptiste Renart | JBR Development",
     "description": "Freelance web developer - I build custom web applications. Showcase websites, web apps, landing pages for SMEs and entrepreneurs.",
     "ogDescription": "Your vision, my code, your growth lever."
+  },
+  "servicesHub": {
+    "label": "Services",
+    "title": "My services",
+    "subtitle": "Custom web solutions to grow your business. From showcase websites to complex applications, I guide you every step of the way.",
+    "learnMore": "Learn more",
+    "meta": {
+      "title": "Web Developer Services Lille | JBR Development",
+      "description": "Discover my web development services in Lille: showcase websites, web applications, React/Next.js. Available and responsive freelancer."
+    },
+    "pages": {
+      "developpeur-web-lille": {
+        "title": "Web Developer in Lille",
+        "description": "Your freelance web developer in Lille. Custom websites and applications for SMEs and entrepreneurs in Northern France."
+      },
+      "creation-site-internet-lille": {
+        "title": "Website Creation",
+        "description": "Professional showcase and e-commerce website creation. Modern design, SEO optimized, mobile responsive."
+      },
+      "freelance-react-nextjs": {
+        "title": "React & Next.js Expert",
+        "description": "High-performance web application development with React and Next.js. Fast, SEO-friendly, scalable sites."
+      },
+      "application-web-sur-mesure": {
+        "title": "Custom Web Application",
+        "description": "Business web application development: dashboards, internal tools, API integrations. Solutions tailored to your needs."
+      }
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "description": "Let's discuss your needs and see how I can help.",
+      "button": "Get a free quote"
+    }
+  },
+  "landingCommon": {
+    "googleReviews": "Google reviews",
+    "cta": {
+      "quote": "Get a free quote",
+      "projects": "View my projects"
+    },
+    "whyMe": {
+      "label": "Why choose me",
+      "title": "A local, responsive, and committed developer",
+      "items": {
+        "local": {
+          "title": "Based in Lambersart",
+          "description": "Let's meet in person in the Lille metropolitan area to discuss your project."
+        },
+        "interlocuteur": {
+          "title": "Single point of contact",
+          "description": "No middleman: you deal directly with me from start to finish."
+        },
+        "reactif": {
+          "title": "Response within 24h",
+          "description": "Available and responsive, I commit to answering your requests quickly."
+        },
+        "tarifs": {
+          "title": "Freelance rates",
+          "description": "No agency fees: benefit from competitive rates without sacrificing quality."
+        },
+        "accompagnement": {
+          "title": "End-to-end support",
+          "description": "From initial brief to launch, I guide you every step of the way."
+        },
+        "technologies": {
+          "title": "Modern technologies",
+          "description": "React, Next.js, TypeScript: powerful tools for fast and maintainable sites."
+        }
+      }
+    },
+    "services": {
+      "label": "My services",
+      "title": "Solutions tailored to your needs",
+      "pricing": "Price",
+      "onQuote": "Custom quote - Free estimate within 24h",
+      "items": {
+        "siteVitrine": {
+          "title": "Showcase Website",
+          "description": "A professional online presence that reflects your identity and converts visitors.",
+          "features": {
+            "1": "Custom design",
+            "2": "Mobile responsive",
+            "3": "SEO optimized",
+            "4": "Contact form"
+          }
+        },
+        "applicationWeb": {
+          "title": "Web Application",
+          "description": "Custom solutions to digitize and optimize your business.",
+          "features": {
+            "1": "Custom dashboard",
+            "2": "Data management",
+            "3": "API integrations",
+            "4": "Intuitive interface"
+          }
+        },
+        "landingPage": {
+          "title": "Landing Page",
+          "description": "Conversion-optimized pages for your marketing campaigns.",
+          "features": {
+            "1": "Conversion-focused design",
+            "2": "Optimized load time",
+            "3": "A/B testing ready",
+            "4": "Integrated analytics"
+          }
+        }
+      }
+    },
+    "faq": {
+      "label": "Frequently Asked Questions"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Let's discuss your project",
+      "subtitle": "Free initial consultation with no commitment. I'll respond within 24h.",
+      "address": "Address",
+      "phone": "Phone",
+      "onGoogle": "on Google"
+    }
+  },
+  "landing": {
+    "developpeur-web-lille": {
+      "meta": {
+        "title": "Freelance Web Developer Lille | JBR Development",
+        "description": "Freelance web developer in Lille. Custom website and web application creation. React, Next.js expert. Free quote within 24h."
+      },
+      "hero": {
+        "label": "Web Developer in Lille",
+        "title": "Your Freelance Web Developer in Lille",
+        "subtitle": "I create custom websites and web applications for SMEs and entrepreneurs in Northern France. Modern technologies, personalized support, concrete results."
+      },
+      "faq": {
+        "title": "Questions about web development in Lille",
+        "pourquoiLille": {
+          "question": "Why choose a web developer in Lille?",
+          "answer": "Working with a local developer facilitates communication and allows for in-person meetings. Based in Lambersart, I know the local business landscape and can easily meet you in the Lille metropolitan area."
+        },
+        "coutSite": {
+          "question": "How much does a website cost in Lille?",
+          "answer": "Rates vary depending on project complexity. A showcase website typically starts around €1,500, a web application from €3,000. Contact me for a free custom quote."
+        },
+        "freelanceVsAgence": {
+          "question": "Freelancer or web agency: which to choose?",
+          "answer": "A freelancer offers a single point of contact, more flexibility, and generally more competitive rates. An agency is better suited for very large projects requiring multiple specialists simultaneously."
+        },
+        "delai": {
+          "question": "How long does it take to create a website?",
+          "answer": "Expect 1-2 weeks for a landing page, 2-4 weeks for a showcase website, and 1-3 months for a complex web application. I give you a precise estimate from our first conversation."
+        },
+        "horsLille": {
+          "question": "Do you work with clients outside Lille?",
+          "answer": "Absolutely! While I prefer in-person meetings in the Lille metropolitan area, I also work via video calls with clients throughout France."
+        }
+      }
+    },
+    "creation-site-internet-lille": {
+      "meta": {
+        "title": "Website Creation Lille | JBR Development",
+        "description": "Professional website creation in Lille. Showcase sites, e-commerce, redesign. Modern design, SEO optimized. Free quote."
+      },
+      "hero": {
+        "label": "Website Creation",
+        "title": "Website Creation in Lille",
+        "subtitle": "Professional websites that reflect your identity and convert visitors into customers. Modern, responsive design optimized for search engines."
+      },
+      "faq": {
+        "title": "Questions about website creation",
+        "prixVitrine": {
+          "question": "What is the price of a showcase website in 2025?",
+          "answer": "A professional showcase website typically costs between €1,500 and €5,000 depending on the number of pages, design, and desired features. I offer a free detailed quote."
+        },
+        "queComprend": {
+          "question": "What does website creation include?",
+          "answer": "My offer includes: custom design, development, content integration, basic SEO optimization, deployment, and training if needed."
+        },
+        "seo": {
+          "question": "Will my site be optimized for Google (SEO)?",
+          "answer": "Yes, all my sites are optimized for natural search: semantic HTML structure, optimized load times, meta tags, sitemap, and SEO best practices."
+        },
+        "autonomie": {
+          "question": "Can I update my site myself after delivery?",
+          "answer": "Depending on your needs, I can integrate a content management system (CMS) that will allow you to modify texts and images independently."
+        },
+        "accompagnement": {
+          "question": "Do you offer support after launch?",
+          "answer": "Yes, I offer maintenance packages for updates, fixes, and improvements. A 30-day bug warranty is included after each delivery."
+        }
+      }
+    },
+    "freelance-react-nextjs": {
+      "meta": {
+        "title": "React Next.js Developer Lille | JBR Development",
+        "description": "React and Next.js expert in Lille. High-performance, SEO-friendly web application development. Fast and modern sites. Available freelancer."
+      },
+      "hero": {
+        "label": "React & Next.js Expert",
+        "title": "React & Next.js Developer in Lille",
+        "subtitle": "Specializing in React and Next.js technologies, I develop ultra-high-performance web applications optimized for SEO and scalability."
+      },
+      "faq": {
+        "title": "Questions about React and Next.js",
+        "pourquoiNextjs": {
+          "question": "Why choose Next.js over React alone?",
+          "answer": "Next.js adds server-side rendering (SSR), static site generation (SSG), and automatic optimizations to React. Result: faster sites that rank better on Google."
+        },
+        "nextjsSeo": {
+          "question": "Is a Next.js site better for SEO?",
+          "answer": "Yes, significantly. Unlike client-side React, Next.js generates complete HTML that Google can index immediately, improving your natural search ranking."
+        },
+        "wordpressVsNextjs": {
+          "question": "What's the difference between a WordPress and Next.js site?",
+          "answer": "WordPress is ideal for content sites that need easy editing. Next.js offers superior performance and total flexibility for custom projects or web applications."
+        },
+        "nextjsPME": {
+          "question": "Is Next.js suitable for small businesses?",
+          "answer": "Absolutely. Next.js allows creating ultra-fast showcase sites at controlled costs. Hosting is often free (Vercel) and performance is excellent."
+        },
+        "prixReact": {
+          "question": "How much does a React/Next.js site cost?",
+          "answer": "Rates start around €2,000 for a Next.js showcase site and can go up to €10,000+ for a complex application. Free quote on request."
+        }
+      }
+    },
+    "application-web-sur-mesure": {
+      "meta": {
+        "title": "Custom Web Application Lille | JBR Development",
+        "description": "Custom web application development in Lille. Dashboards, business tools, API integrations. Solutions tailored to your needs."
+      },
+      "hero": {
+        "label": "Custom Web Application",
+        "title": "Custom Web Application Development",
+        "subtitle": "Digitize and optimize your business with custom web applications: dashboards, management tools, API integrations, automations."
+      },
+      "faq": {
+        "title": "Questions about web applications",
+        "definition": {
+          "question": "What is a custom web application?",
+          "answer": "A custom web application is software accessible via browser, developed specifically to meet your company's needs: management, tracking, automation, etc."
+        },
+        "siteVsApp": {
+          "question": "What's the difference between a website and a web application?",
+          "answer": "A website presents information (showcase). A web application allows interaction: creating accounts, managing data, performing actions. E.g.: a CRM, a dashboard."
+        },
+        "coutApp": {
+          "question": "How much does web application development cost?",
+          "answer": "Budget starts around €3,000 for a simple application and can reach €15,000+ for complex projects with many features. Detailed quote on request."
+        },
+        "delaiApp": {
+          "question": "How long to develop a web application?",
+          "answer": "Expect 1 to 3 months depending on complexity. I work in agile methodology with regular deliveries so you can track progress and adjust as needed."
+        },
+        "technologies": {
+          "question": "What technologies do you use?",
+          "answer": "I develop with React/Next.js for frontend, Node.js for backend, and PostgreSQL or Supabase for databases. Modern, performant, and maintainable technologies."
+        }
+      }
+    }
   }
 }
