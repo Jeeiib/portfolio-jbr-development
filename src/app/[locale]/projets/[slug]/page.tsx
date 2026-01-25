@@ -35,6 +35,13 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   return {
     title: `${project.title} | JBR Development`,
     description: t(`items.${project.slug}.description`),
+    alternates: {
+      canonical: `https://jbrdevelopment.fr/${locale}/projets/${slug}`,
+      languages: {
+        "fr-FR": `https://jbrdevelopment.fr/fr/projets/${slug}`,
+        "en-US": `https://jbrdevelopment.fr/en/projets/${slug}`,
+      },
+    },
   };
 }
 
