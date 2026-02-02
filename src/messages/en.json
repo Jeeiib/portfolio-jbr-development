@@ -94,6 +94,7 @@
     "badge": "Dual expertise",
     "badgeSub": "Service + Technical",
     "photo": "Photo coming soon",
+    "learnMore": "Discover my journey",
     "stats": {
       "reviews": "Google Reviews",
       "satisfaction": "Satisfaction",
@@ -334,6 +335,90 @@
       "address": "Address",
       "phone": "Phone",
       "onGoogle": "on Google"
+    }
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Jean-Baptiste Renart | Freelance Web Developer Lille",
+      "description": "Discover my journey: from 5-star hospitality to web development. Luxury service standards applied to every digital project."
+    },
+    "schema": {
+      "jobTitle": "Freelance Web Developer",
+      "description": "Freelance web developer based in Lille, specialized in React and Next.js. Former 5-star concierge, I bring luxury service standards to every project."
+    },
+    "hero": {
+      "label": "About",
+      "subtitle": "Freelance Web Developer in Lille",
+      "description": "Former concierge at 5-star hotels in Paris, I learned to understand and anticipate the needs of the most demanding clients. Today, I apply the same rigor to your web projects.",
+      "badge": "5 years of excellence",
+      "badgeSub": "From palace to code",
+      "stats": {
+        "reviews": "Google Reviews",
+        "satisfaction": "Satisfaction",
+        "response": "Response"
+      }
+    },
+    "timeline": {
+      "label": "Journey",
+      "title": "My Journey",
+      "subtitle": "From 5-star excellence to code",
+      "items": {
+        "marriott": {
+          "year": "2019 - 2021",
+          "title": "First steps in luxury",
+          "description": "Marriott Opera Ambassador, Paris. Discovery of high-end hospitality and excellence standards."
+        },
+        "narcisse": {
+          "year": "2022 - 2024",
+          "title": "5-star Concierge",
+          "description": "Le Narcisse Blanc Hotel and Spa, Paris. VIP services, anticipating needs, exceptional recommendation network."
+        },
+        "formation": {
+          "year": "2024",
+          "title": "Developer training",
+          "description": "Career transition to web development. CDA certification (Application Designer Developer) through work-study program."
+        },
+        "parallel": {
+          "year": "2025 - Today"
+        },
+        "jay": {
+          "badge": "Work-study",
+          "title": "Jay - AI Assistant",
+          "description": "Full Stack Developer on Jay, AI voice assistant for sales teams. CRM integration, WhatsApp, voice transcription."
+        },
+        "freelance": {
+          "badge": "Freelance",
+          "title": "JBR Development",
+          "description": "Showcase websites, custom web applications. 5-star excellence applied to every client project."
+        }
+      }
+    },
+    "approach": {
+      "label": "Approach",
+      "title": "How I work",
+      "items": {
+        "ecoute": {
+          "title": "Active listening",
+          "description": "Before coding, I take time to understand your needs, constraints, and goals. Like in concierge service, everything starts with listening."
+        },
+        "exigence": {
+          "title": "Attention to detail",
+          "description": "Every pixel counts. I pay special attention to finishing touches, performance, and user experience."
+        },
+        "reactivite": {
+          "title": "Responsiveness",
+          "description": "Transparent communication and quick responses. You always know where your project stands and can reach me easily."
+        }
+      }
+    },
+    "stack": {
+      "label": "Skills",
+      "title": "Technologies I use"
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "description": "Let's discuss your needs and see how I can help bring your vision to life.",
+      "button": "Let's discuss your project"
     }
   },
   "landing": {

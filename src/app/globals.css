@@ -186,6 +186,17 @@ a {
   }
 }
 
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 /* Animation utilities - using 'both' fill-mode to prevent hydration flicker */
 /* Small base delay (50ms) prevents animations from starting during React hydration */
 .animate-fade-in-up {
@@ -206,6 +217,10 @@ a {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+.animate-ripple {
+  animation: ripple 2s ease-out infinite;
 }
 
 /* Stagger delays */

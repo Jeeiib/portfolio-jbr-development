@@ -41,6 +41,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // About page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${baseUrl}/${locale}/a-propos`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/fr/a-propos`,
+          en: `${baseUrl}/en/a-propos`,
+        },
+      },
+    });
+  }
+
   // Landing pages for each locale
   for (const locale of locales) {
     for (const page of landingPages) {

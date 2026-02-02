@@ -1,11 +1,13 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   const t = useTranslations("about");
+  const locale = useLocale();
   const { ref: sectionRef, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.15 });
 
   const stats = [
@@ -116,6 +118,27 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+            {/* Link to full About page */}
+            <Link
+              href={`/${locale}/a-propos`}
+              className={`inline-flex items-center gap-2 mt-8 text-[var(--accent)] hover:text-[var(--accent-hover)] font-medium transition-all duration-700 group ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "800ms" }}
+            >
+              {t("learnMore")}
+              <svg
+                className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

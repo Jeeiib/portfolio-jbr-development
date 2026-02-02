@@ -94,6 +94,7 @@
     "badge": "Double casquette",
     "badgeSub": "Service + Technique",
     "photo": "Photo à venir",
+    "learnMore": "Découvrir mon parcours",
     "stats": {
       "reviews": "Avis Google",
       "satisfaction": "Satisfaction",
@@ -334,6 +335,90 @@
       "address": "Adresse",
       "phone": "Téléphone",
       "onGoogle": "sur Google"
+    }
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "Jean-Baptiste Renart | Développeur Web Freelance Lille",
+      "description": "Découvrez mon parcours : de l'hôtellerie 5 étoiles au développement web. L'exigence du service appliquée à chaque projet digital."
+    },
+    "schema": {
+      "jobTitle": "Développeur Web Freelance",
+      "description": "Développeur web freelance basé à Lille, spécialisé en React et Next.js. Ancien concierge 5 étoiles, j'apporte l'exigence du service de luxe à chaque projet."
+    },
+    "hero": {
+      "label": "À propos",
+      "subtitle": "Développeur Web Freelance à Lille",
+      "description": "Ancien concierge dans l'hôtellerie 5 étoiles à Paris, j'ai appris à comprendre et anticiper les besoins des clients les plus exigeants. Aujourd'hui, j'applique cette même rigueur à vos projets web.",
+      "badge": "5 ans d'exigence",
+      "badgeSub": "Du palace au code",
+      "stats": {
+        "reviews": "Avis Google",
+        "satisfaction": "Satisfaction",
+        "response": "Réponse"
+      }
+    },
+    "timeline": {
+      "label": "Parcours",
+      "title": "Mon Parcours",
+      "subtitle": "De l'exigence 5 étoiles au code",
+      "items": {
+        "marriott": {
+          "year": "2019 - 2021",
+          "title": "Premiers pas dans le luxe",
+          "description": "Marriott Opera Ambassador, Paris. Découverte de l'hôtellerie haut de gamme et des standards d'excellence."
+        },
+        "narcisse": {
+          "year": "2022 - 2024",
+          "title": "Concierge 5 étoiles",
+          "description": "Le Narcisse Blanc Hotel et Spa, Paris. Services VIP, anticipation des besoins, réseau de recommandations d'exception."
+        },
+        "formation": {
+          "year": "2024",
+          "title": "Formation développement",
+          "description": "Reconversion vers le développement web. Formation CDA (Concepteur Développeur d'Applications) en alternance."
+        },
+        "parallel": {
+          "year": "2025 - Aujourd'hui"
+        },
+        "jay": {
+          "badge": "Alternance",
+          "title": "Jay - Assistant IA",
+          "description": "Développeur Full Stack sur Jay, assistant vocal IA pour commerciaux. Intégration CRM, WhatsApp, transcription vocale."
+        },
+        "freelance": {
+          "badge": "Freelance",
+          "title": "JBR Development",
+          "description": "Sites vitrines, applications web sur mesure. L'exigence 5 étoiles appliquée à chaque projet client."
+        }
+      }
+    },
+    "approach": {
+      "label": "Approche",
+      "title": "Ma façon de travailler",
+      "items": {
+        "ecoute": {
+          "title": "Écoute active",
+          "description": "Avant de coder, je prends le temps de comprendre vos besoins, vos contraintes et vos objectifs. Comme en conciergerie, tout commence par l'écoute."
+        },
+        "exigence": {
+          "title": "Exigence du détail",
+          "description": "Chaque pixel compte. Je porte une attention particulière aux finitions, à la performance et à l'expérience utilisateur."
+        },
+        "reactivite": {
+          "title": "Réactivité",
+          "description": "Communication transparente et réponses rapides. Vous savez toujours où en est votre projet et pouvez me joindre facilement."
+        }
+      }
+    },
+    "stack": {
+      "label": "Compétences",
+      "title": "Technologies que j'utilise"
+    },
+    "cta": {
+      "title": "Un projet en tête ?",
+      "description": "Discutons de vos besoins et voyons comment je peux vous aider à concrétiser votre vision.",
+      "button": "Discutons de votre projet"
     }
   },
   "landing": {
