@@ -66,28 +66,53 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = entry.target.getAttribute("data-index");
-            if (index !== null) {
-              if (index === "parallel") {
-                setParallelVisible(true);
-              } else {
-                setVisibleItems((prev) => new Set(prev).add(parseInt(index)));
+    let observer: IntersectionObserver | null = null;
+    let timeoutId: NodeJS.Timeout | null = null;
+    let rafId: number | null = null;
+
+    const initObserver = () => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = entry.target.getAttribute("data-index");
+              if (index !== null) {
+                if (index === "parallel") {
+                  setParallelVisible(true);
+                } else {
+                  setVisibleItems((prev) => new Set(prev).add(parseInt(index)));
+                }
               }
             }
-          }
-        });
-      },
-      { threshold: 0.5, rootMargin: "0px 0px -150px 0px" }
-    );
+          });
+        },
+        { threshold: 0.5, rootMargin: "0px 0px -150px 0px" }
+      );
 
-    const items = timelineRef.current?.querySelectorAll("[data-index]");
-    items?.forEach((item) => observer.observe(item));
+      const items = timelineRef.current?.querySelectorAll("[data-index]");
+      items?.forEach((item) => observer?.observe(item));
+    };
 
-    return () => observer.disconnect();
+    // Attendre que le scroll automatique vers le haut soit terminé
+    const waitForScrollComplete = () => {
+      // Si on est en haut de la page, le scroll est terminé
+      if (window.scrollY < 10) {
+        // Petit délai supplémentaire pour s'assurer que tout est stable
+        timeoutId = setTimeout(initObserver, 50);
+      } else {
+        // Sinon, vérifier à nouveau au prochain frame
+        rafId = requestAnimationFrame(waitForScrollComplete);
+      }
+    };
+
+    // Démarrer la vérification après un court délai initial
+    timeoutId = setTimeout(waitForScrollComplete, 50);
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      if (rafId) cancelAnimationFrame(rafId);
+      observer?.disconnect();
+    };
   }, []);
 
   // Update progress line based on visible items
