@@ -128,12 +128,12 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
   return (
     <div ref={timelineRef} className="timeline-container relative py-12">
       {/* Timeline line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[var(--border)] to-transparent" />
+      <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[var(--border)] to-transparent" />
 
       {/* Progress line */}
       <div
         ref={progressRef}
-        className="absolute left-1/2 top-0 w-[3px] -translate-x-1/2 bg-gradient-to-b from-[var(--accent)] to-[var(--accent-hover)] transition-[height] duration-1000 ease-out rounded-sm"
+        className="absolute left-6 md:left-1/2 top-0 w-[3px] -translate-x-1/2 bg-gradient-to-b from-[var(--accent)] to-[var(--accent-hover)] transition-[height] duration-1000 ease-out rounded-sm"
         style={{
           height: "0%",
           boxShadow: "0 0 20px var(--accent), 0 0 40px var(--accent)"
@@ -145,8 +145,8 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
         <div
           key={item.key}
           data-index={index}
-          className={`timeline-item relative flex items-center mb-16 transition-all duration-1000 ease-out ${
-            item.position === "left" ? "justify-start" : "justify-end"
+          className={`timeline-item relative flex items-center mb-16 transition-all duration-1000 ease-out justify-end ${
+            item.position === "left" ? "md:justify-start" : "md:justify-end"
           } ${
             visibleItems.has(index)
               ? "opacity-100 translate-y-0"
@@ -155,7 +155,7 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
         >
           {/* Dot */}
           <div
-            className={`timeline-dot absolute left-1/2 w-5 h-5 -translate-x-1/2 rounded-full border-[3px] z-10 transition-all duration-400 ${
+            className={`timeline-dot absolute left-6 md:left-1/2 w-5 h-5 -translate-x-1/2 rounded-full border-[3px] z-10 transition-all duration-400 ${
               visibleItems.has(index)
                 ? "border-[var(--accent)] bg-[var(--accent)]"
                 : "border-[var(--border)] bg-[var(--background)]"
@@ -171,10 +171,10 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
 
           {/* Connector */}
           <div
-            className={`timeline-connector absolute top-1/2 h-[2px] -translate-y-1/2 transition-all duration-500 ${
+            className={`timeline-connector absolute top-1/2 h-[2px] -translate-y-1/2 transition-all duration-500 left-6 w-10 ml-[10px] ${
               item.position === "left"
-                ? "right-1/2 w-10 mr-[10px]"
-                : "left-1/2 w-10 ml-[10px]"
+                ? "md:left-auto md:right-1/2 md:w-10 md:mr-[10px] md:ml-0"
+                : "md:left-1/2 md:w-10 md:ml-[10px]"
             } ${
               visibleItems.has(index)
                 ? "bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]"
@@ -184,7 +184,7 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
 
           {/* Content card */}
           <div
-            className={`timeline-content w-[calc(50%-60px)] p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
+            className={`timeline-content w-[calc(100%-80px)] md:w-[calc(50%-60px)] p-5 md:p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
               visibleItems.has(index)
                 ? "border-[rgba(52,211,153,0.3)] shadow-[0_4px_30px_rgba(52,211,153,0.1)]"
                 : "border-[var(--border)]"
@@ -226,13 +226,13 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
         }`}
       >
         {/* Label */}
-        <span className="absolute left-1/2 top-0 -translate-x-1/2 text-xs font-semibold text-[var(--accent)] px-3.5 py-1.5 bg-[var(--background)] border border-[var(--accent)] rounded-full whitespace-nowrap z-20">
+        <span className="absolute left-6 md:left-1/2 top-0 translate-x-2 md:-translate-x-1/2 text-xs font-semibold text-[var(--accent)] px-3.5 py-1.5 bg-[var(--background)] border border-[var(--accent)] rounded-full whitespace-nowrap z-20">
           {t("items.parallel.year")}
         </span>
 
-        {/* Center dot */}
+        {/* Center dot - hidden on mobile, visible on md+ */}
         <div
-          className={`absolute left-1/2 top-1/2 w-5 h-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] z-10 transition-all duration-400 ${
+          className={`hidden md:block absolute left-1/2 top-1/2 w-5 h-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] z-10 transition-all duration-400 ${
             parallelVisible
               ? "border-[var(--accent)] bg-[var(--accent)]"
               : "border-[var(--border)] bg-[var(--background)]"
@@ -246,29 +246,29 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
           )}
         </div>
 
-        {/* Left connector */}
+        {/* Left connector - hidden on mobile */}
         <div
-          className={`absolute top-1/2 left-[calc(50%-10px)] w-10 h-[2px] -translate-y-1/2 -translate-x-full transition-all duration-500 ${
+          className={`hidden md:block absolute top-1/2 left-[calc(50%-10px)] w-10 h-[2px] -translate-y-1/2 -translate-x-full transition-all duration-500 ${
             parallelVisible
               ? "bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]"
               : "bg-[var(--border)]"
           }`}
         />
 
-        {/* Right connector */}
+        {/* Right connector - hidden on mobile */}
         <div
-          className={`absolute top-1/2 left-[calc(50%+10px)] w-10 h-[2px] -translate-y-1/2 transition-all duration-500 ${
+          className={`hidden md:block absolute top-1/2 left-[calc(50%+10px)] w-10 h-[2px] -translate-y-1/2 transition-all duration-500 ${
             parallelVisible
               ? "bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]"
               : "bg-[var(--border)]"
           }`}
         />
 
-        {/* Parallel cards */}
-        <div className="flex justify-between items-stretch">
+        {/* Parallel cards - stacked on mobile, side by side on md+ */}
+        <div className="flex flex-col md:flex-row md:justify-between items-stretch gap-6 md:gap-0 ml-[52px] md:ml-0">
           {/* Jay card */}
           <div
-            className={`timeline-content w-[calc(50%-60px)] p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
+            className={`timeline-content w-full md:w-[calc(50%-60px)] p-5 md:p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
               parallelVisible
                 ? "border-[rgba(52,211,153,0.3)] shadow-[0_4px_30px_rgba(52,211,153,0.1)]"
                 : "border-[var(--border)]"
@@ -302,7 +302,7 @@ export default function AboutTimeline({ locale }: AboutTimelineProps) {
 
           {/* Freelance card */}
           <div
-            className={`timeline-content w-[calc(50%-60px)] p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
+            className={`timeline-content w-full md:w-[calc(50%-60px)] p-5 md:p-7 bg-[var(--background-card)] border rounded-2xl transition-all duration-400 relative overflow-hidden group ${
               parallelVisible
                 ? "border-[rgba(52,211,153,0.3)] shadow-[0_4px_30px_rgba(52,211,153,0.1)]"
                 : "border-[var(--border)]"
