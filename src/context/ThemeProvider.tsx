@@ -17,9 +17,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    // Check localStorage first, default to dark mode
-    const stored = localStorage.getItem("theme") as Theme | null;
-    const initialTheme = stored || "dark";
+    const stored = localStorage.getItem("theme");
+    const initialTheme: Theme = stored === "light" ? "light" : "dark";
     setTheme(initialTheme);
     document.documentElement.setAttribute("data-theme", initialTheme);
   }, []);
