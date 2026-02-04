@@ -54,16 +54,18 @@ export default function Projects() {
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
-    setIsPaused(true);
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     const dx = touchStartX.current - e.changedTouches[0].clientX;
     const dy = touchStartY.current - e.changedTouches[0].clientY;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    const isSwipe = Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy);
+    if (isSwipe) {
       dx > 0 ? next() : prev();
     }
-    setIsPaused(false);
+    // Only toggle pause state on real swipes, not on taps.
+    // Toggling isPaused on every touch causes re-renders that
+    // reset the progress bar animation and cancel Link navigation on iOS.
   };
 
   const ArrowButton = ({
