@@ -66,7 +66,7 @@ export default async function AboutPage({ params }: PageProps) {
     jobTitle: t("schema.jobTitle"),
     description: t("schema.description"),
     url: "https://jbrdevelopment.fr",
-    image: "https://jbrdevelopment.fr/pictures/moi.png",
+    image: "https://jbrdevelopment.fr/pictures/moi.webp",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Lambersart",
@@ -168,7 +168,7 @@ export default async function AboutPage({ params }: PageProps) {
                   {/* Main image */}
                   <div className="relative bg-[var(--background-secondary)] border-2 border-[var(--accent)] rounded-2xl overflow-hidden aspect-square shadow-[0_0_30px_rgba(52,211,153,0.3)]">
                     <Image
-                      src="/pictures/moi.png"
+                      src="/pictures/moi.webp"
                       alt="Jean-Baptiste Renart"
                       fill
                       className="object-cover"

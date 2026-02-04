@@ -47,6 +47,10 @@
       "rdp-glass": {
         "description": "B2B application — product & blog management",
         "fullDescription": "Complete web application for a B2B glass packaging distributor. Admin dashboard, product catalog management, integrated blog system, and client interface optimized for conversion."
+      },
+      "rev-comptabilite": {
+        "description": "Business web application — accounting firm",
+        "fullDescription": "Business web application built for the accounting firm REV Comptabilité (Wambrechies). Microsoft Azure AD SSO authentication, client portal with online appointment booking, Outlook calendar sync via Microsoft Graph API, automated email notifications with Resend, and multi-role management (admin, accountant, associate, client) with Row-Level Security permissions on all Supabase tables."
       }
     }
   },

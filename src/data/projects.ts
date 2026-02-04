@@ -12,13 +12,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "jay",
-    title: "Jay",
-    description: "Assistant IA pour commerciaux — Seul développeur",
-    fullDescription: "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email.",
-    tags: ["React", "TypeScript", "Supabase"],
-    image: "/projects/jay.webp",
-    liveUrl: "https://jay-assistant.fr",
+    slug: "rev-comptabilite",
+    title: "REV Comptabilité",
+    description: "Application web métier — cabinet comptable",
+    fullDescription: "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase.",
+    tags: ["Next.js", "React", "TypeScript", "Supabase"],
+    image: "/projects/rev-comptabilite.webp",
+    liveUrl: "https://www.revcomptabilite.fr",
     featured: true,
   },
   {
@@ -30,6 +30,16 @@ export const projects: Project[] = [
     image: "/projects/nicolas-steinberg.webp",
     liveUrl: "https://nicolassteinberg.com",
     githubUrl: "https://github.com/Jeeiib/nicolas-steinberg-portfolio",
+    featured: true,
+  },
+  {
+    slug: "jay",
+    title: "Jay",
+    description: "Assistant IA pour commerciaux — Seul développeur",
+    fullDescription: "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email.",
+    tags: ["React", "TypeScript", "Supabase"],
+    image: "/projects/jay.webp",
+    liveUrl: "https://jay-assistant.fr",
     featured: true,
   },
   {
