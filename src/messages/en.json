@@ -138,8 +138,8 @@
     "viewOnGoogle": "View on Google",
     "items": {
       "nicolas": {
-        "quote": "An expert to work with while he's still available, because this level of execution is a",
-        "quoteHighlight": "rare find",
+        "quote": "It's rare to find people who can translate a complex strategic vision into such a precise interface. The result exceeds the usual market standards. A valuable collaborator for those who tolerate no approximation. An expert to work with while he's still available, because this level of execution is a",
+        "quoteHighlight": "rare find.",
         "author": "Nicolas Steinberg",
         "role": "Luxury hospitality consultant",
         "initials": "NS",
@@ -147,11 +147,19 @@
       },
       "thierry": {
         "quote": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was",
-        "quoteHighlight": "simply perfect",
+        "quoteHighlight": "simply perfect.",
         "author": "Thierry Dehon",
         "role": "CEO of RDP Glass",
         "initials": "TD",
         "link": "https://share.google/LPCNCjqZRBPBRaVjv"
+      },
+      "corinne": {
+        "quote": "JBR Development built my new website for my accounting firm. I am delighted with the result and the service, carried out with methodology and professionalism with regular progress updates to meet my expectations!",
+        "quoteHighlight": "Highly recommended!",
+        "author": "REV Comptabilité",
+        "role": "Accounting firm",
+        "initials": "RC",
+        "link": "https://share.google/PT1KkKAtY4UwzpxUn"
       }
     }
   },

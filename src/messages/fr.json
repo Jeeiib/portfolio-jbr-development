@@ -138,8 +138,8 @@
     "viewOnGoogle": "Voir sur Google",
     "items": {
       "nicolas": {
-        "quote": "Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
-        "quoteHighlight": "denrée rare",
+        "quote": "Il est rare de trouver des profils capables de traduire une vision stratégique complexe en une interface d'une telle précision. Le résultat dépasse les standards habituels du marché. C'est un collaborateur précieux pour ceux qui ne tolèrent aucune approximation. Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
+        "quoteHighlight": "denrée rare.",
         "author": "Nicolas Steinberg",
         "role": "Consultant hôtellerie de luxe",
         "initials": "NS",
@@ -147,11 +147,19 @@
       },
       "thierry": {
         "quote": "Le développement de notre nouveau site web vient de s'achever et JB a fourni un travail qui a dépassé nos attentes. Sa compréhension des problématiques, sa rapidité de réaction et sa façon de transposer nos demandes a été",
-        "quoteHighlight": "simplement parfaite",
+        "quoteHighlight": "simplement parfaite.",
         "author": "Thierry Dehon",
         "role": "Gérant de RDP Glass",
         "initials": "TD",
         "link": "https://share.google/LPCNCjqZRBPBRaVjv"
+      },
+      "corinne": {
+        "quote": "JBR Développement a réalisé mon nouveau site pour mon cabinet d'expertise comptable. Je suis ravie du rendu ainsi que de la prestation réalisée avec méthodologie et professionnalisme avec des points d'avancée réguliers pour répondre à mes attentes !",
+        "quoteHighlight": "Je recommande vivement !",
+        "author": "REV Comptabilité",
+        "role": "Cabinet d'expertise comptable",
+        "initials": "RC",
+        "link": "https://share.google/PT1KkKAtY4UwzpxUn"
       }
     }
   },

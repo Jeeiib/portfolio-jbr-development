@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTranslations } from "next-intl";
 
-const testimonialKeys = ["nicolas", "thierry"] as const;
+const testimonialKeys = ["nicolas", "thierry", "corinne"] as const;
 
 export default function Testimonial() {
   const t = useTranslations("testimonial");
@@ -47,7 +47,7 @@ export default function Testimonial() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonialKeys.map((key, index) => (
             <div
               key={key}
@@ -58,7 +58,7 @@ export default function Testimonial() {
               }`}
               style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
-              <div className="relative bg-[var(--background)] border border-[var(--border)] rounded-2xl p-6 md:p-8 h-full flex flex-col">
+              <div className="relative bg-[var(--background)] border border-[var(--border)] rounded-2xl p-6 md:p-8 h-full flex flex-col shadow-lg shadow-black/10">
                 {/* Quote mark */}
                 <div
                   className={`absolute -top-5 left-6 md:left-8 transition-all duration-700 ${
@@ -79,15 +79,15 @@ export default function Testimonial() {
                 <blockquote className="text-base md:text-lg leading-relaxed mb-6 pt-4 flex-grow">
                   <p className="text-[var(--foreground)]">
                     &ldquo;{t(`items.${key}.quote`)}{" "}
-                    <span className="text-[var(--accent)] font-medium">{t(`items.${key}.quoteHighlight`)}</span>.&rdquo;
+                    <span className="text-[var(--accent)] font-medium">{t(`items.${key}.quoteHighlight`)}</span>&rdquo;
                   </p>
                 </blockquote>
 
                 {/* Author */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     {/* Avatar */}
-                    <div className="w-12 h-12 rounded-full bg-[var(--background-secondary)] border border-[var(--border)] flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[var(--background-secondary)] border border-[var(--border)] flex items-center justify-center shrink-0">
                       <span className="text-sm font-bold text-[var(--accent)]">
                         {t(`items.${key}.initials`)}
                       </span>
