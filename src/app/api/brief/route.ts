@@ -171,6 +171,34 @@ function validateBriefData(body: Record<string, unknown>): {
   };
 }
 
+// ── Extract all nested "options" objects from a translation tree ──
+// Walks the features translation tree and collects every key→label from "options" objects.
+// e.g. { "application-mobile": { "platforms": { "options": { "both": "iPhone et Android" } } } }
+// → { "both": "iPhone et Android" }
+
+function extractAllOptions(obj: Record<string, unknown>): Record<string, string> {
+  const result: Record<string, string> = {};
+
+  function walk(node: unknown) {
+    if (!node || typeof node !== "object") return;
+    const record = node as Record<string, unknown>;
+    for (const [key, val] of Object.entries(record)) {
+      if (key === "options" && val && typeof val === "object") {
+        for (const [optKey, optVal] of Object.entries(val as Record<string, unknown>)) {
+          if (typeof optVal === "string") {
+            result[optKey] = optVal;
+          }
+        }
+      } else if (typeof val === "object") {
+        walk(val);
+      }
+    }
+  }
+
+  walk(obj);
+  return result;
+}
+
 // ── Load translations for PDF ──
 
 async function buildPdfTranslations(locale: string): Promise<PdfTranslations> {
@@ -249,6 +277,8 @@ async function buildPdfTranslations(locale: string): Promise<PdfTranslations> {
       ...Object.fromEntries(
         Object.entries(b.steps.goals.options || {}).map(([key, val]) => [key, val as string])
       ),
+      // All feature options across all project types
+      ...extractAllOptions(b.steps.features),
       // Budget ranges
       ...Object.fromEntries(
         Object.entries(b.steps.budget.questions.range.options || {}).map(([key, val]) => [key, val as string])
@@ -294,52 +324,51 @@ function getBriefNotificationHtml(data: BriefData): string {
   return `
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background-color:#1a1a1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#1a1a1a;padding:40px 20px;">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"></head>
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5;padding:40px 20px;">
     <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background-color:#232323;border-radius:16px;overflow:hidden;border:1px solid #333333;">
-        <tr><td style="background:linear-gradient(135deg,#34d399 0%,#10b981 100%);padding:32px;text-align:center;">
-          <h1 style="margin:0;color:#1a1a1a;font-size:24px;font-weight:700;">Nouveau Brief Projet</h1>
+      <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4e7;">
+        <tr><td style="background:#059669;padding:28px 32px;">
+          <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;">Nouveau Brief Projet</h1>
+          <p style="margin:6px 0 0;color:#d1fae5;font-size:14px;">${company}</p>
         </td></tr>
         <tr><td style="padding:32px;">
-          <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#2a2a2a;border-radius:12px;border:1px solid #333333;margin-bottom:24px;">
-            <tr><td style="padding:24px;">
-              <h2 style="margin:0 0 16px 0;color:#34d399;font-size:14px;text-transform:uppercase;letter-spacing:1px;">Client</h2>
-              <table width="100%" cellpadding="0" cellspacing="0">
-                <tr><td style="padding:8px 0;border-bottom:1px solid #333333;">
-                  <span style="color:#a0a0a0;font-size:14px;">Nom</span><br>
-                  <span style="color:#f5f5f5;font-size:16px;font-weight:600;">${name}</span>
-                </td></tr>
-                <tr><td style="padding:8px 0;border-bottom:1px solid #333333;">
-                  <span style="color:#a0a0a0;font-size:14px;">Email</span><br>
-                  <a href="mailto:${email}" style="color:#34d399;font-size:16px;font-weight:600;text-decoration:none;">${email}</a>
-                </td></tr>
-                <tr><td style="padding:8px 0;border-bottom:1px solid #333333;">
-                  <span style="color:#a0a0a0;font-size:14px;">Entreprise</span><br>
-                  <span style="color:#f5f5f5;font-size:16px;font-weight:600;">${company}</span>
-                </td></tr>
-                <tr><td style="padding:8px 0;">
-                  <span style="color:#a0a0a0;font-size:14px;">Type de projet</span><br>
-                  <span style="display:inline-block;margin-top:4px;padding:6px 12px;background-color:#34d399;color:#1a1a1a;font-size:14px;font-weight:600;border-radius:20px;">${projectType}</span>
-                </td></tr>
-              </table>
+          <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+            <tr><td style="padding:0 0 16px;">
+              <span style="color:#71717a;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Client</span>
+            </td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
+              <span style="color:#71717a;font-size:13px;">Nom</span><br>
+              <span style="color:#18181b;font-size:15px;font-weight:600;">${name}</span>
+            </td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
+              <span style="color:#71717a;font-size:13px;">Email</span><br>
+              <a href="mailto:${email}" style="color:#059669;font-size:15px;font-weight:600;text-decoration:none;">${email}</a>
+            </td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
+              <span style="color:#71717a;font-size:13px;">Entreprise</span><br>
+              <span style="color:#18181b;font-size:15px;font-weight:600;">${company}</span>
+            </td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
+              <span style="color:#71717a;font-size:13px;">Type de projet</span><br>
+              <span style="display:inline-block;margin-top:6px;padding:5px 14px;background-color:#059669;color:#ffffff;font-size:13px;font-weight:600;border-radius:20px;">${projectType}</span>
             </td></tr>
           </table>
-          <p style="margin:0;color:#a0a0a0;font-size:14px;text-align:center;">
+          <p style="margin:0 0 24px;color:#71717a;font-size:14px;text-align:center;">
             Le brief complet est en pièce jointe (PDF).
           </p>
-          <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px;">
+          <table width="100%" cellpadding="0" cellspacing="0">
             <tr><td align="center">
               <a href="mailto:${email}?subject=Re: Brief Projet - JBR Development"
-                 style="display:inline-block;padding:16px 32px;background-color:#34d399;color:#1a1a1a;font-size:16px;font-weight:600;text-decoration:none;border-radius:8px;">
+                 style="display:inline-block;padding:14px 32px;background-color:#059669;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;border-radius:8px;">
                 Répondre à ${name}
               </a>
             </td></tr>
           </table>
         </td></tr>
-        <tr><td style="padding:24px;text-align:center;border-top:1px solid #333333;">
-          <p style="margin:0;color:#a0a0a0;font-size:14px;">JBR Development • Brief Questionnaire</p>
+        <tr><td style="padding:20px 32px;text-align:center;border-top:1px solid #e4e4e7;">
+          <p style="margin:0;color:#a1a1aa;font-size:13px;">JBR Development</p>
         </td></tr>
       </table>
     </td></tr>
