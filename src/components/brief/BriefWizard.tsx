@@ -367,12 +367,14 @@ export default function BriefWizard() {
       setEditingFromSummary(false);
       setSummaryStepIndex(null);
       setStepKey((k) => k + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStepIndex < activeSteps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
       setStepKey((k) => k + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex]);
 
@@ -382,11 +384,13 @@ export default function BriefWizard() {
       setCurrentStepIndex(summaryStepIndex);
       setEditingFromSummary(false);
       setSummaryStepIndex(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     if (currentStepIndex > 0) {
       setCurrentStepIndex((prev) => prev - 1);
       setStepKey((k) => k + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [currentStepIndex, editingFromSummary, summaryStepIndex]);
 
@@ -397,6 +401,7 @@ export default function BriefWizard() {
       setCurrentStepIndex(stepIndex);
       setStepKey((k) => k + 1);
       setErrors({});
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     [currentStepIndex]
   );
