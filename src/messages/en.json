@@ -1088,7 +1088,8 @@
       "stepOf": "Step {current} of {total}",
       "optional": "optional",
       "edit": "Edit",
-      "other": "Other"
+      "other": "Other",
+      "backToSummary": "Back to summary"
     },
     "validation": {
       "required": "This field is required.",
@@ -1109,6 +1110,11 @@
     "confirmation": {
       "title": "Brief sent!",
       "message": "Thank you! I've received your brief and will get back to you within 24 hours to discuss it."
+    },
+    "error": {
+      "title": "Submission error",
+      "message": "An error occurred while sending your brief. Please try again.",
+      "retry": "Try again"
     }
   }
 }

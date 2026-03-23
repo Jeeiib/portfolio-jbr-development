@@ -1088,7 +1088,8 @@
       "stepOf": "Étape {current} sur {total}",
       "optional": "facultatif",
       "edit": "Modifier",
-      "other": "Autre"
+      "other": "Autre",
+      "backToSummary": "Retour au récapitulatif"
     },
     "validation": {
       "required": "Ce champ est obligatoire.",
@@ -1109,6 +1110,11 @@
     "confirmation": {
       "title": "Brief envoyé !",
       "message": "Merci ! J'ai bien reçu votre brief et je vous recontacte sous 24h pour en discuter."
+    },
+    "error": {
+      "title": "Erreur d'envoi",
+      "message": "Une erreur est survenue lors de l'envoi de votre brief. Veuillez réessayer.",
+      "retry": "Réessayer"
     }
   }
 }
