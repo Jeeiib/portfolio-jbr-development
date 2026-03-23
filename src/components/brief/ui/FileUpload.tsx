@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { type BriefFile, LIMITS, ALLOWED_FILE_TYPES } from "@/data/briefTypes";
 
 interface FileUploadProps {
@@ -28,6 +29,7 @@ export default function FileUpload({
   onRemove,
   maxFiles,
 }: FileUploadProps) {
+  const t = useTranslations("brief.ui.upload");
   const [isDragActive, setIsDragActive] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -37,10 +39,10 @@ export default function FileUpload({
 
   const validateFile = (file: File): string | null => {
     if (!ALLOWED_FILE_TYPES.includes(file.type as (typeof ALLOWED_FILE_TYPES)[number])) {
-      return `Type non supporté : ${file.type || "inconnu"}. Formats acceptés : PDF, PNG, JPEG, WebP.`;
+      return t("errorUnsupportedType", { type: file.type || "unknown" });
     }
     if (file.size > LIMITS.fileMaxSize) {
-      return `Fichier trop volumineux (${formatFileSize(file.size)}). Maximum : ${formatFileSize(LIMITS.fileMaxSize)}.`;
+      return t("errorTooLarge", { size: formatFileSize(file.size), maxSize: formatFileSize(LIMITS.fileMaxSize) });
     }
     return null;
   };
@@ -68,7 +70,7 @@ export default function FileUpload({
         });
 
         if (!response.ok) {
-          throw new Error("Erreur lors de l'upload");
+          throw new Error("Upload failed");
         }
 
         const data = await response.json();
@@ -80,7 +82,7 @@ export default function FileUpload({
           type: file.type,
         });
       } catch {
-        setUploadError("Une erreur est survenue lors de l'upload. Veuillez réessayer.");
+        setUploadError(t("errorUploadFailed"));
       } finally {
         setIsUploading(false);
       }
@@ -146,7 +148,7 @@ export default function FileUpload({
               inputRef.current?.click();
             }
           }}
-          aria-label="Zone de dépôt de fichiers. Cliquez ou glissez-déposez un fichier."
+          aria-label={t("dropzoneLabel")}
           className={`
             relative flex flex-col items-center justify-center
             w-full py-8 px-4 rounded-xl cursor-pointer
@@ -182,7 +184,7 @@ export default function FileUpload({
                 />
               </svg>
               <span className="text-sm text-[var(--foreground-secondary)]">
-                Upload en cours...
+                {t("uploading")}
               </span>
             </>
           ) : (
@@ -206,11 +208,11 @@ export default function FileUpload({
                 />
               </svg>
               <p className="text-sm text-[var(--foreground-secondary)]">
-                <span className="text-[var(--accent)] font-medium">Cliquez pour parcourir</span>
-                {" "}ou glissez-déposez
+                <span className="text-[var(--accent)] font-medium">{t("clickToBrowse")}</span>
+                {" "}{t("orDragDrop")}
               </p>
               <p className="text-xs text-[var(--foreground-secondary)]/50 mt-1">
-                PDF, PNG, JPEG, WebP — max {formatFileSize(LIMITS.fileMaxSize)}
+                {t("formats", { maxSize: formatFileSize(LIMITS.fileMaxSize) })}
               </p>
             </>
           )}
@@ -236,7 +238,7 @@ export default function FileUpload({
 
       {/* File count */}
       <p className="text-xs text-[var(--foreground-secondary)]/60">
-        {files.length}/{maxFiles} fichier{maxFiles > 1 ? "s" : ""}
+        {t("fileCount", { count: files.length, max: maxFiles })}
       </p>
 
       {/* File list */}
@@ -274,7 +276,7 @@ export default function FileUpload({
               <button
                 type="button"
                 onClick={() => onRemove(file.url)}
-                aria-label={`Supprimer ${file.name}`}
+                aria-label={t("removeFile", { name: file.name })}
                 className="
                   flex-shrink-0 p-1.5 rounded-lg
                   text-[var(--foreground-secondary)]/60

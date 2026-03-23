@@ -268,13 +268,13 @@ export default function SummaryStep({
               {"pages" in features && (features as { pages: string[] }).pages.length > 0 && (
                 <RecapRow
                   label={t("steps.features.site-vitrine.pages.label")}
-                  value={`${(features as { pages: string[] }).pages.length} page(s)`}
+                  value={t("steps.summary.recapPages", { count: (features as { pages: string[] }).pages.length })}
                 />
               )}
               {"features" in features && (features as { features: string[] }).features.length > 0 && (
                 <RecapRow
                   label={t("steps.features.title")}
-                  value={`${(features as { features: string[] }).features.length} fonctionnalite(s)`}
+                  value={t("steps.summary.recapFeatures", { count: (features as { features: string[] }).features.length })}
                 />
               )}
               {"dailyUsage" in features && (features as { dailyUsage: string }).dailyUsage && (
@@ -343,7 +343,7 @@ export default function SummaryStep({
                 />
               )}
               {design.files.length > 0 && (
-                <RecapRow label="Fichiers" value={formatFiles(design.files)} />
+                <RecapRow label={t("steps.summary.recapFiles")} value={formatFiles(design.files)} />
               )}
             </RecapSection>
           )}
@@ -387,7 +387,7 @@ export default function SummaryStep({
                 </>
               )}
               {content.files.length > 0 && (
-                <RecapRow label="Fichiers" value={formatFiles(content.files)} />
+                <RecapRow label={t("steps.summary.recapFiles")} value={formatFiles(content.files)} />
               )}
             </RecapSection>
           )}
@@ -492,21 +492,31 @@ export default function SummaryStep({
         />
       </div>
 
-      {/* ── D. Honeypot ── */}
-      <input
-        type="text"
-        name="website_url"
+      {/* ── D. Honeypot (anti-bot trap -- hidden from real users and screen readers) ── */}
+      <div
         aria-hidden="true"
-        tabIndex={-1}
-        value={honeypot}
-        onChange={(e) => onHoneypotChange(e.target.value)}
-        autoComplete="off"
         style={{
           position: "absolute",
           left: "-9999px",
           top: "-9999px",
+          width: 0,
+          height: 0,
+          overflow: "hidden",
+          opacity: 0,
+          pointerEvents: "none",
         }}
-      />
+      >
+        <label htmlFor="website_url">Website URL</label>
+        <input
+          type="text"
+          id="website_url"
+          name="website_url"
+          tabIndex={-1}
+          value={honeypot}
+          onChange={(e) => onHoneypotChange(e.target.value)}
+          autoComplete="off"
+        />
+      </div>
 
       {/* ── E. Submit button ── */}
       <div className="pt-4">

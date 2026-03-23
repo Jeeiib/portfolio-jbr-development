@@ -1,11 +1,14 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface StepIndicatorProps {
   steps: { number: number; title: string }[];
   currentStep: number;
 }
 
 export default function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
+  const t = useTranslations("brief.ui");
   return (
     <nav aria-label="Progress" className="w-full">
       {/* Progress bar background */}
@@ -14,7 +17,7 @@ export default function StepIndicator({ steps, currentStep }: StepIndicatorProps
           <div
             className="h-full bg-[var(--accent)] rounded-full transition-all duration-500 ease-out"
             style={{
-              width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+              width: `${steps.length <= 1 ? 0 : ((currentStep - 1) / (steps.length - 1)) * 100}%`,
             }}
           />
         </div>
@@ -82,10 +85,10 @@ export default function StepIndicator({ steps, currentStep }: StepIndicatorProps
               {/* Accessible label for screen readers */}
               <span className="sr-only">
                 {isCompleted
-                  ? `${step.title} - completed`
+                  ? `${step.title} - ${t("stepCompleted")}`
                   : isCurrent
-                    ? `${step.title} - current step`
-                    : `${step.title} - upcoming`}
+                    ? `${step.title} - ${t("stepCurrent")}`
+                    : `${step.title} - ${t("stepUpcoming")}`}
               </span>
             </li>
           );

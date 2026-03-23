@@ -247,7 +247,7 @@ export default function BriefWizard() {
     budget: defaultBudget,
     contact: defaultContact,
     freeComment: "",
-    locale,
+    locale: locale as "fr" | "en",
   });
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -290,12 +290,12 @@ export default function BriefWizard() {
 
   const handleResumeDraft = useCallback(() => {
     if (pendingDraft) {
-      setData({ ...data, ...pendingDraft.data });
+      setData((prev) => ({ ...prev, ...pendingDraft.data }));
       setCurrentStepIndex(pendingDraft.currentStep);
     }
     setShowDraftModal(false);
     setPendingDraft(null);
-  }, [pendingDraft, data]);
+  }, [pendingDraft]);
 
   const handleRestartDraft = useCallback(() => {
     clearDraft();

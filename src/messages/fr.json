@@ -1078,7 +1078,10 @@
           "placeholder": "Tout ce qui n'entre pas dans les cases... Contexte particulier, délai urgent, question spécifique..."
         },
         "submit": "Envoyer mon brief",
-        "submitting": "Envoi en cours..."
+        "submitting": "Envoi en cours...",
+        "recapPages": "{count} page(s)",
+        "recapFeatures": "{count} fonctionnalité(s)",
+        "recapFiles": "Fichiers joints"
       }
     },
     "ui": {
@@ -1089,7 +1092,22 @@
       "optional": "facultatif",
       "edit": "Modifier",
       "other": "Autre",
-      "backToSummary": "Retour au récapitulatif"
+      "backToSummary": "Retour au récapitulatif",
+      "upload": {
+        "uploading": "Upload en cours...",
+        "clickToBrowse": "Cliquez pour parcourir",
+        "orDragDrop": "ou glissez-déposez",
+        "formats": "PDF, PNG, JPEG, WebP — max {maxSize}",
+        "fileCount": "{count}/{max} fichier(s)",
+        "dropzoneLabel": "Zone de dépôt de fichiers. Cliquez ou glissez-déposez un fichier.",
+        "removeFile": "Supprimer {name}",
+        "errorUnsupportedType": "Type non supporté : {type}. Formats acceptés : PDF, PNG, JPEG, WebP.",
+        "errorTooLarge": "Fichier trop volumineux ({size}). Maximum : {maxSize}.",
+        "errorUploadFailed": "Une erreur est survenue lors de l'upload. Veuillez réessayer."
+      },
+      "stepCompleted": "complétée",
+      "stepCurrent": "étape actuelle",
+      "stepUpcoming": "à venir"
     },
     "validation": {
       "required": "Ce champ est obligatoire.",

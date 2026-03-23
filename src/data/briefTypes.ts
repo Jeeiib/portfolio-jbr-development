@@ -133,7 +133,7 @@ export interface BriefData {
   budget: BriefBudget;
   contact: BriefContact;
   freeComment?: string;
-  locale: string;
+  locale: "fr" | "en";
 }
 
 export interface BriefDraft {

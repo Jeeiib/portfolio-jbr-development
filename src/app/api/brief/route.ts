@@ -25,10 +25,37 @@ const ALLOWED_ORIGINS = [
 ];
 
 // ── Rate limiting: 3/hour/IP ──
+// NOTE: In-memory rate limiting is best-effort in serverless environments.
+// For production hardening, consider Upstash Redis or Vercel Edge rate limiting.
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT = 3;
 const RATE_WINDOW = 60 * 60 * 1000;
+const RATE_MAP_MAX_SIZE = 10_000; // Prevent unbounded memory growth
+
+function pruneRateLimitMap(map: Map<string, { count: number; resetAt: number }>, now: number) {
+  if (map.size > RATE_MAP_MAX_SIZE) {
+    for (const [key, entry] of map) {
+      if (now > entry.resetAt) map.delete(key);
+    }
+    // If still too large after pruning expired, remove oldest entries
+    if (map.size > RATE_MAP_MAX_SIZE) {
+      const excess = map.size - RATE_MAP_MAX_SIZE;
+      const keys = [...map.keys()].slice(0, excess);
+      for (const key of keys) map.delete(key);
+    }
+  }
+}
+
+// ── Sanitize attachment filename: keep only safe chars, limit length ──
+
+function sanitizeAttachmentName(name: string): string {
+  return name
+    .replace(/[^a-zA-Z0-9À-ÿ\s\-_]/g, "") // keep alphanumeric, accented chars, spaces, hyphens, underscores
+    .replace(/\s+/g, "-")                   // spaces to hyphens
+    .slice(0, 80)                            // limit length
+    || "projet";                             // fallback if empty after sanitization
+}
 
 // ── HTML escaping ──
 
@@ -76,6 +103,10 @@ function validateBriefData(body: Record<string, unknown>): {
   if (!Array.isArray(g.objectives) || g.objectives.length === 0) {
     return { valid: false, error: "Missing objectives" };
   }
+  // Validate that each objective is a non-empty string (max 200 chars)
+  if (g.objectives.some((o: unknown) => typeof o !== "string" || o.length > 200)) {
+    return { valid: false, error: "Invalid objectives" };
+  }
   if (typeof g.problem !== "string" || !g.problem.trim()) {
     return { valid: false, error: "Missing problem description" };
   }
@@ -89,9 +120,24 @@ function validateBriefData(body: Record<string, unknown>): {
   if (typeof ct.email !== "string" || !ct.email.trim() || !EMAIL_REGEX.test(ct.email) || ct.email.length > LIMITS.email) {
     return { valid: false, error: "Invalid email" };
   }
-  // Reject newlines in contact fields (email header injection prevention)
-  if ([ct.fullName as string, ct.email as string].some((f) => /[\r\n]/.test(f))) {
+  // Reject newlines in all fields used in email headers (header injection prevention)
+  // This covers: contact.fullName, contact.email, and company.name (used in Subject)
+  if (
+    [ct.fullName as string, ct.email as string, c.name as string].some((f) =>
+      /[\r\n]/.test(f)
+    )
+  ) {
     return { valid: false, error: "Invalid characters detected" };
+  }
+  // Phone: optional, but if present must be a string within length limit and contain only phone-safe chars
+  if (ct.phone !== undefined && ct.phone !== null && ct.phone !== "") {
+    if (typeof ct.phone !== "string" || ct.phone.length > LIMITS.phone) {
+      return { valid: false, error: "Invalid phone number" };
+    }
+    // Allow digits, spaces, hyphens, dots, parentheses, plus sign only
+    if (!/^[0-9\s\-().+]+$/.test(ct.phone)) {
+      return { valid: false, error: "Invalid phone number format" };
+    }
   }
 
   // budget
@@ -99,6 +145,15 @@ function validateBriefData(body: Record<string, unknown>): {
   const b = budget as Record<string, unknown>;
   if (typeof b.range !== "string" || !b.range) return { valid: false, error: "Missing budget range" };
   if (typeof b.deadline !== "string" || !b.deadline) return { valid: false, error: "Missing deadline" };
+  // Validate communicationPreference is an array of strings
+  if (b.communicationPreference !== undefined) {
+    if (!Array.isArray(b.communicationPreference)) {
+      return { valid: false, error: "Invalid communication preference" };
+    }
+    if (b.communicationPreference.some((p: unknown) => typeof p !== "string" || p.length > 100)) {
+      return { valid: false, error: "Invalid communication preference value" };
+    }
+  }
 
   // locale
   if (typeof locale !== "string" || !["fr", "en"].includes(locale)) {
@@ -361,18 +416,34 @@ interface FileAttachment {
   content: Buffer;
 }
 
+// Security: only allow fetching from our own Vercel Blob store to prevent SSRF
+function isAllowedBlobUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    // Vercel Blob URLs follow the pattern: https://<store-id>.public.blob.vercel-storage.com/...
+    return (
+      parsed.protocol === "https:" &&
+      parsed.hostname.endsWith(".public.blob.vercel-storage.com")
+    );
+  } catch {
+    return false;
+  }
+}
+
 async function downloadBlobFiles(data: BriefData): Promise<{ attachments: FileAttachment[]; blobUrls: string[] }> {
   const blobUrls: string[] = [];
   const files: { url: string; name: string }[] = [];
 
   if (data.design?.files) {
     for (const f of data.design.files) {
+      if (!isAllowedBlobUrl(f.url)) continue; // SSRF prevention: skip non-Blob URLs
       files.push({ url: f.url, name: f.name });
       blobUrls.push(f.url);
     }
   }
   if (data.content?.files) {
     for (const f of data.content.files) {
+      if (!isAllowedBlobUrl(f.url)) continue; // SSRF prevention: skip non-Blob URLs
       files.push({ url: f.url, name: f.name });
       blobUrls.push(f.url);
     }
@@ -384,6 +455,8 @@ async function downloadBlobFiles(data: BriefData): Promise<{ attachments: FileAt
       const res = await fetch(file.url);
       if (res.ok) {
         const arrayBuffer = await res.arrayBuffer();
+        // Enforce max attachment size to prevent memory exhaustion (10 MB per file)
+        if (arrayBuffer.byteLength > 10 * 1024 * 1024) continue;
         attachments.push({
           filename: file.name,
           content: Buffer.from(arrayBuffer),
@@ -410,6 +483,7 @@ export async function POST(request: NextRequest) {
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   const now = Date.now();
+  pruneRateLimitMap(rateLimitMap, now); // Prevent unbounded memory growth
   const rateEntry = rateLimitMap.get(ip);
   if (rateEntry) {
     if (now > rateEntry.resetAt) {
@@ -457,7 +531,7 @@ export async function POST(request: NextRequest) {
 
     // 8. Send notification email to freelance
     const allAttachments = [
-      { filename: `brief-${data.company?.name || "projet"}.pdf`, content: pdfBuffer },
+      { filename: `brief-${sanitizeAttachmentName(data.company?.name || "projet")}.pdf`, content: pdfBuffer },
       ...attachments,
     ];
 
@@ -490,7 +564,7 @@ export async function POST(request: NextRequest) {
           : "Received! Your project brief",
         html: getBriefConfirmationHtml(data),
         attachments: [
-          { filename: `brief-${data.company?.name || "projet"}.pdf`, content: pdfBuffer },
+          { filename: `brief-${sanitizeAttachmentName(data.company?.name || "projet")}.pdf`, content: pdfBuffer },
         ],
       });
     } catch {

@@ -1078,7 +1078,10 @@
           "placeholder": "Anything that doesn't fit the boxes... Specific context, urgent deadline, particular question..."
         },
         "submit": "Send my brief",
-        "submitting": "Sending..."
+        "submitting": "Sending...",
+        "recapPages": "{count} page(s)",
+        "recapFeatures": "{count} feature(s)",
+        "recapFiles": "Attached files"
       }
     },
     "ui": {
@@ -1089,7 +1092,22 @@
       "optional": "optional",
       "edit": "Edit",
       "other": "Other",
-      "backToSummary": "Back to summary"
+      "backToSummary": "Back to summary",
+      "upload": {
+        "uploading": "Uploading...",
+        "clickToBrowse": "Click to browse",
+        "orDragDrop": "or drag and drop",
+        "formats": "PDF, PNG, JPEG, WebP — max {maxSize}",
+        "fileCount": "{count}/{max} file(s)",
+        "dropzoneLabel": "File drop zone. Click or drag and drop a file.",
+        "removeFile": "Remove {name}",
+        "errorUnsupportedType": "Unsupported type: {type}. Accepted formats: PDF, PNG, JPEG, WebP.",
+        "errorTooLarge": "File too large ({size}). Maximum: {maxSize}.",
+        "errorUploadFailed": "An error occurred during upload. Please try again."
+      },
+      "stepCompleted": "completed",
+      "stepCurrent": "current step",
+      "stepUpcoming": "upcoming"
     },
     "validation": {
       "required": "This field is required.",
