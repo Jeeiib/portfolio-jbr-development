@@ -324,11 +324,11 @@ function getBriefNotificationHtml(data: BriefData): string {
   return `
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"></head>
-<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5;padding:40px 20px;">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="dark"><meta name="supported-color-schemes" content="dark"></head>
+<body style="margin:0;padding:0;background-color:#111111;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#111111;padding:40px 20px;">
     <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4e7;">
+      <table width="600" cellpadding="0" cellspacing="0" style="background-color:#1c1c1c;border-radius:16px;overflow:hidden;border:1px solid #2e2e2e;">
         <tr><td style="background:#059669;padding:28px 32px;">
           <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;">Nouveau Brief Projet</h1>
           <p style="margin:6px 0 0;color:#d1fae5;font-size:14px;">${company}</p>
@@ -336,26 +336,26 @@ function getBriefNotificationHtml(data: BriefData): string {
         <tr><td style="padding:32px;">
           <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
             <tr><td style="padding:0 0 16px;">
-              <span style="color:#71717a;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Client</span>
+              <span style="color:#a3a3a3;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Client</span>
             </td></tr>
-            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
-              <span style="color:#71717a;font-size:13px;">Nom</span><br>
-              <span style="color:#18181b;font-size:15px;font-weight:600;">${name}</span>
+            <tr><td style="padding:10px 0;border-top:1px solid #2e2e2e;">
+              <span style="color:#a3a3a3;font-size:13px;">Nom</span><br>
+              <span style="color:#f5f5f5;font-size:15px;font-weight:600;">${name}</span>
             </td></tr>
-            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
-              <span style="color:#71717a;font-size:13px;">Email</span><br>
-              <a href="mailto:${email}" style="color:#059669;font-size:15px;font-weight:600;text-decoration:none;">${email}</a>
+            <tr><td style="padding:10px 0;border-top:1px solid #2e2e2e;">
+              <span style="color:#a3a3a3;font-size:13px;">Email</span><br>
+              <a href="mailto:${email}" style="color:#34d399;font-size:15px;font-weight:600;text-decoration:none;">${email}</a>
             </td></tr>
-            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
-              <span style="color:#71717a;font-size:13px;">Entreprise</span><br>
-              <span style="color:#18181b;font-size:15px;font-weight:600;">${company}</span>
+            <tr><td style="padding:10px 0;border-top:1px solid #2e2e2e;">
+              <span style="color:#a3a3a3;font-size:13px;">Entreprise</span><br>
+              <span style="color:#f5f5f5;font-size:15px;font-weight:600;">${company}</span>
             </td></tr>
-            <tr><td style="padding:10px 0;border-top:1px solid #e4e4e7;">
-              <span style="color:#71717a;font-size:13px;">Type de projet</span><br>
+            <tr><td style="padding:10px 0;border-top:1px solid #2e2e2e;">
+              <span style="color:#a3a3a3;font-size:13px;">Type de projet</span><br>
               <span style="display:inline-block;margin-top:6px;padding:5px 14px;background-color:#059669;color:#ffffff;font-size:13px;font-weight:600;border-radius:20px;">${projectType}</span>
             </td></tr>
           </table>
-          <p style="margin:0 0 24px;color:#71717a;font-size:14px;text-align:center;">
+          <p style="margin:0 0 24px;color:#a3a3a3;font-size:14px;text-align:center;">
             Le brief complet est en pièce jointe (PDF).
           </p>
           <table width="100%" cellpadding="0" cellspacing="0">
@@ -367,8 +367,8 @@ function getBriefNotificationHtml(data: BriefData): string {
             </td></tr>
           </table>
         </td></tr>
-        <tr><td style="padding:20px 32px;text-align:center;border-top:1px solid #e4e4e7;">
-          <p style="margin:0;color:#a1a1aa;font-size:13px;">JBR Development</p>
+        <tr><td style="padding:20px 32px;text-align:center;border-top:1px solid #2e2e2e;">
+          <p style="margin:0;color:#737373;font-size:13px;">JBR Development</p>
         </td></tr>
       </table>
     </td></tr>
