@@ -158,7 +158,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <View style={styles.section}>
+    <View style={styles.section} wrap={false}>
       <Text style={styles.sectionTitle}>{title}</Text>
       {children}
     </View>
