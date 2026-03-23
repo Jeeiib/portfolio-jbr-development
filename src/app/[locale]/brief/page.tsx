@@ -24,7 +24,7 @@ export default async function BriefPage({ params }: BriefPageProps) {
   setRequestLocale(locale);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] py-12 px-4 sm:px-6">
+    <main className="min-h-screen bg-[var(--background)] py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <BriefWizard />
     </main>
   );

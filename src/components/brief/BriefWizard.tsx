@@ -250,6 +250,7 @@ export default function BriefWizard() {
     locale: locale as "fr" | "en",
   });
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [stepKey, setStepKey] = useState(0); // triggers re-animation on step change
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [status, setStatus] = useState<WizardStatus>("filling");
   const [honeypot, setHoneypot] = useState("");
@@ -365,11 +366,13 @@ export default function BriefWizard() {
       setCurrentStepIndex(summaryStepIndex);
       setEditingFromSummary(false);
       setSummaryStepIndex(null);
+      setStepKey((k) => k + 1);
       return;
     }
 
     if (currentStepIndex < activeSteps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
+      setStepKey((k) => k + 1);
     }
   }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex]);
 
@@ -383,6 +386,7 @@ export default function BriefWizard() {
     }
     if (currentStepIndex > 0) {
       setCurrentStepIndex((prev) => prev - 1);
+      setStepKey((k) => k + 1);
     }
   }, [currentStepIndex, editingFromSummary, summaryStepIndex]);
 
@@ -391,6 +395,7 @@ export default function BriefWizard() {
       setSummaryStepIndex(currentStepIndex);
       setEditingFromSummary(true);
       setCurrentStepIndex(stepIndex);
+      setStepKey((k) => k + 1);
       setErrors({});
     },
     [currentStepIndex]
@@ -517,22 +522,24 @@ export default function BriefWizard() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-20 px-4 text-center space-y-6">
-        <div className="w-16 h-16 rounded-full bg-[var(--accent)]/10 flex items-center justify-center">
-          <svg
-            className="w-8 h-8 text-[var(--accent)]"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
+      <div className="w-full max-w-3xl mx-auto flex flex-col items-center justify-center py-24 sm:py-32 px-4 text-center">
+        <div className="animate-scale-in">
+          <div className="w-20 h-20 rounded-full bg-[var(--accent)]/10 flex items-center justify-center mb-8 animate-success-pulse">
+            <svg
+              className="w-10 h-10 text-[var(--accent)]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
         </div>
-        <h2 className="text-2xl font-bold text-[var(--foreground)]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] mb-4 animate-fade-in-up">
           {t("confirmation.title")}
         </h2>
-        <p className="text-[var(--foreground-secondary)] max-w-md">
+        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed animate-fade-in-up delay-100">
           {t("confirmation.message")}
         </p>
       </div>
@@ -543,32 +550,34 @@ export default function BriefWizard() {
 
   if (status === "error") {
     return (
-      <div className="flex flex-col items-center justify-center py-20 px-4 text-center space-y-6">
-        <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center">
+      <div className="w-full max-w-3xl mx-auto flex flex-col items-center justify-center py-24 sm:py-32 px-4 text-center">
+        <div className="w-20 h-20 rounded-full bg-red-500/10 flex items-center justify-center mb-8 animate-scale-in">
           <svg
-            className="w-8 h-8 text-red-500"
+            className="w-10 h-10 text-red-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={2.5}
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-[var(--foreground)]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] mb-4 animate-fade-in-up">
           {t("error.title")}
         </h2>
-        <p className="text-[var(--foreground-secondary)] max-w-md">
+        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed mb-8 animate-fade-in-up delay-100">
           {t("error.message")}
         </p>
         <button
           type="button"
           onClick={() => setStatus("filling")}
           className="
-            px-6 py-3 rounded-xl text-sm font-semibold
+            px-8 py-3.5 rounded-xl text-sm font-semibold
             bg-[var(--accent)] text-[var(--accent-foreground)]
-            hover:bg-[var(--accent)]/90 transition-all duration-200
-            focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
+            hover:bg-[var(--accent-hover)] active:scale-[0.97]
+            transition-all duration-200
+            focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40 focus:ring-offset-2 focus:ring-offset-[var(--background)]
+            animate-fade-in-up delay-200
           "
         >
           {t("error.retry")}
@@ -582,27 +591,36 @@ export default function BriefWizard() {
   const isFirstStep = currentStepIndex === 0;
   const isLastStep = currentLogicalStep === 8;
 
+  const nextLabel = editingFromSummary ? t("ui.backToSummary") : t("ui.next");
+
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-8">
+    <div className="w-full max-w-3xl mx-auto">
       {/* Draft resume modal */}
       {showDraftModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-backdrop-enter bg-black/60 backdrop-blur-sm">
           <div
             className="
+              animate-modal-enter
               bg-[var(--background)] border border-[var(--border)]
-              rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl space-y-6
+              rounded-2xl p-6 sm:p-8 max-w-md w-full
+              shadow-2xl shadow-black/30
             "
             role="dialog"
             aria-modal="true"
             aria-labelledby="draft-dialog-title"
           >
+            <div className="w-10 h-10 rounded-full bg-[var(--accent)]/10 flex items-center justify-center mb-5">
+              <svg className="w-5 h-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
             <h3
               id="draft-dialog-title"
-              className="text-lg font-bold text-[var(--foreground)]"
+              className="text-lg font-bold text-[var(--foreground)] mb-2"
             >
               {t("draft.resumeTitle")}
             </h3>
-            <p className="text-sm text-[var(--foreground-secondary)]">
+            <p className="text-sm text-[var(--foreground-secondary)] leading-relaxed mb-6">
               {t("draft.resumeMessage")}
             </p>
             <div className="flex gap-3">
@@ -611,8 +629,10 @@ export default function BriefWizard() {
                 onClick={handleRestartDraft}
                 className="
                   flex-1 px-4 py-3 rounded-xl text-sm font-medium
-                  border border-[var(--border)] text-[var(--foreground)]
-                  hover:bg-[var(--background-secondary)] transition-colors duration-200
+                  border border-[var(--border)] text-[var(--foreground-secondary)]
+                  hover:text-[var(--foreground)] hover:border-[var(--foreground-secondary)]/30
+                  hover:bg-[var(--background-secondary)]
+                  active:scale-[0.97] transition-all duration-200
                   focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
                 "
               >
@@ -624,7 +644,8 @@ export default function BriefWizard() {
                 className="
                   flex-1 px-4 py-3 rounded-xl text-sm font-semibold
                   bg-[var(--accent)] text-[var(--accent-foreground)]
-                  hover:bg-[var(--accent)]/90 transition-colors duration-200
+                  hover:bg-[var(--accent-hover)] active:scale-[0.97]
+                  transition-all duration-200
                   focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
                 "
               >
@@ -636,72 +657,72 @@ export default function BriefWizard() {
       )}
 
       {/* Step indicator */}
-      <StepIndicator
-        steps={stepIndicatorData}
-        currentStep={currentLogicalStep}
-      />
+      <div className="mb-10">
+        <StepIndicator
+          steps={stepIndicatorData}
+          currentStep={currentLogicalStep}
+        />
+        {/* Step counter (mobile) */}
+        <p className="text-xs text-[var(--foreground-secondary)]/60 text-center mt-4 md:hidden tracking-wide uppercase">
+          {t("ui.stepOf", {
+            current: currentStepIndex + 1,
+            total: activeSteps.length,
+          })}
+        </p>
+      </div>
 
-      {/* Step counter (mobile) */}
-      <p className="text-sm text-[var(--foreground-secondary)] text-center md:hidden">
-        {t("ui.stepOf", {
-          current: currentStepIndex + 1,
-          total: activeSteps.length,
-        })}
-      </p>
-
-      {/* Current step content */}
-      <div className="min-h-[400px]">{renderStep()}</div>
+      {/* Current step content — animated on step change */}
+      <div key={stepKey} className="min-h-[420px] animate-step-enter">
+        {renderStep()}
+      </div>
 
       {/* Navigation buttons — not shown on summary (it has its own submit) */}
       {!isLastStep && (
-        <div className="flex items-center justify-between pt-6 border-t border-[var(--border)]">
+        <div className="flex items-center justify-between mt-12 pt-6 border-t border-[var(--border)]/50">
           <button
             type="button"
             onClick={handlePrevious}
             disabled={isFirstStep}
             className={`
-              px-6 py-3 rounded-xl text-sm font-medium
+              group flex items-center gap-2
+              px-5 py-2.5 rounded-lg text-sm font-medium
               transition-all duration-200
               focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
               ${isFirstStep
                 ? "opacity-0 pointer-events-none"
-                : "text-[var(--foreground)] border border-[var(--border)] hover:bg-[var(--background-secondary)]"
+                : "text-[var(--foreground-secondary)] hover:text-[var(--foreground)]"
               }
             `}
           >
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-0.5"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
             {t("ui.previous")}
           </button>
 
-          {/* Edit mode: show "Back to summary" instead of "Next" */}
-          {editingFromSummary ? (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="
-                px-6 py-3 rounded-xl text-sm font-semibold
-                bg-[var(--accent)] text-[var(--accent-foreground)]
-                hover:bg-[var(--accent)]/90 transition-all duration-200
-                focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
-                shadow-lg shadow-[var(--accent)]/20 hover:shadow-xl hover:shadow-[var(--accent)]/30
-              "
+          <button
+            type="button"
+            onClick={handleNext}
+            className="
+              group flex items-center gap-2
+              px-7 py-3 rounded-xl text-sm font-semibold
+              bg-[var(--accent)] text-[var(--accent-foreground)]
+              hover:bg-[var(--accent-hover)] active:scale-[0.97]
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40 focus:ring-offset-2 focus:ring-offset-[var(--background)]
+            "
+          >
+            {nextLabel}
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
             >
-              {t("ui.backToSummary")}
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="
-                px-6 py-3 rounded-xl text-sm font-semibold
-                bg-[var(--accent)] text-[var(--accent-foreground)]
-                hover:bg-[var(--accent)]/90 transition-all duration-200
-                focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40
-                shadow-lg shadow-[var(--accent)]/20 hover:shadow-xl hover:shadow-[var(--accent)]/30
-              "
-            >
-              {t("ui.next")}
-            </button>
-          )}
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       )}
     </div>
