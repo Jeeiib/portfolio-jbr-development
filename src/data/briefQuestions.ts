@@ -3,17 +3,16 @@ import type { ProjectType } from "./briefTypes";
 
 export interface QuestionOption {
   key: string;
-  icon?: string;
 }
 
 export const projectTypeOptions: QuestionOption[] = [
-  { key: "site-vitrine", icon: "🌐" },
-  { key: "application-web", icon: "💻" },
-  { key: "application-mobile", icon: "📱" },
-  { key: "landing-page", icon: "⚡" },
-  { key: "refonte", icon: "🔄" },
-  { key: "developpement-sur-mesure", icon: "🔧" },
-  { key: "maintenance", icon: "🛠️" },
+  { key: "site-vitrine" },
+  { key: "application-web" },
+  { key: "application-mobile" },
+  { key: "landing-page" },
+  { key: "refonte" },
+  { key: "developpement-sur-mesure" },
+  { key: "maintenance" },
 ];
 
 export const objectiveOptions = [
