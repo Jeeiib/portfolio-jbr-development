@@ -570,5 +570,569 @@
         }
       }
     }
+  },
+  "brief": {
+    "steps": {
+      "projectType": {
+        "title": "What type of project do you have in mind?",
+        "subtitle": "Choose the option that best fits your need.",
+        "options": {
+          "site-vitrine": {
+            "title": "Showcase website",
+            "description": "Present my business, services, or company online"
+          },
+          "application-web": {
+            "title": "Web application",
+            "description": "A custom online tool: dashboard, management, client portal..."
+          },
+          "application-mobile": {
+            "title": "Mobile application",
+            "description": "An app for smartphones (iPhone, Android, or both)"
+          },
+          "landing-page": {
+            "title": "Landing page",
+            "description": "A single page to promote a product, event, or offer"
+          },
+          "refonte": {
+            "title": "Website redesign",
+            "description": "Modernize an existing site: design, performance, content"
+          },
+          "developpement-sur-mesure": {
+            "title": "Custom development",
+            "description": "Technical integration, API, automation, specific needs"
+          },
+          "maintenance": {
+            "title": "Maintenance",
+            "description": "Updates, bug fixes, and improvements to an existing site or app"
+          }
+        }
+      },
+      "company": {
+        "title": "Tell us about you",
+        "subtitle": "A few details about your company or project.",
+        "questions": {
+          "name": {
+            "label": "What is your company (or project) called?",
+            "placeholder": "E.g.: Martin Bakery, Creative Studio, MyProject..."
+          },
+          "description": {
+            "label": "In a few words, what do you do?",
+            "placeholder": "E.g.: We sell artisan pastries in Lille and deliver across the metro area..."
+          },
+          "target": {
+            "label": "Who are your products or services aimed at?",
+            "placeholder": "E.g.: Individuals aged 25–45, active, looking for quality local products..."
+          },
+          "hasWebsite": {
+            "label": "Do you already have a website or application?",
+            "yes": "Yes",
+            "no": "No, this is a new project"
+          },
+          "websiteUrl": {
+            "label": "What is the URL?",
+            "placeholder": "https://..."
+          },
+          "inspirations": {
+            "label": "Do you have competitors or sites that inspire you?",
+            "placeholder": "E.g.: www.example.com — I like their clean design and easy navigation..."
+          }
+        }
+      },
+      "goals": {
+        "title": "Your goals",
+        "subtitle": "Help us understand what you expect from this project.",
+        "questions": {
+          "objectives": {
+            "label": "What is the main goal of this project?",
+            "hint": "What should this project concretely bring you?"
+          },
+          "problem": {
+            "label": "What problem are you trying to solve?",
+            "placeholder": "E.g.: Right now clients call me to book appointments and I lose a lot of time on the phone. I'd like an online system..."
+          },
+          "successCriteria": {
+            "label": "If the project is successful, what does that look like to you?",
+            "placeholder": "E.g.: I receive at least 5 quote requests per month through the site / My clients can book without calling me..."
+          }
+        },
+        "options": {
+          "visibility": "Be visible online",
+          "clients": "Attract new clients",
+          "automation": "Automate tasks",
+          "replace-tool": "Replace an existing tool",
+          "client-service": "Offer a service to my clients",
+          "new-product": "Launch a new product"
+        }
+      },
+      "features": {
+        "title": "Features",
+        "subtitle": "Specify what you would like included in your project.",
+        "site-vitrine": {
+          "pages": {
+            "label": "Which pages would you like on your website?",
+            "hint": "Select all the pages you need.",
+            "options": {
+              "home": "Home page",
+              "about": "About / Who we are",
+              "services": "Services / Offerings",
+              "portfolio": "Portfolio / Work",
+              "blog": "Blog / News",
+              "contact": "Contact",
+              "faq": "FAQ",
+              "legal": "Legal notices"
+            }
+          },
+          "features": {
+            "label": "Which features do you want?",
+            "hint": "Check everything that seems useful.",
+            "options": {
+              "contact-form": "Contact form",
+              "booking": "Online appointment booking",
+              "google-maps": "Map / Directions",
+              "gallery": "Photo gallery",
+              "testimonials": "Customer reviews / Testimonials",
+              "social-links": "Social media links",
+              "newsletter": "Newsletter signup",
+              "chat": "Live chat",
+              "seo": "SEO optimization",
+              "multilingual": "Multilingual site"
+            }
+          },
+          "contentAutonomy": {
+            "label": "Do you want to be able to update the content yourself?",
+            "hint": "For example, changing a text or adding a news item without calling a developer.",
+            "options": {
+              "yes": "Yes, I want to be independent",
+              "no": "No, I prefer to delegate updates",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "other": {
+            "label": "Anything else to add?",
+            "placeholder": "E.g.: I need an online shop, a members area, a download section..."
+          }
+        },
+        "application-web": {
+          "dailyUsage": {
+            "label": "What does this application do on a day-to-day basis?",
+            "placeholder": "E.g.: My teams use it to track customer orders, manage stock, and automatically generate invoices..."
+          },
+          "userTypes": {
+            "label": "Who will use this application?",
+            "hint": "Select all applicable user profiles.",
+            "options": {
+              "admin": "An administrator (me)",
+              "employees": "Employees / team members",
+              "clients": "Clients",
+              "partners": "Partners / suppliers",
+              "public": "The general public"
+            }
+          },
+          "features": {
+            "label": "Which features do you need?",
+            "hint": "Check everything that fits your needs.",
+            "options": {
+              "auth": "Login / account creation",
+              "dashboard": "Custom dashboard",
+              "orders": "Order or file management",
+              "payment": "Online payment",
+              "notifications": "Notifications (email, SMS...)",
+              "file-upload": "File upload and storage",
+              "calendar": "Calendar / scheduling",
+              "messaging": "Internal messaging",
+              "export": "Data export (Excel, PDF...)",
+              "integrations": "Connection to other tools"
+            }
+          },
+          "currentTools": {
+            "label": "Do you already use tools to manage this?",
+            "placeholder": "E.g.: Excel, Notion, a point-of-sale system, a CRM... Specify what works and what doesn't."
+          },
+          "userVolume": {
+            "label": "How many people will use the application?",
+            "options": {
+              "just-me": "Just me",
+              "2-10": "2 to 10 people",
+              "10-50": "10 to 50 people",
+              "50-500": "50 to 500 people",
+              "500+": "More than 500 people",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "other": {
+            "label": "Any further details?",
+            "placeholder": "E.g.: The app must work on mobile, integrate with our ERP, or support multiple languages..."
+          }
+        },
+        "application-mobile": {
+          "platforms": {
+            "label": "Which phones should the app run on?",
+            "options": {
+              "iphone": "iPhone only (iOS)",
+              "android": "Android only",
+              "both": "Both iPhone and Android",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "usage": {
+            "label": "What does this app concretely do?",
+            "placeholder": "E.g.: Let my clients track their orders in real time and contact us directly from their phone..."
+          },
+          "phoneFeatures": {
+            "label": "Does your app need access to phone features?",
+            "hint": "Check all that apply.",
+            "options": {
+              "camera": "Camera / photo",
+              "gps": "GPS location",
+              "push-notifications": "Push notifications",
+              "contacts": "Address book",
+              "calendar": "Calendar",
+              "microphone": "Microphone / audio",
+              "bluetooth": "Bluetooth",
+              "none": "No special features needed"
+            }
+          },
+          "offlineMode": {
+            "label": "Should the app work without an internet connection?",
+            "options": {
+              "yes": "Yes, some features must work offline",
+              "no": "No, a connection is always available",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "storePublishing": {
+            "label": "Do you want to publish the app on the App Store / Google Play?",
+            "options": {
+              "yes": "Yes, it will be public",
+              "no-internal": "No, it's an internal app",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "userVolume": {
+            "label": "How many users are you targeting?",
+            "options": {
+              "just-me": "Personal use only",
+              "2-10": "2 to 10 people",
+              "10-50": "10 to 50 people",
+              "50-500": "50 to 500 people",
+              "500+": "More than 500 users",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "other": {
+            "label": "Any further details?",
+            "placeholder": "E.g.: The app must connect to our existing system, support multiple languages..."
+          }
+        },
+        "landing-page": {
+          "objective": {
+            "label": "What is the main goal of this page?",
+            "options": {
+              "sell-product": "Sell a product or service",
+              "promote-event": "Promote an event",
+              "generate-leads": "Collect contacts (form, email...)",
+              "launch-offer": "Launch a promotional offer"
+            }
+          },
+          "features": {
+            "label": "Which elements would you like to include?",
+            "hint": "Check everything that seems useful.",
+            "options": {
+              "form": "Contact or sign-up form",
+              "payment": "Payment button",
+              "countdown": "Countdown timer",
+              "testimonials": "Customer reviews",
+              "video": "Presentation video",
+              "faq": "FAQ section"
+            }
+          },
+          "other": {
+            "label": "Any further details?",
+            "placeholder": "E.g.: The page needs to integrate with my email tool, be available in multiple languages..."
+          }
+        },
+        "refonte": {
+          "currentUrl": {
+            "label": "What is your current website address?",
+            "placeholder": "https://www.mysite.com"
+          },
+          "problems": {
+            "label": "Why do you want to redesign your site?",
+            "hint": "Select all that apply.",
+            "options": {
+              "outdated-design": "The design looks outdated",
+              "slow": "The site is slow",
+              "not-mobile": "It doesn't display well on mobile",
+              "hard-to-update": "It's difficult to update",
+              "bad-seo": "It doesn't rank well on Google",
+              "doesnt-reflect-business": "It no longer reflects my current business"
+            }
+          },
+          "toKeep": {
+            "label": "What would you like to keep?",
+            "placeholder": "E.g.: The logo, certain texts, the overall structure, photos..."
+          },
+          "newFeatures": {
+            "label": "Are there new features to add?",
+            "placeholder": "E.g.: A client area, a blog, an online booking system..."
+          }
+        },
+        "developpement-sur-mesure": {
+          "description": {
+            "label": "Describe your technical need",
+            "placeholder": "E.g.: We need an API that retrieves data from our point-of-sale system and automatically emails it to our accountant..."
+          },
+          "integrations": {
+            "label": "Do you need connections to other systems?",
+            "hint": "Check all that apply.",
+            "options": {
+              "third-party-api": "External API or service (Stripe, Mailchimp, Google...)",
+              "database": "Existing database",
+              "existing-software": "Existing business software (ERP, CRM...)",
+              "automation": "Automation of repetitive tasks"
+            }
+          },
+          "other": {
+            "label": "Any further details?",
+            "placeholder": "E.g.: The system must run on our own server, meet specific security standards..."
+          }
+        },
+        "maintenance": {
+          "appUrl": {
+            "label": "What is the address of your site or application?",
+            "placeholder": "https://www.mysite.com"
+          },
+          "interventionTypes": {
+            "label": "What type of work do you need?",
+            "hint": "Check all that apply.",
+            "options": {
+              "bug-fixes": "Bug fixes",
+              "security-updates": "Security updates",
+              "new-features": "Adding new features",
+              "content-changes": "Content updates (text, images)",
+              "performance": "Performance improvements"
+            }
+          },
+          "frequency": {
+            "label": "How often do you need interventions?",
+            "options": {
+              "one-time": "Just once (one-off)",
+              "monthly": "Every month",
+              "weekly": "Every week",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "other": {
+            "label": "Any further details?",
+            "placeholder": "E.g.: The site is built with WordPress, we have an urgent deadline..."
+          }
+        }
+      },
+      "design": {
+        "title": "Design & visual identity",
+        "subtitle": "Tell us about your visual preferences for this project.",
+        "questions": {
+          "existingIdentity": {
+            "label": "Do you already have a visual identity?",
+            "hint": "Logo, brand guidelines, defined colours...",
+            "options": {
+              "logo-and-brand": "Yes, I have a logo and full brand guidelines",
+              "logo-only": "I have a logo but no full guidelines",
+              "nothing": "No, I'm starting from scratch"
+            }
+          },
+          "ambiance": {
+            "label": "Which visual style suits you best?",
+            "hint": "You can select up to 3 styles.",
+            "options": {
+              "modern-clean": "Modern and clean",
+              "professional-corporate": "Professional and corporate",
+              "warm-friendly": "Warm and friendly",
+              "creative-bold": "Creative and bold",
+              "luxurious-elegant": "Luxurious and elegant",
+              "simple-accessible": "Simple and accessible",
+              "young-dynamic": "Young and dynamic",
+              "sober-minimalist": "Sober and minimalist"
+            }
+          },
+          "colorPreferences": {
+            "label": "Do you have any colour preferences?",
+            "placeholder": "E.g.: Navy blue and white, terracotta palette, no green..."
+          },
+          "designInspirations": {
+            "label": "Are there websites whose design you like?",
+            "placeholder": "E.g.: www.apple.com, www.airbnb.com — I like the minimalism and large photos..."
+          },
+          "filesUpload": {
+            "label": "You can upload your files here (logo, brand guidelines, visuals...)",
+            "hint": "PDF, PNG, JPG, WEBP — max 5 MB per file, 5 files maximum"
+          }
+        }
+      },
+      "content": {
+        "title": "Your content",
+        "subtitle": "Let's talk about the texts, photos, and other content for your project.",
+        "full": {
+          "textsReady": {
+            "label": "Are your texts ready?",
+            "options": {
+              "yes": "Yes, all texts are ready",
+              "drafts": "I have drafts to refine",
+              "need-help": "No, I need help writing them"
+            }
+          },
+          "visualsAvailable": {
+            "label": "Do you have photos or visuals available?",
+            "options": {
+              "pro-photos": "Yes, professional photos",
+              "amateur-photos": "Yes, personal photos (smartphone...)",
+              "nothing": "No, we'll need to use royalty-free images"
+            }
+          },
+          "keepContent": {
+            "label": "Do you want to keep content from your current site?",
+            "options": {
+              "yes": "Yes, all or most of it",
+              "partially": "Partially",
+              "no": "No, starting fresh"
+            }
+          }
+        },
+        "light": {
+          "filesUpload": {
+            "label": "You can upload useful documents here",
+            "hint": "Specifications, mockups, examples... PDF, PNG, JPG, WEBP — max 5 MB per file, 5 files maximum"
+          }
+        }
+      },
+      "budget": {
+        "title": "Budget & timeline",
+        "subtitle": "This information helps us tailor our proposal to your situation.",
+        "questions": {
+          "range": {
+            "label": "What budget are you considering for this project?",
+            "hint": "A rough estimate is fine — no commitment required.",
+            "options": {
+              "under-1k": "Less than €1,000",
+              "1k-3k": "€1,000 – €3,000",
+              "3k-5k": "€3,000 – €5,000",
+              "5k-10k": "€5,000 – €10,000",
+              "10k-20k": "€10,000 – €20,000",
+              "over-20k": "More than €20,000",
+              "unsure": "I'm not sure yet"
+            }
+          },
+          "deadline": {
+            "label": "Do you have a deadline or time constraint?",
+            "options": {
+              "urgent": "Urgent (less than a month)",
+              "2-3-months": "Within 2 to 3 months",
+              "6-months": "Within 6 months",
+              "no-deadline": "No particular deadline"
+            }
+          },
+          "communication": {
+            "label": "How do you prefer to communicate?",
+            "hint": "You can choose more than one.",
+            "options": {
+              "email": "By email",
+              "phone": "By phone",
+              "video": "By video call",
+              "in-person": "In person (Lille area)",
+              "no-preference": "No preference"
+            }
+          }
+        }
+      },
+      "summary": {
+        "title": "Summary & submission",
+        "subtitle": "Review your information before sending your brief.",
+        "sectionTitle": "Your project at a glance",
+        "recapLabels": {
+          "projectType": "Project type",
+          "company": "Your company",
+          "goals": "Your goals",
+          "features": "Features",
+          "design": "Design",
+          "content": "Content",
+          "budget": "Budget & timeline"
+        },
+        "contact": {
+          "title": "Your contact details",
+          "subtitle": "So I can get back to you after receiving your brief.",
+          "fullName": {
+            "label": "First and last name",
+            "placeholder": "Jane Smith"
+          },
+          "email": {
+            "label": "Email address",
+            "placeholder": "jane.smith@mycompany.com"
+          },
+          "phone": {
+            "label": "Phone (optional)",
+            "placeholder": "+44 7700 900123"
+          }
+        },
+        "freeComment": {
+          "label": "Any free comment?",
+          "placeholder": "Anything that doesn't fit the boxes... Specific context, urgent deadline, particular question..."
+        },
+        "submit": "Send my brief",
+        "submitting": "Sending...",
+        "recapPages": "{count} page(s)",
+        "recapFeatures": "{count} feature(s)",
+        "recapFiles": "Attached files"
+      }
+    },
+    "ui": {
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "stepOf": "Step {current} of {total}",
+      "optional": "optional",
+      "edit": "Edit",
+      "other": "Other",
+      "backToSummary": "Back to summary",
+      "upload": {
+        "uploading": "Uploading...",
+        "clickToBrowse": "Click to browse",
+        "orDragDrop": "or drag and drop",
+        "formats": "PDF, PNG, JPEG, WebP — max {maxSize}",
+        "fileCount": "{count}/{max} file(s)",
+        "dropzoneLabel": "File drop zone. Click or drag and drop a file.",
+        "removeFile": "Remove {name}",
+        "errorUnsupportedType": "Unsupported type: {type}. Accepted formats: PDF, PNG, JPEG, WebP.",
+        "errorTooLarge": "File too large ({size}). Maximum: {maxSize}.",
+        "errorUploadFailed": "An error occurred during upload. Please try again."
+      },
+      "stepCompleted": "completed",
+      "stepCurrent": "current step",
+      "stepUpcoming": "upcoming"
+    },
+    "validation": {
+      "required": "This field is required.",
+      "maxLength": "This field must not exceed {max} characters.",
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidUrl": "Please enter a valid web address (e.g.: https://www.example.com).",
+      "fileTooLarge": "This file exceeds the maximum allowed size (5 MB).",
+      "fileTypeNotAllowed": "This file type is not accepted. Accepted formats: PDF, PNG, JPG, WEBP.",
+      "maxFilesReached": "You have reached the maximum number of files (5)."
+    },
+    "draft": {
+      "resumeTitle": "Resume your brief",
+      "resumeMessage": "You started a brief recently. Would you like to pick up where you left off?",
+      "resume": "Resume",
+      "restart": "Start over",
+      "expired": "Your draft has expired. You will start from scratch."
+    },
+    "confirmation": {
+      "title": "Brief sent!",
+      "message": "Thank you! I've received your brief and will get back to you within 24 hours to discuss it."
+    },
+    "error": {
+      "title": "Submission error",
+      "message": "An error occurred while sending your brief. Please try again.",
+      "retry": "Try again"
+    }
   }
 }
