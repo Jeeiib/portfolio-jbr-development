@@ -42,14 +42,4 @@ export const projects: Project[] = [
     liveUrl: "https://jay-assistant.fr",
     featured: true,
   },
-  {
-    slug: "rdp-glass",
-    title: "RDP Glass",
-    description: "Application B2B — gestion produits & blog",
-    fullDescription: "Application web complète pour un distributeur de packaging verre B2B. Dashboard d'administration, gestion de catalogue produits, système de blog intégré, et interface client optimisée pour la conversion.",
-    tags: ["JavaScript", "React", "Supabase"],
-    image: "/projects/rdp-glass.webp",
-    liveUrl: "https://rdp-glass.com",
-    featured: true,
-  },
 ];

@@ -44,10 +44,6 @@
         "description": "Portfolio consultant hôtellerie de luxe",
         "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés."
       },
-      "rdp-glass": {
-        "description": "Application B2B — gestion produits & blog",
-        "fullDescription": "Application web complète pour un distributeur de packaging verre B2B. Dashboard d'administration, gestion de catalogue produits, système de blog intégré, et interface client optimisée pour la conversion."
-      },
       "rev-comptabilite": {
         "description": "Application web métier — cabinet comptable",
         "fullDescription": "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase."
