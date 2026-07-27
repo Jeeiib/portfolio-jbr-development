@@ -11,7 +11,9 @@ interface RevealProps {
 
 /**
  * Révélation au scroll unique et sobre (opacity + translateY).
- * Inerte si prefers-reduced-motion (géré en CSS, .reveal).
+ * Le contenu est visible par défaut (SEO, no-JS) : le masquage n'est
+ * appliqué qu'en JS, et uniquement aux éléments encore sous le viewport.
+ * Inerte si prefers-reduced-motion.
  */
 export default function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -21,15 +23,23 @@ export default function Reveal({ children, delay = 0, className = "" }: RevealPr
     if (!el) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      el.classList.add("is-visible");
+      return; // reste visible, aucune animation
+    }
+
+    // Ne masquer que ce qui est encore nettement sous le viewport :
+    // ce qui est déjà visible ne doit jamais clignoter.
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.9) {
       return;
     }
+
+    el.classList.add("reveal-hidden");
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            entry.target.classList.remove("reveal-hidden");
             observer.unobserve(entry.target);
           }
         }
