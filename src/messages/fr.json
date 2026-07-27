@@ -27,9 +27,9 @@
     }
   },
   "projects": {
-    "label": "Portfolio",
-    "title": "Mes projets récents",
-    "subtitle": "Des applications web conçues pour répondre aux besoins réels de mes clients.",
+    "label": "Preuves",
+    "title": "Ils m'ont fait confiance",
+    "subtitle": "Trois projets livrés, trois patrons qui racontent. Les avis sont publics et vérifiables sur Google.",
     "viewProject": "Voir le projet",
     "visitSite": "Site",
     "backToHome": "Retour à l'accueil",
@@ -49,17 +49,40 @@
     "items": {
       "jay": {
         "description": "Assistant IA pour commerciaux — Seul développeur",
-        "fullDescription": "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email."
+        "fullDescription": "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email.",
+        "clientRole": "Assistant IA pour commerciaux",
+        "problem": "Les commerciaux perdent des heures à ressaisir leurs notes dans le CRM après chaque rendez-vous.",
+        "delivered": "Un assistant IA sur WhatsApp : une note vocale suffit, le CRM et l'agenda se mettent à jour automatiquement.",
+        "result": "Six CRM majeurs connectés : HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader.",
+        "quote": "",
+        "quoteAuthor": ""
       },
       "nicolas-steinberg": {
         "description": "Portfolio consultant hôtellerie de luxe",
-        "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés."
+        "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés.",
+        "clientRole": "Consultant en hôtellerie de luxe",
+        "problem": "Dans l'hôtellerie de luxe, l'image est tout : son site est sa carte de visite auprès de palaces et d'investisseurs exigeants.",
+        "delivered": "Un portfolio épuré au niveau d'exigence de son secteur : design premium, animations fines, chargement instantané.",
+        "result": "Lighthouse 97/100 en performance et 100/100 en SEO.",
+        "quote": "Il est rare de trouver des profils capables de traduire une vision stratégique complexe en une interface d'une telle précision.",
+        "quoteAuthor": "Nicolas Steinberg"
       },
       "rev-comptabilite": {
         "description": "Application web métier — cabinet comptable",
-        "fullDescription": "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase."
+        "fullDescription": "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase.",
+        "clientRole": "Cabinet d'expertise comptable — Wambrechies",
+        "problem": "Le cabinet gérait rendez-vous et échanges clients par téléphone et par mail, avec des allers-retours sans fin pour l'équipe.",
+        "delivered": "Un espace client sécurisé avec prise de rendez-vous en ligne synchronisée Outlook, notifications automatiques et accès par rôles pour l'équipe comme pour les clients.",
+        "result": "La prise de rendez-vous en ligne, synchronisée avec l'agenda du cabinet, est opérationnelle au quotidien.",
+        "quote": "Je suis ravie du rendu ainsi que de la prestation réalisée avec méthodologie et professionnalisme, avec des points d'avancée réguliers.",
+        "quoteAuthor": "REV Comptabilité"
       }
-    }
+    },
+    "problemLabel": "Le problème",
+    "deliveredLabel": "Ce que j'ai livré",
+    "resultLabel": "Résultat",
+    "viewReview": "Lire l'avis sur Google",
+    "ownProduct": "Mon propre produit"
   },
   "services": {
     "label": "Services",
@@ -1147,5 +1170,12 @@
       "message": "Une erreur est survenue lors de l'envoi de votre brief. Veuillez réessayer.",
       "retry": "Réessayer"
     }
+  },
+  "proofStrip": {
+    "rating": "5,0",
+    "ratingLabel": "sur Google",
+    "clients": "entreprises accompagnées",
+    "area": "Lille et métropole",
+    "response": "Réponse sous 24 h"
   }
 }

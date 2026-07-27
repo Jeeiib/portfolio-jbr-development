@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/ui/Navigation";
 import Hero from "@/components/sections/Hero";
+import ProofStrip from "@/components/sections/ProofStrip";
 import Projects from "@/components/sections/Projects";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
-import About from "@/components/sections/About";
-import Testimonial from "@/components/sections/Testimonial";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
@@ -39,11 +38,10 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <ProofStrip />
         <Projects />
         <Services />
         <Process />
-        <About />
-        <Testimonial />
         <FAQ />
         <Contact />
       </main>

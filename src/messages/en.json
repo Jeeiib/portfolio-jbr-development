@@ -27,9 +27,9 @@
     }
   },
   "projects": {
-    "label": "Portfolio",
-    "title": "Recent projects",
-    "subtitle": "Web applications designed to meet my clients' real needs.",
+    "label": "Proof",
+    "title": "They trusted me",
+    "subtitle": "Three delivered projects, three business owners who tell the story. Reviews are public and verifiable on Google.",
     "viewProject": "View project",
     "visitSite": "Site",
     "backToHome": "Back to home",
@@ -49,17 +49,40 @@
     "items": {
       "jay": {
         "description": "AI assistant for sales teams — Solo developer",
-        "fullDescription": "Jay is a conversational AI assistant accessible via WhatsApp that enables professionals to manage their CRMs and calendars through voice. Users send a voice note describing what they want to do, and Jay transcribes, analyzes, and automatically executes the corresponding actions in connected systems. Supports 6 major CRMs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), calendar and email integrations."
+        "fullDescription": "Jay is a conversational AI assistant accessible via WhatsApp that enables professionals to manage their CRMs and calendars through voice. Users send a voice note describing what they want to do, and Jay transcribes, analyzes, and automatically executes the corresponding actions in connected systems. Supports 6 major CRMs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), calendar and email integrations.",
+        "clientRole": "AI assistant for sales teams",
+        "problem": "Salespeople lose hours re-typing their notes into the CRM after every meeting.",
+        "delivered": "An AI assistant on WhatsApp: one voice note and the CRM and calendar update themselves.",
+        "result": "Six major CRMs connected: HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader.",
+        "quote": "",
+        "quoteAuthor": ""
       },
       "nicolas-steinberg": {
         "description": "Luxury hospitality consultant portfolio",
-        "fullDescription": "Portfolio website for a luxury hospitality consultant. Premium and refined design reflecting the luxury world. Smooth scroll animations, impeccable Lighthouse scores (97/100 performance, 100/100 SEO). Integration of custom strategic tools."
+        "fullDescription": "Portfolio website for a luxury hospitality consultant. Premium and refined design reflecting the luxury world. Smooth scroll animations, impeccable Lighthouse scores (97/100 performance, 100/100 SEO). Integration of custom strategic tools.",
+        "clientRole": "Luxury hospitality consultant",
+        "problem": "In luxury hospitality, image is everything: his website is his business card for demanding hotels and investors.",
+        "delivered": "A refined portfolio matching his industry's standards: premium design, subtle animations, instant loading.",
+        "result": "Lighthouse 97/100 performance and 100/100 SEO.",
+        "quote": "It's rare to find people who can translate a complex strategic vision into such a precise interface.",
+        "quoteAuthor": "Nicolas Steinberg"
       },
       "rev-comptabilite": {
         "description": "Business web application — accounting firm",
-        "fullDescription": "Business web application built for the accounting firm REV Comptabilité (Wambrechies). Microsoft Azure AD SSO authentication, client portal with online appointment booking, Outlook calendar sync via Microsoft Graph API, automated email notifications with Resend, and multi-role management (admin, accountant, associate, client) with Row-Level Security permissions on all Supabase tables."
+        "fullDescription": "Business web application built for the accounting firm REV Comptabilité (Wambrechies). Microsoft Azure AD SSO authentication, client portal with online appointment booking, Outlook calendar sync via Microsoft Graph API, automated email notifications with Resend, and multi-role management (admin, accountant, associate, client) with Row-Level Security permissions on all Supabase tables.",
+        "clientRole": "Accounting firm — Wambrechies",
+        "problem": "The firm handled appointments and client exchanges by phone and email, with endless back-and-forth for the team.",
+        "delivered": "A secure client portal with online appointment booking synced to Outlook, automatic notifications and role-based access.",
+        "result": "Online booking, synced with the firm's calendar, is in daily use.",
+        "quote": "I am delighted with the result and the service, carried out with methodology and professionalism, with regular progress updates.",
+        "quoteAuthor": "REV Comptabilité"
       }
-    }
+    },
+    "problemLabel": "The problem",
+    "deliveredLabel": "What I delivered",
+    "resultLabel": "Result",
+    "viewReview": "Read the review on Google",
+    "ownProduct": "My own product"
   },
   "services": {
     "label": "Services",
@@ -1147,5 +1170,12 @@
       "message": "An error occurred while sending your brief. Please try again.",
       "retry": "Try again"
     }
+  },
+  "proofStrip": {
+    "rating": "5.0",
+    "ratingLabel": "on Google",
+    "clients": "businesses supported",
+    "area": "Lille metro area",
+    "response": "Reply within 24 hours"
   }
 }

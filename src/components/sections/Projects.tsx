@@ -1,321 +1,149 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { useRef, useState, useCallback, useEffect } from "react";
 
+/**
+ * Le mur de preuves : chaque projet livré raconté comme l'histoire d'un
+ * patron (problème → livré → résultat), avec l'avis Google réel du client.
+ * Toutes les preuves sont visibles d'un coup — pas de carrousel.
+ */
 export default function Projects() {
   const t = useTranslations("projects");
+  const locale = useLocale();
   const { trackEvent } = useAnalytics();
   const featuredProjects = projects.filter((p) => p.featured);
-  const total = featuredProjects.length;
-  const { ref: sectionRef, isVisible } =
-    useScrollAnimation<HTMLElement>({ threshold: 0.15 });
-
-  const [current, setCurrent] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const touchStartX = useRef(0);
-  const touchStartY = useRef(0);
-
-  const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % total);
-  }, [total]);
-
-  const prev = useCallback(() => {
-    setCurrent((prev) => (prev - 1 + total) % total);
-  }, [total]);
-
-  const goTo = useCallback((index: number) => {
-    setCurrent(index);
-  }, []);
-
-  // Auto-play — restarts on every slide change, pauses on hover/touch
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(next, 6000);
-    return () => clearInterval(timer);
-  }, [isPaused, current, next]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [next, prev]);
-
-  // Touch swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const dx = touchStartX.current - e.changedTouches[0].clientX;
-    const dy = touchStartY.current - e.changedTouches[0].clientY;
-    const isSwipe = Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy);
-    if (isSwipe) {
-      dx > 0 ? next() : prev();
-    }
-    // Only toggle pause state on real swipes, not on taps.
-    // Toggling isPaused on every touch causes re-renders that
-    // reset the progress bar animation and cancel Link navigation on iOS.
-  };
-
-  const ArrowButton = ({
-    direction,
-    className = "",
-  }: {
-    direction: "left" | "right";
-    className?: string;
-  }) => (
-    <button
-      onClick={direction === "left" ? prev : next}
-      className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[var(--background)]/80 backdrop-blur-sm border border-[var(--border)] flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-[var(--accent-foreground)] hover:scale-110 ${className}`}
-      aria-label={direction === "left" ? "Projet précédent" : "Projet suivant"}
-    >
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d={direction === "left" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"}
-        />
-      </svg>
-    </button>
-  );
 
   return (
-    <section
-      id="projets"
-      ref={sectionRef}
-      className="py-24 md:py-32 bg-[var(--background)]"
-    >
-      {/* Section Header */}
+    <section id="projets" className="py-24 md:py-32">
       <div className="section-container">
-        <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
-          }`}
-        >
-          <span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            {t("label")}
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            {t("title")}
-          </h2>
-          <p className="text-[var(--foreground-secondary)] max-w-2xl mx-auto">
-            {t("subtitle")}
-          </p>
-        </div>
-      </div>
-
-      {/* Carousel with side arrows on desktop */}
-      <div
-        className={`transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-        }`}
-        style={{ transitionDelay: "200ms" }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <div className="flex items-center gap-4 lg:gap-6 max-w-[1400px] mx-auto px-4 sm:px-6">
-          {/* Left Arrow — desktop only */}
-          <div className="hidden lg:block shrink-0">
-            <ArrowButton direction="left" />
+        {/* En-tête de section */}
+        <Reveal>
+          <div className="mb-16 max-w-2xl">
+            <p className="annotation-accent mb-4">{t("label")}</p>
+            <h2 className="display-xl mb-4">{t("title")}</h2>
+            <p className="text-[var(--foreground-secondary)]">{t("subtitle")}</p>
           </div>
+        </Reveal>
 
-          {/* Slide Container */}
-          <div className="flex-1 min-w-0">
-            <div
-              className="overflow-hidden rounded-2xl"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div
-                className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-                style={{ transform: `translateX(-${current * 100}%)` }}
+        {/* Cartes histoires */}
+        <div className="flex flex-col gap-16 md:gap-20">
+          {featuredProjects.map((p, index) => (
+            <Reveal key={p.slug}>
+              <article
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center ${
+                  index % 2 === 1 ? "lg:[direction:rtl]" : ""
+                }`}
               >
-                {featuredProjects.map((p, index) => (
-                  <div key={p.slug} className="w-full shrink-0 px-1">
-                    <div className="bg-[var(--background-card)] border border-[var(--border)] rounded-2xl overflow-hidden lg:h-[500px]">
-                      <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] h-full">
-                        {/* Browser Mockup + Image */}
-                        <Link
-                          href={`/projets/${p.slug}`}
-                          className="flex flex-col overflow-hidden bg-[var(--terminal-bg)] group h-full"
-                          onClick={() => trackEvent("project_view", { slug: p.slug })}
-                        >
-                          {/* Browser Chrome */}
-                          <div className="shrink-0 bg-[var(--terminal-header)] px-4 py-2.5 flex items-center gap-2 border-b border-[var(--border)]">
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                            {p.liveUrl && (
-                              <div className="flex-1 mx-4">
-                                <span className="block max-w-[220px] mx-auto text-[11px] text-[var(--foreground-secondary)] text-center bg-[var(--background-secondary)]/50 rounded-md px-3 py-0.5 truncate">
-                                  {p.liveUrl.replace("https://", "").replace("www.", "")}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-
-                          {/* Screenshot */}
-                          <div className="relative aspect-[16/10] lg:aspect-auto lg:flex-1 overflow-hidden">
-                            <Image
-                              src={p.image}
-                              alt={p.title}
-                              fill
-                              className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
-                              sizes="(max-width: 1024px) 100vw, 55vw"
-                              priority={index === 0}
-                            />
-                          </div>
-                        </Link>
-
-                        {/* Content */}
-                        <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center overflow-hidden">
-                          <span className="text-xs font-mono text-[var(--foreground-secondary)] tracking-[0.2em] mb-4 lg:mb-6">
-                            {String(index + 1).padStart(2, "0")} /{" "}
-                            {String(total).padStart(2, "0")}
-                          </span>
-
-                          <Link
-                            href={`/projets/${p.slug}`}
-                            onClick={() => trackEvent("project_view", { slug: p.slug })}
-                          >
-                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 hover:text-[var(--accent)] transition-colors">
-                              {p.title}
-                            </h3>
-                          </Link>
-
-                          <p className="text-[var(--foreground-secondary)] mb-6 leading-relaxed text-sm sm:text-base line-clamp-4 lg:line-clamp-5">
-                            {t(`items.${p.slug}.fullDescription`)}
-                          </p>
-
-                          {/* Tags */}
-                          <div className="flex flex-wrap gap-2 mb-6 lg:mb-8">
-                            {p.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="px-3 py-1 text-xs font-medium bg-[var(--accent)]/10 text-[var(--accent)] rounded-full"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-
-                          {/* Links */}
-                          <div className="flex flex-wrap items-center gap-3">
-                            <Link
-                              href={`/projets/${p.slug}`}
-                              className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-[var(--accent)] btn-primary-text font-semibold rounded-lg hover:bg-[var(--accent-hover)] transition-colors text-sm"
-                              onClick={() => trackEvent("project_view", { slug: p.slug })}
-                            >
-                              {t("viewProject")}
-                              <svg
-                                className="ml-2 w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                />
-                              </svg>
-                            </Link>
-                            {p.liveUrl && (
-                              <a
-                                href={p.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 border border-[var(--border)] rounded-lg text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
-                                onClick={() => trackEvent("external_link_click", { url: p.liveUrl! })}
-                              >
-                                <svg
-                                  className="w-4 h-4 mr-2"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                  />
-                                </svg>
-                                {t("visitSite")}
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </div>
+                {/* Capture dans un cadre navigateur */}
+                <Link
+                  href={`/${locale}/projets/${p.slug}`}
+                  onClick={() => trackEvent("project_view", { slug: p.slug })}
+                  className="group block [direction:ltr]"
+                >
+                  <div className="bg-[var(--background-card)] border border-[var(--border)] rounded-xl overflow-hidden transition-colors group-hover:border-[var(--accent)]">
+                    <div className="flex items-center gap-2 px-4 py-2.5 bg-[var(--background-secondary)] border-b border-[var(--border)]">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--border)]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--border)]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--border)]" />
+                      {p.liveUrl && (
+                        <span className="ml-3 font-[family-name:var(--font-jetbrains-mono)] text-[11px] text-[var(--foreground-secondary)] truncate">
+                          {p.liveUrl.replace("https://", "").replace("www.", "")}
+                        </span>
+                      )}
+                    </div>
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        priority={index === 0}
+                      />
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
+                </Link>
 
-          {/* Right Arrow — desktop only */}
-          <div className="hidden lg:block shrink-0">
-            <ArrowButton direction="right" />
-          </div>
-        </div>
+                {/* Histoire */}
+                <div className="[direction:ltr]">
+                  <div className="flex flex-wrap items-center gap-2 mb-5">
+                    <span className="tag-chantier">
+                      {p.clientName ?? t("ownProduct")}
+                    </span>
+                    <span className="annotation">{t(`items.${p.slug}.clientRole`)}</span>
+                  </div>
 
-        {/* Bottom controls: arrows (mobile) + dots */}
-        <div className="flex justify-center items-center gap-4 mt-8">
-          {/* Left Arrow — mobile only */}
-          <div className="lg:hidden">
-            <ArrowButton direction="left" />
-          </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6">
+                    <Link
+                      href={`/${locale}/projets/${p.slug}`}
+                      onClick={() => trackEvent("project_view", { slug: p.slug })}
+                      className="hover:text-[var(--accent)] transition-colors"
+                    >
+                      {p.title}
+                    </Link>
+                  </h3>
 
-          {/* Dots with progress */}
-          <div className="flex items-center gap-3">
-            {featuredProjects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goTo(index)}
-                className={`relative h-2 rounded-full cursor-pointer transition-all duration-500 overflow-hidden ${
-                  current === index
-                    ? "w-10 bg-[var(--accent)]/20"
-                    : "w-2 bg-[var(--border)] hover:bg-[var(--foreground-secondary)]"
-                }`}
-                aria-label={`Aller au projet ${index + 1}`}
-              >
-                {current === index && (
-                  <span
-                    key={`${current}-${isPaused}`}
-                    className="absolute inset-0 bg-[var(--accent)] rounded-full"
-                    style={{
-                      transformOrigin: "left",
-                      animation: isPaused
-                        ? "none"
-                        : "carousel-progress 6s linear forwards",
-                      transform: isPaused ? "scaleX(1)" : undefined,
-                    }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
+                  <div className="flex flex-col gap-4 mb-6">
+                    <div>
+                      <p className="annotation mb-1">{t("problemLabel")}</p>
+                      <p className="text-[var(--foreground-secondary)]">
+                        {t(`items.${p.slug}.problem`)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="annotation mb-1">{t("deliveredLabel")}</p>
+                      <p className="text-[var(--foreground-secondary)]">
+                        {t(`items.${p.slug}.delivered`)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="annotation mb-1">{t("resultLabel")}</p>
+                      <p className="proof text-base">{t(`items.${p.slug}.result`)}</p>
+                    </div>
+                  </div>
 
-          {/* Right Arrow — mobile only */}
-          <div className="lg:hidden">
-            <ArrowButton direction="right" />
-          </div>
+                  {/* Avis Google réel */}
+                  {t(`items.${p.slug}.quote`) !== "" && p.googleReviewUrl && (
+                    <blockquote className="border-l-2 border-[var(--accent)] pl-4 mb-6">
+                      <p className="text-sm italic text-[var(--foreground-secondary)] mb-2">
+                        « {t(`items.${p.slug}.quote`)} »
+                      </p>
+                      <footer className="flex flex-wrap items-center gap-3 text-sm">
+                        <span className="font-semibold">
+                          {t(`items.${p.slug}.quoteAuthor`)}
+                        </span>
+                        <a
+                          href={p.googleReviewUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() =>
+                            trackEvent("google_review_click", { from: `project-${p.slug}` })
+                          }
+                          className="annotation-accent hover:opacity-80 transition-opacity"
+                        >
+                          {t("viewReview")} →
+                        </a>
+                      </footer>
+                    </blockquote>
+                  )}
+
+                  <Link
+                    href={`/${locale}/projets/${p.slug}`}
+                    onClick={() => trackEvent("project_view", { slug: p.slug })}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
+                  >
+                    {t("viewProject")}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

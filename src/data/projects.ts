@@ -8,6 +8,10 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
+  /** Nom public du client (avis Google) — absent pour un produit maison */
+  clientName?: string;
+  /** Lien vers l'avis Google public correspondant */
+  googleReviewUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -20,6 +24,8 @@ export const projects: Project[] = [
     image: "/projects/rev-comptabilite.webp",
     liveUrl: "https://www.revcomptabilite.fr",
     featured: true,
+    clientName: "REV Comptabilité",
+    googleReviewUrl: "https://share.google/PT1KkKAtY4UwzpxUn",
   },
   {
     slug: "nicolas-steinberg",
@@ -31,6 +37,8 @@ export const projects: Project[] = [
     liveUrl: "https://nicolassteinberg.com",
     githubUrl: "https://github.com/Jeeiib/nicolas-steinberg-portfolio",
     featured: true,
+    clientName: "Nicolas Steinberg",
+    googleReviewUrl: "https://share.google/TrBD8GioYeNPAUJ37",
   },
   {
     slug: "jay",
