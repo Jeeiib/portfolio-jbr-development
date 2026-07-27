@@ -313,7 +313,7 @@
       "label": "Mes services",
       "title": "Des solutions adaptées à vos besoins",
       "pricing": "Tarif",
-      "onQuote": "Sur devis - Devis gratuit sous 24h",
+      "onQuote": "Sur devis - Devis gratuit sous 48 h",
       "items": {
         "siteVitrine": {
           "title": "Site Vitrine",
@@ -345,7 +345,8 @@
             "4": "Analytics intégrés"
           }
         }
-      }
+      },
+      "pricingFrom": "dès {price} € HT"
     },
     "faq": {
       "label": "Questions fréquentes"
@@ -357,7 +358,8 @@
       "address": "Adresse",
       "phone": "Téléphone",
       "onGoogle": "sur Google"
-    }
+    },
+    "googleReviewsCount": "3 avis Google vérifiés"
   },
   "aboutPage": {
     "meta": {
@@ -447,7 +449,7 @@
     "developpeur-web-lille": {
       "meta": {
         "title": "Développeur Web Freelance Lille | JBR Development",
-        "description": "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js. Devis gratuit sous 24h."
+        "description": "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js. Devis gratuit sous 48 h."
       },
       "hero": {
         "label": "Développeur Web à Lille",

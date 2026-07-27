@@ -6,7 +6,9 @@ import Footer from "@/components/sections/Footer";
 import ContactForm from "@/components/ui/ContactForm";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { landingFAQs, whyChooseMe } from "@/data/landingPages";
+import { landingFAQs, whyChooseMe, featureOffer } from "@/data/landingPages";
+import { siteConfig } from "@/data/siteConfig";
+import BriefCTA from "@/components/ui/BriefCTA";
 import LandingFAQ from "@/components/landing/LandingFAQ";
 
 interface PageProps {
@@ -74,7 +76,6 @@ export default async function ApplicationWebSurMesurePage({ params }: PageProps)
       <Navigation />
       <main className="pt-20">
         <section className="py-16 md:py-24 bg-[var(--background)] relative overflow-hidden">
-          <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-[var(--accent)] rounded-full blur-[180px] opacity-[0.08]" />
           <div className="section-container relative z-10">
             <div className="max-w-3xl">
               <span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">{t(`${SLUG}.hero.label`)}</span>
@@ -82,8 +83,7 @@ export default async function ApplicationWebSurMesurePage({ params }: PageProps)
               <p className="text-xl text-[var(--foreground-secondary)] mb-6 leading-relaxed">{t(`${SLUG}.hero.subtitle`)}</p>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--background-card)] border border-[var(--border)] rounded-full mb-8">
                 <div className="flex text-yellow-400">{[...Array(5)].map((_, i) => (<svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>))}</div>
-                <span className="text-sm font-medium">5/5</span>
-                <span className="text-sm text-[var(--foreground-secondary)]">• 2 {tCommon("googleReviews")}</span>
+                <span className="text-sm font-medium">5/5</span><span className="text-sm text-[var(--foreground-secondary)]">• {tCommon("googleReviewsCount")}</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] btn-primary-text font-semibold rounded-lg hover:bg-[var(--accent-hover)] transition-colors">{tCommon("cta.quote")}</a>
@@ -104,7 +104,7 @@ export default async function ApplicationWebSurMesurePage({ params }: PageProps)
           <div className="section-container">
             <div className="text-center mb-12"><span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">{tCommon("services.label")}</span><h2 className="text-3xl sm:text-4xl font-bold">{tCommon("services.title")}</h2></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {["siteVitrine", "applicationWeb", "landingPage"].map((service) => (<div key={service} className="group flex flex-col p-8 bg-[var(--background-card)] border border-[var(--border)] rounded-2xl transition-all duration-300 hover:border-[var(--accent)]"><div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] mb-6 group-hover:bg-[var(--accent)] group-hover:text-[var(--background)] transition-all duration-300">{serviceIcons[service === "siteVitrine" ? "globe" : service === "applicationWeb" ? "layout" : "rocket"]}</div><h3 className="text-xl font-semibold mb-3 group-hover:text-[var(--accent)] transition-colors">{tCommon(`services.items.${service}.title`)}</h3><p className="text-[var(--foreground-secondary)] mb-4 leading-relaxed">{tCommon(`services.items.${service}.description`)}</p><ul className="space-y-2 mb-6 flex-grow">{[1,2,3,4].map((i) => (<li key={i} className="flex items-center text-sm text-[var(--foreground-secondary)]"><svg className="w-4 h-4 text-[var(--accent)] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>{tCommon(`services.items.${service}.features.${i}`)}</li>))}</ul><p className="text-sm text-[var(--foreground-secondary)] mt-auto pt-4 border-t border-[var(--border)]"><span className="font-medium text-[var(--foreground)]">{tCommon("services.pricing")}:</span> {tCommon("services.onQuote")}</p></div>))}
+              {["siteVitrine", "applicationWeb", "landingPage"].map((service) => (<div key={service} className="group flex flex-col p-8 bg-[var(--background-card)] border border-[var(--border)] rounded-2xl transition-all duration-300 hover:border-[var(--accent)]"><div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] mb-6 group-hover:bg-[var(--accent)] group-hover:text-[var(--background)] transition-all duration-300">{serviceIcons[service === "siteVitrine" ? "globe" : service === "applicationWeb" ? "layout" : "rocket"]}</div><h3 className="text-xl font-semibold mb-3 group-hover:text-[var(--accent)] transition-colors">{tCommon(`services.items.${service}.title`)}</h3><p className="text-[var(--foreground-secondary)] mb-4 leading-relaxed">{tCommon(`services.items.${service}.description`)}</p><ul className="space-y-2 mb-6 flex-grow">{[1,2,3,4].map((i) => (<li key={i} className="flex items-center text-sm text-[var(--foreground-secondary)]"><svg className="w-4 h-4 text-[var(--accent)] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>{tCommon(`services.items.${service}.features.${i}`)}</li>))}</ul><p className="text-sm text-[var(--foreground-secondary)] mt-auto pt-4 border-t border-[var(--border)]"><span className="proof">{tCommon("services.pricingFrom", { price: new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-US").format(siteConfig.prices[featureOffer[service]].from) })}</span></p></div>))}
             </div>
           </div>
         </section>
@@ -114,6 +114,7 @@ export default async function ApplicationWebSurMesurePage({ params }: PageProps)
             <LandingFAQ slug={SLUG} items={faqItems} />
           </div>
         </section>
+        <BriefCTA from={SLUG} />
         <section id="contact" className="py-16 md:py-24 bg-[var(--background)]">
           <div className="section-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

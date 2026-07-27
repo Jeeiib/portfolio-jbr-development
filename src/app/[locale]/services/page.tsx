@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { landingPages } from "@/data/landingPages";
+import BriefCTA from "@/components/ui/BriefCTA";
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -67,12 +68,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         <section className="py-16 md:py-24 bg-[var(--background)]">
           <div className="section-container">
             <div className="text-center max-w-3xl mx-auto">
-              <span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-                {t("label")}
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                {t("title")}
-              </h1>
+              <span className="annotation-accent block mb-4">{t("label")}</span>
+              <h1 className="display-xl mb-6">{t("title")}</h1>
               <p className="text-xl text-[var(--foreground-secondary)] leading-relaxed">
                 {t("subtitle")}
               </p>
@@ -124,22 +121,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-24 bg-[var(--background)]">
-          <div className="section-container text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              {t("cta.title")}
-            </h2>
-            <p className="text-[var(--foreground-secondary)] mb-8 max-w-xl mx-auto">
-              {t("cta.description")}
-            </p>
-            <Link
-              href={`/${locale}#contact`}
-              className="inline-flex items-center px-8 py-4 bg-[var(--accent)] btn-primary-text font-semibold rounded-lg hover:bg-[var(--accent-hover)] transition-colors"
-            >
-              {t("cta.button")}
-            </Link>
-          </div>
-        </section>
+        <BriefCTA from="services-hub" />
       </main>
       <Footer />
     </>

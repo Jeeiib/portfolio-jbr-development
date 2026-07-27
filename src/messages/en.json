@@ -345,7 +345,8 @@
             "4": "Integrated analytics"
           }
         }
-      }
+      },
+      "pricingFrom": "from €{price} excl. VAT"
     },
     "faq": {
       "label": "Frequently Asked Questions"
@@ -357,7 +358,8 @@
       "address": "Address",
       "phone": "Phone",
       "onGoogle": "on Google"
-    }
+    },
+    "googleReviewsCount": "3 verified Google reviews"
   },
   "aboutPage": {
     "meta": {
@@ -447,7 +449,7 @@
     "developpeur-web-lille": {
       "meta": {
         "title": "Freelance Web Developer Lille | JBR Development",
-        "description": "Freelance web developer in Lille. Custom website and web application creation. React, Next.js expert. Free quote within 24h."
+        "description": "Freelance web developer in Lille. Custom website and web application creation. React, Next.js expert. Free quote within 48h."
       },
       "hero": {
         "label": "Web Developer in Lille",

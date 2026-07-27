@@ -62,6 +62,20 @@ export const landingFAQs: Record<string, FAQItem[]> = {
   ],
 };
 
+/** Offre de la grille tarifaire correspondant à chaque service des landings */
+export const featureOffer: Record<string, "vitrine" | "surMesure"> = {
+  siteVitrine: "vitrine",
+  landingPage: "vitrine",
+  refonte: "vitrine",
+  sitePerformant: "vitrine",
+  seo: "vitrine",
+  applicationWeb: "surMesure",
+  ecommerce: "surMesure",
+  dashboard: "surMesure",
+  outilMetier: "surMesure",
+  api: "surMesure",
+};
+
 export const whyChooseMe = [
   { key: "local", icon: "mapPin" },
   { key: "interlocuteur", icon: "user" },

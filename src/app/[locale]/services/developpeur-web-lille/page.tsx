@@ -6,7 +6,9 @@ import Footer from "@/components/sections/Footer";
 import ContactForm from "@/components/ui/ContactForm";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { landingFAQs, whyChooseMe } from "@/data/landingPages";
+import { landingFAQs, whyChooseMe, featureOffer } from "@/data/landingPages";
+import { siteConfig } from "@/data/siteConfig";
+import BriefCTA from "@/components/ui/BriefCTA";
 import LandingFAQ from "@/components/landing/LandingFAQ";
 
 interface PageProps {
@@ -129,7 +131,6 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
       <main className="pt-20">
         {/* Hero */}
         <section className="py-16 md:py-24 bg-[var(--background)] relative overflow-hidden">
-          <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-[var(--accent)] rounded-full blur-[180px] opacity-[0.08]" />
 
           <div className="section-container relative z-10">
             <div className="max-w-3xl">
@@ -152,8 +153,7 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
                     </svg>
                   ))}
                 </div>
-                <span className="text-sm font-medium">5/5</span>
-                <span className="text-sm text-[var(--foreground-secondary)]">• 2 {tCommon("googleReviews")}</span>
+                <span className="text-sm font-medium">5/5</span><span className="text-sm text-[var(--foreground-secondary)]">• {tCommon("googleReviewsCount")}</span>
               </div>
 
               {/* CTAs */}
@@ -249,7 +249,7 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
                     ))}
                   </ul>
                   <p className="text-sm text-[var(--foreground-secondary)] mt-auto pt-4 border-t border-[var(--border)]">
-                    <span className="font-medium text-[var(--foreground)]">{tCommon("services.pricing")}:</span> {tCommon("services.onQuote")}
+                    <span className="proof">{tCommon("services.pricingFrom", { price: new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-US").format(siteConfig.prices[featureOffer[service]].from) })}</span>
                   </p>
                 </div>
               ))}
@@ -274,6 +274,7 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
         </section>
 
         {/* Contact */}
+        <BriefCTA from={SLUG} />
         <section id="contact" className="py-16 md:py-24 bg-[var(--background)]">
           <div className="section-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
