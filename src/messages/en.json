@@ -73,7 +73,7 @@
         "clientRole": "Accounting firm — Wambrechies",
         "problem": "The firm handled appointments and client exchanges by phone and email, with endless back-and-forth for the team.",
         "delivered": "A secure client portal with online appointment booking synced to Outlook, automatic notifications and role-based access.",
-        "result": "Online booking, synced with the firm's calendar, is in daily use.",
+        "result": "Online appointment booking synced with the firm's Outlook calendar, live on revcomptabilite.fr.",
         "quote": "I am delighted with the result and the service, carried out with methodology and professionalism, with regular progress updates.",
         "quoteAuthor": "REV Comptabilité"
       }
@@ -160,37 +160,6 @@
       "submitting": "Sending...",
       "success": "Message sent successfully! I'll get back to you shortly.",
       "error": "An error occurred. Please try again or contact me directly by email."
-    }
-  },
-  "testimonial": {
-    "label": "Testimonials",
-    "title": "What they say",
-    "viewOnGoogle": "View on Google",
-    "items": {
-      "nicolas": {
-        "quote": "It's rare to find people who can translate a complex strategic vision into such a precise interface. The result exceeds the usual market standards. A valuable collaborator for those who tolerate no approximation. An expert to work with while he's still available, because this level of execution is a",
-        "quoteHighlight": "rare find.",
-        "author": "Nicolas Steinberg",
-        "role": "Luxury hospitality consultant",
-        "initials": "NS",
-        "link": "https://share.google/TrBD8GioYeNPAUJ37"
-      },
-      "thierry": {
-        "quote": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was",
-        "quoteHighlight": "simply perfect.",
-        "author": "Thierry Dehon",
-        "role": "CEO of RDP Glass",
-        "initials": "TD",
-        "link": "https://share.google/LPCNCjqZRBPBRaVjv"
-      },
-      "corinne": {
-        "quote": "JBR Development built my new website for my accounting firm. I am delighted with the result and the service, carried out with methodology and professionalism with regular progress updates to meet my expectations!",
-        "quoteHighlight": "Highly recommended!",
-        "author": "REV Comptabilité",
-        "role": "Accounting firm",
-        "initials": "RC",
-        "link": "https://share.google/PT1KkKAtY4UwzpxUn"
-      }
     }
   },
   "process": {
