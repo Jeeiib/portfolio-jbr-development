@@ -4,7 +4,10 @@
     "services": "Services",
     "about": "À propos",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tarifs": "Tarifs",
+    "estimate": "Estimer mon projet",
+    "callAria": "Appeler Jean-Baptiste"
   },
   "hero": {
     "available": "Disponible pour vos projets",
@@ -214,7 +217,13 @@
   },
   "footer": {
     "services": "Nos services",
-    "copyright": "JBR Development - Tous droits réservés"
+    "copyright": "JBR Development - Tous droits réservés",
+    "tagline": "Développeur web indépendant à Lille. Sites et outils sur mesure pour TPE et PME.",
+    "areaLine": "Lille et métropole — à distance partout en France",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "responseLine": "Réponse sous 24 h",
+    "reviews": "sur Google — avis vérifiés"
   },
   "notFound": {
     "title": "Oups !",

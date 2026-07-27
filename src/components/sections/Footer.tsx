@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import SmoothScrollLink from "@/components/ui/SmoothScrollLink";
+import { siteConfig } from "@/data/siteConfig";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const socialLinks = [
   {
@@ -29,68 +31,102 @@ export default function Footer() {
   const t = useTranslations("nav");
   const tFooter = useTranslations("footer");
   const locale = useLocale();
+  const { trackEvent } = useAnalytics();
   const currentYear = new Date().getFullYear();
 
+  const isHomePage = false; // le footer pointe toujours en absolu, plus simple et valable partout
+  void isHomePage;
+
   const navLinks = [
-    { href: "#projets", label: t("projects") },
-    { href: "#services", label: t("services") },
-    { href: "#a-propos", label: t("about") },
-    { href: "#contact", label: t("contact") },
+    { href: `/${locale}#projets`, label: t("projects") },
+    { href: `/${locale}/services`, label: t("services") },
+    { href: `/${locale}/tarifs`, label: t("tarifs") },
+    { href: `/${locale}/a-propos`, label: t("about") },
+    { href: `/${locale}#contact`, label: t("contact") },
   ];
 
   return (
-    <footer className="py-12 bg-[var(--background-secondary)] border-t border-[var(--border)]">
-      <div className="section-container">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="text-xl font-bold tracking-tight hover:text-[var(--accent)] transition-colors"
-          >
-            JBR<span className="text-[var(--accent)]">.</span>
-          </Link>
+    <footer className="bg-[var(--background-secondary)] border-t border-[var(--border)]">
+      <div className="section-container py-14">
+        <div className="grid gap-10 md:grid-cols-3">
+          {/* Identité + NAP */}
+          <div className="flex flex-col gap-3">
+            <Link
+              href={`/${locale}`}
+              className="text-xl font-bold tracking-tight hover:text-[var(--accent)] transition-colors w-fit"
+            >
+              JBR<span className="text-[var(--accent)]">.</span>
+            </Link>
+            <p className="text-sm text-[var(--foreground-secondary)] max-w-xs">
+              {tFooter("tagline")}
+            </p>
+            <p className="annotation mt-2">{tFooter("areaLine")}</p>
+          </div>
 
           {/* Navigation */}
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+          <nav className="flex flex-col gap-2" aria-label={tFooter("navTitle")}>
+            <p className="annotation mb-2">{tFooter("navTitle")}</p>
             {navLinks.map((link) => (
               <SmoothScrollLink
                 key={link.href}
                 href={link.href}
-                className="text-sm text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors"
+                className="text-sm text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors w-fit"
               >
                 {link.label}
               </SmoothScrollLink>
             ))}
           </nav>
 
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors"
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            ))}
+          {/* Contact + preuve */}
+          <div className="flex flex-col gap-2">
+            <p className="annotation mb-2">{tFooter("contactTitle")}</p>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              onClick={() => trackEvent("tel_click", { from: "footer" })}
+              className="text-sm text-[var(--foreground)] hover:text-[var(--accent)] transition-colors w-fit"
+            >
+              {siteConfig.phoneDisplay}
+            </a>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="text-sm text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors w-fit"
+            >
+              {siteConfig.email}
+            </a>
+            <p className="text-sm text-[var(--foreground-secondary)]">{tFooter("responseLine")}</p>
+            <a
+              href={siteConfig.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("google_review_click", { from: "footer" })}
+              className="text-sm mt-1 w-fit hover:opacity-80 transition-opacity"
+            >
+              <span className="proof">★ 5,0</span>{" "}
+              <span className="text-[var(--foreground-secondary)]">{tFooter("reviews")}</span>
+            </a>
+            <div className="flex items-center gap-4 mt-3">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("social_click", { platform: link.label, location: "footer" })}
+                  className="text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-[var(--border)] text-center">
+        <div className="mt-10 pt-8 border-t border-[var(--border)] text-center">
           <p className="text-sm text-[var(--foreground-secondary)]">
             © {currentYear} {tFooter("copyright")}
           </p>
-          <Link
-            href={`/${locale}/services`}
-            className="inline-block mt-3 text-xs text-[var(--foreground-secondary)]/50 hover:text-[var(--foreground-secondary)] transition-colors"
-          >
-            {tFooter("services")}
-          </Link>
         </div>
       </div>
     </footer>

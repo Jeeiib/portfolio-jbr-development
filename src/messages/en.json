@@ -4,7 +4,10 @@
     "services": "Services",
     "about": "About",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tarifs": "Pricing",
+    "estimate": "Estimate my project",
+    "callAria": "Call Jean-Baptiste"
   },
   "hero": {
     "available": "Available for new projects",
@@ -214,7 +217,13 @@
   },
   "footer": {
     "services": "Our services",
-    "copyright": "JBR Development - All rights reserved"
+    "copyright": "JBR Development - All rights reserved",
+    "tagline": "Independent web developer in Lille. Custom websites and tools for small businesses.",
+    "areaLine": "Lille metro area — remote across France",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "responseLine": "Reply within 24 hours",
+    "reviews": "on Google — verified reviews"
   },
   "notFound": {
     "title": "Oops!",
