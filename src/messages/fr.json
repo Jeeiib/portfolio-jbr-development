@@ -1199,5 +1199,109 @@
     "title": "Et votre projet, il coûterait combien ?",
     "subtitle": "Décrivez votre projet en quelques questions : vous recevez une fourchette immédiate, sans engagement et sans email commercial derrière.",
     "cta": "Estimer mon projet"
+  },
+  "tarifs": {
+    "meta": {
+      "title": "Tarifs — création de site internet à Lille dès 1 190 € HT",
+      "description": "Des prix affichés, pas de « sur devis » mystérieux : site vitrine dès 1 190 € HT, application sur mesure dès 3 900 € HT, maintenance 79 € HT/mois. Développeur web indépendant à Lille."
+    },
+    "annotation": "Tarifs — mis à jour 2026",
+    "title": "Des prix clairs, sans surprise",
+    "intro": "La plupart des agences et freelances cachent leurs prix. Voici les miens, affichés : vous savez avant de m'appeler si on peut travailler ensemble. Le devis précis ajuste selon votre projet, jamais ne surprend.",
+    "from": "dès",
+    "perMonth": "/ mois",
+    "delay": "Délai type : {min} à {max} semaines",
+    "noCommitment": "Sans engagement de durée",
+    "popular": "Le plus demandé",
+    "estimateCta": "Estimer mon projet — 3 min",
+    "items": {
+      "vitrine": {
+        "title": "Site vitrine — création ou refonte",
+        "description": "Votre entreprise trouvable sur Google, avec un site qui donne confiance et fait décrocher le téléphone.",
+        "includes": [
+          "5 pages sur mesure, design unique (pas de modèle)",
+          "Référencement local Google : balises, données structurées, sitemap",
+          "Adapté mobile, rapide (Core Web Vitals), sécurisé",
+          "Formulaire de contact et clic-pour-appeler",
+          "Formation à la prise en main à la livraison",
+          "Garantie corrections 30 jours"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Application ou outil sur mesure",
+        "description": "Un outil qui épouse votre façon de travailler : espace client, prise de rendez-vous, gestion métier.",
+        "includes": [
+          "Conception autour de vos processus réels",
+          "Espace client sécurisé, comptes et rôles",
+          "Prise de rendez-vous, notifications, automatisations",
+          "Connexion à vos outils (agenda, email, facturation...)",
+          "Démos régulières pendant le développement",
+          "Garantie corrections 30 jours"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance et accompagnement",
+        "description": "Votre site reste rapide, sécurisé et à jour — et vous avez un interlocuteur qui répond.",
+        "includes": [
+          "Hébergement performant et nom de domaine gérés",
+          "Mises à jour techniques et de sécurité",
+          "Sauvegardes régulières",
+          "Petites évolutions incluses chaque mois",
+          "Surveillance du bon fonctionnement",
+          "Réponse sous 24 h ouvrées"
+        ]
+      }
+    },
+    "variesAnnotation": "Transparence",
+    "variesTitle": "Pourquoi « dès » ? Ce qui fait varier le prix",
+    "variesText": "Le prix d'appel correspond à un projet standard : 5 pages pour un site vitrine, un périmètre fonctionnel simple pour un outil. Ce qui fait monter le devis : des pages ou fonctionnalités supplémentaires, des contenus à créer de zéro (textes, photos), une migration depuis un site existant avec historique de référencement à préserver, ou des intégrations spécifiques. Ce qui ne change jamais : le prix annoncé au devis est le prix payé.",
+    "compareTitle": "Et par rapport aux autres solutions ?",
+    "compareIntro": "Soyons honnêtes : je ne suis pas la bonne option pour tout le monde. Voici les trois façons d'avoir un site en 2026.",
+    "compare": {
+      "diy": {
+        "range": "0 – 200 € + abonnement",
+        "title": "Faire soi-même (Wix, IA...)",
+        "text": "Les outils avec IA font des sites corrects en quelques heures. Vous payez un abonnement à vie, le design reste celui d'un modèle, et le référencement local face à des concurrents équipés est difficile.",
+        "forWhom": "Pour tester une idée ou démarrer sans budget."
+      },
+      "lowcost": {
+        "range": "300 – 1 500 €",
+        "title": "Freelance low-cost",
+        "text": "Souvent un thème WordPress habillé rapidement. Ça peut suffire, mais la qualité est inégale : performance, sécurité et suivi dans le temps sont rarement au rendez-vous.",
+        "forWhom": "Pour un besoin ponctuel, si vous savez évaluer la qualité."
+      },
+      "jbr": {
+        "range": "dès 1 190 € HT",
+        "title": "Sur mesure, avec moi",
+        "text": "Un site conçu pour votre entreprise, développé proprement (pas de thème), référencement local sérieux, et un interlocuteur unique à Lille, responsable du résultat, qui répond sous 24 h.",
+        "forWhom": "Pour un site qui doit vraiment rapporter des clients."
+      }
+    },
+    "quote": {
+      "text": "Le développement de notre nouveau site web vient de s'achever et JB a fourni un travail qui a dépassé nos attentes. Sa compréhension des problématiques, sa rapidité de réaction et sa façon de transposer nos demandes a été simplement parfaite.",
+      "author": "Thierry Dehon",
+      "role": "Gérant de RDP Glass, avis Google vérifié"
+    },
+    "faq": {
+      "title": "Questions sur les prix",
+      "items": {
+        "why-from": {
+          "question": "Le prix final peut-il dépasser le prix affiché ?",
+          "answer": "Le « dès » couvre un projet standard. Après notre premier échange, le devis fixe un montant précis en fonction de votre périmètre — et ce montant est définitif : pas de supplément découvert en cours de route."
+        },
+        "payment": {
+          "question": "Comment se passe le paiement ?",
+          "answer": "50 % à la signature du devis pour lancer le chantier, 50 % à la mise en ligne. Pour la maintenance, un paiement mensuel sans engagement de durée."
+        },
+        "what-raises": {
+          "question": "Qu'est-ce qui fait grimper un devis ?",
+          "answer": "Principalement : le nombre de pages ou de fonctionnalités, la création de contenus (textes, photos, traductions), la migration d'un site existant et les intégrations avec vos outils. J'indique toujours l'impact de chaque option sur le devis."
+        },
+        "hidden-costs": {
+          "question": "Y a-t-il des coûts récurrents cachés ?",
+          "answer": "Non. Un site a deux coûts récurrents incompressibles : le nom de domaine et l'hébergement. Soit vous les gérez vous-même (je vous montre comment), soit la maintenance à 79 € HT/mois les inclut avec les mises à jour et les évolutions."
+        }
+      }
+    }
   }
 }

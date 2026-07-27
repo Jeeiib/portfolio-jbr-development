@@ -1199,5 +1199,109 @@
     "title": "What would your project cost?",
     "subtitle": "Describe your project in a few questions: you get an instant range, no commitment and no sales emails afterwards.",
     "cta": "Estimate my project"
+  },
+  "tarifs": {
+    "meta": {
+      "title": "Pricing — websites in Lille from €1,190 excl. VAT",
+      "description": "Prices shown upfront, no mysterious quotes: business website from €1,190, custom application from €3,900, maintenance €79/month. Independent web developer in Lille, France."
+    },
+    "annotation": "Pricing — updated 2026",
+    "title": "Clear prices, no surprises",
+    "intro": "Most agencies and freelancers hide their prices. Here are mine, in the open: you know before calling whether we can work together. The detailed quote adjusts to your project, never surprises.",
+    "from": "from",
+    "perMonth": "/ month",
+    "delay": "Typical delivery: {min} to {max} weeks",
+    "noCommitment": "No long-term commitment",
+    "popular": "Most requested",
+    "estimateCta": "Estimate my project — 3 min",
+    "items": {
+      "vitrine": {
+        "title": "Business website — new or redesign",
+        "description": "Your business findable on Google, with a website that builds trust and makes the phone ring.",
+        "includes": [
+          "5 custom pages, unique design (no template)",
+          "Local Google SEO: tags, structured data, sitemap",
+          "Mobile-ready, fast (Core Web Vitals), secure",
+          "Contact form and click-to-call",
+          "Handover training at delivery",
+          "30-day fix guarantee"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Custom application or tool",
+        "description": "A tool that fits how you actually work: client portal, appointment booking, business management.",
+        "includes": [
+          "Designed around your real processes",
+          "Secure client portal, accounts and roles",
+          "Bookings, notifications, automations",
+          "Connects to your tools (calendar, email, invoicing...)",
+          "Regular demos during development",
+          "30-day fix guarantee"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance and support",
+        "description": "Your site stays fast, secure and up to date — with someone who actually answers.",
+        "includes": [
+          "Fast hosting and domain managed",
+          "Technical and security updates",
+          "Regular backups",
+          "Small improvements included monthly",
+          "Uptime monitoring",
+          "Reply within 24 business hours"
+        ]
+      }
+    },
+    "variesAnnotation": "Transparency",
+    "variesTitle": "Why \"from\"? What changes the price",
+    "variesText": "The starting price covers a standard project: 5 pages for a business website, a simple functional scope for a tool. What raises the quote: extra pages or features, content created from scratch (copy, photos), migrating an existing site while preserving its SEO history, or specific integrations. What never changes: the price in the quote is the price you pay.",
+    "compareTitle": "How does it compare to other options?",
+    "compareIntro": "Let's be honest: I'm not the right option for everyone. Here are the three ways to get a website in 2026.",
+    "compare": {
+      "diy": {
+        "range": "€0 – 200 + subscription",
+        "title": "Do it yourself (Wix, AI...)",
+        "text": "AI builders make decent sites in a few hours. You pay a lifelong subscription, the design stays template-like, and local SEO against equipped competitors is hard.",
+        "forWhom": "To test an idea or start with no budget."
+      },
+      "lowcost": {
+        "range": "€300 – 1,500",
+        "title": "Low-cost freelancer",
+        "text": "Often a quickly-dressed WordPress theme. It can be enough, but quality varies: performance, security and long-term support are rarely there.",
+        "forWhom": "For a one-off need, if you can judge quality."
+      },
+      "jbr": {
+        "range": "from €1,190 excl. VAT",
+        "title": "Custom-built, with me",
+        "text": "A site designed for your business, cleanly built (no theme), serious local SEO, and a single contact in Lille accountable for the result, replying within 24 hours.",
+        "forWhom": "For a website that must actually bring in clients."
+      }
+    },
+    "quote": {
+      "text": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was simply perfect.",
+      "author": "Thierry Dehon",
+      "role": "CEO of RDP Glass, verified Google review"
+    },
+    "faq": {
+      "title": "Questions about pricing",
+      "items": {
+        "why-from": {
+          "question": "Can the final price exceed the displayed price?",
+          "answer": "The \"from\" price covers a standard project. After our first conversation, the quote sets a precise amount based on your scope — and that amount is final: no surprises along the way."
+        },
+        "payment": {
+          "question": "How does payment work?",
+          "answer": "50% when signing the quote to start the work, 50% at go-live. Maintenance is billed monthly with no long-term commitment."
+        },
+        "what-raises": {
+          "question": "What makes a quote go up?",
+          "answer": "Mainly: the number of pages or features, content creation (copy, photos, translations), migrating an existing site, and integrations with your tools. I always show the impact of each option on the quote."
+        },
+        "hidden-costs": {
+          "question": "Are there hidden recurring costs?",
+          "answer": "No. A website has two unavoidable recurring costs: the domain name and hosting. Either you manage them yourself (I show you how), or the €79/month maintenance includes them along with updates and improvements."
+        }
+      }
+    }
   }
 }

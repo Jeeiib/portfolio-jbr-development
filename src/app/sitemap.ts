@@ -41,6 +41,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Pricing page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${baseUrl}/${locale}/tarifs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/fr/tarifs`,
+          en: `${baseUrl}/en/tarifs`,
+        },
+      },
+    });
+  }
+
   // About page for each locale
   for (const locale of locales) {
     entries.push({
