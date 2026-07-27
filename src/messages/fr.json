@@ -163,55 +163,60 @@
     }
   },
   "process": {
-    "label": "Process",
+    "label": "Le chantier",
     "title": "Comment ça se passe ?",
-    "subtitle": "Un accompagnement structuré pour des projets réussis.",
+    "subtitle": "Quatre phases, comme un chantier bien mené : vous savez toujours où on en est.",
+    "phaseLabel": "Phase",
     "steps": {
-      "discovery": {
-        "title": "Découverte",
-        "description": "Questionnaire + rendez-vous (Lille ou visio) pour comprendre vos besoins et objectifs."
+      "quote": {
+        "title": "Devis et plan",
+        "description": "Un échange (à Lille ou en visio) pour comprendre votre besoin, puis un devis détaillé avec planning. Acompte de 50 % à la signature.",
+        "marker": "Devis sous 48 h"
       },
-      "proposal": {
-        "title": "Proposition",
-        "description": "Devis détaillé + planning. Paiement de 50% à la signature pour démarrer."
+      "design": {
+        "title": "Fondations et design",
+        "description": "Maquette de votre site, validée ensemble avant de construire. Vous voyez à quoi ça ressemble avant que ça existe.",
+        "marker": "Maquette validée"
       },
-      "development": {
-        "title": "Développement",
-        "description": "Méthode agile avec points réguliers et démos. Révisions illimitées dans le périmètre."
+      "build": {
+        "title": "Construction",
+        "description": "Développement avec points d'avancement réguliers et démos. Révisions incluses dans le périmètre du devis.",
+        "marker": "Démos régulières"
       },
-      "delivery": {
-        "title": "Livraison",
-        "description": "Solde de 50% + garantie bugs 30 jours. Maintenance optionnelle proposée."
+      "handover": {
+        "title": "Remise des clés",
+        "description": "Mise en ligne, formation à la prise en main, solde de 50 %. Garantie corrections 30 jours, puis maintenance si vous voulez.",
+        "marker": "Garantie 30 jours"
       }
     }
   },
   "faq": {
-    "label": "FAQ",
-    "title": "Questions fréquentes",
+    "label": "Questions directes",
+    "title": "Ce que vous vous demandez vraiment",
     "items": {
       "cost": {
-        "question": "Combien coûte un site web ?",
-        "answer": "Chaque projet est unique. Contactez-moi pour un devis personnalisé gratuit et sans engagement."
+        "question": "Combien ça coûte, concrètement ?",
+        "answer": "Site vitrine dès 1 190 € HT, outil sur mesure dès 3 900 € HT, maintenance à 79 € HT par mois. La page Tarifs détaille ce qui est inclus et ce qui fait varier le prix, et le brief en ligne vous donne une estimation immédiate en 3 minutes."
       },
       "timeline": {
-        "question": "Quels sont les délais ?",
-        "answer": "Landing page : 1-2 semaines. Site vitrine : 2-3 semaines. Refonte : 2-3 semaines. Application web : 1-2 mois."
+        "question": "Combien de temps ça prend ?",
+        "answer": "Un site vitrine : 2 à 3 semaines. Un outil sur mesure : 4 à 8 semaines selon le périmètre. Le planning exact est fixé au devis et tenu — c'est un engagement, pas une estimation."
       },
-      "hosting": {
-        "question": "L'hébergement est inclus ?",
-        "answer": "Je propose les deux options : je peux gérer l'hébergement pour vous, ou vous conseiller pour le faire vous-même."
+      "nontech": {
+        "question": "Je n'y connais rien en technique, c'est un problème ?",
+        "answer": "C'est justement mon métier de faire le pont. Un seul interlocuteur, zéro jargon, des points d'avancement où vous voyez le site se construire, et une formation à la remise des clés pour être autonome sur le quotidien."
       },
-      "autonomy": {
-        "question": "Je pourrai modifier le site moi-même ?",
-        "answer": "Selon vos besoins, je peux intégrer un CMS (système de gestion de contenu) pour que vous soyez totalement autonome."
+      "after": {
+        "question": "Qui s'occupe du site après la mise en ligne ?",
+        "answer": "Moi, si vous le souhaitez : la maintenance à 79 € HT/mois couvre l'hébergement, le nom de domaine, les mises à jour, les sauvegardes et les petites évolutions. Sinon, vous repartez avec un site dont vous êtes pleinement propriétaire."
       },
-      "technologies": {
-        "question": "Tu travailles avec quelles technologies ?",
-        "answer": "React, Next.js, Node.js, TypeScript — des technologies modernes, performantes et maintenables."
+      "wixOrCustom": {
+        "question": "Pourquoi pas Wix ou un site généré par IA ?",
+        "answer": "Pour démarrer seul avec un petit budget, c'est une option honnête. Ce que ça ne fait pas : un site à votre image plutôt qu'un modèle, un référencement local sérieux face à vos concurrents, et un humain responsable du résultat qui répond quand quelque chose cloche."
       },
       "location": {
-        "question": "Tu te déplaces ?",
-        "answer": "Oui, dans la métropole lilloise. Pour le reste, visio sans problème !"
+        "question": "Vous travaillez uniquement sur Lille ?",
+        "answer": "Je me déplace sur Lille et sa métropole pour les rendez-vous, et je travaille à distance avec toute la France. Les points d'avancement se font en visio ou autour d'un café, au choix."
       }
     }
   },
@@ -1146,5 +1151,53 @@
     "clients": "entreprises accompagnées",
     "area": "Lille et métropole",
     "response": "Réponse sous 24 h"
+  },
+  "offers": {
+    "label": "Offres",
+    "title": "Trois offres, prix affichés",
+    "subtitle": "Pas de « sur devis » mystérieux : vous savez où vous mettez les pieds avant de m'appeler. Le devis précis ajuste, jamais ne surprend.",
+    "from": "dès",
+    "perMonth": "/ mois",
+    "delay": "Délai type : {min} à {max} semaines",
+    "noCommitment": "Sans engagement de durée",
+    "details": "Voir le détail des tarifs",
+    "items": {
+      "vitrine": {
+        "title": "Site vitrine — création ou refonte",
+        "description": "Votre entreprise trouvable sur Google, avec un site qui donne confiance et fait décrocher le téléphone.",
+        "includes": [
+          "5 pages sur mesure, design unique",
+          "Référencement local Google inclus",
+          "Adapté mobile, rapide, sécurisé",
+          "Formation à la prise en main"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Application ou outil sur mesure",
+        "description": "Un outil qui épouse votre façon de travailler : espace client, prise de rendez-vous, gestion métier.",
+        "includes": [
+          "Conçu autour de vos processus réels",
+          "Espace client, rendez-vous, automatisations",
+          "Connexion à vos outils existants",
+          "Accompagnement et évolutions"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance et accompagnement",
+        "description": "Votre site reste rapide, sécurisé et à jour — et vous avez un interlocuteur qui répond.",
+        "includes": [
+          "Hébergement et nom de domaine gérés",
+          "Mises à jour et sauvegardes",
+          "Petites évolutions incluses chaque mois",
+          "Réponse sous 24 h ouvrées"
+        ]
+      }
+    }
+  },
+  "briefCta": {
+    "annotation": "Estimation en 3 minutes",
+    "title": "Et votre projet, il coûterait combien ?",
+    "subtitle": "Décrivez votre projet en quelques questions : vous recevez une fourchette immédiate, sans engagement et sans email commercial derrière.",
+    "cta": "Estimer mon projet"
   }
 }

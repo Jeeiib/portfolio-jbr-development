@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/ui/Navigation";
+import BriefCTA from "@/components/ui/BriefCTA";
 import Hero from "@/components/sections/Hero";
 import ProofStrip from "@/components/sections/ProofStrip";
 import Projects from "@/components/sections/Projects";
@@ -40,9 +41,11 @@ export default function Home() {
         <Hero />
         <ProofStrip />
         <Projects />
+        <BriefCTA from="home-proof" />
         <Services />
         <Process />
         <FAQ />
+        <BriefCTA from="home-faq" />
         <Contact />
       </main>
       <Footer />

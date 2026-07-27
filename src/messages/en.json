@@ -163,55 +163,60 @@
     }
   },
   "process": {
-    "label": "Process",
+    "label": "The build",
     "title": "How does it work?",
-    "subtitle": "A structured approach for successful projects.",
+    "subtitle": "Four phases, like a well-run construction site: you always know where things stand.",
+    "phaseLabel": "Phase",
     "steps": {
-      "discovery": {
-        "title": "Discovery",
-        "description": "Questionnaire + meeting (Lille area or video call) to understand your needs and goals."
+      "quote": {
+        "title": "Quote and plan",
+        "description": "A conversation (in Lille or video call) to understand your needs, then a detailed quote with schedule. 50% deposit on signature.",
+        "marker": "Quote within 48h"
       },
-      "proposal": {
-        "title": "Proposal",
-        "description": "Detailed quote + timeline. 50% payment at signature to get started."
+      "design": {
+        "title": "Foundations and design",
+        "description": "A mockup of your website, validated together before building. You see what it looks like before it exists.",
+        "marker": "Approved mockup"
       },
-      "development": {
-        "title": "Development",
-        "description": "Agile methodology with regular check-ins and demos. Unlimited revisions within scope."
+      "build": {
+        "title": "Construction",
+        "description": "Development with regular progress updates and demos. Revisions included within the quoted scope.",
+        "marker": "Regular demos"
       },
-      "delivery": {
-        "title": "Delivery",
-        "description": "Final 50% payment + 30-day bug warranty. Optional maintenance available."
+      "handover": {
+        "title": "Handover",
+        "description": "Go-live, handover training, remaining 50%. 30-day fix guarantee, then maintenance if you want it.",
+        "marker": "30-day guarantee"
       }
     }
   },
   "faq": {
-    "label": "FAQ",
-    "title": "Frequently Asked Questions",
+    "label": "Straight questions",
+    "title": "What you're really wondering",
     "items": {
       "cost": {
-        "question": "How much does a website cost?",
-        "answer": "Every project is unique. Contact me for a free, no-obligation custom quote."
+        "question": "How much does it cost, exactly?",
+        "answer": "Business website from €1,190 excl. VAT, custom tool from €3,900, maintenance at €79 per month. The Pricing page details what's included, and the online brief gives you an instant estimate in 3 minutes."
       },
       "timeline": {
-        "question": "What are the timelines?",
-        "answer": "Landing page: 1-2 weeks. Showcase website: 2-3 weeks. Redesign: 2-3 weeks. Web application: 1-2 months."
+        "question": "How long does it take?",
+        "answer": "A business website: 2 to 3 weeks. A custom tool: 4 to 8 weeks depending on scope. The exact schedule is set in the quote and kept — it's a commitment, not a guess."
       },
-      "hosting": {
-        "question": "Is hosting included?",
-        "answer": "I offer both options: I can manage hosting for you, or advise you on doing it yourself."
+      "nontech": {
+        "question": "I'm not technical at all, is that a problem?",
+        "answer": "Bridging that gap is precisely my job. One contact person, zero jargon, progress updates where you watch the site being built, and handover training so you're autonomous day to day."
       },
-      "autonomy": {
-        "question": "Can I update the site myself?",
-        "answer": "Depending on your needs, I can integrate a CMS (content management system) so you're fully autonomous."
+      "after": {
+        "question": "Who takes care of the site after launch?",
+        "answer": "I do, if you wish: maintenance at €79/month covers hosting, domain, updates, backups and small improvements. Otherwise you leave fully owning your website."
       },
-      "technologies": {
-        "question": "What technologies do you use?",
-        "answer": "React, Next.js, Node.js, TypeScript — modern, performant, and maintainable technologies."
+      "wixOrCustom": {
+        "question": "Why not Wix or an AI-generated site?",
+        "answer": "To start alone on a small budget, it's an honest option. What it won't give you: a site in your image rather than a template, serious local SEO against your competitors, and a human accountable for the result who answers when something breaks."
       },
       "location": {
-        "question": "Do you travel for meetings?",
-        "answer": "Yes, within the Lille metropolitan area. Otherwise, video calls work great!"
+        "question": "Do you only work in Lille?",
+        "answer": "I meet clients across Lille and its metro area, and work remotely with all of France. Progress updates happen by video call or over coffee, your choice."
       }
     }
   },
@@ -1146,5 +1151,53 @@
     "clients": "businesses supported",
     "area": "Lille metro area",
     "response": "Reply within 24 hours"
+  },
+  "offers": {
+    "label": "Offers",
+    "title": "Three offers, prices shown",
+    "subtitle": "No mysterious \"on quote\": you know where you stand before calling me. The detailed quote adjusts, never surprises.",
+    "from": "from",
+    "perMonth": "/ month",
+    "delay": "Typical delivery: {min} to {max} weeks",
+    "noCommitment": "No long-term commitment",
+    "details": "See pricing details",
+    "items": {
+      "vitrine": {
+        "title": "Business website — new or redesign",
+        "description": "Your business findable on Google, with a website that builds trust and makes the phone ring.",
+        "includes": [
+          "5 custom pages, unique design",
+          "Local Google SEO included",
+          "Mobile-ready, fast, secure",
+          "Handover training"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Custom application or tool",
+        "description": "A tool that fits how you actually work: client portal, appointment booking, business management.",
+        "includes": [
+          "Designed around your real processes",
+          "Client portal, bookings, automations",
+          "Connects to your existing tools",
+          "Support and evolutions"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance and support",
+        "description": "Your site stays fast, secure and up to date — with someone who actually answers.",
+        "includes": [
+          "Hosting and domain managed",
+          "Updates and backups",
+          "Small improvements included monthly",
+          "Reply within 24 business hours"
+        ]
+      }
+    }
+  },
+  "briefCta": {
+    "annotation": "3-minute estimate",
+    "title": "What would your project cost?",
+    "subtitle": "Describe your project in a few questions: you get an instant range, no commitment and no sales emails afterwards.",
+    "cta": "Estimate my project"
   }
 }

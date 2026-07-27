@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useTranslations } from "next-intl";
+import Reveal from "@/components/ui/Reveal";
 
-const faqKeys = ["cost", "timeline", "hosting", "autonomy", "technologies", "location"] as const;
+const faqKeys = ["cost", "timeline", "nontech", "after", "wixOrCustom", "location"] as const;
 
+/**
+ * FAQ anti-objections : les vraies questions qu'un patron de TPE se pose
+ * avant de confier son site, répondues frontalement.
+ */
 export default function FAQ() {
   const t = useTranslations("faq");
-  const { ref: sectionRef, isVisible } = useScrollAnimation<HTMLElement>({ threshold: 0.15 });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -16,76 +19,46 @@ export default function FAQ() {
   };
 
   return (
-    <section
-      id="faq"
-      ref={sectionRef}
-      className="py-24 md:py-32 bg-[var(--background-secondary)]"
-    >
+    <section id="faq" className="py-24 md:py-32 bg-[var(--background-secondary)]">
       <div className="section-container">
-        {/* Header */}
-        <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            {t("label")}
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            {t("title")}
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mb-16 max-w-2xl">
+            <p className="annotation-accent mb-4">{t("label")}</p>
+            <h2 className="display-xl">{t("title")}</h2>
+          </div>
+        </Reveal>
 
-        {/* FAQ Items */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl space-y-4">
           {faqKeys.map((key, index) => (
-            <div
-              key={key}
-              className={`transition-all duration-500 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: `${150 + index * 100}ms` }}
-            >
+            <Reveal key={key} delay={index * 60}>
               <div
-                className={`bg-[var(--background-card)] border rounded-xl overflow-hidden transition-all duration-300 ${
+                className={`bg-[var(--background-card)] border rounded-xl overflow-hidden transition-colors duration-300 ${
                   openIndex === index
-                    ? "border-[var(--accent)] shadow-lg shadow-[var(--accent)]/10"
+                    ? "border-[var(--accent)]"
                     : "border-[var(--border)] hover:border-[var(--accent)]/50"
                 }`}
               >
-                {/* Question Button */}
                 <button
                   onClick={() => toggleItem(index)}
+                  aria-expanded={openIndex === index}
                   className="w-full px-6 py-5 flex items-center justify-between text-left gap-4"
                 >
-                  <span className="font-semibold text-lg">
-                    {t(`items.${key}.question`)}
-                  </span>
+                  <span className="font-semibold text-lg">{t(`items.${key}.question`)}</span>
                   <span
+                    aria-hidden="true"
                     className={`flex-shrink-0 w-8 h-8 rounded-full bg-[var(--accent)]/10 flex items-center justify-center transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                   >
-                    <svg
-                      className="w-4 h-4 text-[var(--accent)]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
+                    <svg className="w-4 h-4 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </button>
 
-                {/* Answer */}
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-48" : "max-h-0"
+                    openIndex === index ? "max-h-96" : "max-h-0"
                   }`}
                 >
                   <div className="px-6 pb-5 text-[var(--foreground-secondary)] leading-relaxed">
@@ -93,7 +66,7 @@ export default function FAQ() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
