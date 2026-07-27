@@ -10,7 +10,7 @@ interface ContactFormProps {
 
 export default function ContactForm({ source = "landing" }: ContactFormProps) {
   const t = useTranslations("contact");
-  const { trackContactFormSubmit } = useAnalytics();
+  const { trackEvent } = useAnalytics();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +51,7 @@ export default function ContactForm({ source = "landing" }: ContactFormProps) {
       }
 
       setStatus("success");
-      trackContactFormSubmit();
+      trackEvent("contact_submit");
       setFormData({ name: "", email: "", projectType: "", message: "" });
     } catch {
       setStatus("error");

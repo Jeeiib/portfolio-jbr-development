@@ -10,7 +10,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 
 export default function Projects() {
   const t = useTranslations("projects");
-  const { trackProjectView, trackExternalLink } = useAnalytics();
+  const { trackEvent } = useAnalytics();
   const featuredProjects = projects.filter((p) => p.featured);
   const total = featuredProjects.length;
   const { ref: sectionRef, isVisible } =
@@ -152,7 +152,7 @@ export default function Projects() {
                         <Link
                           href={`/projets/${p.slug}`}
                           className="flex flex-col overflow-hidden bg-[var(--terminal-bg)] group h-full"
-                          onClick={() => trackProjectView(p.slug)}
+                          onClick={() => trackEvent("project_view", { slug: p.slug })}
                         >
                           {/* Browser Chrome */}
                           <div className="shrink-0 bg-[var(--terminal-header)] px-4 py-2.5 flex items-center gap-2 border-b border-[var(--border)]">
@@ -190,7 +190,7 @@ export default function Projects() {
 
                           <Link
                             href={`/projets/${p.slug}`}
-                            onClick={() => trackProjectView(p.slug)}
+                            onClick={() => trackEvent("project_view", { slug: p.slug })}
                           >
                             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 hover:text-[var(--accent)] transition-colors">
                               {p.title}
@@ -218,7 +218,7 @@ export default function Projects() {
                             <Link
                               href={`/projets/${p.slug}`}
                               className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-[var(--accent)] btn-primary-text font-semibold rounded-lg hover:bg-[var(--accent-hover)] transition-colors text-sm"
-                              onClick={() => trackProjectView(p.slug)}
+                              onClick={() => trackEvent("project_view", { slug: p.slug })}
                             >
                               {t("viewProject")}
                               <svg
@@ -241,7 +241,7 @@ export default function Projects() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 border border-[var(--border)] rounded-lg text-sm font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
-                                onClick={() => trackExternalLink(p.liveUrl!)}
+                                onClick={() => trackEvent("external_link_click", { url: p.liveUrl! })}
                               >
                                 <svg
                                   className="w-4 h-4 mr-2"
