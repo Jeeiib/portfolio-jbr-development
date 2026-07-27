@@ -56,6 +56,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-border: var(--border);
   --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 * {
@@ -366,4 +367,86 @@ a {
 @keyframes carousel-progress {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
+}
+
+/* ============================================================
+   Langage "chantier" — tokens de la refonte 2026
+   ============================================================ */
+
+/* Display : titres affirmés, letter-spacing serré */
+.display-2xl {
+  font-size: clamp(2.5rem, 4.5vw + 1rem, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.display-xl {
+  font-size: clamp(1.875rem, 3vw + 0.75rem, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Annotations : micro-légendes mono façon plan de chantier */
+.annotation {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--foreground-secondary);
+}
+
+.annotation-accent {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* Preuve : valeur chiffrée mise en évidence (usage exclusif : preuves et résultats) */
+.proof {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Étiquette de plan : tampon type "livré le ..." */
+.tag-chantier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--foreground-secondary);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+  background: var(--background-secondary);
+}
+
+/* Révélation au scroll sobre (pilotée par <Reveal>) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
