@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import SmoothScrollLink from "@/components/ui/SmoothScrollLink";
 import { siteConfig } from "@/data/siteConfig";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
@@ -34,9 +33,6 @@ export default function Footer() {
   const { trackEvent } = useAnalytics();
   const currentYear = new Date().getFullYear();
 
-  const isHomePage = false; // le footer pointe toujours en absolu, plus simple et valable partout
-  void isHomePage;
-
   const navLinks = [
     { href: `/${locale}#projets`, label: t("projects") },
     { href: `/${locale}/services`, label: t("services") },
@@ -67,13 +63,13 @@ export default function Footer() {
           <nav className="flex flex-col gap-2" aria-label={tFooter("navTitle")}>
             <p className="annotation mb-2">{tFooter("navTitle")}</p>
             {navLinks.map((link) => (
-              <SmoothScrollLink
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors w-fit"
               >
                 {link.label}
-              </SmoothScrollLink>
+              </Link>
             ))}
           </nav>
 
