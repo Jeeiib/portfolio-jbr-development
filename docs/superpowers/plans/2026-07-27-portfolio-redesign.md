@@ -530,6 +530,7 @@ const offersJsonLd = {
 - Modify: tout `<img` restant (`grep -rn "<img" src/ --include="*.tsx"`) → `next/image` avec `width/height` ou `fill` + `sizes`
 - Modify: `src/app/globals.css` — supprimer les keyframes et classes non référencés (vérifier chaque nom : `grep -rn "<nom>" src/`) ; supprimer les styles terminal/syntax (`--terminal-*`, `--syntax-*`) si plus consommés après la refonte du hero
 - Delete: composants orphelins (`grep` d'usage avant chaque suppression : `SmoothScrollLink`, `useScrollAnimation`, `LandingFAQ` si absorbé…)
+- Rewrite: `src/app/[locale]/not-found.tsx` + `src/app/not-found.tsx` — supprimer les halos verts décoratifs (validé avec JB le 27/07 : vert réservé preuves/CTA), 404 sobre langage chantier : `.tag-chantier` « erreur 404 — page hors plan », titre display, lien retour accueil accent
 
 - [ ] **Step 1 :** Inventaire par grep, migrer les images une par une (`pnpm build` après chaque lot).
 - [ ] **Step 2 :** Supprimer uniquement ce dont le grep d'usage renvoie zéro occurrence. `pnpm exec tsc --noEmit && pnpm build` — Expected : succès.
