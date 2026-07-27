@@ -10,13 +10,21 @@
     "callAria": "Appeler Jean-Baptiste"
   },
   "hero": {
-    "available": "Disponible pour vos projets",
-    "role": "Développeur Web",
-    "tagline": "Votre vision, mon code,",
-    "taglineHighlight": "votre levier de croissance.",
-    "ctaPrimary": "Discutons de votre projet",
-    "ctaSecondary": "Voir mes projets",
-    "scroll": "Scroll"
+    "annotation": "Développeur web indépendant — Lille",
+    "title": "Votre site pourrait se construire là,",
+    "titleHighlight": "sous vos yeux.",
+    "subtitle": "Je conçois des sites et des outils sur mesure pour les TPE et PME de la métropole lilloise. Prix affichés, délais tenus, un seul interlocuteur.",
+    "ctaPrimary": "Estimer mon projet — 3 min",
+    "reassurance": "Estimation immédiate, sans engagement. Réponse sous 24 h.",
+    "scroll": "Défiler",
+    "scene": {
+      "online": "en ligne ✓",
+      "imageSlot": "visuel",
+      "phase1": "1/3 — maquette",
+      "phase2": "2/3 — design",
+      "phase3": "3/3 — en ligne",
+      "replay": "↻ rejouer"
+    }
   },
   "projects": {
     "label": "Portfolio",

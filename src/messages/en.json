@@ -10,13 +10,21 @@
     "callAria": "Call Jean-Baptiste"
   },
   "hero": {
-    "available": "Available for new projects",
-    "role": "Web Developer",
-    "tagline": "Your vision, my code,",
-    "taglineHighlight": "your growth lever.",
-    "ctaPrimary": "Let's discuss your project",
-    "ctaSecondary": "View my work",
-    "scroll": "Scroll"
+    "annotation": "Independent web developer — Lille, France",
+    "title": "Your website could be built right here,",
+    "titleHighlight": "before your eyes.",
+    "subtitle": "I design custom websites and tools for small businesses in the Lille area. Clear pricing, reliable deadlines, a single point of contact.",
+    "ctaPrimary": "Estimate my project — 3 min",
+    "reassurance": "Instant estimate, no commitment. Reply within 24 hours.",
+    "scroll": "Scroll",
+    "scene": {
+      "online": "live ✓",
+      "imageSlot": "image",
+      "phase1": "1/3 — wireframe",
+      "phase2": "2/3 — design",
+      "phase3": "3/3 — live",
+      "replay": "↻ replay"
+    }
   },
   "projects": {
     "label": "Portfolio",
