@@ -312,8 +312,6 @@
     "services": {
       "label": "My services",
       "title": "Solutions tailored to your needs",
-      "pricing": "Price",
-      "onQuote": "Custom quote - Free estimate within 24h",
       "items": {
         "siteVitrine": {
           "title": "Showcase Website",

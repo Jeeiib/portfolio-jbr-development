@@ -312,8 +312,6 @@
     "services": {
       "label": "Mes services",
       "title": "Des solutions adaptées à vos besoins",
-      "pricing": "Tarif",
-      "onQuote": "Sur devis - Devis gratuit sous 48 h",
       "items": {
         "siteVitrine": {
           "title": "Site Vitrine",
