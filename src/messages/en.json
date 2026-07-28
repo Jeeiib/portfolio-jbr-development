@@ -99,7 +99,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let's discuss your project",
-    "subtitle": "Got an idea, a need, or a question? Fill out the form or contact me directly by email. I'll get back to you within 24-48 hours.",
+    "subtitle": "Got an idea, a need, or a question? Fill out the form or contact me directly by email. I'll get back to you within 24 hours.",
     "email": "Email",
     "form": {
       "name": "Name",
@@ -424,7 +424,7 @@
         },
         "coutSite": {
           "question": "How much does a website cost in Lille?",
-          "answer": "Rates vary depending on project complexity. A showcase website typically starts around €1,500, a web application from €3,000. Contact me for a free custom quote."
+          "answer": "My prices are public: a business website starts at €1,190 excl. VAT, a custom application or tool at €3,900, and full maintenance costs €79 per month. What's included is detailed on the Pricing page, and the online brief gives you an instant estimate in 3 minutes."
         },
         "freelanceVsAgence": {
           "question": "Freelancer or web agency: which to choose?",
@@ -453,8 +453,8 @@
       "faq": {
         "title": "Questions about website creation",
         "prixVitrine": {
-          "question": "What is the price of a showcase website in 2025?",
-          "answer": "A professional showcase website typically costs between €1,500 and €5,000 depending on the number of pages, design, and desired features. I offer a free detailed quote."
+          "question": "How much does a business website cost in Lille?",
+          "answer": "With me, a 5-page custom business website starts at €1,190 excl. VAT, local SEO included. The price grows with extra pages, content creation or a migration, never along the way: the quoted amount is final. The Pricing page details everything included."
         },
         "queComprend": {
           "question": "What does website creation include?",
@@ -504,7 +504,7 @@
         },
         "prixReact": {
           "question": "How much does a React/Next.js site cost?",
-          "answer": "Rates start around €2,000 for a Next.js showcase site and can go up to €10,000+ for a complex application. Free quote on request."
+          "answer": "My prices don't depend on the technology: business website from €1,190 excl. VAT, custom application from €3,900. React and Next.js simply let me deliver a faster site sooner: you pay for the result, not the stack. Instant estimate in 3 minutes via the online brief."
         }
       }
     },
@@ -530,7 +530,7 @@
         },
         "coutApp": {
           "question": "How much does web application development cost?",
-          "answer": "Budget starts around €3,000 for a simple application and can reach €15,000+ for complex projects with many features. Detailed quote on request."
+          "answer": "A custom tool starts at €3,900 excl. VAT; a typical project lands between €5,000 and €9,000 depending on scope (user accounts, integrations, automations). The quote sets a final amount before the first day of development. The full grid is on the Pricing page."
         },
         "delaiApp": {
           "question": "How long to develop a web application?",

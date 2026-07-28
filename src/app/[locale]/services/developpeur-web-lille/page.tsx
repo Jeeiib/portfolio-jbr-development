@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import { landingFAQs, whyChooseMe, featureOffer } from "@/data/landingPages";
 import { siteConfig } from "@/data/siteConfig";
 import BriefCTA from "@/components/ui/BriefCTA";
+import { formatPrice } from "@/lib/formatPrice";
 import LandingFAQ from "@/components/landing/LandingFAQ";
 
 interface PageProps {
@@ -249,7 +250,7 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
                     ))}
                   </ul>
                   <p className="text-sm text-[var(--foreground-secondary)] mt-auto pt-4 border-t border-[var(--border)]">
-                    <span className="proof">{tCommon("services.pricingFrom", { price: new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-US").format(siteConfig.prices[featureOffer[service]].from) })}</span>
+                    <span className="proof">{tCommon("services.pricingFrom", { price: formatPrice(siteConfig.prices[featureOffer[service]].from, locale) })}</span>
                   </p>
                 </div>
               ))}

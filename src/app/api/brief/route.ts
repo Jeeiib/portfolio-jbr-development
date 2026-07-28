@@ -404,8 +404,8 @@ function getBriefConfirmationHtml(data: BriefData): string {
           </p>
           <p style="margin:0 0 24px 0;color:#f5f5f5;font-size:16px;line-height:1.6;">
             ${isFr
-              ? "Je prends le temps d'étudier votre projet et vous recontacte sous <strong>24 à 48 heures</strong>."
-              : "I'll take the time to study your project and get back to you within <strong>24 to 48 hours</strong>."}
+              ? "Je prends le temps d'étudier votre projet et vous recontacte sous <strong>24 heures</strong>."
+              : "I'll take the time to study your project and get back to you within <strong>24 hours</strong>."}
           </p>
           <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#2a2a2a;border-radius:12px;border:1px solid #333333;margin-bottom:24px;">
             <tr><td style="padding:24px;">
