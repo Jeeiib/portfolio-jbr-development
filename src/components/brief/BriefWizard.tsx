@@ -19,7 +19,6 @@ import {
   BRIEF_DRAFT_VERSION,
   BRIEF_DRAFT_MAX_AGE_DAYS,
   STEPS_BY_PROJECT_TYPE,
-  LIMITS,
 } from "@/data/briefTypes";
 import StepIndicator from "@/components/brief/ui/StepIndicator";
 import EstimateBox from "@/components/brief/EstimateBox";
