@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import type {
   BriefData,
@@ -253,6 +253,7 @@ export default function BriefWizard() {
     locale: locale as "fr" | "en",
   });
   const { trackEvent } = useAnalytics();
+  const briefStartedRef = useRef(false);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [stepKey, setStepKey] = useState(0); // triggers re-animation on step change
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -381,12 +382,8 @@ export default function BriefWizard() {
     }
     setErrors({});
 
-    if (currentStepIndex === 0) {
-      trackEvent("brief_start");
-    }
-    trackEvent("brief_step", { step: currentLogicalStep });
-
-    // If editing from summary, jump back to summary
+    // If editing from summary, jump back to summary (pas un pas de tunnel :
+    // aucun événement analytics ici)
     if (editingFromSummary && summaryStepIndex !== null) {
       setCurrentStepIndex(summaryStepIndex);
       setEditingFromSummary(false);
@@ -396,12 +393,18 @@ export default function BriefWizard() {
       return;
     }
 
+    if (currentStepIndex === 0 && !briefStartedRef.current) {
+      briefStartedRef.current = true;
+      trackEvent("brief_start");
+    }
+    trackEvent("brief_step", { step: currentLogicalStep });
+
     if (currentStepIndex < activeSteps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
       setStepKey((k) => k + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex]);
+  }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex, trackEvent]);
 
   const handlePrevious = useCallback(() => {
     setErrors({});
