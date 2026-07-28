@@ -11,16 +11,6 @@
   --accent-hover: #10b981;
   --accent-foreground: #052e16; /* Dark green for text on accent - WCAG AA compliant */
   --border: #333333;
-  /* Terminal colors */
-  --terminal-bg: #0d1117;
-  --terminal-header: #161b22;
-  /* Syntax highlighting - dark mode (light colors on dark bg) */
-  --syntax-keyword: #c27aff;
-  --syntax-variable: #51a2ff;
-  --syntax-property: #ff6467;
-  --syntax-method: #facc15;
-  --syntax-bracket: #fde047;
-  --syntax-string: #34d399; /* Accent green for strings */
 }
 
 /* Light Mode - Using :root[data-theme] for higher specificity */
@@ -34,16 +24,6 @@
   --accent-hover: #065f46;
   --accent-foreground: #ffffff; /* White text on dark green buttons */
   --border: #e5e7eb;
-  /* Terminal colors */
-  --terminal-bg: #ffffff;
-  --terminal-header: #f6f8fa;
-  /* Syntax highlighting - light mode (dark colors on light bg - WCAG AA) */
-  --syntax-keyword: #7c3aed;
-  --syntax-variable: #2563eb;
-  --syntax-property: #dc2626;
-  --syntax-method: #ca8a04;
-  --syntax-bracket: #a16207;
-  --syntax-string: #047857; /* Same as accent for strings */
 }
 
 @theme inline {
@@ -143,19 +123,6 @@ a {
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-}
-
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -166,24 +133,6 @@ a {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes starBreathe {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.35);
   }
 }
 
@@ -208,16 +157,8 @@ a {
   animation: fadeIn 0.5s ease-out 50ms both;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out 50ms both;
-}
-
 .animate-scale-in {
   animation: scaleIn 0.4s ease-out 50ms both;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
 }
 
 .animate-ripple {
@@ -228,9 +169,7 @@ a {
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
 
 /* Brief wizard step transitions */
 @keyframes stepEnter {
@@ -241,17 +180,6 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes stepExit {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
   }
 }
 
@@ -296,25 +224,6 @@ a {
   animation: successPulse 2s ease-in-out 0.5s 2;
 }
 
-/* Initial state for animations - visibility prevents FOUC flicker */
-.opacity-0-initial {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, #6ee7b7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow effect for accent elements */
-.glow-accent {
-  box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
-}
-
 /* Card hover effect - specific properties for fast hover response */
 .card-hover {
   transition-property: transform, border-color, box-shadow;
@@ -330,17 +239,6 @@ a {
 /* Primary button text - ensures dynamic theme switching */
 .btn-primary-text {
   color: var(--accent-foreground) !important;
-}
-
-/* Subtle noise texture overlay */
-.noise-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.02;
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* Section container */
@@ -361,12 +259,6 @@ a {
   .section-container {
     padding: 0 3rem;
   }
-}
-
-/* Carousel progress animation */
-@keyframes carousel-progress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
 }
 
 /* ============================================================
