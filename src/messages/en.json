@@ -231,9 +231,10 @@
     "reviews": "on Google — verified reviews"
   },
   "notFound": {
-    "title": "Oops!",
+    "title": "Page not found",
     "message": "This page doesn't exist or has been moved.",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "tag": "Error 404 — off the blueprint"
   },
   "metadata": {
     "title": "Jean-Baptiste Renart | JBR Development",
