@@ -1143,6 +1143,10 @@
       "title": "Erreur d'envoi",
       "message": "Une erreur est survenue lors de l'envoi de votre brief. Veuillez réessayer.",
       "retry": "Réessayer"
+    },
+    "estimate": {
+      "label": "Estimation indicative de votre projet",
+      "disclaimer": "Fourchette calculée depuis vos réponses, affinée dans le devis. Sans engagement."
     }
   },
   "proofStrip": {

@@ -1143,6 +1143,10 @@
       "title": "Submission error",
       "message": "An error occurred while sending your brief. Please try again.",
       "retry": "Try again"
+    },
+    "estimate": {
+      "label": "Indicative estimate for your project",
+      "disclaimer": "Range computed from your answers, refined in the quote. No commitment."
     }
   },
   "proofStrip": {

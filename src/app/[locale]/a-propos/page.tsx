@@ -145,17 +145,6 @@ export default async function AboutPage({ params }: PageProps) {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-[var(--background)] relative overflow-hidden">
-          {/* Background effects */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)`,
-              backgroundSize: "50px 50px",
-            }}
-          />
-          <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-[var(--accent)] rounded-full blur-[180px] opacity-[0.08]" />
-          <div className="absolute bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-blue-500 rounded-full blur-[150px] opacity-[0.05]" />
-
           <div className="section-container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Photo */}
@@ -166,7 +155,7 @@ export default async function AboutPage({ params }: PageProps) {
                   <div className="absolute inset-4 bg-[var(--background-card)] border border-[var(--border)] rounded-2xl rotate-3 transition-transform duration-700 hover:rotate-0" />
 
                   {/* Main image */}
-                  <div className="relative bg-[var(--background-secondary)] border-2 border-[var(--accent)] rounded-2xl overflow-hidden aspect-square shadow-[0_0_30px_rgba(52,211,153,0.3)]">
+                  <div className="relative bg-[var(--background-secondary)] border border-[var(--border)] rounded-2xl overflow-hidden aspect-square">
                     <Image
                       src="/pictures/moi.webp"
                       alt="Jean-Baptiste Renart"
@@ -194,12 +183,8 @@ export default async function AboutPage({ params }: PageProps) {
 
               {/* Content */}
               <div className="order-1 lg:order-2">
-                <span className="inline-block text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-                  {t("hero.label")}
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                  Jean-Baptiste Renart
-                </h1>
+                <span className="annotation-accent block mb-4">{t("hero.label")}</span>
+                <h1 className="display-xl mb-6">Jean-Baptiste Renart</h1>
                 <p className="text-xl text-[var(--foreground-secondary)] mb-4">
                   {t("hero.subtitle")}
                 </p>

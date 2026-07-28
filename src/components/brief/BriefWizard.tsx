@@ -22,6 +22,9 @@ import {
   LIMITS,
 } from "@/data/briefTypes";
 import StepIndicator from "@/components/brief/ui/StepIndicator";
+import EstimateBox from "@/components/brief/EstimateBox";
+import { siteConfig } from "@/data/siteConfig";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import ProjectTypeStep from "@/components/brief/steps/ProjectTypeStep";
 import CompanyStep from "@/components/brief/steps/CompanyStep";
 import GoalsStep from "@/components/brief/steps/GoalsStep";
@@ -249,6 +252,7 @@ export default function BriefWizard() {
     freeComment: "",
     locale: locale as "fr" | "en",
   });
+  const { trackEvent } = useAnalytics();
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [stepKey, setStepKey] = useState(0); // triggers re-animation on step change
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -291,8 +295,24 @@ export default function BriefWizard() {
 
   const handleResumeDraft = useCallback(() => {
     if (pendingDraft) {
-      setData((prev) => ({ ...prev, ...pendingDraft.data }));
-      setCurrentStepIndex(pendingDraft.currentStep);
+      // Fusion défensive champ par champ : un brouillon incomplet ou corrompu
+      // ne doit jamais écraser les valeurs par défaut avec undefined
+      // (sinon crash au rendu du récapitulatif).
+      setData((prev) => {
+        const d = pendingDraft.data;
+        return {
+          ...prev,
+          ...d,
+          company: { ...defaultCompany, ...prev.company, ...d.company },
+          goals: { ...defaultGoals, ...prev.goals, ...d.goals },
+          budget: { ...defaultBudget, ...prev.budget, ...d.budget },
+          contact: { ...defaultContact, ...prev.contact, ...d.contact },
+        };
+      });
+      const maxIndex = pendingDraft.data.projectType
+        ? STEPS_BY_PROJECT_TYPE[pendingDraft.data.projectType].length - 1
+        : 0;
+      setCurrentStepIndex(Math.min(Math.max(pendingDraft.currentStep, 0), maxIndex));
     }
     setShowDraftModal(false);
     setPendingDraft(null);
@@ -360,6 +380,11 @@ export default function BriefWizard() {
       return;
     }
     setErrors({});
+
+    if (currentStepIndex === 0) {
+      trackEvent("brief_start");
+    }
+    trackEvent("brief_step", { step: currentLogicalStep });
 
     // If editing from summary, jump back to summary
     if (editingFromSummary && summaryStepIndex !== null) {
@@ -434,11 +459,12 @@ export default function BriefWizard() {
       }
 
       clearDraft();
+      trackEvent("brief_submit");
       setStatus("success");
     } catch {
       setStatus("error");
     }
-  }, [data, honeypot, t]);
+  }, [data, honeypot, t, trackEvent]);
 
   // ── Render current step ──
 
@@ -544,9 +570,30 @@ export default function BriefWizard() {
         <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] mb-4 animate-fade-in-up">
           {t("confirmation.title")}
         </h2>
-        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed animate-fade-in-up delay-100">
+        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed animate-fade-in-up delay-100 mb-8">
           {t("confirmation.message")}
         </p>
+        <div className="w-full max-w-md animate-fade-in-up delay-200 mb-8">
+          <EstimateBox data={data} />
+        </div>
+        <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up delay-300">
+          <a
+            href={`tel:${siteConfig.phone}`}
+            onClick={() => trackEvent("tel_click", { from: "brief-success" })}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            {siteConfig.phoneDisplay}
+          </a>
+          <a
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { from: "brief-success" })}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
     );
   }
