@@ -37,14 +37,8 @@
     "visitOnlineSite": "Visiter le site",
     "viewCode": "Voir le code",
     "backToProjects": "Retour aux projets",
-    "projectLabel": "Projet",
-    "visitSiteButton": "Voir le site",
-    "sourceCode": "Code source",
     "aboutProject": "À propos du projet",
     "otherProjects": "Autres projets",
-    "ctaTitle": "Un projet en tête ?",
-    "ctaDescription": "Discutons de vos besoins et voyons comment je peux vous aider à concrétiser votre vision.",
-    "ctaButton": "Discutons de votre projet",
     "notFoundTitle": "Projet non trouvé",
     "items": {
       "jay": {
@@ -83,39 +77,6 @@
     "resultLabel": "Résultat",
     "viewReview": "Lire l'avis sur Google",
     "ownProduct": "Mon propre produit"
-  },
-  "services": {
-    "label": "Services",
-    "title": "Ce que je propose",
-    "subtitle": "Des solutions web adaptées à vos besoins et à votre budget.",
-    "pricing": "Tarifs :",
-    "pricingValue": "Sur devis",
-    "items": {
-      "sites-vitrines": {
-        "title": "Sites vitrines",
-        "description": "Une présence en ligne professionnelle qui reflète votre identité et convertit vos visiteurs en clients."
-      },
-      "applications-web": {
-        "title": "Applications web",
-        "description": "Dashboards, gestion de contenu, outils métier — des solutions sur mesure qui simplifient votre quotidien."
-      },
-      "developpement-technique": {
-        "title": "Développement technique",
-        "description": "Applications internes, intégrations API, automatisations — des solutions robustes pour vos besoins complexes."
-      },
-      "landing-pages": {
-        "title": "Landing pages",
-        "description": "Pages de conversion optimisées pour vos campagnes, produits ou événements."
-      },
-      "refonte-site": {
-        "title": "Refonte de site",
-        "description": "Modernisation de votre site existant : design, performance, expérience utilisateur."
-      },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "Évolutions, corrections, mises à jour — votre site entre de bonnes mains."
-      }
-    }
   },
   "about": {
     "label": "À propos",

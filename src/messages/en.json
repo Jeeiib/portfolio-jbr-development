@@ -37,14 +37,8 @@
     "visitOnlineSite": "Visit site",
     "viewCode": "View code",
     "backToProjects": "Back to projects",
-    "projectLabel": "Project",
-    "visitSiteButton": "Visit site",
-    "sourceCode": "Source code",
     "aboutProject": "About the project",
     "otherProjects": "Other projects",
-    "ctaTitle": "Have a project in mind?",
-    "ctaDescription": "Let's discuss your needs and see how I can help bring your vision to life.",
-    "ctaButton": "Let's discuss your project",
     "notFoundTitle": "Project not found",
     "items": {
       "jay": {
@@ -83,39 +77,6 @@
     "resultLabel": "Result",
     "viewReview": "Read the review on Google",
     "ownProduct": "My own product"
-  },
-  "services": {
-    "label": "Services",
-    "title": "What I offer",
-    "subtitle": "Web solutions tailored to your needs and budget.",
-    "pricing": "Rates:",
-    "pricingValue": "Custom quote",
-    "items": {
-      "sites-vitrines": {
-        "title": "Showcase websites",
-        "description": "A professional online presence that reflects your identity and converts visitors into customers."
-      },
-      "applications-web": {
-        "title": "Web applications",
-        "description": "Dashboards, content management, business tools — custom solutions that simplify your daily work."
-      },
-      "developpement-technique": {
-        "title": "Technical development",
-        "description": "Internal applications, API integrations, automations — robust solutions for your complex needs."
-      },
-      "landing-pages": {
-        "title": "Landing pages",
-        "description": "Conversion-optimized pages for your campaigns, products, or events."
-      },
-      "refonte-site": {
-        "title": "Website redesign",
-        "description": "Modernizing your existing site: design, performance, user experience."
-      },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "Updates, fixes, improvements — your website in good hands."
-      }
-    }
   },
   "about": {
     "label": "About",
