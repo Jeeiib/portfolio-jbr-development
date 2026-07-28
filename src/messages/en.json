@@ -16,7 +16,6 @@
     "subtitle": "I design custom websites and tools for small businesses in the Lille area. Clear pricing, reliable deadlines, a single point of contact.",
     "ctaPrimary": "Estimate my project — 3 min",
     "reassurance": "Instant estimate, no commitment. Reply within 24 hours.",
-    "scroll": "Scroll",
     "scene": {
       "online": "live ✓",
       "imageSlot": "image",
@@ -1113,10 +1112,10 @@
   },
   "proofStrip": {
     "rating": "5.0",
-    "ratingLabel": "on Google",
+    "ratingLabel": "on Google — verified reviews",
     "clients": "businesses supported",
-    "area": "Lille metro area",
-    "response": "Reply within 24 hours"
+    "area": "and the whole metro area",
+    "response": "maximum response time"
   },
   "offers": {
     "label": "Offers",

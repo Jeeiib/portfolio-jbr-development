@@ -16,7 +16,6 @@
     "subtitle": "Je conçois des sites et des outils sur mesure pour les TPE et PME de la métropole lilloise. Prix affichés, délais tenus, un seul interlocuteur.",
     "ctaPrimary": "Estimer mon projet — 3 min",
     "reassurance": "Estimation immédiate, sans engagement. Réponse sous 24 h.",
-    "scroll": "Défiler",
     "scene": {
       "online": "en ligne ✓",
       "imageSlot": "visuel",
@@ -1113,10 +1112,10 @@
   },
   "proofStrip": {
     "rating": "5,0",
-    "ratingLabel": "sur Google",
+    "ratingLabel": "sur Google — avis vérifiés",
     "clients": "entreprises accompagnées",
-    "area": "Lille et métropole",
-    "response": "Réponse sous 24 h"
+    "area": "et toute la métropole",
+    "response": "délai de réponse maximum"
   },
   "offers": {
     "label": "Offres",

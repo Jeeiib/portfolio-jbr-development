@@ -20,7 +20,10 @@ export default function BriefCTA({ from }: BriefCTAProps) {
   const { trackEvent } = useAnalytics();
 
   return (
-    <div className="section-container py-14">
+    // Section à fond explicite : les coutures d'alternance de fond tombent
+    // sur les bords de la section, jamais sur la carte elle-même.
+    <section className="bg-[var(--background)] py-16 md:py-20">
+      <div className="section-container">
       <div className="rounded-xl border border-dashed border-[var(--accent)] bg-[var(--accent)]/5 px-6 py-10 sm:px-10 text-center">
         <p className="annotation mb-3">{t("annotation")}</p>
         <h2 className="text-2xl sm:text-3xl font-bold mb-3">{t("title")}</h2>
@@ -56,6 +59,7 @@ export default function BriefCTA({ from }: BriefCTAProps) {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

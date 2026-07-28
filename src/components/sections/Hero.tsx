@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import SmoothScrollLink from "@/components/ui/SmoothScrollLink";
 import ChantierScene from "@/components/hero/ChantierScene";
 import { siteConfig } from "@/data/siteConfig";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -13,7 +12,7 @@ export default function Hero() {
   const { trackEvent } = useAnalytics();
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20">
+    <section className="relative min-h-[88svh] flex items-center pt-28 pb-16">
       <div className="section-container py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Message + CTA — visibles dès la première frame, aucun contenu n'attend l'animation */}
@@ -61,16 +60,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Indicateur de scroll sobre */}
-      <div className="hidden md:block absolute bottom-6 left-1/2 -translate-x-1/2">
-        <SmoothScrollLink
-          href="#projets"
-          className="annotation flex flex-col items-center gap-1 hover:text-[var(--accent)] transition-colors"
-        >
-          <span>{t("scroll")}</span>
-          <span aria-hidden="true">↓</span>
-        </SmoothScrollLink>
-      </div>
     </section>
   );
 }
