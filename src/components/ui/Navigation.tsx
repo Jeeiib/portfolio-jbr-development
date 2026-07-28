@@ -32,16 +32,19 @@ export default function Navigation() {
     { href: anchor("contact"), label: t("contact"), isAnchor: isHomePage },
   ];
 
-  // Initialize scroll state and enable transitions after mount
+  // Initialize scroll state and enable transitions after mount.
+  // L'état initial est posé via rAF pour ne pas déclencher de setState
+  // synchrone dans l'effet (règle react-hooks/set-state-in-effect).
   useEffect(() => {
-    setIsScrolled(window.scrollY > 50);
-    const timer = setTimeout(() => setHasMounted(true), 50);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    const raf = requestAnimationFrame(handleScroll);
+    const timer = setTimeout(() => setHasMounted(true), 50);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(raf);
       clearTimeout(timer);
     };
   }, []);
