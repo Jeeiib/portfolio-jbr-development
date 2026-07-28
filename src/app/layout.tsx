@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | JBR Development",
   },
   description:
-    "Développeur web freelance à Lille (Nord). Création de sites internet, applications web sur mesure, sites vitrines et e-commerce. Expert React, Next.js, TypeScript. Devis gratuit.",
+    "Développeur web indépendant à Lille. Sites vitrines dès 1 190 € HT, applications sur mesure, maintenance. Prix affichés, devis gratuit sous 48 h, un seul interlocuteur.",
   keywords: [
     "développeur web Lille",
     "développeur web freelance Lille",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   category: "technology",
   openGraph: {
     title: "Développeur Web Freelance Lille | JBR Development",
-    description: "Création de sites web et applications sur mesure à Lille. Expert React & Next.js. Votre vision, mon code, votre levier de croissance.",
+    description: "Sites et outils sur mesure pour TPE et PME lilloises. Prix affichés, délais tenus, avis Google vérifiés.",
     type: "website",
     locale: "fr_FR",
     alternateLocale: "en_US",

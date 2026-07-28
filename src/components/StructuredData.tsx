@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { siteConfig } from "@/data/siteConfig";
 
 interface StructuredDataProps {
   locale?: string;
@@ -18,11 +19,44 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
       ? "Développeur web freelance spécialisé dans la création de sites web et applications sur mesure. Sites vitrines, e-commerce, applications web pour PME et entrepreneurs à Lille et dans le Nord."
       : "Freelance web developer specializing in custom websites and web applications. Business websites, e-commerce, web apps for SMBs and entrepreneurs in Lille and Northern France.",
     url: baseUrl,
-    telephone: "+33618972250",
-    email: "contact@jbrdevelopment.fr",
-    image: `${baseUrl}/pictures/MoiJay.jpeg`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    image: `${baseUrl}/pictures/moi.webp`,
     logo: `${baseUrl}/icon-512.png`,
     priceRange: "€€",
+    makesOffer: [
+      {
+        "@type": "Offer",
+        name: locale === "fr" ? "Site vitrine (création ou refonte)" : "Business website (new or redesign)",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: siteConfig.prices.vitrine.from,
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+        },
+      },
+      {
+        "@type": "Offer",
+        name: locale === "fr" ? "Application ou outil sur mesure" : "Custom application or tool",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: siteConfig.prices.surMesure.from,
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+        },
+      },
+      {
+        "@type": "Offer",
+        name: locale === "fr" ? "Maintenance et accompagnement" : "Maintenance and support",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: siteConfig.prices.maintenance.monthly,
+          priceCurrency: "EUR",
+          unitText: locale === "fr" ? "mois" : "month",
+          valueAddedTaxIncluded: false,
+        },
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "7 Rue Nicot",
@@ -73,7 +107,7 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",
-      reviewCount: "2",
+      reviewCount: "3",
       bestRating: "5",
       worstRating: "1",
     },
@@ -87,7 +121,7 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
     ],
     sameAs: [
       "https://www.linkedin.com/in/jean-baptiste-renart-46b618153",
-      "https://github.com/iamrdb2f",
+      "https://github.com/Jeeiib",
     ],
   };
 
@@ -104,9 +138,9 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
       ? "Développeur web freelance basé à Lille, spécialisé en React, Next.js et TypeScript. Création de sites web et applications sur mesure pour PME et entrepreneurs."
       : "Freelance web developer based in Lille, France, specializing in React, Next.js and TypeScript. Custom websites and web applications for SMBs and entrepreneurs.",
     url: baseUrl,
-    image: `${baseUrl}/pictures/MoiJay.jpeg`,
-    email: "contact@jbrdevelopment.fr",
-    telephone: "+33618972250",
+    image: `${baseUrl}/pictures/moi.webp`,
+    email: siteConfig.email,
+    telephone: siteConfig.phone,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Lambersart",
@@ -131,7 +165,7 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
     ],
     sameAs: [
       "https://www.linkedin.com/in/jean-baptiste-renart-46b618153",
-      "https://github.com/iamrdb2f",
+      "https://github.com/Jeeiib",
     ],
   };
 
@@ -149,14 +183,6 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
     inLanguage: [locale === "fr" ? "fr-FR" : "en-US"],
     publisher: {
       "@id": `${baseUrl}/#person`,
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/${locale}?search={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
     },
   };
 
@@ -192,13 +218,13 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
       {
         "@type": "Service",
         position: 3,
-        name: locale === "fr" ? "Landing page conversion" : "Conversion Landing Page",
+        name: locale === "fr" ? "Maintenance et accompagnement" : "Maintenance and support",
         description: locale === "fr"
-          ? "Pages d'atterrissage optimisées pour la conversion"
-          : "Landing pages optimized for conversion",
+          ? "Hébergement, mises à jour, sauvegardes et évolutions de votre site"
+          : "Hosting, updates, backups and improvements for your website",
         provider: { "@id": `${baseUrl}/#business` },
         areaServed: { "@type": "City", name: "Lille" },
-        serviceType: "Landing Page Development",
+        serviceType: "Website Maintenance",
       },
     ],
   };

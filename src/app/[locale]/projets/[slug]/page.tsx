@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 
   return {
     title: `${project.title} — ${t(`items.${project.slug}.description`)}`,
-    description: t(`items.${project.slug}.problem`),
+    description: `${t(`items.${project.slug}.delivered`)} ${t(`items.${project.slug}.result`)}`,
     alternates: {
       canonical: `https://jbrdevelopment.fr/${locale}/projets/${slug}`,
       languages: {

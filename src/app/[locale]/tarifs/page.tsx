@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const offersJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://jbrdevelopment.fr/#business",
   name: "JBR Development",
   url: "https://jbrdevelopment.fr",
   telephone: siteConfig.phone,
