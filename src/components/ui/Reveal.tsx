@@ -7,6 +7,8 @@ interface RevealProps {
   /** Délai en millisecondes avant la transition une fois visible */
   delay?: number;
   className?: string;
+  /** Élément rendu (div par défaut) — "li" pour rester valide dans une liste */
+  as?: "div" | "li";
 }
 
 /**
@@ -15,8 +17,8 @@ interface RevealProps {
  * appliqué qu'en JS, et uniquement aux éléments encore sous le viewport.
  * Inerte si prefers-reduced-motion.
  */
-export default function Reveal({ children, delay = 0, className = "" }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export default function Reveal({ children, delay = 0, className = "", as: Tag = "div" }: RevealProps) {
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -52,12 +54,12 @@ export default function Reveal({ children, delay = 0, className = "" }: RevealPr
   }, []);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={ref as never}
       className={`reveal ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

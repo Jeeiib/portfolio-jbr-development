@@ -25,8 +25,8 @@ export default function Process() {
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {PHASES.map((phase, index) => (
-            <Reveal key={phase} delay={index * 100} className="h-full">
-              <li className="h-full flex flex-col bg-[var(--background-card)] border border-[var(--border)] rounded-xl p-6">
+            <Reveal key={phase} as="li" delay={index * 100} className="h-full">
+              <div className="h-full flex flex-col bg-[var(--background-card)] border border-[var(--border)] rounded-xl p-6">
                 <p className="annotation mb-4">
                   {t("phaseLabel")} {String(index + 1).padStart(2, "0")} / 04
                 </p>
@@ -35,7 +35,7 @@ export default function Process() {
                   {t(`steps.${phase}.description`)}
                 </p>
                 <p className="tag-chantier w-fit">{t(`steps.${phase}.marker`)}</p>
-              </li>
+              </div>
             </Reveal>
           ))}
         </ol>
