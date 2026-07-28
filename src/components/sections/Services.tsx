@@ -5,10 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { offers, type Offer } from "@/data/offers";
 import Reveal from "@/components/ui/Reveal";
 import { useAnalytics } from "@/hooks/useAnalytics";
-
-function formatPrice(n: number, locale: string) {
-  return new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-US").format(n);
-}
+import { formatPrice } from "@/lib/formatPrice";
 
 /**
  * Section Offres de la home : trois offres avec prix et délais affichés —
