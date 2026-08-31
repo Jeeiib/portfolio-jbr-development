@@ -95,6 +95,18 @@ Autre enseignement : les deux clients qui citent le site (revcomptabilite.fr et 
 
 **Blocage d'accès :** la fiche n'apparaît ni sur `hey@jay-assistant.fr` ni sur `renartjeanbaptiste@gmail.com` (zéro établissement sur les deux). Elle est gérée depuis un troisième compte Google, probablement `jbr.development.pro@gmail.com`. Il faut s'y connecter pour continuer.
 
+**Fait le 31/08/2026** (compte `jbr.development.pro@gmail.com`, `business.google.com/u/2/`) :
+
+- [x] **Horaires ajoutés** : la fiche était en « ouvert sans horaires standards », donc n'affichait aucun horaire, et Google le signalait comme information manquante. Posés lundi-vendredi 9h-18h, samedi et dimanche fermés, à l'identique de ce que déclare `StructuredData.tsx`. En attente de validation Google.
+- [x] **Trois services ajoutés** : « Création de site vitrine », « Refonte de site internet » et « Référencement local Google ». Les sept services présents (développement d'applications, applications mobiles, logiciels, e-commerce, maintenance, conseil, design/UX) ne mentionnaient pas l'offre d'appel, ce qui est le comble pour un site vitrine à 1 190 €.
+- [x] **Description ajoutée au service Maintenance** : hébergement, mises à jour, sauvegardes, évolutions mensuelles, réponse sous 24 h, 79 € HT par mois sans engagement. Le prix reste hors du champ « Prix », qui n'exprime pas de périodicité et laisserait croire à un montant unique.
+
+**Déjà en place, rien à faire** : catégorie principale « Concepteur de sites Web », description complète avec mots-clés locaux, téléphone, site web, LinkedIn, adresse, photos (logo et devanture), 3 avis 5/5 (Nicolas Steinberg, Thierry Dehon, Corinne Renart pour le cabinet comptable), 301 interactions clients et 80 vues le mois dernier.
+
+**À arbitrer :** les **zones desservies déclarent « France »**. C'est exactement l'erreur décrite dans l'article sur la fiche Google : une zone nationale dilue le signal local, et la fiche ne sort de toute façon pas sur « développeur web Paris ». Des communes réelles (Lille, Lambersart, Wambrechies, Saint-André-lez-Lille, Marcq-en-Baroeul, La Madeleine) concentreraient le signal là où il y a une chance de sortir. Décision laissée à JB, puisque cela restreint la zone affichée.
+
+**À faire après le déploiement :** le premier post de la fiche, qui doit pointer vers un article de `/conseils` (inutile tant que la section n'est pas en ligne).
+
 Le levier le plus rentable et le plus rapide, indépendant du site.
 
 1. **Catégorie principale** : « Concepteur de sites Web ». Secondaires possibles : « Service informatique », « Consultant en informatique ». La principale décide de l'essentiel des requêtes sur lesquelles la fiche sort.
