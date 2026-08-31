@@ -6,14 +6,12 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 
 ## Traités
 
+- [x] **Les six erreurs qui font qu'un site de TPE ne rapporte rien** — intention : « pourquoi mon site ne rapporte pas », diagnostic en dix minutes. Maillage : /tarifs, /brief. Publié le 31/08/2026.
 - [x] **Combien coûte un site internet à Lille en 2026 ?** — intention : « prix site internet Lille », comparaison des trois segments. Maillage : /tarifs, /brief. Publié le 31/08/2026.
 - [x] **Votre fiche Google Business, en dix minutes bien utilisées** — intention : « fiche Google Business artisan », guide actionnable. Maillage : /brief, /tarifs. Publié le 24/08/2026.
 - [x] **Wix, IA ou développeur : comment choisir sans se tromper** — intention : « wix ou développeur », arbitrage honnête. Maillage : /tarifs, /brief. Publié le 17/08/2026.
 
 ## À traiter, dans cet ordre
-
-- [ ] **Les six erreurs qui font qu'un site de TPE ne rapporte rien**
-  Intention : « pourquoi mon site ne rapporte pas ». Angle : diagnostic que le lecteur peut faire seul sur son propre site en dix minutes (pas de téléphone visible, aucun appel à l'action, invisible en local, lent sur mobile, aucune preuve, formulaire qui décourage). Maillage : /tarifs, /brief.
 
 - [ ] **Site internet pour expert-comptable : ce qui change vraiment**
   Intention : « site internet cabinet comptable ». Angle : la confiance et la prise de rendez-vous plutôt que la vitrine ; le passage du site à l'outil métier. S'appuyer sur ce qui est déjà public de REV Comptabilité, sans rien ajouter. Maillage : /services/application-web-sur-mesure, /brief.
