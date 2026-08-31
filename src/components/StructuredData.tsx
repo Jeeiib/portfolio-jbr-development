@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { siteConfig } from "@/data/siteConfig";
 
 interface StructuredDataProps {
@@ -104,13 +103,6 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
       "Tailwind CSS",
       "WordPress",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "3",
-      bestRating: "5",
-      worstRating: "1",
-    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -247,34 +239,24 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
   // statically defined JSON-LD schemas with no user input
   return (
     <>
-      <Script
-        id="schema-local-business"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <Script
-        id="schema-person"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <Script
-        id="schema-website"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      <Script
-        id="schema-services"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
-      <Script
-        id="schema-breadcrumb"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import ContactForm from "@/components/ui/ContactForm";
@@ -73,7 +72,7 @@ export default async function FreelanceReactNextjsPage({ params }: PageProps) {
 
   return (
     <>
-      <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
       <main className="pt-20">
         <section className="py-16 md:py-24 bg-[var(--background)] relative overflow-hidden">

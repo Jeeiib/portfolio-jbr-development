@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import ContactForm from "@/components/ui/ContactForm";
@@ -123,8 +122,7 @@ export default async function DeveloppeurWebLillePage({ params }: PageProps) {
 
   return (
     <>
-      <Script
-        id="faq-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

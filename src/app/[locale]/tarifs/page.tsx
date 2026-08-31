@@ -6,7 +6,6 @@ import BriefCTA from "@/components/ui/BriefCTA";
 import PricingTable from "@/components/tarifs/PricingTable";
 import PricingFAQ from "@/components/tarifs/PricingFAQ";
 import Reveal from "@/components/ui/Reveal";
-import { siteConfig } from "@/data/siteConfig";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,48 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const offersJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://jbrdevelopment.fr/#business",
-  name: "JBR Development",
-  url: "https://jbrdevelopment.fr",
-  telephone: siteConfig.phone,
-  makesOffer: [
-    {
-      "@type": "Offer",
-      name: "Site vitrine (création ou refonte)",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        price: siteConfig.prices.vitrine.from,
-        priceCurrency: "EUR",
-        valueAddedTaxIncluded: false,
-      },
-    },
-    {
-      "@type": "Offer",
-      name: "Application ou outil sur mesure",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        price: siteConfig.prices.surMesure.from,
-        priceCurrency: "EUR",
-        valueAddedTaxIncluded: false,
-      },
-    },
-    {
-      "@type": "Offer",
-      name: "Maintenance et accompagnement",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: siteConfig.prices.maintenance.monthly,
-        priceCurrency: "EUR",
-        unitText: "mois",
-        valueAddedTaxIncluded: false,
-      },
-    },
-  ],
-};
-
 export default async function TarifsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -83,10 +40,6 @@ export default async function TarifsPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(offersJsonLd) }}
-      />
       <Navigation />
       <main className="pt-28 md:pt-36">
         {/* En-tête */}

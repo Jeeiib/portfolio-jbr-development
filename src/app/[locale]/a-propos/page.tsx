@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -136,8 +135,7 @@ export default async function AboutPage({ params }: PageProps) {
 
   return (
     <>
-      <Script
-        id="person-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
