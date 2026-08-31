@@ -55,7 +55,7 @@ Déclenché par un audit externe non sollicité (prospection SEO) dont le seul c
   ```
   Frontmatter MDX obligatoire : `title`, `description`, `date`, `keywords`, optionnel `draft: true`.
 
-- [ ] **Step 1 : Tests échouants** — `src/lib/__tests__/conseils.test.ts` :
+- [x] **Step 1 : Tests échouants** — `src/lib/__tests__/conseils.test.ts` :
 
 ```ts
 import { describe, it, expect } from "vitest";
@@ -83,10 +83,12 @@ describe("conseils", () => {
 
 Run `pnpm test` → FAIL. Créer la fixture MDX (200 mots minimum, frontmatter complet).
 
-- [ ] **Step 2 : Implémenter `src/lib/conseils.ts`** — `fs.readdirSync(path.join(process.cwd(), "content/conseils"))`, filtre `.mdx`, `gray-matter` pour le frontmatter, slug = nom de fichier sans extension. Aucune compilation MDX ici (le rendu se fait dans la page) — ce module ne fait que lister/lire.
-- [ ] **Step 3 :** `pnpm test && pnpm exec tsc --noEmit` → PASS. Commit `feat(conseils): module de lecture des articles MDX`.
+- [x] **Step 2 : Implémenter `src/lib/conseils.ts`** — `fs.readdirSync(path.join(process.cwd(), "content/conseils"))`, filtre `.mdx`, `gray-matter` pour le frontmatter, slug = nom de fichier sans extension. Aucune compilation MDX ici (le rendu se fait dans la page) — ce module ne fait que lister/lire.
+- [x] **Step 3 :** `pnpm test && pnpm exec tsc --noEmit` → PASS. Commit `feat(conseils): module de lecture des articles MDX`.
 
 ---
+
+> **Task 1 faite le 31/08/2026.** `gray-matter` seul installé : la lib de rendu MDX reste à valider via Context7 au moment de la Task 2, le module ne compile rien. Le frontmatter est validé à la lecture (erreur nommant fichier et champ). Fixtures : `exemple-fixture.mdx` (publiée, à remplacer en Task 3) et `exemple-brouillon.mdx` (brouillon permanent, garde le test du filtrage significatif).
 
 ### Task 2 : [DESIGN — coordinateur] Pages /conseils et /conseils/[slug]
 
