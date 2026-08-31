@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import type {
   BriefData,
@@ -19,9 +19,11 @@ import {
   BRIEF_DRAFT_VERSION,
   BRIEF_DRAFT_MAX_AGE_DAYS,
   STEPS_BY_PROJECT_TYPE,
-  LIMITS,
 } from "@/data/briefTypes";
 import StepIndicator from "@/components/brief/ui/StepIndicator";
+import EstimateBox from "@/components/brief/EstimateBox";
+import { siteConfig } from "@/data/siteConfig";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import ProjectTypeStep from "@/components/brief/steps/ProjectTypeStep";
 import CompanyStep from "@/components/brief/steps/CompanyStep";
 import GoalsStep from "@/components/brief/steps/GoalsStep";
@@ -249,6 +251,8 @@ export default function BriefWizard() {
     freeComment: "",
     locale: locale as "fr" | "en",
   });
+  const { trackEvent } = useAnalytics();
+  const briefStartedRef = useRef(false);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [stepKey, setStepKey] = useState(0); // triggers re-animation on step change
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -291,8 +295,24 @@ export default function BriefWizard() {
 
   const handleResumeDraft = useCallback(() => {
     if (pendingDraft) {
-      setData((prev) => ({ ...prev, ...pendingDraft.data }));
-      setCurrentStepIndex(pendingDraft.currentStep);
+      // Fusion défensive champ par champ : un brouillon incomplet ou corrompu
+      // ne doit jamais écraser les valeurs par défaut avec undefined
+      // (sinon crash au rendu du récapitulatif).
+      setData((prev) => {
+        const d = pendingDraft.data;
+        return {
+          ...prev,
+          ...d,
+          company: { ...defaultCompany, ...prev.company, ...d.company },
+          goals: { ...defaultGoals, ...prev.goals, ...d.goals },
+          budget: { ...defaultBudget, ...prev.budget, ...d.budget },
+          contact: { ...defaultContact, ...prev.contact, ...d.contact },
+        };
+      });
+      const maxIndex = pendingDraft.data.projectType
+        ? STEPS_BY_PROJECT_TYPE[pendingDraft.data.projectType].length - 1
+        : 0;
+      setCurrentStepIndex(Math.min(Math.max(pendingDraft.currentStep, 0), maxIndex));
     }
     setShowDraftModal(false);
     setPendingDraft(null);
@@ -361,7 +381,8 @@ export default function BriefWizard() {
     }
     setErrors({});
 
-    // If editing from summary, jump back to summary
+    // If editing from summary, jump back to summary (pas un pas de tunnel :
+    // aucun événement analytics ici)
     if (editingFromSummary && summaryStepIndex !== null) {
       setCurrentStepIndex(summaryStepIndex);
       setEditingFromSummary(false);
@@ -371,12 +392,18 @@ export default function BriefWizard() {
       return;
     }
 
+    if (currentStepIndex === 0 && !briefStartedRef.current) {
+      briefStartedRef.current = true;
+      trackEvent("brief_start");
+    }
+    trackEvent("brief_step", { step: currentLogicalStep });
+
     if (currentStepIndex < activeSteps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
       setStepKey((k) => k + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex]);
+  }, [currentLogicalStep, data, t, currentStepIndex, activeSteps.length, editingFromSummary, summaryStepIndex, trackEvent]);
 
   const handlePrevious = useCallback(() => {
     setErrors({});
@@ -434,11 +461,12 @@ export default function BriefWizard() {
       }
 
       clearDraft();
+      trackEvent("brief_submit");
       setStatus("success");
     } catch {
       setStatus("error");
     }
-  }, [data, honeypot, t]);
+  }, [data, honeypot, t, trackEvent]);
 
   // ── Render current step ──
 
@@ -544,9 +572,30 @@ export default function BriefWizard() {
         <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] mb-4 animate-fade-in-up">
           {t("confirmation.title")}
         </h2>
-        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed animate-fade-in-up delay-100">
+        <p className="text-lg text-[var(--foreground-secondary)] max-w-lg leading-relaxed animate-fade-in-up delay-100 mb-8">
           {t("confirmation.message")}
         </p>
+        <div className="w-full max-w-md animate-fade-in-up delay-200 mb-8">
+          <EstimateBox data={data} />
+        </div>
+        <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up delay-300">
+          <a
+            href={`tel:${siteConfig.phone}`}
+            onClick={() => trackEvent("tel_click", { from: "brief-success" })}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            {siteConfig.phoneDisplay}
+          </a>
+          <a
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { from: "brief-success" })}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
     );
   }

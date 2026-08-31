@@ -197,7 +197,7 @@ function getConfirmationEmailHtml(data: { name: string; projectType: string }) {
               </p>
 
               <p style="margin: 0 0 24px 0; color: #f5f5f5; font-size: 16px; line-height: 1.6;">
-                Je prends le temps d'étudier votre demande et vous répondrai personnellement sous <strong>24 à 48 heures</strong>.
+                Je prends le temps d'étudier votre demande et vous répondrai personnellement sous <strong>24 heures</strong>.
               </p>
 
               <!-- What's Next Card -->

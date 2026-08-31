@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { landingPages } from "@/data/landingPages";
 import { routing } from "@/i18n/routing";
+import { getAllArticles } from "@/lib/conseils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://jbrdevelopment.fr";
@@ -36,6 +37,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           fr: `${baseUrl}/fr/services`,
           en: `${baseUrl}/en/services`,
+        },
+      },
+    });
+  }
+
+  // Pricing page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${baseUrl}/${locale}/tarifs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/fr/tarifs`,
+          en: `${baseUrl}/en/tarifs`,
         },
       },
     });
@@ -91,6 +108,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     }
+  }
+
+  // Section /conseils : française uniquement, donc pas d'alternates. Les
+  // brouillons sont déjà exclus par getAllArticles.
+  const articles = getAllArticles();
+
+  if (articles.length > 0) {
+    entries.push({
+      url: `${baseUrl}/fr/conseils`,
+      lastModified: new Date(articles[0].date),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  }
+
+  for (const article of articles) {
+    entries.push({
+      url: `${baseUrl}/fr/conseils/${article.slug}`,
+      lastModified: new Date(article.date),
+      changeFrequency: "yearly",
+      priority: 0.7,
+    });
   }
 
   return entries;

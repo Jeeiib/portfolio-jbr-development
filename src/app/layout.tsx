@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -17,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | JBR Development",
   },
   description:
-    "Développeur web freelance à Lille (Nord). Création de sites internet, applications web sur mesure, sites vitrines et e-commerce. Expert React, Next.js, TypeScript. Devis gratuit.",
+    "Développeur web indépendant à Lille. Sites vitrines dès 1 190 € HT, applications sur mesure, maintenance. Prix affichés, devis gratuit sous 48 h, un seul interlocuteur.",
   keywords: [
     "développeur web Lille",
     "développeur web freelance Lille",
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
   category: "technology",
   openGraph: {
     title: "Développeur Web Freelance Lille | JBR Development",
-    description: "Création de sites web et applications sur mesure à Lille. Expert React & Next.js. Votre vision, mon code, votre levier de croissance.",
+    description: "Sites et outils sur mesure pour TPE et PME lilloises. Prix affichés, délais tenus, avis Google vérifiés.",
     type: "website",
     locale: "fr_FR",
     alternateLocale: "en_US",
@@ -101,9 +108,10 @@ export default function RootLayout({
           src="/scripts/theme-init.js"
         />
       </head>
-      <body className={`${spaceGrotesk.variable} antialiased`} suppressHydrationWarning>
-        <GoogleAnalytics />
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`} suppressHydrationWarning>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

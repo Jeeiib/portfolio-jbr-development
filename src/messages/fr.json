@@ -4,21 +4,32 @@
     "services": "Services",
     "about": "À propos",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tarifs": "Tarifs",
+    "estimate": "Estimer mon projet",
+    "callAria": "Appeler Jean-Baptiste",
+    "conseils": "Conseils"
   },
   "hero": {
-    "available": "Disponible pour vos projets",
-    "role": "Développeur Web",
-    "tagline": "Votre vision, mon code,",
-    "taglineHighlight": "votre levier de croissance.",
-    "ctaPrimary": "Discutons de votre projet",
-    "ctaSecondary": "Voir mes projets",
-    "scroll": "Scroll"
+    "annotation": "Développeur web indépendant — Lille",
+    "title": "Votre site pourrait se construire là,",
+    "titleHighlight": "sous vos yeux.",
+    "subtitle": "Je conçois des sites et des outils sur mesure pour les TPE et PME de la métropole lilloise. Prix affichés, délais tenus, un seul interlocuteur.",
+    "ctaPrimary": "Estimer mon projet — 3 min",
+    "reassurance": "Estimation immédiate, sans engagement. Réponse sous 24 h.",
+    "scene": {
+      "online": "en ligne ✓",
+      "imageSlot": "visuel",
+      "phase1": "1/3 — maquette",
+      "phase2": "2/3 — design",
+      "phase3": "3/3 — en ligne",
+      "replay": "↻ rejouer"
+    }
   },
   "projects": {
-    "label": "Portfolio",
-    "title": "Mes projets récents",
-    "subtitle": "Des applications web conçues pour répondre aux besoins réels de mes clients.",
+    "label": "Preuves",
+    "title": "Ils m'ont fait confiance",
+    "subtitle": "Trois projets livrés, trois patrons qui racontent. Les avis sont publics et vérifiables sur Google.",
     "viewProject": "Voir le projet",
     "visitSite": "Site",
     "backToHome": "Retour à l'accueil",
@@ -26,62 +37,46 @@
     "visitOnlineSite": "Visiter le site",
     "viewCode": "Voir le code",
     "backToProjects": "Retour aux projets",
-    "projectLabel": "Projet",
-    "visitSiteButton": "Voir le site",
-    "sourceCode": "Code source",
     "aboutProject": "À propos du projet",
     "otherProjects": "Autres projets",
-    "ctaTitle": "Un projet en tête ?",
-    "ctaDescription": "Discutons de vos besoins et voyons comment je peux vous aider à concrétiser votre vision.",
-    "ctaButton": "Discutons de votre projet",
     "notFoundTitle": "Projet non trouvé",
     "items": {
       "jay": {
         "description": "Assistant IA pour commerciaux — Seul développeur",
-        "fullDescription": "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email."
+        "fullDescription": "Jay est un assistant IA conversationnel accessible via WhatsApp qui permet aux professionnels de gérer leurs CRM et calendriers par la voix. L'utilisateur envoie une note vocale décrivant ce qu'il veut faire, et Jay transcrit, analyse et exécute automatiquement les actions correspondantes dans les systèmes connectés. Support de 6 CRMs majeurs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), intégrations calendriers et email.",
+        "clientRole": "Assistant IA pour commerciaux",
+        "problem": "Les commerciaux perdent des heures à ressaisir leurs notes dans le CRM après chaque rendez-vous.",
+        "delivered": "Un assistant IA sur WhatsApp : une note vocale suffit, le CRM et l'agenda se mettent à jour automatiquement.",
+        "result": "Six CRM majeurs connectés : HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader.",
+        "quote": "",
+        "quoteAuthor": ""
       },
       "nicolas-steinberg": {
         "description": "Portfolio consultant hôtellerie de luxe",
-        "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés."
+        "fullDescription": "Site portfolio pour un consultant en hôtellerie de luxe. Design premium et épuré reflétant l'univers du luxe. Animations fluides au scroll, scores Lighthouse impeccables (97/100 performance, 100/100 SEO). Intégration d'outils stratégiques personnalisés.",
+        "clientRole": "Consultant en hôtellerie de luxe",
+        "problem": "Dans l'hôtellerie de luxe, l'image est tout : son site est sa carte de visite auprès de palaces et d'investisseurs exigeants.",
+        "delivered": "Un portfolio épuré au niveau d'exigence de son secteur : design premium, animations fines, chargement instantané.",
+        "result": "Lighthouse 97/100 en performance et 100/100 en SEO.",
+        "quote": "Il est rare de trouver des profils capables de traduire une vision stratégique complexe en une interface d'une telle précision.",
+        "quoteAuthor": "Nicolas Steinberg"
       },
       "rev-comptabilite": {
         "description": "Application web métier — cabinet comptable",
-        "fullDescription": "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase."
+        "fullDescription": "Application web métier développée pour le cabinet d'expertise comptable REV Comptabilité (Wambrechies). Authentification SSO Microsoft Azure AD, portail client avec prise de rendez-vous en ligne, synchronisation calendrier Outlook via Microsoft Graph API, notifications email automatiques avec Resend, et gestion multi-rôles (admin, expert-comptable, collaborateur, client) avec permissions Row-Level Security sur toutes les tables Supabase.",
+        "clientRole": "Cabinet d'expertise comptable — Wambrechies",
+        "problem": "Le cabinet gérait rendez-vous et échanges clients par téléphone et par mail, avec des allers-retours sans fin pour l'équipe.",
+        "delivered": "Un espace client sécurisé avec prise de rendez-vous en ligne synchronisée Outlook, notifications automatiques et accès par rôles pour l'équipe comme pour les clients.",
+        "result": "Prise de rendez-vous en ligne synchronisée avec l'agenda Outlook du cabinet, en production sur revcomptabilite.fr.",
+        "quote": "Je suis ravie du rendu ainsi que de la prestation réalisée avec méthodologie et professionnalisme, avec des points d'avancée réguliers.",
+        "quoteAuthor": "REV Comptabilité"
       }
-    }
-  },
-  "services": {
-    "label": "Services",
-    "title": "Ce que je propose",
-    "subtitle": "Des solutions web adaptées à vos besoins et à votre budget.",
-    "pricing": "Tarifs :",
-    "pricingValue": "Sur devis",
-    "items": {
-      "sites-vitrines": {
-        "title": "Sites vitrines",
-        "description": "Une présence en ligne professionnelle qui reflète votre identité et convertit vos visiteurs en clients."
-      },
-      "applications-web": {
-        "title": "Applications web",
-        "description": "Dashboards, gestion de contenu, outils métier — des solutions sur mesure qui simplifient votre quotidien."
-      },
-      "developpement-technique": {
-        "title": "Développement technique",
-        "description": "Applications internes, intégrations API, automatisations — des solutions robustes pour vos besoins complexes."
-      },
-      "landing-pages": {
-        "title": "Landing pages",
-        "description": "Pages de conversion optimisées pour vos campagnes, produits ou événements."
-      },
-      "refonte-site": {
-        "title": "Refonte de site",
-        "description": "Modernisation de votre site existant : design, performance, expérience utilisateur."
-      },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "Évolutions, corrections, mises à jour — votre site entre de bonnes mains."
-      }
-    }
+    },
+    "problemLabel": "Le problème",
+    "deliveredLabel": "Ce que j'ai livré",
+    "resultLabel": "Résultat",
+    "viewReview": "Lire l'avis sur Google",
+    "ownProduct": "Mon propre produit"
   },
   "about": {
     "label": "À propos",
@@ -104,7 +99,7 @@
   "contact": {
     "label": "Contact",
     "title": "Discutons de votre projet",
-    "subtitle": "Vous avez une idée, un besoin, une question ? Remplissez le formulaire ou contactez-moi directement par email. Je vous réponds sous 24-48h.",
+    "subtitle": "Vous avez une idée, un besoin, une question ? Remplissez le formulaire ou contactez-moi directement par email. Je vous réponds sous 24 h.",
     "email": "Email",
     "form": {
       "name": "Nom",
@@ -128,98 +123,79 @@
       "error": "Une erreur est survenue. Réessayez ou contactez-moi directement par email."
     }
   },
-  "testimonial": {
-    "label": "Témoignages",
-    "title": "Ce qu'ils disent",
-    "viewOnGoogle": "Voir sur Google",
-    "items": {
-      "nicolas": {
-        "quote": "Il est rare de trouver des profils capables de traduire une vision stratégique complexe en une interface d'une telle précision. Le résultat dépasse les standards habituels du marché. C'est un collaborateur précieux pour ceux qui ne tolèrent aucune approximation. Un expert à solliciter tant qu'il est encore accessible, car ce niveau d'exécution est une",
-        "quoteHighlight": "denrée rare.",
-        "author": "Nicolas Steinberg",
-        "role": "Consultant hôtellerie de luxe",
-        "initials": "NS",
-        "link": "https://share.google/TrBD8GioYeNPAUJ37"
-      },
-      "thierry": {
-        "quote": "Le développement de notre nouveau site web vient de s'achever et JB a fourni un travail qui a dépassé nos attentes. Sa compréhension des problématiques, sa rapidité de réaction et sa façon de transposer nos demandes a été",
-        "quoteHighlight": "simplement parfaite.",
-        "author": "Thierry Dehon",
-        "role": "Gérant de RDP Glass",
-        "initials": "TD",
-        "link": "https://share.google/LPCNCjqZRBPBRaVjv"
-      },
-      "corinne": {
-        "quote": "JBR Développement a réalisé mon nouveau site pour mon cabinet d'expertise comptable. Je suis ravie du rendu ainsi que de la prestation réalisée avec méthodologie et professionnalisme avec des points d'avancée réguliers pour répondre à mes attentes !",
-        "quoteHighlight": "Je recommande vivement !",
-        "author": "REV Comptabilité",
-        "role": "Cabinet d'expertise comptable",
-        "initials": "RC",
-        "link": "https://share.google/PT1KkKAtY4UwzpxUn"
-      }
-    }
-  },
   "process": {
-    "label": "Process",
+    "label": "Le chantier",
     "title": "Comment ça se passe ?",
-    "subtitle": "Un accompagnement structuré pour des projets réussis.",
+    "subtitle": "Quatre phases, comme un chantier bien mené : vous savez toujours où on en est.",
+    "phaseLabel": "Phase",
     "steps": {
-      "discovery": {
-        "title": "Découverte",
-        "description": "Questionnaire + rendez-vous (Lille ou visio) pour comprendre vos besoins et objectifs."
+      "quote": {
+        "title": "Devis et plan",
+        "description": "Un échange (à Lille ou en visio) pour comprendre votre besoin, puis un devis détaillé avec planning. Acompte de 50 % à la signature.",
+        "marker": "Devis sous 48 h"
       },
-      "proposal": {
-        "title": "Proposition",
-        "description": "Devis détaillé + planning. Paiement de 50% à la signature pour démarrer."
+      "design": {
+        "title": "Fondations et design",
+        "description": "Maquette de votre site, validée ensemble avant de construire. Vous voyez à quoi ça ressemble avant que ça existe.",
+        "marker": "Maquette validée"
       },
-      "development": {
-        "title": "Développement",
-        "description": "Méthode agile avec points réguliers et démos. Révisions illimitées dans le périmètre."
+      "build": {
+        "title": "Construction",
+        "description": "Développement avec points d'avancement réguliers et démos. Révisions incluses dans le périmètre du devis.",
+        "marker": "Démos régulières"
       },
-      "delivery": {
-        "title": "Livraison",
-        "description": "Solde de 50% + garantie bugs 30 jours. Maintenance optionnelle proposée."
+      "handover": {
+        "title": "Remise des clés",
+        "description": "Mise en ligne, formation à la prise en main, solde de 50 %. Garantie corrections 30 jours, puis maintenance si vous voulez.",
+        "marker": "Garantie 30 jours"
       }
     }
   },
   "faq": {
-    "label": "FAQ",
-    "title": "Questions fréquentes",
+    "label": "Questions directes",
+    "title": "Ce que vous vous demandez vraiment",
     "items": {
       "cost": {
-        "question": "Combien coûte un site web ?",
-        "answer": "Chaque projet est unique. Contactez-moi pour un devis personnalisé gratuit et sans engagement."
+        "question": "Combien ça coûte, concrètement ?",
+        "answer": "Site vitrine dès 1 190 € HT, outil sur mesure dès 3 900 € HT, maintenance à 79 € HT par mois. La page Tarifs détaille ce qui est inclus et ce qui fait varier le prix, et le brief en ligne vous donne une estimation immédiate en 3 minutes."
       },
       "timeline": {
-        "question": "Quels sont les délais ?",
-        "answer": "Landing page : 1-2 semaines. Site vitrine : 2-3 semaines. Refonte : 2-3 semaines. Application web : 1-2 mois."
+        "question": "Combien de temps ça prend ?",
+        "answer": "Un site vitrine : 2 à 3 semaines. Un outil sur mesure : 4 à 8 semaines selon le périmètre. Le planning exact est fixé au devis et tenu — c'est un engagement, pas une estimation."
       },
-      "hosting": {
-        "question": "L'hébergement est inclus ?",
-        "answer": "Je propose les deux options : je peux gérer l'hébergement pour vous, ou vous conseiller pour le faire vous-même."
+      "nontech": {
+        "question": "Je n'y connais rien en technique, c'est un problème ?",
+        "answer": "C'est justement mon métier de faire le pont. Un seul interlocuteur, zéro jargon, des points d'avancement où vous voyez le site se construire, et une formation à la remise des clés pour être autonome sur le quotidien."
       },
-      "autonomy": {
-        "question": "Je pourrai modifier le site moi-même ?",
-        "answer": "Selon vos besoins, je peux intégrer un CMS (système de gestion de contenu) pour que vous soyez totalement autonome."
+      "after": {
+        "question": "Qui s'occupe du site après la mise en ligne ?",
+        "answer": "Moi, si vous le souhaitez : la maintenance à 79 € HT/mois couvre l'hébergement, le nom de domaine, les mises à jour, les sauvegardes et les petites évolutions. Sinon, vous repartez avec un site dont vous êtes pleinement propriétaire."
       },
-      "technologies": {
-        "question": "Tu travailles avec quelles technologies ?",
-        "answer": "React, Next.js, Node.js, TypeScript — des technologies modernes, performantes et maintenables."
+      "wixOrCustom": {
+        "question": "Pourquoi pas Wix ou un site généré par IA ?",
+        "answer": "Pour démarrer seul avec un petit budget, c'est une option honnête. Ce que ça ne fait pas : un site à votre image plutôt qu'un modèle, un référencement local sérieux face à vos concurrents, et un humain responsable du résultat qui répond quand quelque chose cloche."
       },
       "location": {
-        "question": "Tu te déplaces ?",
-        "answer": "Oui, dans la métropole lilloise. Pour le reste, visio sans problème !"
+        "question": "Vous travaillez uniquement sur Lille ?",
+        "answer": "Je me déplace sur Lille et sa métropole pour les rendez-vous, et je travaille à distance avec toute la France. Les points d'avancement se font en visio ou autour d'un café, au choix."
       }
     }
   },
   "footer": {
     "services": "Nos services",
-    "copyright": "JBR Development - Tous droits réservés"
+    "copyright": "JBR Development - Tous droits réservés",
+    "tagline": "Développeur web indépendant à Lille. Sites et outils sur mesure pour TPE et PME.",
+    "areaLine": "Lille et métropole — à distance partout en France",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "responseLine": "Réponse sous 24 h",
+    "reviews": "sur Google — avis vérifiés"
   },
   "notFound": {
-    "title": "Oups !",
+    "title": "Page introuvable",
     "message": "Cette page n'existe pas ou a été déplacée.",
-    "backHome": "Retour à l'accueil"
+    "backHome": "Retour à l'accueil",
+    "tag": "Erreur 404 — page hors plan"
   },
   "metadata": {
     "title": "Jean-Baptiste Renart | JBR Development",
@@ -298,8 +274,6 @@
     "services": {
       "label": "Mes services",
       "title": "Des solutions adaptées à vos besoins",
-      "pricing": "Tarif",
-      "onQuote": "Sur devis - Devis gratuit sous 24h",
       "items": {
         "siteVitrine": {
           "title": "Site Vitrine",
@@ -331,7 +305,8 @@
             "4": "Analytics intégrés"
           }
         }
-      }
+      },
+      "pricingFrom": "dès {price} € HT"
     },
     "faq": {
       "label": "Questions fréquentes"
@@ -343,7 +318,8 @@
       "address": "Adresse",
       "phone": "Téléphone",
       "onGoogle": "sur Google"
-    }
+    },
+    "googleReviewsCount": "3 avis Google vérifiés"
   },
   "aboutPage": {
     "meta": {
@@ -433,7 +409,7 @@
     "developpeur-web-lille": {
       "meta": {
         "title": "Développeur Web Freelance Lille | JBR Development",
-        "description": "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js. Devis gratuit sous 24h."
+        "description": "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js. Devis gratuit sous 48 h."
       },
       "hero": {
         "label": "Développeur Web à Lille",
@@ -448,7 +424,7 @@
         },
         "coutSite": {
           "question": "Combien coûte un site internet à Lille ?",
-          "answer": "Les tarifs varient selon la complexité du projet. Un site vitrine démarre généralement autour de 1 500€, une application web à partir de 3 000€. Contactez-moi pour un devis personnalisé gratuit."
+          "answer": "Mes tarifs sont affichés : un site vitrine commence à 1 190 € HT, une application ou un outil sur mesure à 3 900 € HT, et la maintenance complète coûte 79 € HT par mois. Le détail de ce qui est inclus est sur la page Tarifs, et le brief en ligne vous donne une estimation immédiate en 3 minutes."
         },
         "freelanceVsAgence": {
           "question": "Freelance ou agence web : que choisir ?",
@@ -477,8 +453,8 @@
       "faq": {
         "title": "Questions sur la création de site internet",
         "prixVitrine": {
-          "question": "Quel est le prix d'un site vitrine en 2025 ?",
-          "answer": "Un site vitrine professionnel coûte généralement entre 1 500€ et 5 000€ selon le nombre de pages, le design et les fonctionnalités souhaitées. Je vous propose un devis détaillé gratuit."
+          "question": "Combien coûte un site vitrine à Lille ?",
+          "answer": "Chez moi, un site vitrine 5 pages sur mesure démarre à 1 190 € HT, référencement local inclus. Le prix monte avec le nombre de pages, la création de contenus ou une migration, jamais en cours de route : le montant du devis est définitif. La page Tarifs détaille tout ce qui est inclus."
         },
         "queComprend": {
           "question": "Que comprend la création d'un site internet ?",
@@ -528,7 +504,7 @@
         },
         "prixReact": {
           "question": "Combien coûte un site en React/Next.js ?",
-          "answer": "Les tarifs démarrent autour de 2 000€ pour un site vitrine Next.js et peuvent aller jusqu'à 10 000€+ pour une application complexe. Devis gratuit sur demande."
+          "answer": "Mes tarifs ne dépendent pas de la technologie : site vitrine dès 1 190 € HT, application sur mesure dès 3 900 € HT. React et Next.js me permettent simplement de livrer plus vite un site plus performant : vous payez le résultat, pas la stack. Estimation immédiate en 3 minutes via le brief en ligne."
         }
       }
     },
@@ -554,7 +530,7 @@
         },
         "coutApp": {
           "question": "Combien coûte le développement d'une application web ?",
-          "answer": "Le budget démarre autour de 3 000€ pour une application simple et peut atteindre 15 000€+ pour des projets complexes avec nombreuses fonctionnalités. Devis détaillé sur demande."
+          "answer": "Un outil sur mesure démarre à 3 900 € HT ; un projet type se situe entre 5 000 et 9 000 € HT selon le périmètre (comptes utilisateurs, intégrations, automatisations). Le devis fixe un montant définitif avant le premier jour de développement. La grille complète est sur la page Tarifs."
         },
         "delaiApp": {
           "question": "Combien de temps pour développer une application web ?",
@@ -1129,6 +1105,183 @@
       "title": "Erreur d'envoi",
       "message": "Une erreur est survenue lors de l'envoi de votre brief. Veuillez réessayer.",
       "retry": "Réessayer"
+    },
+    "estimate": {
+      "label": "Estimation indicative de votre projet",
+      "disclaimer": "Fourchette calculée depuis vos réponses, affinée dans le devis. Sans engagement."
     }
+  },
+  "proofStrip": {
+    "rating": "5,0",
+    "ratingLabel": "sur Google — avis vérifiés",
+    "clients": "entreprises accompagnées",
+    "area": "et toute la métropole",
+    "response": "délai de réponse maximum"
+  },
+  "offers": {
+    "label": "Offres",
+    "title": "Trois offres, prix affichés",
+    "subtitle": "Pas de « sur devis » mystérieux : vous savez où vous mettez les pieds avant de m'appeler. Le devis précis ajuste, jamais ne surprend.",
+    "from": "dès",
+    "perMonth": "/ mois",
+    "delay": "Délai type : {min} à {max} semaines",
+    "noCommitment": "Sans engagement de durée",
+    "details": "Voir le détail des tarifs",
+    "items": {
+      "vitrine": {
+        "title": "Site vitrine — création ou refonte",
+        "description": "Votre entreprise trouvable sur Google, avec un site qui donne confiance et fait décrocher le téléphone.",
+        "includes": [
+          "5 pages sur mesure, design unique",
+          "Référencement local Google inclus",
+          "Adapté mobile, rapide, sécurisé",
+          "Formation à la prise en main"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Application ou outil sur mesure",
+        "description": "Un outil qui épouse votre façon de travailler : espace client, prise de rendez-vous, gestion métier.",
+        "includes": [
+          "Conçu autour de vos processus réels",
+          "Espace client, rendez-vous, automatisations",
+          "Connexion à vos outils existants",
+          "Accompagnement et évolutions"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance et accompagnement",
+        "description": "Votre site reste rapide, sécurisé et à jour — et vous avez un interlocuteur qui répond.",
+        "includes": [
+          "Hébergement et nom de domaine gérés",
+          "Mises à jour et sauvegardes",
+          "Petites évolutions incluses chaque mois",
+          "Réponse sous 24 h ouvrées"
+        ]
+      }
+    }
+  },
+  "briefCta": {
+    "annotation": "Estimation en 3 minutes",
+    "title": "Et votre projet, il coûterait combien ?",
+    "subtitle": "Décrivez votre projet en quelques questions : vous recevez une fourchette immédiate, sans engagement et sans email commercial derrière.",
+    "cta": "Estimer mon projet"
+  },
+  "tarifs": {
+    "meta": {
+      "title": "Tarifs — création de site internet à Lille dès 1 190 € HT",
+      "description": "Des prix affichés, pas de « sur devis » mystérieux : site vitrine dès 1 190 € HT, application sur mesure dès 3 900 € HT, maintenance 79 € HT/mois. Développeur web indépendant à Lille."
+    },
+    "annotation": "Tarifs — mis à jour 2026",
+    "title": "Des prix clairs, sans surprise",
+    "intro": "La plupart des agences et freelances cachent leurs prix. Voici les miens, affichés : vous savez avant de m'appeler si on peut travailler ensemble. Le devis précis ajuste selon votre projet, jamais ne surprend.",
+    "from": "dès",
+    "perMonth": "/ mois",
+    "delay": "Délai type : {min} à {max} semaines",
+    "noCommitment": "Sans engagement de durée",
+    "popular": "Le plus demandé",
+    "estimateCta": "Estimer mon projet — 3 min",
+    "items": {
+      "vitrine": {
+        "title": "Site vitrine — création ou refonte",
+        "description": "Votre entreprise trouvable sur Google, avec un site qui donne confiance et fait décrocher le téléphone.",
+        "includes": [
+          "5 pages sur mesure, design unique (pas de modèle)",
+          "Référencement local Google : balises, données structurées, sitemap",
+          "Adapté mobile, rapide (Core Web Vitals), sécurisé",
+          "Formulaire de contact et clic-pour-appeler",
+          "Formation à la prise en main à la livraison",
+          "Garantie corrections 30 jours"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Application ou outil sur mesure",
+        "description": "Un outil qui épouse votre façon de travailler : espace client, prise de rendez-vous, gestion métier.",
+        "includes": [
+          "Conception autour de vos processus réels",
+          "Espace client sécurisé, comptes et rôles",
+          "Prise de rendez-vous, notifications, automatisations",
+          "Connexion à vos outils (agenda, email, facturation...)",
+          "Démos régulières pendant le développement",
+          "Garantie corrections 30 jours"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance et accompagnement",
+        "description": "Votre site reste rapide, sécurisé et à jour — et vous avez un interlocuteur qui répond.",
+        "includes": [
+          "Hébergement performant et nom de domaine gérés",
+          "Mises à jour techniques et de sécurité",
+          "Sauvegardes régulières",
+          "Petites évolutions incluses chaque mois",
+          "Surveillance du bon fonctionnement",
+          "Réponse sous 24 h ouvrées"
+        ]
+      }
+    },
+    "variesAnnotation": "Transparence",
+    "variesTitle": "Pourquoi « dès » ? Ce qui fait varier le prix",
+    "variesText": "Le prix d'appel correspond à un projet standard : 5 pages pour un site vitrine, un périmètre fonctionnel simple pour un outil. Ce qui fait monter le devis : des pages ou fonctionnalités supplémentaires, des contenus à créer de zéro (textes, photos), une migration depuis un site existant avec historique de référencement à préserver, ou des intégrations spécifiques. Ce qui ne change jamais : le prix annoncé au devis est le prix payé.",
+    "compareTitle": "Et par rapport aux autres solutions ?",
+    "compareIntro": "Soyons honnêtes : je ne suis pas la bonne option pour tout le monde. Voici les trois façons d'avoir un site en 2026.",
+    "compare": {
+      "diy": {
+        "range": "0 – 200 € + abonnement",
+        "title": "Faire soi-même (Wix, IA...)",
+        "text": "Les outils avec IA font des sites corrects en quelques heures. Vous payez un abonnement à vie, le design reste celui d'un modèle, et le référencement local face à des concurrents équipés est difficile.",
+        "forWhom": "Pour tester une idée ou démarrer sans budget."
+      },
+      "lowcost": {
+        "range": "300 – 1 500 €",
+        "title": "Freelance low-cost",
+        "text": "Souvent un thème WordPress habillé rapidement. Ça peut suffire, mais la qualité est inégale : performance, sécurité et suivi dans le temps sont rarement au rendez-vous.",
+        "forWhom": "Pour un besoin ponctuel, si vous savez évaluer la qualité."
+      },
+      "jbr": {
+        "range": "dès 1 190 € HT",
+        "title": "Sur mesure, avec moi",
+        "text": "Un site conçu pour votre entreprise, développé proprement (pas de thème), référencement local sérieux, et un interlocuteur unique à Lille, responsable du résultat, qui répond sous 24 h.",
+        "forWhom": "Pour un site qui doit vraiment rapporter des clients."
+      }
+    },
+    "quote": {
+      "text": "Le développement de notre nouveau site web vient de s'achever et JB a fourni un travail qui a dépassé nos attentes. Sa compréhension des problématiques, sa rapidité de réaction et sa façon de transposer nos demandes a été simplement parfaite.",
+      "author": "Thierry Dehon",
+      "role": "Gérant de RDP Glass, avis Google vérifié"
+    },
+    "faq": {
+      "title": "Questions sur les prix",
+      "items": {
+        "why-from": {
+          "question": "Le prix final peut-il dépasser le prix affiché ?",
+          "answer": "Le « dès » couvre un projet standard. Après notre premier échange, le devis fixe un montant précis en fonction de votre périmètre — et ce montant est définitif : pas de supplément découvert en cours de route."
+        },
+        "payment": {
+          "question": "Comment se passe le paiement ?",
+          "answer": "50 % à la signature du devis pour lancer le chantier, 50 % à la mise en ligne. Pour la maintenance, un paiement mensuel sans engagement de durée."
+        },
+        "what-raises": {
+          "question": "Qu'est-ce qui fait grimper un devis ?",
+          "answer": "Principalement : le nombre de pages ou de fonctionnalités, la création de contenus (textes, photos, traductions), la migration d'un site existant et les intégrations avec vos outils. J'indique toujours l'impact de chaque option sur le devis."
+        },
+        "hidden-costs": {
+          "question": "Y a-t-il des coûts récurrents cachés ?",
+          "answer": "Non. Un site a deux coûts récurrents incompressibles : le nom de domaine et l'hébergement. Soit vous les gérez vous-même (je vous montre comment), soit la maintenance à 79 € HT/mois les inclut avec les mises à jour et les évolutions."
+        }
+      }
+    }
+  },
+  "conseils": {
+    "meta": {
+      "title": "Conseils web pour TPE et PME à Lille — JBR Development",
+      "description": "Combien coûte un site, par où commencer, ce qui fait vraiment venir des clients : les questions qui reviennent en rendez-vous, traitées concrètement."
+    },
+    "annotation": "Notes de chantier",
+    "title": "Conseils pour votre présence en ligne",
+    "intro": "Les questions qui reviennent à chaque premier rendez-vous, traitées une fois pour toutes : combien ça coûte, par où commencer, ce qui fait vraiment venir des clients. Pas de théorie de référencement, des décisions concrètes pour une TPE ou une PME.",
+    "empty": "Les premiers articles arrivent. En attendant, décrivez-moi votre projet : je réponds sous 24 h.",
+    "sommaireTitle": "Plan de l'article",
+    "backToList": "Tous les conseils",
+    "publishedOn": "Publié le",
+    "readingHint": "Une question en tête pendant la lecture ? Le brief prend trois minutes."
   }
 }

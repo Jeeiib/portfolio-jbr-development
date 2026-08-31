@@ -4,21 +4,32 @@
     "services": "Services",
     "about": "About",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tarifs": "Pricing",
+    "estimate": "Estimate my project",
+    "callAria": "Call Jean-Baptiste",
+    "conseils": "Advice"
   },
   "hero": {
-    "available": "Available for new projects",
-    "role": "Web Developer",
-    "tagline": "Your vision, my code,",
-    "taglineHighlight": "your growth lever.",
-    "ctaPrimary": "Let's discuss your project",
-    "ctaSecondary": "View my work",
-    "scroll": "Scroll"
+    "annotation": "Independent web developer — Lille, France",
+    "title": "Your website could be built right here,",
+    "titleHighlight": "before your eyes.",
+    "subtitle": "I design custom websites and tools for small businesses in the Lille area. Clear pricing, reliable deadlines, a single point of contact.",
+    "ctaPrimary": "Estimate my project — 3 min",
+    "reassurance": "Instant estimate, no commitment. Reply within 24 hours.",
+    "scene": {
+      "online": "live ✓",
+      "imageSlot": "image",
+      "phase1": "1/3 — wireframe",
+      "phase2": "2/3 — design",
+      "phase3": "3/3 — live",
+      "replay": "↻ replay"
+    }
   },
   "projects": {
-    "label": "Portfolio",
-    "title": "Recent projects",
-    "subtitle": "Web applications designed to meet my clients' real needs.",
+    "label": "Proof",
+    "title": "They trusted me",
+    "subtitle": "Three delivered projects, three business owners who tell the story. Reviews are public and verifiable on Google.",
     "viewProject": "View project",
     "visitSite": "Site",
     "backToHome": "Back to home",
@@ -26,62 +37,46 @@
     "visitOnlineSite": "Visit site",
     "viewCode": "View code",
     "backToProjects": "Back to projects",
-    "projectLabel": "Project",
-    "visitSiteButton": "Visit site",
-    "sourceCode": "Source code",
     "aboutProject": "About the project",
     "otherProjects": "Other projects",
-    "ctaTitle": "Have a project in mind?",
-    "ctaDescription": "Let's discuss your needs and see how I can help bring your vision to life.",
-    "ctaButton": "Let's discuss your project",
     "notFoundTitle": "Project not found",
     "items": {
       "jay": {
         "description": "AI assistant for sales teams — Solo developer",
-        "fullDescription": "Jay is a conversational AI assistant accessible via WhatsApp that enables professionals to manage their CRMs and calendars through voice. Users send a voice note describing what they want to do, and Jay transcribes, analyzes, and automatically executes the corresponding actions in connected systems. Supports 6 major CRMs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), calendar and email integrations."
+        "fullDescription": "Jay is a conversational AI assistant accessible via WhatsApp that enables professionals to manage their CRMs and calendars through voice. Users send a voice note describing what they want to do, and Jay transcribes, analyzes, and automatically executes the corresponding actions in connected systems. Supports 6 major CRMs (HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader), calendar and email integrations.",
+        "clientRole": "AI assistant for sales teams",
+        "problem": "Salespeople lose hours re-typing their notes into the CRM after every meeting.",
+        "delivered": "An AI assistant on WhatsApp: one voice note and the CRM and calendar update themselves.",
+        "result": "Six major CRMs connected: HubSpot, Salesforce, Pipedrive, Zoho, Odoo, TeamLeader.",
+        "quote": "",
+        "quoteAuthor": ""
       },
       "nicolas-steinberg": {
         "description": "Luxury hospitality consultant portfolio",
-        "fullDescription": "Portfolio website for a luxury hospitality consultant. Premium and refined design reflecting the luxury world. Smooth scroll animations, impeccable Lighthouse scores (97/100 performance, 100/100 SEO). Integration of custom strategic tools."
+        "fullDescription": "Portfolio website for a luxury hospitality consultant. Premium and refined design reflecting the luxury world. Smooth scroll animations, impeccable Lighthouse scores (97/100 performance, 100/100 SEO). Integration of custom strategic tools.",
+        "clientRole": "Luxury hospitality consultant",
+        "problem": "In luxury hospitality, image is everything: his website is his business card for demanding hotels and investors.",
+        "delivered": "A refined portfolio matching his industry's standards: premium design, subtle animations, instant loading.",
+        "result": "Lighthouse 97/100 performance and 100/100 SEO.",
+        "quote": "It's rare to find people who can translate a complex strategic vision into such a precise interface.",
+        "quoteAuthor": "Nicolas Steinberg"
       },
       "rev-comptabilite": {
         "description": "Business web application — accounting firm",
-        "fullDescription": "Business web application built for the accounting firm REV Comptabilité (Wambrechies). Microsoft Azure AD SSO authentication, client portal with online appointment booking, Outlook calendar sync via Microsoft Graph API, automated email notifications with Resend, and multi-role management (admin, accountant, associate, client) with Row-Level Security permissions on all Supabase tables."
+        "fullDescription": "Business web application built for the accounting firm REV Comptabilité (Wambrechies). Microsoft Azure AD SSO authentication, client portal with online appointment booking, Outlook calendar sync via Microsoft Graph API, automated email notifications with Resend, and multi-role management (admin, accountant, associate, client) with Row-Level Security permissions on all Supabase tables.",
+        "clientRole": "Accounting firm — Wambrechies",
+        "problem": "The firm handled appointments and client exchanges by phone and email, with endless back-and-forth for the team.",
+        "delivered": "A secure client portal with online appointment booking synced to Outlook, automatic notifications and role-based access.",
+        "result": "Online appointment booking synced with the firm's Outlook calendar, live on revcomptabilite.fr.",
+        "quote": "I am delighted with the result and the service, carried out with methodology and professionalism, with regular progress updates.",
+        "quoteAuthor": "REV Comptabilité"
       }
-    }
-  },
-  "services": {
-    "label": "Services",
-    "title": "What I offer",
-    "subtitle": "Web solutions tailored to your needs and budget.",
-    "pricing": "Rates:",
-    "pricingValue": "Custom quote",
-    "items": {
-      "sites-vitrines": {
-        "title": "Showcase websites",
-        "description": "A professional online presence that reflects your identity and converts visitors into customers."
-      },
-      "applications-web": {
-        "title": "Web applications",
-        "description": "Dashboards, content management, business tools — custom solutions that simplify your daily work."
-      },
-      "developpement-technique": {
-        "title": "Technical development",
-        "description": "Internal applications, API integrations, automations — robust solutions for your complex needs."
-      },
-      "landing-pages": {
-        "title": "Landing pages",
-        "description": "Conversion-optimized pages for your campaigns, products, or events."
-      },
-      "refonte-site": {
-        "title": "Website redesign",
-        "description": "Modernizing your existing site: design, performance, user experience."
-      },
-      "maintenance": {
-        "title": "Maintenance",
-        "description": "Updates, fixes, improvements — your website in good hands."
-      }
-    }
+    },
+    "problemLabel": "The problem",
+    "deliveredLabel": "What I delivered",
+    "resultLabel": "Result",
+    "viewReview": "Read the review on Google",
+    "ownProduct": "My own product"
   },
   "about": {
     "label": "About",
@@ -104,7 +99,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let's discuss your project",
-    "subtitle": "Got an idea, a need, or a question? Fill out the form or contact me directly by email. I'll get back to you within 24-48 hours.",
+    "subtitle": "Got an idea, a need, or a question? Fill out the form or contact me directly by email. I'll get back to you within 24 hours.",
     "email": "Email",
     "form": {
       "name": "Name",
@@ -128,98 +123,79 @@
       "error": "An error occurred. Please try again or contact me directly by email."
     }
   },
-  "testimonial": {
-    "label": "Testimonials",
-    "title": "What they say",
-    "viewOnGoogle": "View on Google",
-    "items": {
-      "nicolas": {
-        "quote": "It's rare to find people who can translate a complex strategic vision into such a precise interface. The result exceeds the usual market standards. A valuable collaborator for those who tolerate no approximation. An expert to work with while he's still available, because this level of execution is a",
-        "quoteHighlight": "rare find.",
-        "author": "Nicolas Steinberg",
-        "role": "Luxury hospitality consultant",
-        "initials": "NS",
-        "link": "https://share.google/TrBD8GioYeNPAUJ37"
-      },
-      "thierry": {
-        "quote": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was",
-        "quoteHighlight": "simply perfect.",
-        "author": "Thierry Dehon",
-        "role": "CEO of RDP Glass",
-        "initials": "TD",
-        "link": "https://share.google/LPCNCjqZRBPBRaVjv"
-      },
-      "corinne": {
-        "quote": "JBR Development built my new website for my accounting firm. I am delighted with the result and the service, carried out with methodology and professionalism with regular progress updates to meet my expectations!",
-        "quoteHighlight": "Highly recommended!",
-        "author": "REV Comptabilité",
-        "role": "Accounting firm",
-        "initials": "RC",
-        "link": "https://share.google/PT1KkKAtY4UwzpxUn"
-      }
-    }
-  },
   "process": {
-    "label": "Process",
+    "label": "The build",
     "title": "How does it work?",
-    "subtitle": "A structured approach for successful projects.",
+    "subtitle": "Four phases, like a well-run construction site: you always know where things stand.",
+    "phaseLabel": "Phase",
     "steps": {
-      "discovery": {
-        "title": "Discovery",
-        "description": "Questionnaire + meeting (Lille area or video call) to understand your needs and goals."
+      "quote": {
+        "title": "Quote and plan",
+        "description": "A conversation (in Lille or video call) to understand your needs, then a detailed quote with schedule. 50% deposit on signature.",
+        "marker": "Quote within 48h"
       },
-      "proposal": {
-        "title": "Proposal",
-        "description": "Detailed quote + timeline. 50% payment at signature to get started."
+      "design": {
+        "title": "Foundations and design",
+        "description": "A mockup of your website, validated together before building. You see what it looks like before it exists.",
+        "marker": "Approved mockup"
       },
-      "development": {
-        "title": "Development",
-        "description": "Agile methodology with regular check-ins and demos. Unlimited revisions within scope."
+      "build": {
+        "title": "Construction",
+        "description": "Development with regular progress updates and demos. Revisions included within the quoted scope.",
+        "marker": "Regular demos"
       },
-      "delivery": {
-        "title": "Delivery",
-        "description": "Final 50% payment + 30-day bug warranty. Optional maintenance available."
+      "handover": {
+        "title": "Handover",
+        "description": "Go-live, handover training, remaining 50%. 30-day fix guarantee, then maintenance if you want it.",
+        "marker": "30-day guarantee"
       }
     }
   },
   "faq": {
-    "label": "FAQ",
-    "title": "Frequently Asked Questions",
+    "label": "Straight questions",
+    "title": "What you're really wondering",
     "items": {
       "cost": {
-        "question": "How much does a website cost?",
-        "answer": "Every project is unique. Contact me for a free, no-obligation custom quote."
+        "question": "How much does it cost, exactly?",
+        "answer": "Business website from €1,190 excl. VAT, custom tool from €3,900, maintenance at €79 per month. The Pricing page details what's included, and the online brief gives you an instant estimate in 3 minutes."
       },
       "timeline": {
-        "question": "What are the timelines?",
-        "answer": "Landing page: 1-2 weeks. Showcase website: 2-3 weeks. Redesign: 2-3 weeks. Web application: 1-2 months."
+        "question": "How long does it take?",
+        "answer": "A business website: 2 to 3 weeks. A custom tool: 4 to 8 weeks depending on scope. The exact schedule is set in the quote and kept — it's a commitment, not a guess."
       },
-      "hosting": {
-        "question": "Is hosting included?",
-        "answer": "I offer both options: I can manage hosting for you, or advise you on doing it yourself."
+      "nontech": {
+        "question": "I'm not technical at all, is that a problem?",
+        "answer": "Bridging that gap is precisely my job. One contact person, zero jargon, progress updates where you watch the site being built, and handover training so you're autonomous day to day."
       },
-      "autonomy": {
-        "question": "Can I update the site myself?",
-        "answer": "Depending on your needs, I can integrate a CMS (content management system) so you're fully autonomous."
+      "after": {
+        "question": "Who takes care of the site after launch?",
+        "answer": "I do, if you wish: maintenance at €79/month covers hosting, domain, updates, backups and small improvements. Otherwise you leave fully owning your website."
       },
-      "technologies": {
-        "question": "What technologies do you use?",
-        "answer": "React, Next.js, Node.js, TypeScript — modern, performant, and maintainable technologies."
+      "wixOrCustom": {
+        "question": "Why not Wix or an AI-generated site?",
+        "answer": "To start alone on a small budget, it's an honest option. What it won't give you: a site in your image rather than a template, serious local SEO against your competitors, and a human accountable for the result who answers when something breaks."
       },
       "location": {
-        "question": "Do you travel for meetings?",
-        "answer": "Yes, within the Lille metropolitan area. Otherwise, video calls work great!"
+        "question": "Do you only work in Lille?",
+        "answer": "I meet clients across Lille and its metro area, and work remotely with all of France. Progress updates happen by video call or over coffee, your choice."
       }
     }
   },
   "footer": {
     "services": "Our services",
-    "copyright": "JBR Development - All rights reserved"
+    "copyright": "JBR Development - All rights reserved",
+    "tagline": "Independent web developer in Lille. Custom websites and tools for small businesses.",
+    "areaLine": "Lille metro area — remote across France",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "responseLine": "Reply within 24 hours",
+    "reviews": "on Google — verified reviews"
   },
   "notFound": {
-    "title": "Oops!",
+    "title": "Page not found",
     "message": "This page doesn't exist or has been moved.",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "tag": "Error 404 — off the blueprint"
   },
   "metadata": {
     "title": "Jean-Baptiste Renart | JBR Development",
@@ -298,8 +274,6 @@
     "services": {
       "label": "My services",
       "title": "Solutions tailored to your needs",
-      "pricing": "Price",
-      "onQuote": "Custom quote - Free estimate within 24h",
       "items": {
         "siteVitrine": {
           "title": "Showcase Website",
@@ -331,7 +305,8 @@
             "4": "Integrated analytics"
           }
         }
-      }
+      },
+      "pricingFrom": "from €{price} excl. VAT"
     },
     "faq": {
       "label": "Frequently Asked Questions"
@@ -343,7 +318,8 @@
       "address": "Address",
       "phone": "Phone",
       "onGoogle": "on Google"
-    }
+    },
+    "googleReviewsCount": "3 verified Google reviews"
   },
   "aboutPage": {
     "meta": {
@@ -433,7 +409,7 @@
     "developpeur-web-lille": {
       "meta": {
         "title": "Freelance Web Developer Lille | JBR Development",
-        "description": "Freelance web developer in Lille. Custom website and web application creation. React, Next.js expert. Free quote within 24h."
+        "description": "Freelance web developer in Lille. Custom website and web application creation. React, Next.js expert. Free quote within 48h."
       },
       "hero": {
         "label": "Web Developer in Lille",
@@ -448,7 +424,7 @@
         },
         "coutSite": {
           "question": "How much does a website cost in Lille?",
-          "answer": "Rates vary depending on project complexity. A showcase website typically starts around €1,500, a web application from €3,000. Contact me for a free custom quote."
+          "answer": "My prices are public: a business website starts at €1,190 excl. VAT, a custom application or tool at €3,900, and full maintenance costs €79 per month. What's included is detailed on the Pricing page, and the online brief gives you an instant estimate in 3 minutes."
         },
         "freelanceVsAgence": {
           "question": "Freelancer or web agency: which to choose?",
@@ -477,8 +453,8 @@
       "faq": {
         "title": "Questions about website creation",
         "prixVitrine": {
-          "question": "What is the price of a showcase website in 2025?",
-          "answer": "A professional showcase website typically costs between €1,500 and €5,000 depending on the number of pages, design, and desired features. I offer a free detailed quote."
+          "question": "How much does a business website cost in Lille?",
+          "answer": "With me, a 5-page custom business website starts at €1,190 excl. VAT, local SEO included. The price grows with extra pages, content creation or a migration, never along the way: the quoted amount is final. The Pricing page details everything included."
         },
         "queComprend": {
           "question": "What does website creation include?",
@@ -528,7 +504,7 @@
         },
         "prixReact": {
           "question": "How much does a React/Next.js site cost?",
-          "answer": "Rates start around €2,000 for a Next.js showcase site and can go up to €10,000+ for a complex application. Free quote on request."
+          "answer": "My prices don't depend on the technology: business website from €1,190 excl. VAT, custom application from €3,900. React and Next.js simply let me deliver a faster site sooner: you pay for the result, not the stack. Instant estimate in 3 minutes via the online brief."
         }
       }
     },
@@ -554,7 +530,7 @@
         },
         "coutApp": {
           "question": "How much does web application development cost?",
-          "answer": "Budget starts around €3,000 for a simple application and can reach €15,000+ for complex projects with many features. Detailed quote on request."
+          "answer": "A custom tool starts at €3,900 excl. VAT; a typical project lands between €5,000 and €9,000 depending on scope (user accounts, integrations, automations). The quote sets a final amount before the first day of development. The full grid is on the Pricing page."
         },
         "delaiApp": {
           "question": "How long to develop a web application?",
@@ -1129,6 +1105,183 @@
       "title": "Submission error",
       "message": "An error occurred while sending your brief. Please try again.",
       "retry": "Try again"
+    },
+    "estimate": {
+      "label": "Indicative estimate for your project",
+      "disclaimer": "Range computed from your answers, refined in the quote. No commitment."
     }
+  },
+  "proofStrip": {
+    "rating": "5.0",
+    "ratingLabel": "on Google — verified reviews",
+    "clients": "businesses supported",
+    "area": "and the whole metro area",
+    "response": "maximum response time"
+  },
+  "offers": {
+    "label": "Offers",
+    "title": "Three offers, prices shown",
+    "subtitle": "No mysterious \"on quote\": you know where you stand before calling me. The detailed quote adjusts, never surprises.",
+    "from": "from",
+    "perMonth": "/ month",
+    "delay": "Typical delivery: {min} to {max} weeks",
+    "noCommitment": "No long-term commitment",
+    "details": "See pricing details",
+    "items": {
+      "vitrine": {
+        "title": "Business website — new or redesign",
+        "description": "Your business findable on Google, with a website that builds trust and makes the phone ring.",
+        "includes": [
+          "5 custom pages, unique design",
+          "Local Google SEO included",
+          "Mobile-ready, fast, secure",
+          "Handover training"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Custom application or tool",
+        "description": "A tool that fits how you actually work: client portal, appointment booking, business management.",
+        "includes": [
+          "Designed around your real processes",
+          "Client portal, bookings, automations",
+          "Connects to your existing tools",
+          "Support and evolutions"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance and support",
+        "description": "Your site stays fast, secure and up to date — with someone who actually answers.",
+        "includes": [
+          "Hosting and domain managed",
+          "Updates and backups",
+          "Small improvements included monthly",
+          "Reply within 24 business hours"
+        ]
+      }
+    }
+  },
+  "briefCta": {
+    "annotation": "3-minute estimate",
+    "title": "What would your project cost?",
+    "subtitle": "Describe your project in a few questions: you get an instant range, no commitment and no sales emails afterwards.",
+    "cta": "Estimate my project"
+  },
+  "tarifs": {
+    "meta": {
+      "title": "Pricing — websites in Lille from €1,190 excl. VAT",
+      "description": "Prices shown upfront, no mysterious quotes: business website from €1,190, custom application from €3,900, maintenance €79/month. Independent web developer in Lille, France."
+    },
+    "annotation": "Pricing — updated 2026",
+    "title": "Clear prices, no surprises",
+    "intro": "Most agencies and freelancers hide their prices. Here are mine, in the open: you know before calling whether we can work together. The detailed quote adjusts to your project, never surprises.",
+    "from": "from",
+    "perMonth": "/ month",
+    "delay": "Typical delivery: {min} to {max} weeks",
+    "noCommitment": "No long-term commitment",
+    "popular": "Most requested",
+    "estimateCta": "Estimate my project — 3 min",
+    "items": {
+      "vitrine": {
+        "title": "Business website — new or redesign",
+        "description": "Your business findable on Google, with a website that builds trust and makes the phone ring.",
+        "includes": [
+          "5 custom pages, unique design (no template)",
+          "Local Google SEO: tags, structured data, sitemap",
+          "Mobile-ready, fast (Core Web Vitals), secure",
+          "Contact form and click-to-call",
+          "Handover training at delivery",
+          "30-day fix guarantee"
+        ]
+      },
+      "sur-mesure": {
+        "title": "Custom application or tool",
+        "description": "A tool that fits how you actually work: client portal, appointment booking, business management.",
+        "includes": [
+          "Designed around your real processes",
+          "Secure client portal, accounts and roles",
+          "Bookings, notifications, automations",
+          "Connects to your tools (calendar, email, invoicing...)",
+          "Regular demos during development",
+          "30-day fix guarantee"
+        ]
+      },
+      "maintenance": {
+        "title": "Maintenance and support",
+        "description": "Your site stays fast, secure and up to date — with someone who actually answers.",
+        "includes": [
+          "Fast hosting and domain managed",
+          "Technical and security updates",
+          "Regular backups",
+          "Small improvements included monthly",
+          "Uptime monitoring",
+          "Reply within 24 business hours"
+        ]
+      }
+    },
+    "variesAnnotation": "Transparency",
+    "variesTitle": "Why \"from\"? What changes the price",
+    "variesText": "The starting price covers a standard project: 5 pages for a business website, a simple functional scope for a tool. What raises the quote: extra pages or features, content created from scratch (copy, photos), migrating an existing site while preserving its SEO history, or specific integrations. What never changes: the price in the quote is the price you pay.",
+    "compareTitle": "How does it compare to other options?",
+    "compareIntro": "Let's be honest: I'm not the right option for everyone. Here are the three ways to get a website in 2026.",
+    "compare": {
+      "diy": {
+        "range": "€0 – 200 + subscription",
+        "title": "Do it yourself (Wix, AI...)",
+        "text": "AI builders make decent sites in a few hours. You pay a lifelong subscription, the design stays template-like, and local SEO against equipped competitors is hard.",
+        "forWhom": "To test an idea or start with no budget."
+      },
+      "lowcost": {
+        "range": "€300 – 1,500",
+        "title": "Low-cost freelancer",
+        "text": "Often a quickly-dressed WordPress theme. It can be enough, but quality varies: performance, security and long-term support are rarely there.",
+        "forWhom": "For a one-off need, if you can judge quality."
+      },
+      "jbr": {
+        "range": "from €1,190 excl. VAT",
+        "title": "Custom-built, with me",
+        "text": "A site designed for your business, cleanly built (no theme), serious local SEO, and a single contact in Lille accountable for the result, replying within 24 hours.",
+        "forWhom": "For a website that must actually bring in clients."
+      }
+    },
+    "quote": {
+      "text": "The development of our new website has just been completed and JB delivered work that exceeded our expectations. His understanding of the issues, his responsiveness, and his way of translating our requests was simply perfect.",
+      "author": "Thierry Dehon",
+      "role": "CEO of RDP Glass, verified Google review"
+    },
+    "faq": {
+      "title": "Questions about pricing",
+      "items": {
+        "why-from": {
+          "question": "Can the final price exceed the displayed price?",
+          "answer": "The \"from\" price covers a standard project. After our first conversation, the quote sets a precise amount based on your scope — and that amount is final: no surprises along the way."
+        },
+        "payment": {
+          "question": "How does payment work?",
+          "answer": "50% when signing the quote to start the work, 50% at go-live. Maintenance is billed monthly with no long-term commitment."
+        },
+        "what-raises": {
+          "question": "What makes a quote go up?",
+          "answer": "Mainly: the number of pages or features, content creation (copy, photos, translations), migrating an existing site, and integrations with your tools. I always show the impact of each option on the quote."
+        },
+        "hidden-costs": {
+          "question": "Are there hidden recurring costs?",
+          "answer": "No. A website has two unavoidable recurring costs: the domain name and hosting. Either you manage them yourself (I show you how), or the €79/month maintenance includes them along with updates and improvements."
+        }
+      }
+    }
+  },
+  "conseils": {
+    "meta": {
+      "title": "Web advice for small businesses in Lille — JBR Development",
+      "description": "What a website costs, where to start, and what actually brings in clients: the questions that come up in every first meeting, answered concretely."
+    },
+    "annotation": "Field notes",
+    "title": "Advice for your online presence",
+    "intro": "The questions that come up in every first meeting, answered once and for all: what it costs, where to start, what actually brings in clients. No SEO theory, just concrete decisions for a small business.",
+    "empty": "The first articles are on their way. In the meantime, tell me about your project: I reply within 24 hours.",
+    "sommaireTitle": "In this article",
+    "backToList": "All advice",
+    "publishedOn": "Published on",
+    "readingHint": "A question while reading? The brief takes three minutes."
   }
 }

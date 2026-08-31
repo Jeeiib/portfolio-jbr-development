@@ -16,15 +16,10 @@ import type {
   BriefFeatures,
 } from "@/data/briefTypes";
 import { LIMITS, STEPS_BY_PROJECT_TYPE } from "@/data/briefTypes";
+import EstimateBox from "@/components/brief/EstimateBox";
 import {
   objectiveOptions,
-  identityOptions,
   ambianceOptions,
-  textsReadyOptions,
-  visualsAvailableOptions,
-  keepContentOptions,
-  budgetRanges,
-  deadlineOptions,
   communicationOptions,
   contentVariant,
   showDesignStep,
@@ -518,7 +513,10 @@ export default function SummaryStep({
         />
       </div>
 
-      {/* ── E. Submit button ── */}
+      {/* ── E. Estimation immédiate ── */}
+      <EstimateBox data={data} />
+
+      {/* ── F. Submit button ── */}
       <div className="pt-4">
         <button
           type="button"

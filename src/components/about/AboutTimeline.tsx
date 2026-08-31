@@ -3,17 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
-interface AboutTimelineProps {
-  locale: string;
-}
-
 interface TimelineItemData {
   key: string;
   position: "left" | "right";
   icon: React.ReactNode;
 }
 
-export default function AboutTimeline({ locale }: AboutTimelineProps) {
+export default function AboutTimeline() {
   const t = useTranslations("aboutPage.timeline");
   const timelineRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);

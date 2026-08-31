@@ -11,16 +11,6 @@
   --accent-hover: #10b981;
   --accent-foreground: #052e16; /* Dark green for text on accent - WCAG AA compliant */
   --border: #333333;
-  /* Terminal colors */
-  --terminal-bg: #0d1117;
-  --terminal-header: #161b22;
-  /* Syntax highlighting - dark mode (light colors on dark bg) */
-  --syntax-keyword: #c27aff;
-  --syntax-variable: #51a2ff;
-  --syntax-property: #ff6467;
-  --syntax-method: #facc15;
-  --syntax-bracket: #fde047;
-  --syntax-string: #34d399; /* Accent green for strings */
 }
 
 /* Light Mode - Using :root[data-theme] for higher specificity */
@@ -34,16 +24,6 @@
   --accent-hover: #065f46;
   --accent-foreground: #ffffff; /* White text on dark green buttons */
   --border: #e5e7eb;
-  /* Terminal colors */
-  --terminal-bg: #ffffff;
-  --terminal-header: #f6f8fa;
-  /* Syntax highlighting - light mode (dark colors on light bg - WCAG AA) */
-  --syntax-keyword: #7c3aed;
-  --syntax-variable: #2563eb;
-  --syntax-property: #dc2626;
-  --syntax-method: #ca8a04;
-  --syntax-bracket: #a16207;
-  --syntax-string: #047857; /* Same as accent for strings */
 }
 
 @theme inline {
@@ -56,6 +36,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-border: var(--border);
   --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 * {
@@ -142,19 +123,6 @@ a {
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-}
-
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -165,24 +133,6 @@ a {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes starBreathe {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.35);
   }
 }
 
@@ -207,16 +157,8 @@ a {
   animation: fadeIn 0.5s ease-out 50ms both;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out 50ms both;
-}
-
 .animate-scale-in {
   animation: scaleIn 0.4s ease-out 50ms both;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
 }
 
 .animate-ripple {
@@ -227,9 +169,7 @@ a {
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
 
 /* Brief wizard step transitions */
 @keyframes stepEnter {
@@ -240,17 +180,6 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes stepExit {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
   }
 }
 
@@ -295,25 +224,6 @@ a {
   animation: successPulse 2s ease-in-out 0.5s 2;
 }
 
-/* Initial state for animations - visibility prevents FOUC flicker */
-.opacity-0-initial {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, #6ee7b7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow effect for accent elements */
-.glow-accent {
-  box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
-}
-
 /* Card hover effect - specific properties for fast hover response */
 .card-hover {
   transition-property: transform, border-color, box-shadow;
@@ -331,39 +241,232 @@ a {
   color: var(--accent-foreground) !important;
 }
 
-/* Subtle noise texture overlay */
-.noise-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.02;
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Section container */
 .section-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Longhands volontaires : la shorthand `margin`/`padding` remettrait
+     margin-bottom et padding-top a zero et annulerait les utilitaires
+     Tailwind mb-* / pt-* poses sur le meme element. */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .section-container {
-    padding: 0 2rem;
+    padding-inline: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-container {
-    padding: 0 3rem;
+    padding-inline: 3rem;
   }
 }
 
-/* Carousel progress animation */
-@keyframes carousel-progress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+/* ============================================================
+   Langage "chantier" — tokens de la refonte 2026
+   ============================================================ */
+
+/* Display : titres affirmés, letter-spacing serré */
+.display-2xl {
+  font-size: clamp(2.5rem, 4.5vw + 1rem, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.display-xl {
+  font-size: clamp(1.875rem, 3vw + 0.75rem, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Annotations : micro-légendes mono façon plan de chantier */
+.annotation {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--foreground-secondary);
+}
+
+.annotation-accent {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+/* Preuve : valeur chiffrée mise en évidence (usage exclusif : preuves et résultats) */
+.proof {
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Étiquette de plan : tampon type "livré le ..." */
+.tag-chantier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--foreground-secondary);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+  background: var(--background-secondary);
+}
+
+/* Révélation au scroll sobre (pilotée par <Reveal>).
+   Visible par défaut (crawlers, no-JS) : le masquage est appliqué en JS
+   uniquement aux éléments sous le viewport, puis retiré à l'intersection. */
+.reveal {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal.reveal-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   Longue lecture — corps d'article /conseils
+   ============================================================ */
+
+/* Mesure de lecture : ~70 caractères, la ligne au-delà fatigue l'oeil. */
+.prose-conseils {
+  max-width: 70ch;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.prose-conseils > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Les H2 ouvrent une section : filet plein largeur façon séparation de plan. */
+.prose-conseils h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 7rem;
+}
+
+.prose-conseils h3 {
+  margin-top: 2rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  scroll-margin-top: 7rem;
+}
+
+.prose-conseils strong {
+  font-weight: 600;
+}
+
+/* Un lien est une action : l'accent est légitime ici, comme sur les CTA. */
+.prose-conseils a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.prose-conseils a:hover {
+  color: var(--accent-hover);
+  text-decoration-thickness: 2px;
+}
+
+.prose-conseils ul,
+.prose-conseils ol {
+  padding-left: 1.25rem;
+}
+
+.prose-conseils ul { list-style: disc; }
+.prose-conseils ol { list-style: decimal; }
+
+.prose-conseils li + li {
+  margin-top: 0.5rem;
+}
+
+.prose-conseils li::marker {
+  color: var(--foreground-secondary);
+}
+
+/* Citation : filet neutre, pas d'accent — l'accent reste aux preuves et actions. */
+.prose-conseils blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+  color: var(--foreground-secondary);
+}
+
+.prose-conseils code {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.875em;
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+.prose-conseils pre {
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+/* Dans un bloc, le fond et la bordure sont déjà portés par le <pre>. */
+.prose-conseils pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.prose-conseils hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+}
+
+/* Sommaire : le plan de l'article. Numéroté, car l'ordre est l'ordre de lecture. */
+.sommaire-conseils {
+  counter-reset: sommaire;
+}
+
+.sommaire-conseils li {
+  counter-increment: sommaire;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sommaire-conseils li::before {
+  content: counter(sommaire, decimal-leading-zero);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--foreground-secondary);
+  padding-top: 0.3em;
+  flex-shrink: 0;
 }

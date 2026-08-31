@@ -1,0 +1,15 @@
+---
+title: "Brouillon de test"
+description: "Brouillon permanent qui garde le test du filtrage des drafts significatif, même après le remplacement de la fixture publiée."
+date: "2026-08-30"
+keywords: ["fixture", "draft"]
+draft: true
+---
+
+Ce brouillon ne doit jamais apparaître dans `getAllArticles()` ni dans le
+sitemap. Il reste dans le dépôt pour que le test du filtrage des brouillons
+continue de vérifier quelque chose de réel une fois la fixture publiée
+remplacée par les vrais articles.
+
+Il doit en revanche rester lisible par `getArticle("exemple-brouillon")`, afin
+que la prévisualisation d'un brouillon reste possible pendant la rédaction.
