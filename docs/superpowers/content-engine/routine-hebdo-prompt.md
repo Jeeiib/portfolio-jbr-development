@@ -49,17 +49,25 @@ Tu travailles sur le repo Portfolio (jbrdevelopment.fr). Mission hebdomadaire :
      Si tu as besoin d'une statistique que tu ne peux pas sourcer, remplace-la par
      un raisonnement. Ne cite un client que sur ce qui est déjà public sur le site.
 
-4. Lance `pnpm test` et `pnpm build`. Les deux doivent passer avant de committer.
+4. Installe les dependances avec `pnpm install`, puis lance `pnpm test` et
+   `pnpm build`. Les deux doivent passer avant de committer. Les tests de
+   conformite editoriale (src/lib/__tests__/conseils-conformite.test.ts) valident
+   longueur, sections, maillage, typographie et surtout que tout montant en euros
+   vient du depot : corrige jusqu'a ce qu'ils passent, ne les modifie pas.
 
 5. Coche le sujet dans le calendrier éditorial, dans le même commit que l'article.
 
 6. Crée une branche conseils/<slug>, commit sans aucune mention d'IA ni
    co-auteur, pousse, et ouvre une PR titrée "content(conseils): <titre>" avec
-   un résumé de trois lignes et la mention "Relecture requise avant merge".
+   un résumé de trois lignes et la mention "Publication automatique dans sept
+   jours sauf objection : fermer cette PR ou la commenter suffit à la bloquer".
 
-7. NE MERGE JAMAIS ta propre PR. Si le calendrier ne contient plus de sujet non
-   coché, n'invente pas de sujet : ouvre à la place une PR qui ajoute quatre
-   sujets proposés au calendrier, tirés des requêtes en hausse de Search Console.
+7. NE FUSIONNE JAMAIS la PR que tu viens d'ouvrir dans ce meme run : son delai
+   de relecture de sept jours commence maintenant. Seule l'etape 0 fusionne, et
+   seulement des PR ouvertes depuis au moins six jours. Si le calendrier ne
+   contient plus de sujet non coche, n'invente pas de sujet : ouvre a la place une
+   PR qui ajoute quatre sujets proposes au calendrier, tires des requetes en
+   hausse de Search Console.
 ```
 
 ## Ce qui autorise la publication
