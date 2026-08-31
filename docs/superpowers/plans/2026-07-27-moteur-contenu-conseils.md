@@ -189,6 +189,8 @@ Pas de code : session guidée avec JB, résultats consignés dans `docs/superpow
 
 ---
 
+> **Task 5 préparée le 31/08/2026, exécution en attente.** Les procédures des trois steps sont écrites et actionnables dans `ops-seo-local.md` (méthode domaine pour Search Console, catégorie et zone desservie pour la fiche, modèle de demande d'avis, boucle mensuelle), plus un Step 4 sur les citations locales ajouté après l'audit du 31/08. Rien n'est exécutable sans les accès de JB, et rien n'est utile avant le déploiement de la refonte.
+
 ## Definition of done (plan B)
 
 - `/conseils` en ligne avec 3 articles réels, JSON-LD valide, sitemap à jour.

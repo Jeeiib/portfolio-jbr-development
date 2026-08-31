@@ -40,12 +40,47 @@ Pistes à traiter dans l'ordre : fiche Google Business, pages « réalisé par �
 
 ## Search Console
 
-À compléter lors de la Task 5, Step 1 (session avec JB) : date de vérification de la propriété, méthode, date de soumission du sitemap, état de couverture.
+À faire en session avec JB, qui a les accès. Rien de tout cela n'est utile avant le déploiement de la refonte.
+
+1. **Vérifier la propriété** en méthode domaine (enregistrement DNS), pas en préfixe d'URL : la méthode domaine couvre `jbrdevelopment.fr`, `www`, http et https d'un coup, ce qui évite d'avoir quatre propriétés à surveiller.
+2. **Soumettre le sitemap** `https://jbrdevelopment.fr/sitemap.xml`. Il est servi en 200 sur le domaine canonique, vérifié le 31/08/2026.
+3. **Demander l'indexation** des pages qui comptent, une par une : `/fr/tarifs`, `/fr/conseils` et les trois articles, `/fr/services/developpeur-web-lille`, `/fr/services/creation-site-internet-lille`.
+4. **Contrôler la couverture** une semaine plus tard : pages indexées contre pages soumises, et lire les motifs d'exclusion. Les `/en/conseils` doivent apparaître en 404 volontaires, ce n'est pas une anomalie à corriger.
+
+À consigner ici : date de vérification, méthode retenue, date de soumission du sitemap, nombre de pages indexées au premier relevé.
 
 ## Fiche Google Business
 
-À compléter lors de la Task 5, Step 2 : catégorie principale, description, photos, premier post, modèle de demande d'avis post-projet.
+Le levier le plus rentable et le plus rapide, indépendant du site. À faire en session avec JB.
+
+1. **Catégorie principale** : « Concepteur de sites Web ». Secondaires possibles : « Service informatique », « Consultant en informatique ». La principale décide de l'essentiel des requêtes sur lesquelles la fiche sort.
+2. **Zone desservie** : Lille, Lambersart, Wambrechies, Saint-André-lez-Lille, Marcq-en-Baroeul, La Madeleine. Des communes réelles, pas « France entière », qui dilue.
+3. **Description** : ce qui est fait et où, en langage de client, avec les mots-clés locaux et un lien vers `/fr/tarifs`.
+4. **Photos** : réalisations et portrait plutôt que le logo seul, ajoutées régulièrement plutôt qu'en une seule fois.
+5. **Premier post** : réutiliser l'article sur la fiche Google Business, qui traite précisément ce sujet.
+6. **Cohérence des informations** avec le site : même écriture du nom, même numéro, même adresse partout. C'est un signal de confiance, et c'est aussi ce que le JSON-LD `ProfessionalService` déclare désormais.
+
+### Modèle de demande d'avis après projet
+
+À envoyer juste après la livraison, quand le client est content, jamais des semaines plus tard. Le lien direct vers le formulaire d'avis compte plus que le texte : chaque clic en moins double les chances de réponse.
+
+> Bonjour [prénom],
+>
+> Content que le site vous plaise et qu'il soit en ligne.
+>
+> Si vous avez deux minutes, un avis Google m'aiderait beaucoup : c'est ce que regardent les entreprises qui me contactent avant de me faire confiance. Le lien va directement sur le formulaire : [lien]
+>
+> Et si quelque chose bouge sur le site, écrivez-moi, je regarde.
+>
+> Bonne journée,
+> Jean-Baptiste
 
 ## Boucle mensuelle
 
-Chaque 1er du mois, 15 min : lecture du rapport Search Console (requêtes en hausse, pages faibles), mise à jour des priorités du calendrier éditorial, mise à jour du registre de citations ci-dessus.
+Chaque 1er du mois, 15 min avec JB :
+
+1. Lire le rapport Search Console : requêtes en hausse, pages qui reçoivent des impressions sans clic (titre ou description à retravailler), pages sans impression du tout.
+2. Réordonner le calendrier éditorial en conséquence : un sujet qui correspond à une requête déjà en impressions passe devant.
+3. Mettre à jour le registre de citations ci-dessus, et relancer une piste ouverte.
+
+L'automatisation complète via l'API Search Console reste une amélioration future, hors périmètre.
