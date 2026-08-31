@@ -17,7 +17,25 @@
 - Mêmes contraintes globales que le plan A (charte, copy FR d'abord, pnpm, commits sans Claude).
 - **Jamais de publication sans validation humaine** : l'agent ne merge JAMAIS ses propres PR.
 - Chaque article : ≥ 800 mots utiles, ancré dans le réel (projets clients, contexte lillois), maillage interne vers `/tarifs` et `/brief`, zéro remplissage IA générique.
+- **JSON-LD toujours rendu côté serveur** : balise `<script type="application/ld+json">` native dans le composant, **jamais `next/script`**. `next/script` injecte après hydratation : le JSON-LD reste absent du HTML source et invisible pour tout crawler qui n'exécute pas le JS. C'est la seule forme recommandée par la doc Next.js (`next/script` est conçu pour du JS exécutable, pas pour des données). Garde-fou automatique : `src/lib/__tests__/structured-data.test.ts`.
+- **Aucun avis auto-attribué** dans les données structurées (`aggregateRating` ou `Review` que l'on se décerne soi-même) : Google ne les affiche pas depuis 2019 et peut sanctionner la pratique. La note vient de la fiche Google Business.
 - Français uniquement pour /conseils (pas de version EN — hors périmètre spec §11) : les pages /conseils ne rendent que la locale fr ; en anglais, la section n'apparaît pas dans la nav.
+
+---
+
+### Task 0 : Données structurées rendues côté serveur — FAIT (31/08/2026)
+
+Déclenché par un audit externe non sollicité (prospection SEO) dont le seul constat fondé était : aucune donnée structurée dans le HTML de jbrdevelopment.fr. Vérifié, confirmé, corrigé. Les deux autres constats du même audit étaient infondés (voir `docs/superpowers/content-engine/ops-seo-local.md`).
+
+**Diagnostic :** les 5 schémas de `StructuredData.tsx` et les schémas `FAQPage`/`Person` de 5 pages passaient par `next/script` en `strategy="afterInteractive"`. Mesure sur le HTML prérendu : **0 balise `<script type="application/ld+json">`**. Le JSON-LD n'existait que comme descripteur de composant dans le payload RSC.
+
+**Livré (commit `fdf5770`) :**
+- [x] Bascule des 6 fichiers sur la balise `<script>` native. Après : 5 schémas sur l'accueil, 6 sur les pages internes, tous JSON valides.
+- [x] Retrait de l'`aggregateRating` auto-attribué (5/5 sur 3 avis) de `StructuredData.tsx`.
+- [x] Retrait du bloc `offersJsonLd` de `/tarifs` : redondant avec `StructuredData` sous le même `@id`, et non localisé — sur `/en/tarifs` il injectait des noms d'offres en français en conflit avec ceux du layout.
+- [x] Test de non-régression `src/lib/__tests__/structured-data.test.ts`, vérifié failing puis passing. Il couvre aussi les futures pages `/conseils` de la Task 2.
+
+**Reste ouvert (hors périmètre de ce plan) :** `src/context/ThemeProvider.tsx:19` fait échouer `pnpm lint` (`react-hooks/set-state-in-effect`). Erreur antérieure à ce correctif, à traiter quand on ouvrira ce fichier.
 
 ---
 
@@ -154,6 +172,7 @@ Pas de code : session guidée avec JB, résultats consignés dans `docs/superpow
 
 - [ ] **Step 1 : Search Console** — vérifier la propriété `jbrdevelopment.fr` (JB a les accès ; méthode domaine via DNS de préférence), soumettre `sitemap.xml`, contrôler couverture/indexation des nouvelles pages (/tarifs, /conseils), demander l'indexation manuelle des pages clés.
 - [ ] **Step 2 : Fiche Google Business** — catégorie principale « Concepteur de sites Web », description avec mots-clés locaux, lien vers /tarifs, ajout de photos, publier un premier post (réutiliser l'article 1), activer la collecte d'avis : modèle de message de demande d'avis post-projet consigné dans le doc ops.
+- [ ] **Step 4 : Citations locales (domaines référents)** — le site n'est cité que par 2 domaines, ce qui est effectivement le premier frein sur les requêtes concurrentielles. Voie propre uniquement, **aucun lien acheté ni échangé par lots** (contraire aux Spam Policies de Google, risque de dévaluation ou d'action manuelle) : fiche Google Business, annuaires professionnels légitimes, CCI Grand Lille et réseaux d'entrepreneurs locaux, pages « réalisé par » chez les clients existants (RDP Glass, REV Comptabilité, Nicolas Steinberg), associations professionnelles, écosystème tech lillois. Cible réaliste : 10 à 15 domaines distincts sur 6 mois. Consigner chaque citation obtenue dans le doc ops (date, domaine, page cible, type). Ne PAS suivre le Trust Flow : métrique propriétaire Majestic, pas un signal Google — suivre les impressions et positions Search Console.
 - [ ] **Step 3 : Boucle mensuelle** — consigner la procédure : chaque 1er du mois, session de 15 min (JB + agent) : lecture du rapport Search Console (requêtes en hausse, pages faibles), mise à jour des priorités du calendrier éditorial en conséquence. Automatisation complète (API GSC) = amélioration future, hors périmètre.
 
 ---
