@@ -245,19 +245,22 @@ a {
 .section-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Longhands volontaires : la shorthand `margin`/`padding` remettrait
+     margin-bottom et padding-top a zero et annulerait les utilitaires
+     Tailwind mb-* / pt-* poses sur le meme element. */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .section-container {
-    padding: 0 2rem;
+    padding-inline: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-container {
-    padding: 0 3rem;
+    padding-inline: 3rem;
   }
 }
 
