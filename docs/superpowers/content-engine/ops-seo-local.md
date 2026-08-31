@@ -38,6 +38,22 @@ Pistes à traiter dans l'ordre : fiche Google Business, pages « réalisé par �
 
 ---
 
+## Après le déploiement du 31/08/2026
+
+La refonte a été mergée (PR #2, 42 commits) et déployée en production. Vérifications faites sur `jbrdevelopment.fr` :
+
+**JSON-LD confirmé en production**, ce qui clôt le sujet ouvert par l'audit : 5 blocs sur l'accueil, `/fr/conseils` et `/fr/tarifs`, 6 sur un article (le schéma `Article` en plus), tous valides au parsing, aucun `aggregateRating` nulle part, et plus de doublon d'offres sur `/en/tarifs`. Point de départ : zéro balise.
+
+**Vercel Analytics opérationnels.** L'écran « Get Started » a disparu, remplacé par des données réelles. La cause était bien que `main` n'embarquait pas `@vercel/analytics` (elle utilisait encore GA4) : rien à corriger, seulement à déployer.
+
+**Sitemap** renvoyé après déploiement : les pages découvertes passent de 20 à **26**, les quatre URL de `/conseils` y figurent.
+
+**Indexation demandée** pour six pages, toutes placées en file d'exploration prioritaire : `/fr`, `/fr/tarifs`, `/fr/conseils` et les trois articles. À recontrôler dans une semaine dans le rapport d'indexation.
+
+**Premier post publié sur la fiche Google**, sur l'article des prix, avec bouton « En savoir plus » vers l'article. En attente de validation. Les horaires posés plus tôt sont désormais actifs sur la fiche (« Ouvert, ferme à 18:00 »).
+
+**Routine hebdomadaire : bloquée, pas armée.** La création échoue en `401` avec « Connect your GitHub account before saving a routine that uses a GitHub repository ». Il faut connecter le compte GitHub à claude.ai (installer l'app GitHub via https://claude.ai/code/onboarding?magic=github-app-setup), ce qui est une autorisation personnelle. Le prompt est prêt et validé dans `routine-hebdo-prompt.md`, la cadence retenue est `0 6 * * 1` (lundi 8h à Paris en heure d'été, 7h en heure d'hiver). À créer dès la connexion faite.
+
 ## Relevé Search Console du 31/08/2026
 
 Premier état des lieux mesuré, avant tout déploiement de la refonte.
