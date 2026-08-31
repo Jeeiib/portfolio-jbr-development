@@ -103,7 +103,7 @@ Autre enseignement : les deux clients qui citent le site (revcomptabilite.fr et 
 
 **Déjà en place, rien à faire** : catégorie principale « Concepteur de sites Web », description complète avec mots-clés locaux, téléphone, site web, LinkedIn, adresse, photos (logo et devanture), 3 avis 5/5 (Nicolas Steinberg, Thierry Dehon, Corinne Renart pour le cabinet comptable), 301 interactions clients et 80 vues le mois dernier.
 
-**À arbitrer :** les **zones desservies déclarent « France »**. C'est exactement l'erreur décrite dans l'article sur la fiche Google : une zone nationale dilue le signal local, et la fiche ne sort de toute façon pas sur « développeur web Paris ». Des communes réelles (Lille, Lambersart, Wambrechies, Saint-André-lez-Lille, Marcq-en-Baroeul, La Madeleine) concentreraient le signal là où il y a une chance de sortir. Décision laissée à JB, puisque cela restreint la zone affichée.
+- [x] **Zones desservies corrigées** : la fiche déclarait « France », l'erreur exacte que décrit l'article sur la fiche Google. Une zone nationale dilue le signal local sans rien apporter, une fiche ne sortant jamais sur « développeur web Paris ». Remplacée par **Métropole Européenne de Lille** (arbitrage de JB du 31/08 : toute la métropole plutôt qu'une liste de communes), ce qui couvre les 95 communes en une seule entrée. Le travail à distance hors métropole reste porté par la description et le site.
 
 **À faire après le déploiement :** le premier post de la fiche, qui doit pointer vers un article de `/conseils` (inutile tant que la section n'est pas en ligne).
 
