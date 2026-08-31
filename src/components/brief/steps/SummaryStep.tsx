@@ -19,13 +19,7 @@ import { LIMITS, STEPS_BY_PROJECT_TYPE } from "@/data/briefTypes";
 import EstimateBox from "@/components/brief/EstimateBox";
 import {
   objectiveOptions,
-  identityOptions,
   ambianceOptions,
-  textsReadyOptions,
-  visualsAvailableOptions,
-  keepContentOptions,
-  budgetRanges,
-  deadlineOptions,
   communicationOptions,
   contentVariant,
   showDesignStep,

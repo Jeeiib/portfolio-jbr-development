@@ -4,7 +4,7 @@ import { del } from "@vercel/blob";
 import { generateBriefPdf } from "@/lib/briefPdf";
 import type { PdfTranslations } from "@/lib/briefPdf";
 import type { BriefData } from "@/data/briefTypes";
-import { LIMITS, PROJECT_TYPES, ALLOWED_FILE_TYPES } from "@/data/briefTypes";
+import { LIMITS, PROJECT_TYPES } from "@/data/briefTypes";
 
 // ── Resend client (lazy, same pattern as /api/contact) ──
 
@@ -77,7 +77,7 @@ function validateBriefData(body: Record<string, unknown>): {
   error?: string;
   data?: BriefData;
 } {
-  const { projectType, company, goals, features, design, content, budget, contact, freeComment, locale } = body;
+  const { projectType, company, goals, budget, contact, freeComment, locale } = body;
 
   // projectType
   if (!projectType || !PROJECT_TYPES.includes(projectType as typeof PROJECT_TYPES[number])) {

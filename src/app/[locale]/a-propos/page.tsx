@@ -251,7 +251,7 @@ export default async function AboutPage({ params }: PageProps) {
               </p>
             </div>
 
-            <AboutTimeline locale={locale} />
+            <AboutTimeline />
           </div>
         </section>
 
