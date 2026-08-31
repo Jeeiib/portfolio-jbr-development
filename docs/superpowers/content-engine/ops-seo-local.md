@@ -38,6 +38,46 @@ Pistes à traiter dans l'ordre : fiche Google Business, pages « réalisé par �
 
 ---
 
+## Relevé Search Console du 31/08/2026
+
+Premier état des lieux mesuré, avant tout déploiement de la refonte.
+
+**Accès :** propriété de type domaine `sc-domain:jbrdevelopment.fr`, déjà vérifiée, sur le compte **renartjeanbaptiste@gmail.com**. Attention, ce n'est pas le compte par défaut du navigateur (`hey@jay-assistant.fr` n'y a pas accès) : utiliser `/u/1/` dans les URL Search Console.
+
+**Trafic :** **8 clics** au total sur les trois derniers mois (29/05 au 21/08). C'est le chiffre qui objective le « zéro client via le site ».
+
+**Indexation : 13 pages indexées contre 28 non indexées.** Motifs :
+
+| Motif | Pages | Lecture |
+|---|---|---|
+| Explorée, actuellement non indexée | 18 | Le vrai problème. Google a vu ces pages et juge qu'elles ne valent pas d'être indexées. Se corrige par le contenu et l'autorité, pas par la technique. |
+| Page avec redirection | 4 | Anciennes URL sans préfixe de langue (`/projets/jay`), d'avant l'i18n. Normal après migration. |
+| Page en double, canonique refusée par Google | 4 | `/fr` et les trois pages projets. Nos canoniques sont pourtant correctes (vérifiées en prod). Google préfère la racine, la redirection `/` vers `/fr` étant un 307 temporaire. |
+| Introuvable (404) | 2 | Anciennes URL. |
+
+**Sitemap :** soumis le 8 janvier 2026 mais **plus relu depuis le 27 janvier**, sept mois de crawl à l'arrêt. **Renvoyé le 31/08/2026**, relu immédiatement : les pages découvertes passent de 18 à 20. À renvoyer de nouveau après le déploiement, il contiendra alors `/conseils` et les articles.
+
+**Actions manuelles : aucun problème détecté.** Aucune sanction Google, malgré l'`aggregateRating` auto-attribué qui était déclaré dans le code. Il n'a jamais été vu par Google, faute d'être rendu dans le HTML.
+
+**Liens externes : 17 liens depuis 6 domaines référents.**
+
+| Domaine | Liens |
+|---|---|
+| revcomptabilite.fr | 9 |
+| linkedin.com | 4 |
+| crunchbase.com | 1 |
+| github.com | 1 |
+| nicolassteinberg.com | 1 |
+| yhype.me | 1 |
+
+**Ce relevé contredit le démarchage du 31/08**, qui annonçait « 2 domaines référents pour 2 liens ». Google en voit six, et 17 liens. Sa mesure venait de Majestic, qui ne crawle qu'une fraction du web. À retenir : les chiffres d'autorité d'un outil tiers ne décrivent pas ce que Google connaît.
+
+Autre enseignement : les deux clients qui citent le site (revcomptabilite.fr et nicolassteinberg.com) pèsent 10 des 17 liens. La piste « pages réalisé par chez les clients » du registre ci-dessous est donc la plus productive, et elle est déjà amorcée.
+
+**Technique vérifiée saine :** canoniques et hreflang corrects sur la prod, sitemap et robots.txt servis en 200 sur le domaine canonique, aucun lien interne non préfixé dans le code. Il n'y a rien à réparer côté technique hors le JSON-LD déjà corrigé.
+
+## Reste à faire en session
+
 ## Search Console
 
 À faire en session avec JB, qui a les accès. Rien de tout cela n'est utile avant le déploiement de la refonte.
@@ -51,7 +91,11 @@ Pistes à traiter dans l'ordre : fiche Google Business, pages « réalisé par �
 
 ## Fiche Google Business
 
-Le levier le plus rentable et le plus rapide, indépendant du site. À faire en session avec JB.
+**État constaté le 31/08/2026 :** la fiche **JBR DEVELOPMENT** existe, est revendiquée (des réponses du propriétaire figurent sous les avis) et porte déjà la bonne catégorie principale, « Concepteur de sites Web ». Le point 1 ci-dessous est donc déjà fait.
+
+**Blocage d'accès :** la fiche n'apparaît ni sur `hey@jay-assistant.fr` ni sur `renartjeanbaptiste@gmail.com` (zéro établissement sur les deux). Elle est gérée depuis un troisième compte Google, probablement `jbr.development.pro@gmail.com`. Il faut s'y connecter pour continuer.
+
+Le levier le plus rentable et le plus rapide, indépendant du site.
 
 1. **Catégorie principale** : « Concepteur de sites Web ». Secondaires possibles : « Service informatique », « Consultant en informatique ». La principale décide de l'essentiel des requêtes sur lesquelles la fiche sort.
 2. **Zone desservie** : Lille, Lambersart, Wambrechies, Saint-André-lez-Lille, Marcq-en-Baroeul, La Madeleine. Des communes réelles, pas « France entière », qui dilue.
