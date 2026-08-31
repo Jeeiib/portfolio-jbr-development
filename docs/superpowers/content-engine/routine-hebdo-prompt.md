@@ -4,7 +4,9 @@ Version du 31/08/2026. Ce fichier est la source de vérité : la routine planifi
 
 **Cadence prévue :** hebdomadaire, lundi 08h00 Europe/Paris.
 
-**Statut : pas encore armée.** La routine ouvre des PR sur le dépôt de façon autonome, elle ne sera créée qu'après accord explicite de JB.
+**Statut au 31/08/2026 : prête, création bloquée.** JB a donné son accord après le merge, mais la création renvoie `401` : « Connect your GitHub account before saving a routine that uses a GitHub repository. » Il faut d'abord connecter le compte GitHub à claude.ai (app GitHub, https://claude.ai/code/onboarding?magic=github-app-setup), autorisation qui ne peut être donnée que par JB lui-même. Cadence retenue : `0 6 * * 1`, soit lundi 8h à Paris en heure d'été. Environnement `Default`, modèle `claude-sonnet-5`, outils Bash/Read/Write/Edit/Glob/Grep.
+
+Le prompt ci-dessous a été durci pour la création : ajout de `pnpm install` avant les tests, et rappel que le JSON-LD doit rester en balise `<script>` native, son test de non-régression ne devant pas être contourné.
 
 ## Prompt
 
