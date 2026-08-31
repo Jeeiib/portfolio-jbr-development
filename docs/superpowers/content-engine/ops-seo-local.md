@@ -156,3 +156,9 @@ Chaque 1er du mois, 15 min avec JB :
 3. Mettre à jour le registre de citations ci-dessus, et relancer une piste ouverte.
 
 L'automatisation complète via l'API Search Console reste une amélioration future, hors périmètre.
+
+---
+
+## Test du circuit de notification
+
+PR jetable ouverte le 31/08/2026 sur une branche `conseils/` pour valider que le job de notification envoie bien le mail via Resend une fois le secret `RESEND_API_KEY` posé dans les secrets Actions du dépôt. Cette PR n'apporte aucun contenu et doit être fermée après vérification.
