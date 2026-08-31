@@ -139,7 +139,8 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </article>
 
-        <BriefCTA from="conseils" />
+        {/* slug dans l'origine : permet de voir quel article convertit */}
+        <BriefCTA from={`conseils/${slug}`} />
       </main>
       <Footer />
     </>

@@ -141,11 +141,17 @@ const articleJsonLd = (meta: ArticleMeta) => ({
 
 **Rédaction par le coordinateur** (ton du site, spec §3) : chaque article ≥ 800 mots, structure H2/H3, chiffres réels de l'étude de marché commanditée (segments DIY 0-200 €, low-cost 300-1 500 €, sur-mesure 1 500-8 000 €, grille JBR), exemples ancrés (RDP Glass, REV Comptabilité — sans divulguer d'info privée), maillage vers `/tarifs` et `/brief`, keywords frontmatter alignés sur l'intention (« prix site internet Lille », « fiche Google Business artisan », « wix ou développeur »).
 
-- [ ] **Step 1 :** Rédiger les 3 articles, frontmatter daté du jour de rédaction.
-- [ ] **Step 2 :** `pnpm test && pnpm build` → PASS (tests conseils passent sur les vrais articles). Relecture JB des 3 articles AVANT commit (gate humain — le premier contenu donne le ton du moteur).
-- [ ] **Step 3 :** Commit `content(conseils): trois articles de lancement`.
+- [x] **Step 1 :** Rédiger les 3 articles, frontmatter daté du jour de rédaction.
+- [x] **Step 2 :** `pnpm test && pnpm build` → PASS (tests conseils passent sur les vrais articles). Relecture JB des 3 articles AVANT commit (gate humain — le premier contenu donne le ton du moteur).
+- [x] **Step 3 :** Commit `content(conseils): trois articles de lancement`.
 
 ---
+
+> **Task 3 faite le 31/08/2026 — EN ATTENTE DE RELECTURE JB.** Les trois articles sont écrits et commités pour que la branche soit complète, mais le gate humain n'est pas levé : rien n'est déployé, et la relecture de JB reste requise avant mise en ligne. Volumes : 938, 851 et 864 mots, 4 H2 chacun (le sommaire s'affiche donc), maillage /tarifs et /brief dans chacun.
+>
+> Ancrages factuels utilisés, tous issus du dépôt : segments de marché de `tarifs.compare` (DIY 0-200 € + abonnement, low-cost 300-1 500 €, JBR dès 1 190 €), grille 1 190 / 3 900 / 79 €, et REV Comptabilité à Wambrechies avec les seules informations déjà publiques sur le site (SSO Azure AD, portail client, synchronisation Outlook, rôles). Aucune statistique inventée : le raisonnement remplace les chiffres non sourçables.
+>
+> La fixture publiée est supprimée comme prévu. Les tests ne dépendent plus d'un contenu éditorial : `getHeadings` est testé sur des sources inline, et un test générique vérifie que chaque article publié a au moins un H2 et pas d'ancre en doublon. `exemple-brouillon.mdx` reste pour couvrir le filtrage des drafts.
 
 ### Task 4 : Agent hebdomadaire de rédaction (routine planifiée)
 

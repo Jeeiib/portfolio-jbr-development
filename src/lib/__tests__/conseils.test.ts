@@ -38,13 +38,19 @@ describe("conseils", () => {
   });
 
   it("extrait les H2 du corps avec des ancres slugifiées", () => {
-    const art = getArticle("exemple-fixture")!;
-    const titres = getHeadings(art.content);
-    expect(titres.map((h) => h.text)).toEqual([
-      "Ce que la fixture valide",
-      "Pourquoi un fichier réel plutôt qu'un mock",
+    const source = ["## Référencement : où commencer ?", "", "Texte.", "", "## Coût d'un site vitrine"].join("\n");
+    expect(getHeadings(source)).toEqual([
+      { id: "referencement-ou-commencer", text: "Référencement : où commencer ?" },
+      { id: "cout-d-un-site-vitrine", text: "Coût d'un site vitrine" },
     ]);
-    expect(titres[1].id).toBe("pourquoi-un-fichier-reel-plutot-qu-un-mock");
+  });
+
+  it("donne à chaque article publié un sommaire exploitable, sans ancre en doublon", () => {
+    for (const meta of getAllArticles()) {
+      const titres = getHeadings(getArticle(meta.slug)!.content);
+      expect(titres.length, `${meta.slug}: aucun H2`).toBeGreaterThan(0);
+      expect(new Set(titres.map((h) => h.id)).size, `${meta.slug}: ancres en doublon`).toBe(titres.length);
+    }
   });
 
   it("ignore les faux titres contenus dans un bloc de code", () => {
