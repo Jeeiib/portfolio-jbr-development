@@ -77,3 +77,45 @@ export function getAllArticles(): ArticleMeta[] {
 export function getArticle(slug: string): Article | null {
   return lire(slug);
 }
+
+export interface Heading {
+  /** ancre, identique a l'id pose sur le <h2> au rendu */
+  id: string;
+  text: string;
+}
+
+/**
+ * Ancre lisible depuis un titre francais : les diacritiques sont aplatis et
+ * toute ponctuation devient un separateur. Le rendu MDX pose l'id avec cette
+ * meme fonction, pour que le sommaire et les titres ne puissent pas divorcer.
+ */
+export function slugifyHeading(texte: string): string {
+  return texte
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * H2 du corps, dans l'ordre de lecture, pour alimenter le sommaire. Les blocs
+ * de code delimites par des fences sont ignores : un exemple de Markdown dans
+ * un article ne doit pas se retrouver dans son sommaire.
+ */
+export function getHeadings(content: string): Heading[] {
+  const titres: Heading[] = [];
+  let dansUnBlocDeCode = false;
+
+  for (const ligne of content.split("\n")) {
+    if (ligne.trimStart().startsWith("```")) {
+      dansUnBlocDeCode = !dansUnBlocDeCode;
+      continue;
+    }
+    if (dansUnBlocDeCode || !ligne.startsWith("## ")) continue;
+    const text = ligne.slice(3).trim();
+    titres.push({ id: slugifyHeading(text), text });
+  }
+
+  return titres;
+}

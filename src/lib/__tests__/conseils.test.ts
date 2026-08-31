@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getAllArticles, getArticle } from "@/lib/conseils";
+import { getAllArticles, getArticle, getHeadings, slugifyHeading } from "@/lib/conseils";
 
 describe("conseils", () => {
   it("liste les articles non-draft triés du plus récent au plus ancien", () => {
@@ -35,5 +35,33 @@ describe("conseils", () => {
       expect(a.date, `${a.slug}: date ISO`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(Array.isArray(a.keywords), `${a.slug}: keywords`).toBe(true);
     }
+  });
+
+  it("extrait les H2 du corps avec des ancres slugifiées", () => {
+    const art = getArticle("exemple-fixture")!;
+    const titres = getHeadings(art.content);
+    expect(titres.map((h) => h.text)).toEqual([
+      "Ce que la fixture valide",
+      "Pourquoi un fichier réel plutôt qu'un mock",
+    ]);
+    expect(titres[1].id).toBe("pourquoi-un-fichier-reel-plutot-qu-un-mock");
+  });
+
+  it("ignore les faux titres contenus dans un bloc de code", () => {
+    const source = [
+      "## Vrai titre",
+      "",
+      "```md",
+      "## Faux titre dans un bloc de code",
+      "```",
+      "",
+      "### Sous-titre ignoré",
+    ].join("\n");
+    expect(getHeadings(source).map((h) => h.text)).toEqual(["Vrai titre"]);
+  });
+
+  it("slugifie les accents et la ponctuation française", () => {
+    expect(slugifyHeading("Référencement : où commencer ?")).toBe("referencement-ou-commencer");
+    expect(slugifyHeading("Coût d'un site vitrine")).toBe("cout-d-un-site-vitrine");
   });
 });

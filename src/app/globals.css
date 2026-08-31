@@ -343,3 +343,130 @@ a {
     transition: none;
   }
 }
+
+/* ============================================================
+   Longue lecture — corps d'article /conseils
+   ============================================================ */
+
+/* Mesure de lecture : ~70 caractères, la ligne au-delà fatigue l'oeil. */
+.prose-conseils {
+  max-width: 70ch;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--foreground);
+}
+
+.prose-conseils > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Les H2 ouvrent une section : filet plein largeur façon séparation de plan. */
+.prose-conseils h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 7rem;
+}
+
+.prose-conseils h3 {
+  margin-top: 2rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  scroll-margin-top: 7rem;
+}
+
+.prose-conseils strong {
+  font-weight: 600;
+}
+
+/* Un lien est une action : l'accent est légitime ici, comme sur les CTA. */
+.prose-conseils a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.prose-conseils a:hover {
+  color: var(--accent-hover);
+  text-decoration-thickness: 2px;
+}
+
+.prose-conseils ul,
+.prose-conseils ol {
+  padding-left: 1.25rem;
+}
+
+.prose-conseils ul { list-style: disc; }
+.prose-conseils ol { list-style: decimal; }
+
+.prose-conseils li + li {
+  margin-top: 0.5rem;
+}
+
+.prose-conseils li::marker {
+  color: var(--foreground-secondary);
+}
+
+/* Citation : filet neutre, pas d'accent — l'accent reste aux preuves et actions. */
+.prose-conseils blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+  color: var(--foreground-secondary);
+}
+
+.prose-conseils code {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.875em;
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+.prose-conseils pre {
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+/* Dans un bloc, le fond et la bordure sont déjà portés par le <pre>. */
+.prose-conseils pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.prose-conseils hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+}
+
+/* Sommaire : le plan de l'article. Numéroté, car l'ordre est l'ordre de lecture. */
+.sommaire-conseils {
+  counter-reset: sommaire;
+}
+
+.sommaire-conseils li {
+  counter-increment: sommaire;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sommaire-conseils li::before {
+  content: counter(sommaire, decimal-leading-zero);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.6875rem;
+  color: var(--foreground-secondary);
+  padding-top: 0.3em;
+  flex-shrink: 0;
+}

@@ -121,11 +121,15 @@ const articleJsonLd = (meta: ArticleMeta) => ({
 - Locale en : `generateStaticParams` ne produit que fr pour ces routes ; accès direct `/en/conseils` → `notFound()`.
 - `generateStaticParams` sur [slug] depuis `getAllArticles()` ; `dynamicParams = false`.
 
-- [ ] **Step 1 :** Context7 (lib MDX choisie) + `frontend-design`, implémenter.
-- [ ] **Step 2 :** Vérifs : chrome-devtools (index + article, mobile/desktop/dark/light), `pnpm build` (routes statiques générées), sitemap contient l'article fixture ? → NON : exclure les fixtures/drafts du sitemap (test manuel).
-- [ ] **Step 3 :** Commit `feat(conseils): pages index et article avec JSON-LD`.
+- [x] **Step 1 :** Context7 (lib MDX choisie) + `frontend-design`, implémenter.
+- [x] **Step 2 :** Vérifs : chrome-devtools (index + article, mobile/desktop/dark/light), `pnpm build` (routes statiques générées), sitemap contient l'article fixture ? → NON : exclure les fixtures/drafts du sitemap (test manuel).
+- [x] **Step 3 :** Commit `feat(conseils): pages index et article avec JSON-LD`.
 
 ---
+
+> **Task 2 faite le 31/08/2026.** Lib de rendu validée via Context7 : `next-mdx-remote@6` et son `compileMDX` de l'export `/rsc`, qui fonctionne sur Next 16 / React 19.2 sans avertissement de peer. Recette chrome-devtools passée sur index et article, en 1440 px, 1024 px et 390 px, thème sombre et clair.
+>
+> Deux défauts trouvés et corrigés pendant la recette : le lien « Conseils » manquait au footer alors que le header l'avait, et surtout `.section-container` annulait tous les `mb-*` du site (commit `307be52`, hors périmètre du plan mais découvert ici). Le sommaire ne s'affiche qu'à partir de 4 H2 ; la fixture n'en a que 2, il faudra le vérifier à l'oeil sur un vrai article de la Task 3.
 
 ### Task 3 : Trois premiers articles (socle de lancement)
 

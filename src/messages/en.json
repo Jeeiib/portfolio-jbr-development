@@ -7,7 +7,8 @@
     "contact": "Contact",
     "tarifs": "Pricing",
     "estimate": "Estimate my project",
-    "callAria": "Call Jean-Baptiste"
+    "callAria": "Call Jean-Baptiste",
+    "conseils": "Advice"
   },
   "hero": {
     "annotation": "Independent web developer — Lille, France",
@@ -1268,5 +1269,19 @@
         }
       }
     }
+  },
+  "conseils": {
+    "meta": {
+      "title": "Web advice for small businesses in Lille — JBR Development",
+      "description": "What a website costs, where to start, and what actually brings in clients: the questions that come up in every first meeting, answered concretely."
+    },
+    "annotation": "Field notes",
+    "title": "Advice for your online presence",
+    "intro": "The questions that come up in every first meeting, answered once and for all: what it costs, where to start, what actually brings in clients. No SEO theory, just concrete decisions for a small business.",
+    "empty": "The first articles are on their way. In the meantime, tell me about your project: I reply within 24 hours.",
+    "sommaireTitle": "In this article",
+    "backToList": "All advice",
+    "publishedOn": "Published on",
+    "readingHint": "A question while reading? The brief takes three minutes."
   }
 }

@@ -7,7 +7,8 @@
     "contact": "Contact",
     "tarifs": "Tarifs",
     "estimate": "Estimer mon projet",
-    "callAria": "Appeler Jean-Baptiste"
+    "callAria": "Appeler Jean-Baptiste",
+    "conseils": "Conseils"
   },
   "hero": {
     "annotation": "Développeur web indépendant — Lille",
@@ -1268,5 +1269,19 @@
         }
       }
     }
+  },
+  "conseils": {
+    "meta": {
+      "title": "Conseils web pour TPE et PME à Lille — JBR Development",
+      "description": "Combien coûte un site, par où commencer, ce qui fait vraiment venir des clients : les questions qui reviennent en rendez-vous, traitées concrètement."
+    },
+    "annotation": "Notes de chantier",
+    "title": "Conseils pour votre présence en ligne",
+    "intro": "Les questions qui reviennent à chaque premier rendez-vous, traitées une fois pour toutes : combien ça coûte, par où commencer, ce qui fait vraiment venir des clients. Pas de théorie de référencement, des décisions concrètes pour une TPE ou une PME.",
+    "empty": "Les premiers articles arrivent. En attendant, décrivez-moi votre projet : je réponds sous 24 h.",
+    "sommaireTitle": "Plan de l'article",
+    "backToList": "Tous les conseils",
+    "publishedOn": "Publié le",
+    "readingHint": "Une question en tête pendant la lecture ? Le brief prend trois minutes."
   }
 }

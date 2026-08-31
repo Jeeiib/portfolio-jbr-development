@@ -37,6 +37,8 @@ export default function Footer() {
     { href: `/${locale}#projets`, label: t("projects") },
     { href: `/${locale}/services`, label: t("services") },
     { href: `/${locale}/tarifs`, label: t("tarifs") },
+    // Section publiée en français uniquement
+    ...(locale === "fr" ? [{ href: `/${locale}/conseils`, label: t("conseils") }] : []),
     { href: `/${locale}/a-propos`, label: t("about") },
     { href: `/${locale}#contact`, label: t("contact") },
   ];

@@ -28,6 +28,10 @@ export default function Navigation() {
     { href: anchor("projets"), label: t("projects"), isAnchor: isHomePage },
     { href: `/${locale}/services`, label: t("services"), isAnchor: false },
     { href: `/${locale}/tarifs`, label: t("tarifs"), isAnchor: false },
+    // Section publiée en français uniquement
+    ...(locale === "fr"
+      ? [{ href: `/${locale}/conseils`, label: t("conseils"), isAnchor: false }]
+      : []),
     { href: `/${locale}/a-propos`, label: t("about"), isAnchor: false },
     { href: anchor("contact"), label: t("contact"), isAnchor: isHomePage },
   ];
