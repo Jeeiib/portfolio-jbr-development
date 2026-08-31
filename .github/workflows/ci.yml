@@ -1,0 +1,94 @@
+name: CI
+
+# Ces vérifications sont ce qui autorise la publication automatique d'un
+# article : la routine hebdomadaire ne fusionne une PR que si elles passent.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  verifications:
+    name: Typage, lint, tests et build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pas de `version` ici : package.json declare packageManager, et preciser
+      # les deux fait echouer l'action sur un conflit de versions.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Installer les dépendances
+        run: pnpm install --frozen-lockfile
+
+      - name: Typage
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Tests
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+  article-pret:
+    name: Prévenir qu'un article attend la relecture
+    needs: verifications
+    if: >
+      github.event_name == 'pull_request'
+      && github.event.action == 'opened'
+      && startsWith(github.head_ref, 'conseils/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Envoyer le mail de relecture
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TITRE: ${{ github.event.pull_request.title }}
+          LIEN: ${{ github.event.pull_request.html_url }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ]; then
+            echo "::warning::RESEND_API_KEY absent des secrets du depot, aucun mail envoye."
+            exit 0
+          fi
+
+          SUJET=$(printf '%s' "$TITRE" | sed 's/^content(conseils): //')
+          ECHEANCE=$(date -u -d "+7 days" +"%d/%m/%Y")
+
+          CORPS="Un nouvel article est prêt pour ta relecture.
+
+          ${SUJET}
+
+          Les vérifications automatiques sont passées : longueur, structure, maillage interne, typographie, et aucun montant en euros qui ne vienne du dépôt. Le build et les tests sont verts.
+
+          Relire la PR : ${LIEN}
+
+          Sans action de ta part, cet article sera publié automatiquement le ${ECHEANCE}, au prochain passage de la routine hebdomadaire. Si quelque chose ne va pas, ferme la PR ou commente-la avant cette date."
+
+          TEXTE=$(printf '%s' "$CORPS" | sed 's/^ *//')
+
+          jq -n \
+            --arg from "JBR Development <contact@jbrdevelopment.fr>" \
+            --arg to "jb@jbrdevelopment.fr" \
+            --arg subject "Article prêt pour relecture : ${SUJET}" \
+            --arg text "$TEXTE" \
+            '{from: $from, to: [$to], subject: $subject, text: $text}' > payload.json
+
+          code=$(curl -sS -o reponse.json -w "%{http_code}" -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            --data @payload.json)
+
+          echo "Resend a repondu $code"
+          cat reponse.json
+          if [ "$code" != "200" ]; then
+            echo "::error::Envoi du mail echoue"
+            exit 1
+          fi
