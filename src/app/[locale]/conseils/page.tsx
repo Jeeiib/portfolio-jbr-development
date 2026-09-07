@@ -7,6 +7,9 @@ import BriefCTA from "@/components/ui/BriefCTA";
 import Reveal from "@/components/ui/Reveal";
 import ArticleCard from "@/components/conseils/ArticleCard";
 import { getAllArticles } from "@/lib/conseils";
+import { getPathname } from "@/i18n/navigation";
+
+const BASE_URL = "https://jbrdevelopment.fr";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -20,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     // Section publiée en français uniquement : pas d'alternate en anglais.
-    alternates: { canonical: "https://jbrdevelopment.fr/fr/conseils" },
+    alternates: { canonical: `${BASE_URL}${getPathname({ locale: "fr", href: "/conseils" })}` },
   };
 }
 
@@ -49,7 +52,7 @@ export default async function ConseilsPage({ params }: Props) {
             <div className="flex max-w-3xl flex-col gap-5">
               {articles.map((article) => (
                 <Reveal key={article.slug}>
-                  <ArticleCard article={article} locale={locale} />
+                  <ArticleCard article={article} />
                 </Reveal>
               ))}
             </div>

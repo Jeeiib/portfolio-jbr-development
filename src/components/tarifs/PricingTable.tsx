@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { offers, type Offer } from "@/data/offers";
 import Reveal from "@/components/ui/Reveal";
@@ -70,7 +70,7 @@ export default function PricingTable() {
             </ul>
 
             <Link
-              href={`/${locale}/brief`}
+              href="/brief"
               onClick={() => trackEvent("cta_brief_click", { from: `tarifs-${offer.id}` })}
               className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold bg-[var(--accent)] btn-primary-text rounded-lg transition-colors hover:bg-[var(--accent-hover)] mt-auto"
             >

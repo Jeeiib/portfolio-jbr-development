@@ -25,15 +25,17 @@ const MONTANTS_AUTORISES = new Set<number>([
   0, 200, 300, 1500, 8000,
 ]);
 
-const LIENS_INTERNES_ATTENDUS = ["/fr/tarifs", "/fr/brief"];
+const LIENS_INTERNES_ATTENDUS = ["/tarifs", "/brief"];
 
 // Routes réellement servies par le site, pour qu'un lien interne ne pointe
 // jamais vers une page inexistante.
+// Le français est servi sans préfixe de locale : un lien vers /fr/tarifs
+// partirait en redirection 308, donc il ne doit plus apparaître dans le contenu.
 const ROUTES_CONNUES = [
-  "/fr", "/fr/tarifs", "/fr/brief", "/fr/services", "/fr/a-propos", "/fr/conseils",
-  "/fr/services/developpeur-web-lille", "/fr/services/creation-site-internet-lille",
-  "/fr/services/freelance-react-nextjs", "/fr/services/application-web-sur-mesure",
-  "/fr/projets/rev-comptabilite", "/fr/projets/nicolas-steinberg", "/fr/projets/jay",
+  "/", "/tarifs", "/brief", "/services", "/a-propos", "/conseils",
+  "/services/developpeur-web-lille", "/services/creation-site-internet-lille",
+  "/services/freelance-react-nextjs", "/services/application-web-sur-mesure",
+  "/projets/rev-comptabilite", "/projets/nicolas-steinberg", "/projets/jay",
 ];
 
 function corpsDe(slug: string): string {
@@ -68,7 +70,7 @@ describe("conformité éditoriale des articles /conseils", () => {
     const liens = [...corpsDe(slug).matchAll(/\]\((\/[a-z0-9/-]*)\)/g)].map((m) => m[1]);
     for (const lien of liens) {
       const cible = lien.replace(/\/$/, "");
-      const existe = ROUTES_CONNUES.includes(cible) || cible.startsWith("/fr/conseils/");
+      const existe = ROUTES_CONNUES.includes(cible) || cible.startsWith("/conseils/");
       expect(existe, `${slug} pointe vers ${lien}, qui n'est pas une route connue`).toBe(true);
     }
   });

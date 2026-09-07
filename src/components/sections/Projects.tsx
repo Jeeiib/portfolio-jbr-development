@@ -1,8 +1,8 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { useTranslations, useLocale } from "next-intl";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -14,7 +14,6 @@ import { useAnalytics } from "@/hooks/useAnalytics";
  */
 export default function Projects() {
   const t = useTranslations("projects");
-  const locale = useLocale();
   const { trackEvent } = useAnalytics();
   const featuredProjects = projects.filter((p) => p.featured);
 
@@ -41,7 +40,7 @@ export default function Projects() {
               >
                 {/* Capture dans un cadre navigateur */}
                 <Link
-                  href={`/${locale}/projets/${p.slug}`}
+                  href={`/projets/${p.slug}`}
                   onClick={() => trackEvent("project_view", { slug: p.slug })}
                   className="group block [direction:ltr]"
                 >
@@ -80,7 +79,7 @@ export default function Projects() {
 
                   <h3 className="text-2xl sm:text-3xl font-bold mb-6">
                     <Link
-                      href={`/${locale}/projets/${p.slug}`}
+                      href={`/projets/${p.slug}`}
                       onClick={() => trackEvent("project_view", { slug: p.slug })}
                       className="hover:text-[var(--accent)] transition-colors"
                     >
@@ -133,7 +132,7 @@ export default function Projects() {
                   )}
 
                   <Link
-                    href={`/${locale}/projets/${p.slug}`}
+                    href={`/projets/${p.slug}`}
                     onClick={() => trackEvent("project_view", { slug: p.slug })}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
                   >

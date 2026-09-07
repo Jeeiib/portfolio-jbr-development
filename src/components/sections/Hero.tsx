@@ -1,14 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import ChantierScene from "@/components/hero/ChantierScene";
 import { siteConfig } from "@/data/siteConfig";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 export default function Hero() {
   const t = useTranslations("hero");
-  const locale = useLocale();
   const { trackEvent } = useAnalytics();
 
   return (
@@ -30,7 +29,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-6">
               <Link
-                href={`/${locale}/brief`}
+                href="/brief"
                 onClick={() => trackEvent("cta_brief_click", { from: "hero" })}
                 className="inline-flex items-center justify-center px-7 py-4 text-base font-semibold bg-[var(--accent)] btn-primary-text rounded-lg transition-colors hover:bg-[var(--accent-hover)]"
               >

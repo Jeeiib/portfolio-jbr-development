@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getPathname } from "@/i18n/navigation";
 import Navigation from "@/components/ui/Navigation";
 import BriefCTA from "@/components/ui/BriefCTA";
 import Hero from "@/components/sections/Hero";
@@ -10,6 +11,8 @@ import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
+const BASE_URL = "https://jbrdevelopment.fr";
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -17,17 +20,13 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
-  // Canonical dynamique selon la locale
-  const canonical = locale === "fr"
-    ? "https://jbrdevelopment.fr/fr"
-    : `https://jbrdevelopment.fr/${locale}`;
-
   return {
     alternates: {
-      canonical,
+      canonical: `${BASE_URL}${getPathname({ locale, href: "/" })}`,
       languages: {
-        "fr-FR": "https://jbrdevelopment.fr/fr",
-        "en-US": "https://jbrdevelopment.fr/en",
+        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/" })}`,
+        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/" })}`,
+        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/" })}`,
       },
     },
   };

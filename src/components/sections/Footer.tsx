@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { siteConfig } from "@/data/siteConfig";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -34,13 +34,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { href: `/${locale}#projets`, label: t("projects") },
-    { href: `/${locale}/services`, label: t("services") },
-    { href: `/${locale}/tarifs`, label: t("tarifs") },
+    { href: "/#projets", label: t("projects") },
+    { href: "/services", label: t("services") },
+    { href: "/tarifs", label: t("tarifs") },
     // Section publiée en français uniquement
-    ...(locale === "fr" ? [{ href: `/${locale}/conseils`, label: t("conseils") }] : []),
-    { href: `/${locale}/a-propos`, label: t("about") },
-    { href: `/${locale}#contact`, label: t("contact") },
+    ...(locale === "fr" ? [{ href: "/conseils", label: t("conseils") }] : []),
+    { href: "/a-propos", label: t("about") },
+    { href: "/#contact", label: t("contact") },
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function Footer() {
           {/* Identité + NAP */}
           <div className="flex flex-col gap-3">
             <Link
-              href={`/${locale}`}
+              href="/"
               className="text-xl font-bold tracking-tight hover:text-[var(--accent)] transition-colors w-fit"
             >
               JBR<span className="text-[var(--accent)]">.</span>

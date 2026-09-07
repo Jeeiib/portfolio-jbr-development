@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getPathname } from "@/i18n/navigation";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import BriefCTA from "@/components/ui/BriefCTA";
 import PricingTable from "@/components/tarifs/PricingTable";
 import PricingFAQ from "@/components/tarifs/PricingFAQ";
 import Reveal from "@/components/ui/Reveal";
+
+const BASE_URL = "https://jbrdevelopment.fr";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -15,19 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "tarifs.meta" });
 
-  const canonical =
-    locale === "fr"
-      ? "https://jbrdevelopment.fr/fr/tarifs"
-      : `https://jbrdevelopment.fr/${locale}/tarifs`;
-
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical,
+      canonical: `${BASE_URL}${getPathname({ locale, href: "/tarifs" })}`,
       languages: {
-        "fr-FR": "https://jbrdevelopment.fr/fr/tarifs",
-        "en-US": "https://jbrdevelopment.fr/en/tarifs",
+        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/tarifs" })}`,
+        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/tarifs" })}`,
+        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/tarifs" })}`,
       },
     },
   };

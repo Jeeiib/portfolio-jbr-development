@@ -39,8 +39,10 @@ Tu travailles sur le repo Portfolio (jbrdevelopment.fr). Mission hebdomadaire :
      keywords (liste de chaînes). Un champ manquant fait échouer le build.
    - au moins 800 mots utiles et au moins 4 titres de niveau H2, pour que le
      sommaire de la page s'affiche.
-   - maillage interne vers /fr/tarifs et /fr/brief, plus les liens indiqués dans
-     la ligne du calendrier.
+   - maillage interne vers /tarifs et /brief, plus les liens indiqués dans
+     la ligne du calendrier. Les URL françaises ne portent PAS de préfixe de
+     locale : /fr/tarifs repartirait en redirection 308 et le test de
+     conformité le refuse.
    - AUCUN fait ni chiffre inventé. Les seuls chiffres utilisables sans source
      externe sont ceux du dépôt : segments de marché de tarifs.compare dans
      src/messages/fr.json, grille 1 190 / 3 900 / 79 € HT, délais 2-3 semaines
@@ -72,7 +74,7 @@ Tu travailles sur le repo Portfolio (jbrdevelopment.fr). Mission hebdomadaire :
 
 ## Ce qui autorise la publication
 
-La relecture humaine n'est plus un passage obligé, parce qu'elle est encodée en tests. `.github/workflows/ci.yml` lance typage, lint, tests et build sur chaque PR, et `src/lib/__tests__/conseils-conformite.test.ts` vérifie, pour chaque article publié : au moins 800 mots et 4 sections, maillage vers `/fr/tarifs` et `/fr/brief`, liens internes pointant vers des routes réelles, aucun tiret long, aucun emoji, un frontmatter exploitable pour le SEO, et surtout **aucun montant en euros absent de la liste blanche du dépôt**. Ce dernier test est la protection principale contre l'invention de chiffres : il a d'ailleurs attrapé un « 0 à 20 000 € » que j'avais écrit moi-même dans l'article sur les prix.
+La relecture humaine n'est plus un passage obligé, parce qu'elle est encodée en tests. `.github/workflows/ci.yml` lance typage, lint, tests et build sur chaque PR, et `src/lib/__tests__/conseils-conformite.test.ts` vérifie, pour chaque article publié : au moins 800 mots et 4 sections, maillage vers `/tarifs` et `/brief`, liens internes pointant vers des routes réelles, aucun tiret long, aucun emoji, un frontmatter exploitable pour le SEO, et surtout **aucun montant en euros absent de la liste blanche du dépôt**. Ce dernier test est la protection principale contre l'invention de chiffres : il a d'ailleurs attrapé un « 0 à 20 000 € » que j'avais écrit moi-même dans l'article sur les prix.
 
 À l'ouverture d'une PR `conseils/*`, et seulement si ces vérifications passent, un job envoie un mail à `jb@jbrdevelopment.fr` via Resend annonçant l'article et la date de publication automatique. Fermer la PR ou la commenter suffit à bloquer la publication.
 

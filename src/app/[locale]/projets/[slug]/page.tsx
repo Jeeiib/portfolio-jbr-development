@@ -6,7 +6,10 @@ import BriefCTA from "@/components/ui/BriefCTA";
 import Link from "next/link";
 import Image from "next/image";
 import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+
+const BASE_URL = "https://jbrdevelopment.fr";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -37,10 +40,11 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     title: `${project.title} — ${t(`items.${project.slug}.description`)}`,
     description: `${t(`items.${project.slug}.delivered`)} ${t(`items.${project.slug}.result`)}`,
     alternates: {
-      canonical: `https://jbrdevelopment.fr/${locale}/projets/${slug}`,
+      canonical: `${BASE_URL}${getPathname({ locale, href: `/projets/${slug}` })}`,
       languages: {
-        "fr-FR": `https://jbrdevelopment.fr/fr/projets/${slug}`,
-        "en-US": `https://jbrdevelopment.fr/en/projets/${slug}`,
+        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: `/projets/${slug}` })}`,
+        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: `/projets/${slug}` })}`,
+        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: `/projets/${slug}` })}`,
       },
     },
   };

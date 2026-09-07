@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/data/siteConfig";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
@@ -16,7 +16,6 @@ interface BriefCTAProps {
  */
 export default function BriefCTA({ from }: BriefCTAProps) {
   const t = useTranslations("briefCta");
-  const locale = useLocale();
   const { trackEvent } = useAnalytics();
 
   return (
@@ -32,7 +31,7 @@ export default function BriefCTA({ from }: BriefCTAProps) {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href={`/${locale}/brief`}
+            href="/brief"
             onClick={() => trackEvent("cta_brief_click", { from })}
             className="inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold bg-[var(--accent)] btn-primary-text rounded-lg transition-colors hover:bg-[var(--accent-hover)]"
           >

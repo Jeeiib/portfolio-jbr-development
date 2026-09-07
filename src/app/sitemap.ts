@@ -2,10 +2,18 @@ import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { landingPages } from "@/data/landingPages";
 import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { getAllArticles } from "@/lib/conseils";
 
+const baseUrl = "https://jbrdevelopment.fr";
+
+// Construit l'URL absolue d'une locale donnée pour un chemin, via getPathname :
+// suit automatiquement la config de routage (français sans préfixe, anglais sous /en).
+function absoluteUrl(locale: "fr" | "en", href: string) {
+  return `${baseUrl}${getPathname({ locale, href })}`;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jbrdevelopment.fr";
   const locales = routing.locales;
 
   const entries: MetadataRoute.Sitemap = [];
@@ -13,14 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Home pages for each locale
   for (const locale of locales) {
     entries.push({
-      url: `${baseUrl}/${locale}`,
+      url: absoluteUrl(locale, "/"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: locale === "fr" ? 1 : 0.9,
       alternates: {
         languages: {
-          fr: `${baseUrl}/fr`,
-          en: `${baseUrl}/en`,
+          fr: absoluteUrl("fr", "/"),
+          en: absoluteUrl("en", "/"),
+          "x-default": absoluteUrl("fr", "/"),
         },
       },
     });
@@ -29,14 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Services hub page for each locale
   for (const locale of locales) {
     entries.push({
-      url: `${baseUrl}/${locale}/services`,
+      url: absoluteUrl(locale, "/services"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
         languages: {
-          fr: `${baseUrl}/fr/services`,
-          en: `${baseUrl}/en/services`,
+          fr: absoluteUrl("fr", "/services"),
+          en: absoluteUrl("en", "/services"),
+          "x-default": absoluteUrl("fr", "/services"),
         },
       },
     });
@@ -45,14 +55,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Pricing page for each locale
   for (const locale of locales) {
     entries.push({
-      url: `${baseUrl}/${locale}/tarifs`,
+      url: absoluteUrl(locale, "/tarifs"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
         languages: {
-          fr: `${baseUrl}/fr/tarifs`,
-          en: `${baseUrl}/en/tarifs`,
+          fr: absoluteUrl("fr", "/tarifs"),
+          en: absoluteUrl("en", "/tarifs"),
+          "x-default": absoluteUrl("fr", "/tarifs"),
         },
       },
     });
@@ -61,14 +72,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // About page for each locale
   for (const locale of locales) {
     entries.push({
-      url: `${baseUrl}/${locale}/a-propos`,
+      url: absoluteUrl(locale, "/a-propos"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
       alternates: {
         languages: {
-          fr: `${baseUrl}/fr/a-propos`,
-          en: `${baseUrl}/en/a-propos`,
+          fr: absoluteUrl("fr", "/a-propos"),
+          en: absoluteUrl("en", "/a-propos"),
+          "x-default": absoluteUrl("fr", "/a-propos"),
         },
       },
     });
@@ -77,15 +89,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Landing pages for each locale
   for (const locale of locales) {
     for (const page of landingPages) {
+      const path = `/services/${page.slug}`;
       entries.push({
-        url: `${baseUrl}/${locale}/services/${page.slug}`,
+        url: absoluteUrl(locale, path),
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.9,
         alternates: {
           languages: {
-            fr: `${baseUrl}/fr/services/${page.slug}`,
-            en: `${baseUrl}/en/services/${page.slug}`,
+            fr: absoluteUrl("fr", path),
+            en: absoluteUrl("en", path),
+            "x-default": absoluteUrl("fr", path),
           },
         },
       });
@@ -95,15 +109,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Project pages for each locale
   for (const locale of locales) {
     for (const project of projects) {
+      const path = `/projets/${project.slug}`;
       entries.push({
-        url: `${baseUrl}/${locale}/projets/${project.slug}`,
+        url: absoluteUrl(locale, path),
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.8,
         alternates: {
           languages: {
-            fr: `${baseUrl}/fr/projets/${project.slug}`,
-            en: `${baseUrl}/en/projets/${project.slug}`,
+            fr: absoluteUrl("fr", path),
+            en: absoluteUrl("en", path),
+            "x-default": absoluteUrl("fr", path),
           },
         },
       });
@@ -116,7 +132,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   if (articles.length > 0) {
     entries.push({
-      url: `${baseUrl}/fr/conseils`,
+      url: absoluteUrl("fr", "/conseils"),
       lastModified: new Date(articles[0].date),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -125,7 +141,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const article of articles) {
     entries.push({
-      url: `${baseUrl}/fr/conseils/${article.slug}`,
+      url: absoluteUrl("fr", `/conseils/${article.slug}`),
       lastModified: new Date(article.date),
       changeFrequency: "yearly",
       priority: 0.7,
