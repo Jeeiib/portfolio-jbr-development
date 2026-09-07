@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import ContactForm from "@/components/ui/ContactForm";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import { landingFAQs, whyChooseMe, featureOffer } from "@/data/landingPages";
 import { siteConfig } from "@/data/siteConfig";
 import BriefCTA from "@/components/ui/BriefCTA";
@@ -15,6 +16,7 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
+const BASE_URL = "https://jbrdevelopment.fr";
 const SLUG = "creation-site-internet-lille";
 
 export function generateStaticParams() {
@@ -37,10 +39,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "prix site internet Lille",
     ],
     alternates: {
-      canonical: `https://jbrdevelopment.fr/${locale}/services/${SLUG}`,
+      canonical: `${BASE_URL}${getPathname({ locale, href: `/services/${SLUG}` })}`,
       languages: {
-        "fr-FR": `https://jbrdevelopment.fr/fr/services/${SLUG}`,
-        "en-US": `https://jbrdevelopment.fr/en/services/${SLUG}`,
+        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: `/services/${SLUG}` })}`,
+        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: `/services/${SLUG}` })}`,
+        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: `/services/${SLUG}` })}`,
       },
     },
   };

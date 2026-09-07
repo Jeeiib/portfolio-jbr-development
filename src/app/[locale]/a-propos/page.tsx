@@ -5,6 +5,7 @@ import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
 import AboutTimeline from "@/components/about/AboutTimeline";
 import {
   SiReact,
@@ -19,6 +20,8 @@ import {
   SiVuedotjs,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+
+const BASE_URL = "https://jbrdevelopment.fr";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -43,10 +46,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "JBR Development",
     ],
     alternates: {
-      canonical: `https://jbrdevelopment.fr/${locale}/a-propos`,
+      canonical: `${BASE_URL}${getPathname({ locale, href: "/a-propos" })}`,
       languages: {
-        "fr-FR": "https://jbrdevelopment.fr/fr/a-propos",
-        "en-US": "https://jbrdevelopment.fr/en/a-propos",
+        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/a-propos" })}`,
+        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/a-propos" })}`,
+        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/a-propos" })}`,
       },
     },
   };

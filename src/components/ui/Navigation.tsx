@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import SmoothScrollLink from "@/components/ui/SmoothScrollLink";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -19,20 +18,21 @@ export default function Navigation() {
   const [hasMounted, setHasMounted] = useState(false);
   const pathname = usePathname();
 
-  const isHomePage = pathname === "/fr" || pathname === "/en" || pathname === "/";
+  // pathname (next-intl) est toujours sans préfixe de locale
+  const isHomePage = pathname === "/";
 
   // Ancres résolues selon la page : ancre directe sur la home, retour home + ancre ailleurs
-  const anchor = (id: string) => (isHomePage ? `#${id}` : `/${locale}#${id}`);
+  const anchor = (id: string) => (isHomePage ? `#${id}` : `/#${id}`);
 
   const navLinks = [
     { href: anchor("projets"), label: t("projects"), isAnchor: isHomePage },
-    { href: `/${locale}/services`, label: t("services"), isAnchor: false },
-    { href: `/${locale}/tarifs`, label: t("tarifs"), isAnchor: false },
+    { href: "/services", label: t("services"), isAnchor: false },
+    { href: "/tarifs", label: t("tarifs"), isAnchor: false },
     // Section publiée en français uniquement
     ...(locale === "fr"
-      ? [{ href: `/${locale}/conseils`, label: t("conseils"), isAnchor: false }]
+      ? [{ href: "/conseils", label: t("conseils"), isAnchor: false }]
       : []),
-    { href: `/${locale}/a-propos`, label: t("about"), isAnchor: false },
+    { href: "/a-propos", label: t("about"), isAnchor: false },
     { href: anchor("contact"), label: t("contact"), isAnchor: isHomePage },
   ];
 
@@ -78,7 +78,7 @@ export default function Navigation() {
 
   const briefCta = (from: string, extraClasses = "") => (
     <Link
-      href={`/${locale}/brief`}
+      href="/brief"
       onClick={() => {
         trackEvent("cta_brief_click", { from });
         handleLinkClick();
@@ -122,7 +122,7 @@ export default function Navigation() {
             </button>
           ) : (
             <Link
-              href={`/${locale}`}
+              href="/"
               className="text-lg md:text-xl font-bold tracking-tight transition-colors hover:text-[var(--accent)]"
             >
               JBR<span className="text-[var(--accent)]">.</span>

@@ -9,6 +9,7 @@ import BriefCTA from "@/components/ui/BriefCTA";
 import { mdxComponents } from "@/components/conseils/mdxComponents";
 import { getAllArticles, getArticle, getHeadings } from "@/lib/conseils";
 import { formatDateLongue } from "@/lib/formatDate";
+import { getPathname } from "@/i18n/navigation";
 
 const BASE_URL = "https://jbrdevelopment.fr";
 
@@ -33,17 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   const { meta } = article;
+  const canonical = `${BASE_URL}${getPathname({ locale: "fr", href: `/conseils/${slug}` })}`;
   return {
     title: `${meta.title} — JBR Development`,
     description: meta.description,
     keywords: meta.keywords,
-    alternates: { canonical: `${BASE_URL}/fr/conseils/${slug}` },
+    alternates: { canonical },
     openGraph: {
       type: "article",
       title: meta.title,
       description: meta.description,
       publishedTime: meta.date,
-      url: `${BASE_URL}/fr/conseils/${slug}`,
+      url: canonical,
     },
   };
 }
@@ -76,10 +78,10 @@ export default async function ArticlePage({ params }: Props) {
     author: {
       "@type": "Person",
       name: "Jean-Baptiste Renart",
-      url: `${BASE_URL}/fr/a-propos`,
+      url: `${BASE_URL}${getPathname({ locale: "fr", href: "/a-propos" })}`,
     },
     publisher: { "@type": "Organization", name: "JBR Development" },
-    mainEntityOfPage: `${BASE_URL}/fr/conseils/${slug}`,
+    mainEntityOfPage: `${BASE_URL}${getPathname({ locale: "fr", href: `/conseils/${slug}` })}`,
   };
 
   return (

@@ -6,7 +6,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "JBR Dev",
     description:
       "Développeur web freelance à Lille. Création de sites internet et applications web sur mesure. Expert React, Next.js, TypeScript.",
-    start_url: "/fr",
+    // Le français est servi à la racine sans préfixe de locale.
+    start_url: "/",
     scope: "/",
     display: "standalone",
     orientation: "portrait-primary",

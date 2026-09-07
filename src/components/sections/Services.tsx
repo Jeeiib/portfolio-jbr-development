@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { offers, type Offer } from "@/data/offers";
 import Reveal from "@/components/ui/Reveal";
@@ -74,7 +74,7 @@ export default function Services() {
                 </ul>
 
                 <Link
-                  href={`/${locale}/tarifs`}
+                  href="/tarifs"
                   onClick={() => trackEvent("cta_click", { location: `offer-${offer.id}` })}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors mt-auto"
                 >

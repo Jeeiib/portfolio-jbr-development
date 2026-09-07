@@ -1,23 +1,22 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { useTransition } from "react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
+  // pathname (next-intl) est déjà sans préfixe de locale
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  const switchLocale = (newLocale: string) => {
-    // Remove current locale from pathname and add new one
-    const segments = pathname.split("/");
-    segments[1] = newLocale;
-    const newPath = segments.join("/");
-
+  const switchLocale = (newLocale: "fr" | "en") => {
+    // router.replace de next-intl repréfixe lui-même le pathname courant :
+    // plus de reconstruction manuelle, donc plus de 404 sur les pages sans
+    // équivalent dans l'autre langue (ex. /conseils, français uniquement).
     startTransition(() => {
-      router.replace(newPath);
+      router.replace(pathname, { locale: newLocale });
     });
   };
 

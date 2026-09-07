@@ -1,4 +1,6 @@
 import { siteConfig } from "@/data/siteConfig";
+import { getPathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 interface StructuredDataProps {
   locale?: string;
@@ -6,6 +8,14 @@ interface StructuredDataProps {
 
 export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
   const baseUrl = "https://jbrdevelopment.fr";
+  // L'accueil français est à la racine : le construire via getPathname évite de
+  // pointer le fil d'Ariane sur /fr, qui repart en redirection 308.
+  const homeUrl = `${baseUrl}${getPathname({
+    locale: routing.locales.includes(locale as "fr" | "en")
+      ? (locale as "fr" | "en")
+      : routing.defaultLocale,
+    href: "/",
+  })}`.replace(/\/$/, "");
 
   // LocalBusiness Schema - Crucial pour le SEO local "développeur web Lille"
   const localBusinessSchema = {
@@ -229,8 +239,8 @@ export default function StructuredData({ locale = "fr" }: StructuredDataProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Accueil",
-        item: `${baseUrl}/${locale}`,
+        name: locale === "en" ? "Home" : "Accueil",
+        item: homeUrl,
       },
     ],
   };
