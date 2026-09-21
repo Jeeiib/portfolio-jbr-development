@@ -27,11 +27,6 @@ export async function generateMetadata({ params }: ServicesPageProps): Promise<M
     description: t("meta.description"),
     alternates: {
       canonical: `${BASE_URL}${getPathname({ locale, href: "/services" })}`,
-      languages: {
-        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/services" })}`,
-        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/services" })}`,
-        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/services" })}`,
-      },
     },
   };
 }

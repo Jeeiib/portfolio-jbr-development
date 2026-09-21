@@ -41,11 +41,6 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     description: `${t(`items.${project.slug}.delivered`)} ${t(`items.${project.slug}.result`)}`,
     alternates: {
       canonical: `${BASE_URL}${getPathname({ locale, href: `/projets/${slug}` })}`,
-      languages: {
-        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: `/projets/${slug}` })}`,
-        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: `/projets/${slug}` })}`,
-        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: `/projets/${slug}` })}`,
-      },
     },
   };
 }
