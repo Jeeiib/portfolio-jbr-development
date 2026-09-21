@@ -23,11 +23,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     alternates: {
       canonical: `${BASE_URL}${getPathname({ locale, href: "/" })}`,
-      languages: {
-        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/" })}`,
-        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/" })}`,
-        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/" })}`,
-      },
     },
   };
 }

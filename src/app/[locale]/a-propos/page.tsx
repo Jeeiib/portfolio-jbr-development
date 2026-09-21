@@ -47,11 +47,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: `${BASE_URL}${getPathname({ locale, href: "/a-propos" })}`,
-      languages: {
-        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: "/a-propos" })}`,
-        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: "/a-propos" })}`,
-        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: "/a-propos" })}`,
-      },
     },
   };
 }

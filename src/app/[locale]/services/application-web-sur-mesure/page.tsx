@@ -40,11 +40,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ],
     alternates: {
       canonical: `${BASE_URL}${getPathname({ locale, href: `/services/${SLUG}` })}`,
-      languages: {
-        "fr-FR": `${BASE_URL}${getPathname({ locale: "fr", href: `/services/${SLUG}` })}`,
-        "en-US": `${BASE_URL}${getPathname({ locale: "en", href: `/services/${SLUG}` })}`,
-        "x-default": `${BASE_URL}${getPathname({ locale: "fr", href: `/services/${SLUG}` })}`,
-      },
     },
   };
 }
