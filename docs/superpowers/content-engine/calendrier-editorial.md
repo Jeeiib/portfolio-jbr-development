@@ -22,8 +22,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Combien de temps prend la création d'un site, réellement**
   Intention : « délai création site internet ». Angle : le planning honnête, et le fait que le délai dépend surtout du client (contenus, validations). Utiliser les délais affichés. Maillage : /tarifs, /brief. Publié le 21/09/2026.
 
-- [ ] **Refonte ou nouveau site : comment ne pas perdre son référencement**
-  Intention : « refonte site sans perdre référencement ». Angle : ce qu'il faut préserver (URL, redirections, contenus qui performent) et le risque concret d'une migration bâclée. Maillage : /tarifs, /brief.
+- [x] **Refonte ou nouveau site : comment ne pas perdre son référencement**
+  Intention : « refonte site sans perdre référencement ». Angle : ce qu'il faut préserver (URL, redirections, contenus qui performent) et le risque concret d'une migration bâclée. Maillage : /tarifs, /brief. Publié le 28/09/2026.
 
 - [ ] **Ce qu'un site coûte après la mise en ligne**
   Intention : « coût maintenance site internet ». Angle : hébergement, nom de domaine, mises à jour, sécurité ; ce qui est inclus et ce qui ne l'est pas. Maillage : /tarifs, /brief.
