@@ -25,8 +25,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Refonte ou nouveau site : comment ne pas perdre son référencement**
   Intention : « refonte site sans perdre référencement ». Angle : ce qu'il faut préserver (URL, redirections, contenus qui performent) et le risque concret d'une migration bâclée. Maillage : /tarifs, /brief. Publié le 28/09/2026.
 
-- [ ] **Ce qu'un site coûte après la mise en ligne**
-  Intention : « coût maintenance site internet ». Angle : hébergement, nom de domaine, mises à jour, sécurité ; ce qui est inclus et ce qui ne l'est pas. Maillage : /tarifs, /brief.
+- [x] **Ce qu'un site coûte après la mise en ligne**
+  Intention : « coût maintenance site internet ». Angle : hébergement, nom de domaine, mises à jour, sécurité ; ce qui est inclus et ce qui ne l'est pas. Maillage : /tarifs, /brief. Publié le 05/10/2026.
 
 - [ ] **Préparer un brief efficace : ce que votre prestataire a besoin de savoir**
   Intention : « comment rédiger un cahier des charges site web ». Angle : les six questions qui font gagner deux semaines, et pourquoi un brief précis fait baisser le devis. Maillage : /brief en premier.
