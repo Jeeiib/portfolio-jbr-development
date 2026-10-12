@@ -28,8 +28,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Ce qu'un site coûte après la mise en ligne**
   Intention : « coût maintenance site internet ». Angle : hébergement, nom de domaine, mises à jour, sécurité ; ce qui est inclus et ce qui ne l'est pas. Maillage : /tarifs, /brief. Publié le 05/10/2026.
 
-- [ ] **Préparer un brief efficace : ce que votre prestataire a besoin de savoir**
-  Intention : « comment rédiger un cahier des charges site web ». Angle : les six questions qui font gagner deux semaines, et pourquoi un brief précis fait baisser le devis. Maillage : /brief en premier.
+- [x] **Préparer un brief efficace : ce que votre prestataire a besoin de savoir**
+  Intention : « comment rédiger un cahier des charges site web ». Angle : les six questions qui font gagner deux semaines, et pourquoi un brief précis fait baisser le devis. Maillage : /brief en premier. Publié le 12/10/2026.
 
 - [ ] **Votre site est-il vraiment sécurisé ? Le minimum vital**
   Intention : « sécurité site internet TPE ». Angle : HTTPS, sauvegardes, mises à jour, RGPD de base, et le risque réel pour une petite structure. Maillage : /tarifs, /brief.
