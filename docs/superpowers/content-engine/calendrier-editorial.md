@@ -31,8 +31,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [ ] **Préparer un brief efficace : ce que votre prestataire a besoin de savoir**
   Intention : « comment rédiger un cahier des charges site web ». Angle : les six questions qui font gagner deux semaines, et pourquoi un brief précis fait baisser le devis. Maillage : /brief en premier.
 
-- [ ] **Votre site est-il vraiment sécurisé ? Le minimum vital**
-  Intention : « sécurité site internet TPE ». Angle : HTTPS, sauvegardes, mises à jour, RGPD de base, et le risque réel pour une petite structure. Maillage : /tarifs, /brief.
+- [x] **Votre site est-il vraiment sécurisé ? Le minimum vital**
+  Intention : « sécurité site internet TPE ». Angle : HTTPS, sauvegardes, mises à jour, RGPD de base, et le risque réel pour une petite structure. Maillage : /tarifs, /brief. Publié le 19/10/2026.
 
 - [ ] **Site vitrine ou boutique en ligne : la bonne question à se poser**
   Intention : « site vitrine ou e-commerce ». Angle : le coût caché du e-commerce (logistique, paiements, retours) contre la simplicité d'un site qui fait décrocher le téléphone. Maillage : /tarifs, /brief.
