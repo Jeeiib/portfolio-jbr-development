@@ -37,8 +37,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Site vitrine ou boutique en ligne : la bonne question à se poser**
   Intention : « site vitrine ou e-commerce ». Angle : le coût caché du e-commerce (logistique, paiements, retours) contre la simplicité d'un site qui fait décrocher le téléphone. Maillage : /tarifs, /brief. Publié le 26/10/2026.
 
-- [ ] **Pourquoi votre concurrent passe devant vous sur Google**
-  Intention : « pourquoi mon concurrent est mieux référencé ». Angle : les vrais facteurs (fiche, citations locales, contenu, technique) et ce qui n'en est pas un. Rappeler que les scores d'outils tiers ne sont pas des signaux Google. Maillage : /conseils, /brief.
+- [x] **Pourquoi votre concurrent passe devant vous sur Google**
+  Intention : « pourquoi mon concurrent est mieux référencé ». Angle : les vrais facteurs (fiche, citations locales, contenu, technique) et ce qui n'en est pas un. Rappeler que les scores d'outils tiers ne sont pas des signaux Google. Maillage : /conseils, /brief. Publié le 02/11/2026.
 
 - [ ] **Un outil métier plutôt qu'un site : quand ça devient rentable**
   Intention : « application web sur mesure PME ». Angle : le calcul en heures gagnées par mois plutôt qu'en prix de projet. Maillage : /services/application-web-sur-mesure, /tarifs.
