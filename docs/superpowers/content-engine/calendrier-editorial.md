@@ -34,8 +34,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Votre site est-il vraiment sécurisé ? Le minimum vital**
   Intention : « sécurité site internet TPE ». Angle : HTTPS, sauvegardes, mises à jour, RGPD de base, et le risque réel pour une petite structure. Maillage : /tarifs, /brief. Publié le 19/10/2026.
 
-- [ ] **Site vitrine ou boutique en ligne : la bonne question à se poser**
-  Intention : « site vitrine ou e-commerce ». Angle : le coût caché du e-commerce (logistique, paiements, retours) contre la simplicité d'un site qui fait décrocher le téléphone. Maillage : /tarifs, /brief.
+- [x] **Site vitrine ou boutique en ligne : la bonne question à se poser**
+  Intention : « site vitrine ou e-commerce ». Angle : le coût caché du e-commerce (logistique, paiements, retours) contre la simplicité d'un site qui fait décrocher le téléphone. Maillage : /tarifs, /brief. Publié le 26/10/2026.
 
 - [ ] **Pourquoi votre concurrent passe devant vous sur Google**
   Intention : « pourquoi mon concurrent est mieux référencé ». Angle : les vrais facteurs (fiche, citations locales, contenu, technique) et ce qui n'en est pas un. Rappeler que les scores d'outils tiers ne sont pas des signaux Google. Maillage : /conseils, /brief.
