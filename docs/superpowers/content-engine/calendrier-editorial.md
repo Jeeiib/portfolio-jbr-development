@@ -40,8 +40,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Pourquoi votre concurrent passe devant vous sur Google**
   Intention : « pourquoi mon concurrent est mieux référencé ». Angle : les vrais facteurs (fiche, citations locales, contenu, technique) et ce qui n'en est pas un. Rappeler que les scores d'outils tiers ne sont pas des signaux Google. Maillage : /conseils, /brief. Publié le 02/11/2026.
 
-- [ ] **Un outil métier plutôt qu'un site : quand ça devient rentable**
-  Intention : « application web sur mesure PME ». Angle : le calcul en heures gagnées par mois plutôt qu'en prix de projet. Maillage : /services/application-web-sur-mesure, /tarifs.
+- [x] **Un outil métier plutôt qu'un site : quand ça devient rentable**
+  Intention : « application web sur mesure PME ». Angle : le calcul en heures gagnées par mois plutôt qu'en prix de projet. Maillage : /services/application-web-sur-mesure, /tarifs. Publié le 09/11/2026.
 
 ## Quand le backlog est vide
 
