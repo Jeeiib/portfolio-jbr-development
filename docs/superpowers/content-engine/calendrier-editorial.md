@@ -43,6 +43,18 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Un outil métier plutôt qu'un site : quand ça devient rentable**
   Intention : « application web sur mesure PME ». Angle : le calcul en heures gagnées par mois plutôt qu'en prix de projet. Maillage : /services/application-web-sur-mesure, /tarifs. Publié le 09/11/2026.
 
+- [ ] **Freelance low-cost ou site sur mesure : comment repérer la différence avant de signer**
+  Intention : « freelance pas cher site internet ». Angle : s'appuyer sur les trois segments déjà affichés sur /tarifs (DIY, freelance low-cost, sur mesure) pour expliquer ce qui distingue concrètement un thème habillé vite fait d'un site développé proprement, et comment le vérifier avant de signer. Maillage : /tarifs, /brief.
+
+- [ ] **Nom de domaine et adresse email professionnelle : les erreurs qui coûtent cher plus tard**
+  Intention : « nom de domaine site internet TPE ». Angle : ce qui se passe quand le nom de domaine est enregistré au nom du prestataire plutôt que du client, et ce qu'une adresse email pro change pour la crédibilité face à une boîte gmail générique. Maillage : /brief, /tarifs.
+
+- [ ] **Votre site s'affiche mal sur mobile : ce qu'il faut vérifier en deux minutes**
+  Intention : « site internet pas adapté mobile ». Angle : le test simple à faire soi-même depuis son téléphone, et ce qui distingue un vrai site responsive d'un site qui s'affiche juste en plus petit. Maillage : /tarifs, /brief.
+
+- [ ] **React, Next.js ou WordPress : pourquoi la technologie derrière votre site vous concerne un peu**
+  Intention : « quelle technologie pour mon site internet ». Angle : démystifier le choix technique pour un client qui n'y connaît rien ; ce qui compte réellement pour lui (vitesse, sécurité, coût de maintenance dans le temps) contre ce qui ne change rien à son usage. Maillage : /services/freelance-react-nextjs, /tarifs.
+
 ## Quand le backlog est vide
 
 La routine n'invente pas de sujet à la volée : elle ouvre une PR qui propose quatre nouveaux sujets à ajouter ici, tirés des requêtes en hausse dans Search Console (voir la boucle mensuelle dans `ops-seo-local.md`).
