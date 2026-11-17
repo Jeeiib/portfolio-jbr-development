@@ -288,6 +288,9 @@ export default function BriefWizard() {
   useEffect(() => {
     const draft = loadDraft();
     if (draft) {
+      // Lecture du localStorage volontairement après le montage : la faire au
+      // rendu initial casserait l'hydratation (le serveur n'a pas de brouillon).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPendingDraft(draft);
       setShowDraftModal(true);
     }
