@@ -43,8 +43,8 @@ Règles de rédaction, non négociables : minimum 800 mots utiles, structure en 
 - [x] **Un outil métier plutôt qu'un site : quand ça devient rentable**
   Intention : « application web sur mesure PME ». Angle : le calcul en heures gagnées par mois plutôt qu'en prix de projet. Maillage : /services/application-web-sur-mesure, /tarifs. Publié le 09/11/2026.
 
-- [ ] **Freelance low-cost ou site sur mesure : comment repérer la différence avant de signer**
-  Intention : « freelance pas cher site internet ». Angle : s'appuyer sur les trois segments déjà affichés sur /tarifs (DIY, freelance low-cost, sur mesure) pour expliquer ce qui distingue concrètement un thème habillé vite fait d'un site développé proprement, et comment le vérifier avant de signer. Maillage : /tarifs, /brief.
+- [x] **Freelance low-cost ou site sur mesure : comment repérer la différence avant de signer**
+  Intention : « freelance pas cher site internet ». Angle : s'appuyer sur les trois segments déjà affichés sur /tarifs (DIY, freelance low-cost, sur mesure) pour expliquer ce qui distingue concrètement un thème habillé vite fait d'un site développé proprement, et comment le vérifier avant de signer. Maillage : /tarifs, /brief. Publié le 23/11/2026.
 
 - [ ] **Nom de domaine et adresse email professionnelle : les erreurs qui coûtent cher plus tard**
   Intention : « nom de domaine site internet TPE ». Angle : ce qui se passe quand le nom de domaine est enregistré au nom du prestataire plutôt que du client, et ce qu'une adresse email pro change pour la crédibilité face à une boîte gmail générique. Maillage : /brief, /tarifs.
